@@ -4,6 +4,7 @@
 # VIADE ES1A
 
 ## Autores
+- Alguien
 
 This repository contains a skeleton of the VIADE project.
 

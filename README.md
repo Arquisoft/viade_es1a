@@ -5,6 +5,7 @@
 
 ## Autores
 - Alvaro Baños Gomez
+- Thalía Cuetos Fernández
 
 This repository contains a skeleton of the VIADE project.
 

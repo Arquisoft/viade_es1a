@@ -5,6 +5,8 @@
 
 ## Autores
 
+- Kevin Barbón Manzano
+
 This repository contains a skeleton of the VIADE project.
 
 This project is an assignment for the [Software Architecture course](https://arquisoft.github.io/) following [these requirements](https://labra.solid.community/public/SoftwareArchitecture/AssignmentDescription/).

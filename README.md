@@ -5,6 +5,7 @@
 
 ## Autores
 - Alvaro Baños Gomez
+- Samuel Moreno Vincent
 
 This repository contains a skeleton of the VIADE project.
 

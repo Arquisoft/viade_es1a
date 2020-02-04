@@ -6,6 +6,11 @@
 ## Autores
 - Alvaro Baños Gomez
 - Jorge Pascual García
+- Samuel Moreno Vincent
+- Adrián Fernández Alonso
+- Kevin Barbón Manzano
+
+>>>>>>> c52bb28165b6ec6f40551814afa10b6405556598
 
 This repository contains a skeleton of the VIADE project.
 

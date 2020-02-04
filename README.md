@@ -5,6 +5,7 @@
 
 ## Autores
 - Alvaro Baños Gomez
+- Jorge Pascual García
 
 This repository contains a skeleton of the VIADE project.
 

@@ -1,5 +1,14 @@
 [[section-architecture-constraints]]
-== Architecture Constraints
+== Restricciones de la Arquitectura
+
+=== Restricciones Tecnicas
+[options="header"]
+|===
+| RT         | Restriccion
+| <RT1>     | Documentacion
+| <RT2>     | Navegador
+|===
+
 
 
 [role="arc42help"]

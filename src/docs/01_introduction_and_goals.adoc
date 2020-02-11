@@ -14,7 +14,15 @@ Describes the relevant requirements and the driving forces that software archite
 ****
 
 === Resumen de requisitos
+Los requisitos de la aplicación son:
 
+* El sistema se basará en una arquitectura descentralizada en la que los datos están separados de la aplicación
+* Los usuarios pueden almacenar las rutas en sus pods propios.
+* Los usuarios podrán visualizar las rutas en un mapa.
+* La aplicación permitirá al usuario compartir fotos, vídeos u otro tipo de ficheros con otros amigos.
+* Un usuario puede obtener notificaciones cuando algún amigo quiera compartir una ruta con él.
+* Los usuarios pueden tener grupos de amigos con quienes ellos puedan querer compartir una ruta.
+* Debería ser posible ver las rutas cargadas por usuarios que están utilizando una app diferente, de forma que la interoperabilidad con otros sistemas de gestión de rutas debería tenerse en cuenta. 
 [role="arc42help"]
 ****
 .Contents

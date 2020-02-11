@@ -16,4 +16,4 @@ More information about how this project has been setup is available [in the wiki
 
 ## Building the system
 
-This project requires [Node](kkk)
+This project requires [Node](https://nodejs.org/)

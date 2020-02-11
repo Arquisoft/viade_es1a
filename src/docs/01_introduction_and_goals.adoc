@@ -1,5 +1,8 @@
 [[section-introduction-and-goals]]
-== Introduction and Goals
+== Introdución y objetivos
+El objetivo es crear un sistema de gestión de rutas descentralizado basado en las especeficaciones solid utilizando el framework React.
+
+
 
 [role="arc42help"]
 ****
@@ -10,7 +13,7 @@ Describes the relevant requirements and the driving forces that software archite
 * relevant stakeholders and their expectations
 ****
 
-=== Requirements Overview
+=== Resumen de requisitos
 
 [role="arc42help"]
 ****

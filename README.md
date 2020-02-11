@@ -13,3 +13,8 @@ This project is an assignment for the [Software Architecture course](https://arq
 The app is deployed at [https://arquisoft.github.io/viade_es1a/](https://arquisoft.github.io/viade_es1a/) which also contains a [technical documentation](https://arquisoft.github.io/viade_es1a/docs).
 
 More information about how this project has been setup is available [in the wiki](https://github.com/Arquisoft/viade_es1a/wiki).
+
+
+## Building the system
+
+This project requires [Node](https://nodejs.org/)

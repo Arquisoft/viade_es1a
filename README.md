@@ -4,6 +4,12 @@
 # VIADE ES1A
 
 ## Autores
+- Alvaro Baños Gomez
+- Jorge Pascual García
+- Thalía Cuetos Fernández
+- Samuel Moreno Vincent
+- Adrián Fernández Alonso
+- Kevin Barbón Manzano
 
 This repository contains a skeleton of the VIADE project.
 

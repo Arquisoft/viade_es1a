@@ -3,6 +3,9 @@
 El objetivo es crear un sistema de gestión de rutas descentralizado basado en las especeficaciones solid utilizando el framework React.
 
 
+[role="arc42help"]
+
+
 
 === Resumen de requisitos
 Los requisitos de la aplicación son:

@@ -21,7 +21,7 @@ Los requisitos de la aplicación son:
 [role="arc42help"]
 
 
-=== Quality Goals
+=== Objetivos de calidad
 
 [role="arc42help"]
 ****
@@ -35,6 +35,15 @@ If you as an architect do not know how the quality of your work will be judged �
 .Form
 A table with quality goals and concrete scenarios, ordered by priorities
 ****
+
+[options="header",cols="1,2"]
+|===
+|Objetivo|Motivación
+|Usabilidad|El usuario debe sentirse cómodo usando nuestra aplicación
+|Mantenibilidad|Un buen diseño inicial del software facilitará el arreglo de errores o cambios posteriores que se deban realizar
+|Descentralización|Es importante mantener la privacidad de los datos de cada usuario
+|Eficiencia|Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla
+|===
 
 === Stakeholders
 

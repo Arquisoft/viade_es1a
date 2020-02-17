@@ -1,19 +1,25 @@
 [[section-architecture-constraints]]
-== Architecture Constraints
+== Restricciones de la Arquitectura
+
+=== Restricciones Técnicas
+[options="header"]
+|===
+|        | Restricción | Descripción
+| RT1     | Uso [React](https://es.reactjs.org/) | Tendremos que usar React en el desarrollo de la aplicación teniendo en cuenta sus ventajas y limitaciones.
+| RT2     | Uso [SOLID](https://solid.mit.edu/) | Usaremos los principios de SOLID para conseguir una aplicación descentralizada.
+|===
+=== Restricciones Organizativas
+|===
+|        | Restricción | Descripción
+| RO1     | Equipo de 6 | Debemos organizarnos teniendo en cuenta a todos los integrantes del equipo.
+|===
+=== Convenciones
+|===
+|        | Restricción | Descripción
+| RC1     | Git | Tenemos que usar git para la gestión de las versiones del proyecto.
+| RC2     | Arc42 | Se usará para la creación de la documentación del proyecto.
+|===
+
 
 
 [role="arc42help"]
-****
-.Contents
-Any requirement that constrains software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies.
-
-.Motivation
-Architects should know exactly where they are free in their design decisions and where they must adhere to constraints.
-Constraints must always be dealt with; they may be negotiable, though.
-
-.Form
-Simple tables of constraints with explanations.
-If needed you can subdivide them into
-technical constraints, organizational and political constraints and
-conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
-****

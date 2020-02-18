@@ -36,7 +36,7 @@ Los requisitos de la aplicación son:
 [role="arc42help"]
 
 
-[options="header",cols="1,2,2"]
+[options="header",cols="1,2,3"]
 |===
 |Rol/Nombre|Descripción|Expectativas
 | Profesores | Evaluan la aplicación y guian a los desarrolladores | Esperan que los estudiantes trabajen en equipo, que aprendan a usar una tecnología desconocida y a tomar decisiones

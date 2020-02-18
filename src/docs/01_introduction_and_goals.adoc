@@ -31,7 +31,7 @@ Los requisitos de la aplicación son:
 |Eficiencia|Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla
 |===
 
-[role="arc42help"]
+
 
 === Stakeholders
 

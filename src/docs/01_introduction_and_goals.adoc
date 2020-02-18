@@ -33,8 +33,6 @@ Los requisitos de la aplicación son:
 
 === Stakeholders
 
-
-
 [options="header",cols="1,2,3"]
 |===
 |Rol/Nombre|Descripción|Expectativas
@@ -42,5 +40,4 @@ Los requisitos de la aplicación son:
 | Usuarios | Personas que usan la aplicación cuando van de ruta | Esperan poder guardar y compartir rutas con personas o con  grupos de personas de forma usable, disponible, rápida y segura 
 | Inrupt |Organización que fomenta y desarrola Solid y ha propuesto el desafío | Esperan que los estudiantes creen una aplicación descentralizada usando Solid para fomentar su uso
 | Desarrolladores |Diseñan e implementan la aplicación tanto desde un punto de  vista arquitectónico como desde la codificación | Esperan aprender a trabajar en equipo, ser capaces de realizar una aplicación funcional de rutas descentralizadas y saber ampliar sus horizontes con nuevas tecnologías
-
 |===

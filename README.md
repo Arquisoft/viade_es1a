@@ -5,8 +5,6 @@
 
 ## Autores
 - Alvaro Baños Gomez
-- Jorge Pascual García
-- Thalía Cuetos Fernández
 - Samuel Moreno Vincent
 - Adrián Fernández Alonso
 - Kevin Barbón Manzano

@@ -7,7 +7,7 @@
 
 ==== Sistema general de Whitebox
 
-image:Figura5.1.png["Diagrama nivel 1",200,200,float="left",align="center"] +
+image:images/Figura5.1.png["Diagrama nivel 1",200,200,float="left",align="center"] +
 Figura 5.1
 
 |===

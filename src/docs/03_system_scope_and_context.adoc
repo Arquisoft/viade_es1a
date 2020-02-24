@@ -1,7 +1,7 @@
 [[section-system-scope-and-context]]
-== System Scope and Context
+== Alcance y contexto del sistema
 
-=== Business Context
+=== Contexto empresarial
 
 image::sistemaycontexto.png[]
 
@@ -9,8 +9,8 @@ El proyecto será una aplicación para que los usuarios puedan compartir sus rut
 
 Los usuarios podrán guardar sus distintas rutas usando sus PODS.
 
-=== Technical Context
+=== Contexto técnico
 
-TODO
+N/A
 
 

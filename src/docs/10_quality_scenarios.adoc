@@ -1,18 +1,11 @@
 [[section-quality-scenarios]]
 == Requerimientos de calidad
 
-
-[role="arc42help"]
-
 === Árbol de calidad
-
-[role="arc42help"]
 
 image::QualityTree.png[]
 
 === Escenarios de calidad
-
-[role="arc42help"]
 
 |===
 | Escenario | Explicación | Prioridad
@@ -28,3 +21,4 @@ image::QualityTree.png[]
 | Eficiencia
 | La aplicación no puede tener un tiempo de respuesta largo
 | Alta
+|===

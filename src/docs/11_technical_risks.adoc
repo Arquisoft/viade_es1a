@@ -7,7 +7,7 @@
 |Falta de conocimiento y uso de React| Realizar cursos, mirar tutoriales  y practicar con pequeñas aplicaciones
 
 |Falta de conocimiento de Solid| Mirar  foros y ejemplos oficiales de Solid
-|Abandono de 2 miembros del equipo| Mantener un buena comunicación y dividir el trabajo a partes iguales para compensar la falta de miembros y asi conseguir trabajar lo más eficientemente posible
+|Abandono de futuros miembros del equipo| Mantener un buena comunicación y dividir el trabajo a partes iguales para trabajar lo más eficientemente posible y que no supongo una carga excesiva de trabajo que termine en abandono del equipo
 |Problemas con git|Usar un metodología para los merges, commits y creación de ramas además de ser cuidadosos
 |Primer contacto con la programación asincrona| Mirar videotutoriales y entender con toda claridad este concepto
 |Sin experiencia en aplicar arquitecturas en proyectos desde cero  | Tomar como referencia proyectos ya realizados en react y hacer un buen uso de patrones tanto arquitectónicos como de diseño

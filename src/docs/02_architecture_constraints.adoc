@@ -11,7 +11,7 @@
 === Restricciones Organizativas
 |===
 |        | Restricción | Descripción
-| RO1     | Equipo de 6 | Debemos organizarnos teniendo en cuenta a todos los integrantes del equipo.
+| RO1     | Equipo de 4 | Debemos organizarnos teniendo en cuenta a todos los integrantes del equipo.
 | RO2   | Tiempo | El tiempo que tenemos para la realización del proyecto es hasta la finalización del curso académico y la fecha dada por el profesor de la asignatura.
 |===
 === Convenciones

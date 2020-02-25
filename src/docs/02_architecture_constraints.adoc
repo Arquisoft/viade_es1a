@@ -5,8 +5,8 @@
 [options="header"]
 |===
 |        | Restricción | Descripción
-| RT1     | Uso https://es.reactjs.org/[React] | Tendremos que usar React en el desarrollo de la aplicación teniendo en cuenta sus ventajas y limitaciones.
-| RT2     | Uso https://solid.mit.edu/[SOLID] | Usaremos los principios de SOLID para conseguir una aplicación descentralizada.
+| RT1     | Uso React | Tendremos que usar React en el desarrollo de la aplicación teniendo en cuenta sus ventajas y limitaciones.
+| RT2     | Uso SOLID | Usaremos los principios de SOLID para conseguir una aplicación descentralizada.
 |===
 === Restricciones Organizativas
 |===

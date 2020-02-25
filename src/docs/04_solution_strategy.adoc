@@ -1,9 +1,9 @@
 [[section-solution-strategy]]
-== Solution Strategy
+== Estrategia de Solución
 
 
 
-Tecnológia::
+Tecnología::
 
 En cuánto a las tecnologías se usaremos React y Solid como se redacto en las Restricciones de la arquitectura. Parte de la tecnología usada para el desarrollo de la aplicacion es parte de las restricciones. 
 Hemos consensuado usar Visual Studio Code como editor de texto para el desarrollo del codigo para un trabajo en equipo mas dinámico.

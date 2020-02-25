@@ -1,4 +1,4 @@
 [[section-runtime-view]]
-== Runtime View
+== Vista de tiempo de ejecución
 
 N/A

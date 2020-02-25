@@ -1,6 +1,6 @@
 [[section-deployment-view]]
 
 
-== Deployment View
+== Vista de implementacion
 
 N/A

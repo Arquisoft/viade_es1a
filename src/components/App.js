@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/images/logo.svg';
+import logo from '../assets/images/ViaDe.svg';
 import '../assets/css/App.css';
 
 function App() {
@@ -7,17 +7,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <h1>Viade es1a</h1>
+        <p>En desarollo, para más información visita nuestra <a
+            className="App-link"
+            href="https://github.com/Arquisoft/viade_es1a"
+            target="_blank"
+            rel="noopener noreferrer"
+          >proyecto en github</a>.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React. Developed using Docker.
-        </a>
       </header>
     </div>
   );

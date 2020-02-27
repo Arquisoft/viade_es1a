@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Viade es1a</h1>
-        <p>En desarollo, para más información visita nuestra <a
+        <p>En desarollo, para más información visita nuestro <a
             className="App-link"
             href="https://github.com/Arquisoft/viade_es1a"
             target="_blank"

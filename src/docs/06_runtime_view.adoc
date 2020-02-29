@@ -1,4 +1,40 @@
 [[section-runtime-view]]
 == Vista de tiempo de ejecución
 
-N/A
+=== Escenario Nueva Ruta
+
+ToDo
+
+=== Escenario Ver Ruta
+
+[plantuml,Sequence diagram,png]
+----
+@startuml
+
+actor Usuario
+collections Interfaz_Grafica
+collections Logica_de_negocio
+boundary OpenStreetMap_API
+collections Persistencia
+database Pod
+
+Usuario -> Interfaz_Grafica: Click en la ruta
+activate Interfaz_Grafica
+Interfaz_Grafica -> Logica_de_negocio: Pedir ruta (id)
+activate Logica_de_negocio
+Logica_de_negocio -> Persistencia: Pedir ruta (id)
+activate Persistencia
+Persistencia -> Pod: Pedir Ruta (id)
+Pod -> Persistencia: Devolver ruta (JSON)
+Persistencia -> Logica_de_negocio : Devolver ruta (JSON)
+deactivate Persistencia
+Logica_de_negocio -> Logica_de_negocio : Parser (JSON a Object)
+Logica_de_negocio -> OpenStreetMap_API : Obtener mapa (Object)
+OpenStreetMap_API -> Logica_de_negocio : Mapa (Url)
+Logica_de_negocio -> Interfaz_Grafica : Mapa (Url)
+deactivate Logica_de_negocio
+Interfaz_Grafica -> Usuario : Mostrar mapa
+deactivate Interfaz_Grafica
+
+@enduml
+----

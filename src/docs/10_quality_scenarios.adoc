@@ -15,7 +15,7 @@ image::QualityTree.png[]
 | Mantenibilidad
 | Tiene que ser fácil realizar cambios, y añadir funcionalidades en la aplicación
 | Alta
-| Descentralización
+| Privacidad
 | La información se tiene que guardar de forma descentralizada, es decir, que el usuario pueda llevarse su información cuando quiera y compartirla con las personas que desee.
 | Muy Alta
 | Eficiencia

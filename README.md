@@ -29,7 +29,7 @@ Una vez instalado Node, descargar el proyecto con el siguiente comando:
 
 ` git clone https://github.com/Arquisoft/viade_es1a.git `
 
-Para moverse a la carpata del proyecto usar:
+Para moverse a la carpeta del proyecto usar:
 
 ` cd viade_es1a` 
 
@@ -37,7 +37,7 @@ Instalar las dependencias:
 
 ` npm install ` 
 
-Ejecutar la aplicacion:
+Ejecutar la aplicación:
 
 ` run ` 
 

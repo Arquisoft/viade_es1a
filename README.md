@@ -23,3 +23,21 @@ La documentación puede verse en la siguiente [pagina de documentación](https:/
 
 ## Para instalación del sistema
 Este proyecto requiere [Node](https://nodejs.org/)
+
+
+Una vez instalado Node, descargar el proyecto con el siguiente comando:
+
+` git clone https://github.com/Arquisoft/viade_es1a.git `
+
+Para moverse a la carpata del proyecto usar:
+
+` cd viade_es1a` 
+
+Instalar las dependencias:
+
+` npm install ` 
+
+Ejecutar la aplicacion:
+
+` run ` 
+

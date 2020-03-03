@@ -9,15 +9,35 @@
 - Adrián Fernández Alonso
 - Kevin Barbón Manzano
 
-This repository contains a skeleton of the VIADE project.
+## Especificación
 
-This project is an assignment for the [Software Architecture course](https://arquisoft.github.io/) following [these requirements](https://labra.solid.community/public/SoftwareArchitecture/AssignmentDescription/).
+Este proyecto es un trabajo de la asignatura [Arquitectura del Software](https://arquisoft.github.io/) de la [Universidad de Oviedo](http://www.uniovi.es/) siguiendo [estos requisitos](https://labra.solid.community/public/SoftwareArchitecture/EnunciadoPractica/).
 
-The app is deployed at [https://arquisoft.github.io/viade_es1a/](https://arquisoft.github.io/viade_es1a/) which also contains a [technical documentation](https://arquisoft.github.io/viade_es1a/docs).
+La aplicación esta desplegada en [https://arquisoft.github.io/viade_es1a/](https://arquisoft.github.io/viade_es1a/)
+La documentación puede verse en la siguiente [pagina de documentación](https://arquisoft.github.io/viade_es1a/docs).
 
-More information about how this project has been setup is available [in the wiki](https://github.com/Arquisoft/viade_es1a/wiki).
 
 
-## Building the system
+<!-- More information about how this project has been setup is available [in the wiki](https://github.com/Arquisoft/viade_es1a/wiki). -->
 
-This project requires [Node](https://nodejs.org/)
+
+## Para instalación del sistema
+Este proyecto requiere [Node](https://nodejs.org/)
+
+
+Una vez instalado Node, descargar el proyecto con el siguiente comando:
+
+` git clone https://github.com/Arquisoft/viade_es1a.git `
+
+Para moverse a la carpeta del proyecto usar:
+
+` cd viade_es1a` 
+
+Instalar las dependencias:
+
+` npm install ` 
+
+Ejecutar la aplicación:
+
+` run ` 
+

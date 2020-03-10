@@ -3,13 +3,16 @@ import L from 'leaflet';
 // postCSS import of Leaflet's CSS
 import 'leaflet/dist/leaflet.css';
 // using webpack json loader we can import our geojson file like this
-import geojson from 'json!./bk_subway_entrances.geojson';
+import geojson from './bk_subway_entrances.geojson';
 // import local components Filter and ForkMe
 import Filter from './Filter';
 import ForkMe from './ForkMe';
 
 // store the map configuration properties in an object,
 // we could also move this to a separate file & import it if desired.
+
+
+
 let config = {};
 config.params = {
   center: [40.655769,-73.938503],

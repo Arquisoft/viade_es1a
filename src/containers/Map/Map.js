@@ -3,7 +3,7 @@ import L from 'leaflet';
 // postCSS import of Leaflet's CSS
 import 'leaflet/dist/leaflet.css';
 // using webpack json loader we can import our geojson file like this
-import geojson from './bk_subway_entrances.geojson';
+import geojson from './map.json';//json!
 // import local components Filter and ForkMe
 import Filter from './Filter';
 import ForkMe from './ForkMe';

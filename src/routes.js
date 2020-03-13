@@ -14,7 +14,7 @@ import {
   FormModelConverter,
   FormModelRenderer,
   TextEditor,
-  Map
+  App
 } from './containers';
 
 const privateRoutes = [
@@ -55,8 +55,8 @@ const privateRoutes = [
   },
   {
     id: 'map',
-    path: '/map',
-    component: Map
+    path: '/Map',
+    component: App
   }
 ];
 
@@ -69,6 +69,7 @@ const Routes = () => (
         <NotLoggedInLayout path="/register/success" component={RegistrationSuccess} exact />
         <PublicLayout path="/404" component={PageNotFound} exact />
         <Redirect from="/" to="/welcome" exact />
+        <Redirect from="/" to="/map" exact />
         <PrivateLayout path="/" routes={privateRoutes} />
         <Redirect to="/404" />
       </Switch>

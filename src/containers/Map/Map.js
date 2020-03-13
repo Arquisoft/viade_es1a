@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import geojson from './map.json';//json!
 // import local components Filter and ForkMe
 import Filter from './Filter';
-import ForkMe from './ForkMe';
+
 
 // store the map configuration properties in an object,
 // we could also move this to a separate file & import it if desired.
@@ -15,21 +15,18 @@ import ForkMe from './ForkMe';
 
 let config = {};
 config.params = {
-  center: [40.655769,-73.938503],
+  center: [-5.8447600, 43.3602900],
   zoomControl: false,
-  zoom: 13,
-  maxZoom: 19,
-  minZoom: 11,
   scrollwheel: false,
   legends: true,
   infoControl: false,
   attributionControl: true
 };
 config.tileLayer = {
-  uri: 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+  uri: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   params: {
     minZoom: 11,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     id: '',
     accessToken: ''
   }
@@ -81,11 +78,11 @@ class Map extends Component {
     }
   }
 
-  componentWillUnmount() {
+  //componentWillUnmount() {
     // code to run just before unmounting the component
     // this destroys the Leaflet map object & related event listeners
-    this.state.map.remove();
-  }
+  //  this.state.map.remove();
+  //}
 
   getData() {
     // could also be an AJAX request that results in setting state with the geojson data
@@ -223,7 +220,7 @@ class Map extends Component {
               filterLines={this.updateMap} />
         }
         <div ref={(node) => this._mapNode = node} id="map" />
-        <ForkMe />
+        
       </div>
     );
   }

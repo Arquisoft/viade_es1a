@@ -1,4 +1,4 @@
-import React, { Fragment, Suspense } from 'react';
+import React, { Fragment, Suspense, Component } from 'react';
 import { toast, Slide } from 'react-toastify';
 import { Loader } from '@util-components';
 import { ThemeProvider } from 'styled-components';
@@ -33,8 +33,10 @@ const App = () => (
             toastClassName: 'solid-toaster',
             bodyClassName: 'solid-toaster-body',
             transition: Slide
+
           }}
         />
+        
       </Fragment>
     </ThemeProvider>
   </Suspense>

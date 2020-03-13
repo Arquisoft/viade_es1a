@@ -6,7 +6,7 @@ import Profile from './Profile';
 import TextEditor from './TextEditor';
 import { GamePage, GameList } from './TicTacToe';
 import { FormModelConverter, FormModelRenderer } from './FormModel';
-import Map from './Map';
+import App from './Map';
 
 export {
   Login,
@@ -20,5 +20,5 @@ export {
   FormModelConverter,
   FormModelRenderer,
   TextEditor,
-  Map
+  App
 };

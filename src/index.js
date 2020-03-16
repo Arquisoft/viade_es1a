@@ -4,6 +4,8 @@ import './i18n';
 import App from './App';
 import { ErrorBoundary, GlobalError } from './components';
 import * as serviceWorker from './serviceWorker';
+import './index.css'; // postCSS import of CSS module
+
 
 ReactDOM.render(
   <ErrorBoundary component={(error, info) => <GlobalError error={error} info={info} />}>

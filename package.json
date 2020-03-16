@@ -34,6 +34,7 @@
     "react-click-outside": "^3.0.1",
     "react-dev-utils": "^7.0.1",
     "react-dom": "16.8.4",
+    "react-google-maps": "^9.4.5",
     "react-i18next": "^10.1.2",
     "react-leaflet": "^2.6.1",
     "react-modal": "^3.8.2",

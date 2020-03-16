@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { PrivateLayout, PublicLayout, NotLoggedInLayout } from '@layouts';
 import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import './index.css'; // postCSS import of CSS module
 
 import {
   Login,
@@ -14,8 +15,8 @@ import {
   FormModelConverter,
   FormModelRenderer,
   TextEditor,
-  App
 } from './containers';
+import Map from './containers/Map2'
 
 const privateRoutes = [
   {
@@ -55,10 +56,12 @@ const privateRoutes = [
   },
   {
     id: 'map',
-    path: '/Map',
-    component: App
+    path: '/map',
+    component: Map
   }
 ];
+
+
 
 const Routes = () => (
   <Router>
@@ -69,12 +72,13 @@ const Routes = () => (
         <NotLoggedInLayout path="/register/success" component={RegistrationSuccess} exact />
         <PublicLayout path="/404" component={PageNotFound} exact />
         <Redirect from="/" to="/welcome" exact />
-        <Redirect from="/" to="/map" exact />
         <PrivateLayout path="/" routes={privateRoutes} />
         <Redirect to="/404" />
       </Switch>
     </Fragment>
   </Router>
 );
+
+
 
 export default Routes;

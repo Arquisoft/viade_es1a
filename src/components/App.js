@@ -8,16 +8,7 @@ import SubmitButton from './elementos/SubmitButton';
 import { observer } from 'mobx-react';
 
 function Imagen() {
-  var imgn = (
-    <React.Fragment>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </React.Fragment>
-  );
-  //TODO
-  imgn = (<img src={logo} className="App-logo" alt="logo" />);
-  return imgn;
+  return (<img src={logo} className="App-logo" alt="logo" />);
 }
 
 class App extends React.Component {
@@ -28,7 +19,7 @@ class App extends React.Component {
         method: 'post',
         headers: {
           'Accept': 'application/json',
-          'Content-type': 'application/json'
+          'Content-Type': 'application/json'
         }
       });
       let result = await res.json();
@@ -54,7 +45,7 @@ class App extends React.Component {
         method: 'post',
         headers: {
           'Accept': 'application/json',
-          'Content-type': 'application/json'
+          'Content-Type': 'application/json'
         }
       });
       let result = await res.json();
@@ -98,9 +89,14 @@ class App extends React.Component {
       }
       return (
         <div className="App">
-          {Imagen()}
+
           <div className="container">
-            <LoginForm />
+
+            <header className="App-header">
+              {Imagen()}
+              <LoginForm />
+            </header>
+
           </div>
         </div>
       );

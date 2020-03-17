@@ -4,7 +4,13 @@ class ImputField extends React.Component {
   render() {
     return (
       <div className="ImputField">
-        Aqui va el imput
+        <input
+          className='input'
+          type={this.props.type}
+          placeholder={this.props.placeholder}
+          value={this.props.value}
+          onChange={(e) => this.props.onChange(e.target.value)}
+        />
       </div>
     );
   }

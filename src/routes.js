@@ -11,7 +11,7 @@ import {
   RegistrationSuccess,
   Profile,
   GameList,
-  GamePage,
+ // GamePage,
   FormModelConverter,
   FormModelRenderer,
   TextEditor,

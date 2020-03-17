@@ -92,7 +92,7 @@ class App extends React.Component {
           <div className="container">
             {Imagen()}
             <LoginForm />
-            
+
             <Map />
           </div>
         </div>

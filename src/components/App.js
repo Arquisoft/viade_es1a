@@ -1,0 +1,111 @@
+import React from 'react';
+import logo from '../assets/images/ViaDe.svg';
+import '../assets/css/App.css';
+import UserStore from './elementos/UserStore';
+//import ImputField from './elementos/ImputField';
+import LoginForm from './elementos/LoginForm';
+import SubmitButton from './elementos/SubmitButton';
+import { observer } from 'mobx-react';
+
+function Imagen() {
+  var imgn = (
+    <React.Fragment>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+      </header>
+    </React.Fragment>
+  );
+  //TODO
+  imgn = (<img src={logo} className="App-logo" alt="logo" />);
+  return imgn;
+}
+
+class App extends React.Component {
+
+  async componentDidMount() {
+    try {
+      let res = await fetch('./isLoggedIn', {
+        method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json'
+        }
+      });
+      let result = await res.json();
+      if (result && result.sucess) {
+        UserStore.loading = false;
+        UserStore.isLoggedIn = true;
+        UserStore.username = result.username;
+      }
+      else {
+        UserStore.loading = false;
+        UserStore.isLoggedIn = false;
+      }
+    }
+    catch (e) {
+      UserStore.loading = false;
+      UserStore.isLoggedIn = false;
+    }
+  }
+
+  async doLogout() {
+    try {
+      let res = await fetch('./logout', {
+        method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json'
+        }
+      });
+      let result = await res.json();
+      if (result && result.sucess) {
+        UserStore.isLoggedIn = false;
+        UserStore.username = '';
+      }
+    }
+    catch (e) {
+      console.log(e);
+    }
+  }
+  render() {
+    if (UserStore.loading) {
+      return (
+        <div className="App">
+          <div className="container">
+            Cargando, espere...
+          </div>
+        </div>
+      );
+    }
+    else {
+      if (UserStore.isLoggedIn) {
+        return (
+          <div className="App">
+            <div className="container">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+              </header>
+              Bienvenido {UserStore.username}
+
+              <SubmitButton
+                text={'Desconectar'}
+                desabled={false}
+                onClick={() => this.doLogout}
+              />
+            </div>
+          </div>
+        );
+      }
+      return (
+        <div className="App">
+          {Imagen()}
+          <div className="container">
+            <LoginForm />
+          </div>
+        </div>
+      );
+    }
+  }
+}
+
+export default observer(App);

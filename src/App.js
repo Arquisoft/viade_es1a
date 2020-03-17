@@ -13,6 +13,7 @@ import 'normalize.css';
 import './index.css';
 import '@inrupt/solid-style-guide';
 import { Toaster } from './App.styled';
+import Map from './containers/Map'
 
 library.add(fas);
 library.add(faGithub);
@@ -36,6 +37,8 @@ const App = () => (
 
           }}
         />
+        <Map />
+
         
       </Fragment>
     </ThemeProvider>

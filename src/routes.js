@@ -16,7 +16,7 @@ import {
   FormModelRenderer,
   TextEditor,
 } from './containers';
-import Map from './containers/Map2'
+import Map from './containers/Map'
 
 const privateRoutes = [
   {

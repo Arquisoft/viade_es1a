@@ -9,15 +9,14 @@ const Wrapper = styled.div`
     height: 720px;
 `;
 
-
 const urlMapa_1_montania = 'https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png';
 const urlMapa_2_satelite = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
 
 const Mapa1 = L.tileLayer(urlMapa_1_montania, {
-            detectRetina: true,
-            maxZoom: 20,
-            maxNativeZoom: 17
-        });
+    detectRetina: true,
+    maxZoom: 20,
+    maxNativeZoom: 17
+});
 
 const Mapa2 = L.tileLayer(urlMapa_2_satelite, {
     detectRetina: true,

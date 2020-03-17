@@ -11,7 +11,7 @@ function Imagen() {
   return (<img src={logo} className="App-logo" alt="logo" />);
 }
 
-class App extends React.Component {
+class Main extends React.Component {
 
   async componentDidMount() {
     try {
@@ -101,4 +101,4 @@ class App extends React.Component {
   }
 }
 
-export default observer(App);
+export default observer(Main);

@@ -76,9 +76,9 @@ class LoginForm extends React.Component {
     return (
       <div className="LoginForm">
 
-        Iniciar sesión:
-
-
+        <h2>Iniciar sesión</h2>:
+        
+        
         <InputField
           type='text'
           placeholder='Username'

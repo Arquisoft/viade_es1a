@@ -4,29 +4,33 @@ import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    width: ${props => props.with};
-    height: ${props => props.height};
+    width: 800px;
+    height: 500px;
 `;
-    
+
 export default class Map2 extends React.Component {
 
-    componentDidMount(){
-        this.map = L.map('map',{
-            center: [58, 16],
-            zoom: 6,
-            zoomControl : false
+    componentDidMount() {
+        this.map = L.map('map', {
+            center: [43.3602900, -5.8447600],
+            zoom: 10,
+            zoomControl: false
         });
 
-        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png', {
             detectRetina: true,
             maxZoom: 20,
-            maxNativeZoom: 17            
+            maxNativeZoom: 17
         }).addTo(this.map);
 
     }
 
-    render(){
-        return<Wrapper width="250px" height="250px" id="map"/>
+    render() {
+        return(
+        <div className="Map">
+            <Wrapper id="map" />
+        </div>
+        );
     }
 }
 

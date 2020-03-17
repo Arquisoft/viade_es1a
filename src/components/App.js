@@ -1,10 +1,9 @@
 import React from 'react';
 import logo from '../assets/images/ViaDe.svg';
-import '../assets/css/App.css';
-import UserStore from './elementos/UserStore';
-//import ImputField from './elementos/ImputField';
-import LoginForm from './elementos/LoginForm';
-import SubmitButton from './elementos/SubmitButton';
+import '../assets/css/login.css';
+import UserStore from './login/UserStore';
+import LoginForm from './login/LoginForm';
+import SubmitButton from './login/SubmitButton';
 import { observer } from 'mobx-react';
 
 function Imagen() {
@@ -89,14 +88,9 @@ class App extends React.Component {
       }
       return (
         <div className="App">
-
           <div className="container">
-
-            <header className="App-header">
-              {Imagen()}
-              <LoginForm />
-            </header>
-
+            {Imagen()}
+            <LoginForm />
           </div>
         </div>
       );

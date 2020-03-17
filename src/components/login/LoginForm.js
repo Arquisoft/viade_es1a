@@ -33,25 +33,25 @@ class LoginForm extends React.Component {
     })
   }
 
-  async doLogin(){
-    if(!this.state.username){
+  async doLogin() {
+    if (!this.state.username) {
       return;
     }
-    if(!this.state.password){
+    if (!this.state.password) {
       return;
     }
     this.setState({
       buttonDisabled: true
     })
     try {
-      let res =await fetch('/login',{
+      let res = await fetch('/login', {
         method: 'post',
         headers: {
           'Accept': 'application/jon'
         },
         body: JSON.stringify({
           username: this.state.username,
-          password:this.state.password
+          password: this.state.password
         })
       });
 
@@ -61,12 +61,12 @@ class LoginForm extends React.Component {
         UserStore.username = this.state.username;
       }
 
-      else if (result && result.sucess === false){
+      else if (result && result.sucess === false) {
         this.resetForm();
         alert(result.msg);
       }
     }
-    catch(e){
+    catch (e) {
       console.log(e);
       this.resetForm();
     }
@@ -75,14 +75,29 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="LoginForm">
-        
-        Log In
+
+        Iniciar sesión:
+
+
         <InputField
           type='text'
           placeholder='Username'
           value={this.state.username ? this.state.username : ''}
           onChange={(val) => this.setInputValue('username', val)}
-          />
+        />
+
+        <InputField
+          type='password'
+          placeholder='Password'
+          value={this.state.password ? this.state.password : ''}
+          onChange={(val) => this.setInputValue('password', val)}
+        />
+
+        <SubmitButton
+          text='Login'
+          disabled={this.state.buttonDisabled}
+          onClick={() => this.doLogin()}
+        />
 
       </div>
     );

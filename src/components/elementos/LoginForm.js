@@ -76,14 +76,27 @@ class LoginForm extends React.Component {
     return (
       <div className="LoginForm">
         
-        Log In
+        <h2>Log In</h2>
+
         <InputField
           type='text'
           placeholder='Username'
           value={this.state.username ? this.state.username : ''}
           onChange={(val) => this.setInputValue('username', val)}
-          />
+        />
 
+        <InputField
+          type='password'
+          placeholder='Password'
+          value={this.state.password ? this.state.password : ''}
+          onChange={(val) => this.setInputValue('password', val)}
+        />
+
+        <SubmitButton
+          text="Log In"
+          onClick={() => this.doLogin()}
+      
+        />
       </div>
     );
   }

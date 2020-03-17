@@ -35,11 +35,6 @@ const privateRoutes = [
     component: GameList
   },
   {
-    id: 'tictactoegame',
-    path: '/tictactoe/:gameId',
-    component: GamePage
-  },
-  {
     id: 'text-editor',
     path: '/text-editor',
     component: TextEditor

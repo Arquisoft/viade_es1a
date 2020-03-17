@@ -76,7 +76,7 @@ class LoginForm extends React.Component {
     return (
       <div className="LoginForm">
 
-        <h2>Iniciar sesión</h2>:
+        <h2>Iniciar sesión</h2>
         
         
         <InputField

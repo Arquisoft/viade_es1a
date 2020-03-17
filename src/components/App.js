@@ -5,6 +5,7 @@ import UserStore from './login/UserStore';
 import LoginForm from './login/LoginForm';
 import SubmitButton from './login/SubmitButton';
 import { observer } from 'mobx-react';
+import Map from './map/Map';
 
 function Imagen() {
   return (<img src={logo} className="App-logo" alt="logo" />);
@@ -92,6 +93,7 @@ class App extends React.Component {
             {Imagen()}
             <LoginForm />
           </div>
+          <Map />
         </div>
       );
     }

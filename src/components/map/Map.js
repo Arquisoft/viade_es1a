@@ -4,8 +4,8 @@ import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    width: 800px;
-    height: 500px;
+    width: 1280px;
+    height: 720px;
 `;
 
 
@@ -52,10 +52,13 @@ export default class Map2 extends React.Component {
     }
 
     render() {
-        return (
-            <div className="Map">
-                <Wrapper id="map" />
-            </div>
+
+        return(
+        <div className="Map">
+            <br/>
+            <Wrapper id="map" />
+        </div>
+
         );
     }
 }

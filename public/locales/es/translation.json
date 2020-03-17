@@ -53,7 +53,7 @@
     "map": "Mapa",
     "formModelRender": "Form Model Render",
     "formModelConvert": "Form Model Convert",
-    "text-editor": "Editor de Textos",
+    "text-editor": "Añadir Ruta",
     "changeLanguage": "Cambiar Lenguaje",
     "languages": {
       "en": "English (Inglés)",
@@ -239,7 +239,7 @@
     }
   },
   "editor": {
-    "explanation": "Aqui tiene un simple editor de textos con que puede crear un fichero de texto plano y guardarlo en un Pod. Para mostrarlo claramente en este demo, hay que proveer una URL que directamente identifica el fichero en el Pod. El Pod puede ser el del mismo usuario conectado, o de otra persona. Para poder escribir, y leer, al Pod de otra persona, el proprietario tendrá que dar permiso de escribir, usando el botón de 'Dar Acceso' abajo.",
+    "explanation": "Version inicial para cargar y editar archivos de ruta en el Pod del usuario(no version final)",
     "url": "URL",
     "friend": "Webid de collaborador",
     "load": "Cargar",

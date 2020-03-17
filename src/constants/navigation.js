@@ -28,7 +28,7 @@ export const NavigationItems = [
   },
   {
     id: 'map',
-    icon: '/img/icon/tictactoe.svg',
+    icon: '/img/icon/map.svg',
     label: 'navBar.map',
     to: '/map'
   }

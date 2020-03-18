@@ -1,9 +1,9 @@
-import React from 'react';
-import logo from '../static/images/ViaDe.svg';
-import '../static/css/login.css';
-import { observer } from 'mobx-react';
-import Map from './map/Map';
-import { AuthButton, LoggedOut, LoggedIn } from '@solid/react';
+import React from "react";
+import logo from "../static/images/ViaDe.svg";
+import "../static/css/login.css";
+import { observer } from "mobx-react";
+import Map from "./map/Map";
+import { AuthButton, LoggedOut, LoggedIn } from "@solid/react";
 
 function Imagen() {
   return (<img src={logo} className="App-logo" alt="logo" />);
@@ -15,7 +15,7 @@ function Imagen() {
 
 class Main extends React.Component {
   render() {
-    const popUri = 'https://solid.community/common/popup.html'
+    const popUri = "https://solid.community/common/popup.html"
     return (
       <div className="App">
         <div className="container">

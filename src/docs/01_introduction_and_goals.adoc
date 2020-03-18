@@ -39,7 +39,8 @@ Los requisitos de la aplicación son:
 |===
 |Rol/Nombre|Descripción|Expectativas
 | Profesores | Evaluan la aplicación y guian a los desarrolladores | Esperan que los estudiantes trabajen en equipo, que aprendan a usar una tecnología desconocida y a tomar decisiones
-| Usuarios | Personas que usan la aplicación cuando van de ruta | Esperan poder guardar y compartir rutas con personas o con  grupos de personas de forma usable, disponible, rápida y segura 
+| Usuarios excursionistas| Personas que usan la aplicación cuando van de ruta  |Esperan poder seguir una ruta que elijan para poder guiarse
+|Usuarios no excursionistas|Personas interesadas en conocer rutas o añadir las suyas|Esperan poder guardar y compartir rutas con personas o con  grupos de personas de forma usable, disponible, rápida y segura 
 | Inrupt |Organización que fomenta y desarrola Solid y ha propuesto el desafío | Esperan que los estudiantes creen una aplicación descentralizada usando Solid para fomentar su uso
 | Desarrolladores |Diseñan e implementan la aplicación tanto desde un punto de  vista arquitectónico como desde la codificación | Esperan aprender a trabajar en equipo, ser capaces de realizar una aplicación funcional de rutas descentralizadas y saber ampliar sus horizontes con nuevas tecnologías
 |===

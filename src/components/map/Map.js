@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import SubmitButton from '../login/SubmitButton';
 
 const Wrapper = styled.div`
-    width: 1280px;
-    height: 720px;
+    width: 900px;
+    height: 600px;
 `;
 
 const urlMapa_1_montania = 'https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png';

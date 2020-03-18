@@ -13,7 +13,7 @@ script:
   - npm install -g codecov
   - npm test && codecov
   - npm run build
-## - npm run docs
+  - npm run docs
 deploy:
   provider: pages
   skip_cleanup: true

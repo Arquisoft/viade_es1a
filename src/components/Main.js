@@ -6,6 +6,12 @@ import LoginForm from './login/LoginForm';
 import SubmitButton from './login/SubmitButton';
 import { observer } from 'mobx-react';
 import Map from './map/Map';
+import {  AuthButton, LoggedOut, LoggedIn} from '@solid/react';
+
+
+
+
+
 
 function Imagen() {
   return (<img src={logo} className="App-logo" alt="logo" />);
@@ -87,12 +93,24 @@ class Main extends React.Component {
           </div>
         );
       }
+      const popUri = 'https://solid.community/common/popup.html'
+
       return (
         <div className="App">
           <div className="container">
             {Imagen()}
             <LoginForm />
 
+            
+
+            <AuthButton popup={popUri} login="Login here!" logout="Log me out"/>
+
+            <LoggedOut>
+              <p>You are not logged in, and this is a members-only area!</p>
+            </LoggedOut>
+            <LoggedIn>
+              <p>You are logged in and can see the special content.</p>
+            </LoggedIn>
             <Map />
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../assets/images/ViaDe.svg';
-import '../assets/css/login.css';
+import logo from '../static/images/ViaDe.svg';
+import '../static/css/login.css';
 import { observer } from 'mobx-react';
 import Map from './map/Map';
 import { AuthButton, LoggedOut, LoggedIn } from '@solid/react';

@@ -30,7 +30,7 @@ class LoginForm extends React.Component {
       username: "",
       password: "",
       buttonDisabled: false
-    })
+    });
   }
 
   async doLogin() {

@@ -4,10 +4,10 @@
 # VIADE ES1A
 
 ## Autores
-- Alvaro Baños Gomez
-- Samuel Moreno Vincent
-- Adrián Fernández Alonso
-- Kevin Barbón Manzano
+  - Alvaro Baños Gomez
+  - Samuel Moreno Vincent
+  - Adrián Fernández Alonso
+  - Kevin Barbón Manzano
 
 ## Especificación
 
@@ -16,14 +16,11 @@ Este proyecto es un trabajo de la asignatura [Arquitectura del Software](https:/
 La aplicación esta desplegada en [https://arquisoft.github.io/viade_es1a/](https://arquisoft.github.io/viade_es1a/)
 La documentación puede verse en la siguiente [pagina de documentación](https://arquisoft.github.io/viade_es1a/docs).
 
-
-
 <!-- More information about how this project has been setup is available [in the wiki](https://github.com/Arquisoft/viade_es1a/wiki). -->
 
 
 ## Para instalación del sistema
 Este proyecto requiere [Node](https://nodejs.org/)
-
 
 Una vez instalado Node, descargar el proyecto con el siguiente comando:
 
@@ -40,4 +37,3 @@ Instalar las dependencias:
 Ejecutar la aplicación:
 
 ` run ` 
-

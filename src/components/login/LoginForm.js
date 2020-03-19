@@ -1,7 +1,7 @@
-import React from 'react';
-import InputField from './ImputField'
-import SubmitButton from './SubmitButton';
-import UserStore from './UserStore';
+import React from "react";
+import InputField from "./ImputField"
+import SubmitButton from "./SubmitButton";
+import UserStore from "./UserStore";
 
 
 class LoginForm extends React.Component {
@@ -9,8 +9,8 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       buttonDisabled: false
     }
   }
@@ -27,8 +27,8 @@ class LoginForm extends React.Component {
 
   resetForm() {
     this.setState({
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       buttonDisabled: false
     })
   }
@@ -44,10 +44,10 @@ class LoginForm extends React.Component {
       buttonDisabled: true
     })
     try {
-      let res = await fetch('/login', {
-        method: 'post',
+      let res = await fetch("/login", {
+        method: "post",
         headers: {
-          'Accept': 'application/jon'
+          "Accept": "application/jon"
         },
         body: JSON.stringify({
           username: this.state.username,
@@ -80,21 +80,21 @@ class LoginForm extends React.Component {
         
         
         <InputField
-          type='text'
-          placeholder='Username'
-          value={this.state.username ? this.state.username : ''}
-          onChange={(val) => this.setInputValue('username', val)}
+          type="text"
+          placeholder="Username"
+          value={this.state.username ? this.state.username : ""}
+          onChange={(val) => this.setInputValue("username", val)}
         />
 
         <InputField
-          type='password'
-          placeholder='Password'
-          value={this.state.password ? this.state.password : ''}
-          onChange={(val) => this.setInputValue('password', val)}
+          type="password"
+          placeholder="Password"
+          value={this.state.password ? this.state.password : ""}
+          onChange={(val) => this.setInputValue("password", val)}
         />
 
         <SubmitButton
-          text='Login'
+          text="Login"
           disabled={this.state.buttonDisabled}
           onClick={() => this.doLogin()}
         />

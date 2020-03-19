@@ -1,5 +1,5 @@
 import React from "react";
-import InputField from "./ImputField"
+import InputField from "./ImputField";
 import SubmitButton from "./SubmitButton";
 import UserStore from "./UserStore";
 
@@ -12,7 +12,7 @@ class LoginForm extends React.Component {
       username: "",
       password: "",
       buttonDisabled: false
-    }
+    };
   }
 
   setInputValue(property, val) {
@@ -42,7 +42,7 @@ class LoginForm extends React.Component {
     }
     this.setState({
       buttonDisabled: true
-    })
+    });
     try {
       let res = await fetch("/login", {
         method: "post",
@@ -77,8 +77,8 @@ class LoginForm extends React.Component {
       <div className="LoginForm">
 
         <h2>Iniciar sesión</h2>
-        
-        
+
+
         <InputField
           type="text"
           placeholder="Username"

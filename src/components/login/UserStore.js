@@ -7,7 +7,7 @@ class UserStore{
             isLoggedIn: false,
             username: ""
 
-        })
+        });
     }
 }
 

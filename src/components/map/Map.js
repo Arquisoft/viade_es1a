@@ -9,16 +9,16 @@ const Wrapper = styled.div`
     height: 600px;
 `;
 
-const urlMapa_1_montania = "https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png";
-const urlMapa_2_satelite = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
+const urlMapaMontania = "https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png";
+const urlMapaSatelite = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
 
-const Mapa1 = L.tileLayer(urlMapa_1_montania, {
+const Mapa1 = L.tileLayer(urlMapaMontania, {
     detectRetina: true,
     maxZoom: 20,
     maxNativeZoom: 17
 });
 
-const Mapa2 = L.tileLayer(urlMapa_2_satelite, {
+const Mapa2 = L.tileLayer(urlMapaSatelite, {
     detectRetina: true,
     maxZoom: 20,
     maxNativeZoom: 17
@@ -31,7 +31,7 @@ export default class Map2 extends React.Component {
         this.state = {
             nMapa: 1,
             mapa: Mapa1,
-        }
+        };
     }
 
     async cambiar() {

@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
     "docs": "shx rm -rf build/docs && asciidoctor -D build/docs -a imagesdir=./images -r asciidoctor-diagram src/docs/index.adoc && shx cp -R src/docs/images build/docs",
     "eject": "react-scripts eject"
   },
@@ -39,5 +39,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest-cucumber": "^2.0.11",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^2.1.1",
+    "shx": "^0.3.2"
   }
 }

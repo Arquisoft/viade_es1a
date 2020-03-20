@@ -28,6 +28,15 @@ function parseGeoJson(archivo){
 // }
 
 class Main extends React.Component {
+  handleFiles = files => {
+    var reader = new FileReader();
+      reader.onload = function(e) {
+      // Use reader.result
+      alert(reader.result)
+    }
+    reader.readAsText(files[0]);
+  }
+
   render() {
     const popUri = "https://solid.community/common/popup.html";
     return (
@@ -44,7 +53,7 @@ class Main extends React.Component {
             
             <button className='btn' onClick = {crearArchivo}>Prueba crear archivo</button>
 
-            <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.geojson'}>
+            <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.*'}>
               <button className='btn'>Upload</button>
             </ReactFileReader>
           </LoggedIn>

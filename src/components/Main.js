@@ -11,9 +11,10 @@ function imagen() {
   return (<img src={logo} className="App-logo" alt="logo" />);
 }
 
-function crearArchivo(){
+function crearArchivo(WebId){
+  console.log(WebId);
   let fc = new file_client(auth);
-  let url =  "Rutas/ruta1.json";
+  let url =  "https://adrifa13.solid.community/rutas/ruta1.json";
   fc.createFile(url, "prueba", "text/turtle");
 }
 
@@ -35,6 +36,7 @@ class Main extends React.Component {
           <LoggedIn>
             <Map />
             <AuthButton className="SubmitButton" popup={popUri} login="Identificate" logout="Desconectar" />
+            
             <button onClick = {crearArchivo}>Prueba crear archivo</button>
           </LoggedIn>
         </div>

@@ -6,6 +6,7 @@ import Map from "./map/Map";
 import { AuthButton, LoggedOut, LoggedIn } from "@solid/react";
 import file_client from "solid-file-client";
 import auth from "solid-auth-client";
+import ReactFileReader from "react-file-reader";
 
 function imagen() {
   return (<img src={logo} className="App-logo" alt="logo" />);
@@ -16,6 +17,10 @@ function crearArchivo(WebId){
   let fc = new file_client(auth);
   let url =  "https://adrifa13.solid.community/rutas/ruta1.json";
   fc.createFile(url, "prueba", "text/turtle");
+}
+
+function parseGeoJson(archivo){
+
 }
 
 // function refreshPage() {
@@ -37,7 +42,11 @@ class Main extends React.Component {
             <Map />
             <AuthButton className="SubmitButton" popup={popUri} login="Identificate" logout="Desconectar" />
             
-            <button onClick = {crearArchivo}>Prueba crear archivo</button>
+            <button className='btn' onClick = {crearArchivo}>Prueba crear archivo</button>
+
+            <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.geojson'}>
+              <button className='btn'>Upload</button>
+            </ReactFileReader>
           </LoggedIn>
         </div>
       </div>

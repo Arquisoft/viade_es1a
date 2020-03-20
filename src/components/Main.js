@@ -19,10 +19,6 @@ function crearArchivo(WebId){
   fc.createFile(url, "prueba", "text/turtle");
 }
 
-function parseGeoJson(archivo){
-
-}
-
 // function refreshPage() {
 //   window.location.reload(false);
 // }
@@ -31,9 +27,10 @@ class Main extends React.Component {
   handleFiles = files => {
     var reader = new FileReader();
       reader.onload = function(e) {
-      // Use reader.result
-      alert(reader.result)
-    }
+        // Use reader.result
+        //Aqui habria que parsear el archivo y mostrarlo en el mapa
+        alert(reader.result)
+      }
     reader.readAsText(files[0]);
   }
 

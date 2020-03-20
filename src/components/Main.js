@@ -4,9 +4,17 @@ import "../static/css/login.css";
 import { observer } from "mobx-react";
 import Map from "./map/Map";
 import { AuthButton, LoggedOut, LoggedIn } from "@solid/react";
+import file_client from "solid-file-client";
+import auth from "solid-auth-client";
 
 function imagen() {
   return (<img src={logo} className="App-logo" alt="logo" />);
+}
+
+function crearArchivo(){
+  let fc = new file_client(auth);
+  let url =  "Rutas/ruta1.json";
+  fc.createFile(url, "prueba", "text/turtle");
 }
 
 // function refreshPage() {
@@ -27,6 +35,7 @@ class Main extends React.Component {
           <LoggedIn>
             <Map />
             <AuthButton className="SubmitButton" popup={popUri} login="Identificate" logout="Desconectar" />
+            <button onClick = {crearArchivo}>Prueba crear archivo</button>
           </LoggedIn>
         </div>
       </div>

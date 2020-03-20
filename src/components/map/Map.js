@@ -2,7 +2,7 @@ import React from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styled from "styled-components";
-import SubmitButton from "../login/SubmitButton";
+import Button from "../basics/BasicButton";
 
 const Wrapper = styled.div`
     width: 900px;
@@ -64,7 +64,8 @@ export default class Map2 extends React.Component {
         return (
             <div className="Map">
                 <br />
-                <SubmitButton
+                <Button
+                    class="btn"
                     text="Cambiar Mapa"
                     disabled={false}
                     onClick={() => this.cambiar()}

@@ -8,6 +8,7 @@ import file_client from "solid-file-client";
 import auth from "solid-auth-client";
 import Welcome from "./login/User"
 
+import ReactFileReader from "react-file-reader";
 
 function imagen() {
   return (<img src={logo} className="App-logo" alt="logo" />);
@@ -26,6 +27,16 @@ function crearArchivo(WebId){
 // }
 
 class Main extends React.Component {
+  handleFiles = files => {
+    var reader = new FileReader();
+      reader.onload = function(e) {
+        // Use reader.result
+        //Aqui habria que parsear el archivo y mostrarlo en el mapa
+        alert(reader.result)
+      }
+    reader.readAsText(files[0]);
+  }
+
   render() {
     const popUri = "https://solid.community/common/popup.html";
     return (
@@ -41,9 +52,12 @@ class Main extends React.Component {
             <Map />
             
             <AuthButton className="SubmitButton" popup={popUri} login="Identificate" logout="Desconectar" />
-          
-            <button onClick = {crearArchivo}>Prueba crear archivo</button>
             
+            <button className='SubmitButton' onClick = {crearArchivo}>Prueba crear archivo</button>
+
+            <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.*'}>
+              <button className='SubmitButton'>Upload</button>
+            </ReactFileReader>
           </LoggedIn>
           
         </div>

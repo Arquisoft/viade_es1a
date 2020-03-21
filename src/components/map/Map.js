@@ -3,7 +3,8 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styled from "styled-components";
 import Button from "../basics/BasicButton";
-import geoJSON from "../../static/files/prueba1.geojson";
+import ReactFileReader from "react-file-reader";
+import geojson from "../../static/files/prueba3.geojson"
 
 const Wrapper = styled.div`
     width: 900px;
@@ -25,16 +26,7 @@ const Mapa2 = L.tileLayer(urlMapaSatelite, {
     maxNativeZoom: 17
 });
 
-handleFiles = files => {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-      // Use reader.result
-      //Aqui habria que parsear el archivo y mostrarlo en el mapa
-      
-      alert(reader.result)
-    }
-    reader.readAsText(files[0]);
-  }
+
 
 export default class Map2 extends React.Component {
 
@@ -45,6 +37,24 @@ export default class Map2 extends React.Component {
             mapa: Mapa1,
         };
     }
+
+    handleFiles = files => {
+        var string = "";
+        var reader = new FileReader();
+        
+        reader.onload = function () {
+          // Use reader.result
+          //Aqui habria que parsear el archivo y mostrarlo en el mapa
+          string = reader.result
+          alert(reader.result)
+          L.geoJSON(reader.result).addTo(this.map);
+        }
+        reader.readAsText(files[0]);
+      }
+
+      aux(){
+
+      }
 
     async cambiar() {
         if (this.state.nMapa === 1) {
@@ -63,23 +73,12 @@ export default class Map2 extends React.Component {
 
 
     componentDidMount() {
-        var geojsonFeature = {
-            "type": "Feature",
-            "properties": {
-                "name": "Coors Field"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-104.99404, 39.75621]
-            }
-        };
         this.map = L.map("map", {
             center: [43.3602900, -5.8447600],
             zoom: 10,
             zoomControl: false
         });
         this.state.mapa.addTo(this.map);
-        L.geoJSON(GeoJSON).addTo(this.map);
     }
 
     render() {
@@ -93,6 +92,9 @@ export default class Map2 extends React.Component {
                     disabled={false}
                     onClick={() => this.cambiar()}
                 />
+                <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.geojson'}>
+                    <button className="btn">Upload</button>
+                </ReactFileReader>
                 <Wrapper id="map" />
             </div>
 

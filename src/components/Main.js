@@ -3,13 +3,12 @@ import logo from "../static/images/ViaDe.svg";
 import "../static/css/login.css";
 import { observer } from "mobx-react";
 import Map from "./map/Map";
-import { LoggedOut, LoggedIn } from "@solid/react";
+import { LoggedOut, LoggedIn, useWebId } from "@solid/react";
 import file_client from "solid-file-client";
 import auth from "solid-auth-client";
-import Welcome from "./basics/User"
-import LoginButton from "./login/LoginButton"
-
-import ReactFileReader from "react-file-reader";
+import Welcome from "./basics/User";
+import LoginButton from "./login/LoginButton";
+import UploadButton from "./basics/uploadButton";
 
 function imagen() {
   return (<img src={logo} className="App-logo" alt="logo" />);
@@ -21,7 +20,6 @@ function crearArchivo(WebId) {
   let url = "https://adrifa13.solid.community/rutas/ruta1.json";
   fc.createFile(url, "prueba", "text/turtle");
 }
-
 
 // function refreshPage() {
 //   window.location.reload(false);
@@ -53,9 +51,7 @@ class Main extends React.Component {
             <Map />
             <LoginButton />
             <button className="btn" onClick={crearArchivo}>Prueba crear archivo</button>
-            <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.*'}>
-              <button className="btn">Upload</button>
-            </ReactFileReader>
+            <UploadButton/>
           </LoggedIn>
         </div>
       </div>

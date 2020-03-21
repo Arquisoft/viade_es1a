@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 import styled from "styled-components";
 import Button from "../basics/BasicButton";
 import ReactFileReader from "react-file-reader";
-import geojson from "../../static/files/prueba3.geojson"
+import geojson from "../../static/files/prueba3.geojson";
 
 const Wrapper = styled.div`
     width: 900px;

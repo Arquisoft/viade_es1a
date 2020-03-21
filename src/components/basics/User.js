@@ -4,12 +4,14 @@ import { useWebId } from "@solid/react";
 
 export const User = props => {
     let webId = useWebId();
+    
     function split() {
         let username = String(webId);
         username = username.replace("https://", "");
         username = username.replace(".solid.community/profile/card#me", "");
         return username;
     }
+    
     return (
         <section>
             <div className="col-sm">
@@ -18,4 +20,5 @@ export const User = props => {
         </section>
     );
 }
+
 export default User;

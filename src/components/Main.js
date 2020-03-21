@@ -5,9 +5,8 @@ import { observer } from "mobx-react";
 import Map from "./map/Map";
 import { LoggedOut, LoggedIn, useWebId } from "@solid/react";
 
-import Welcome from "./basics/User";
+import { User, UploadButton } from "./basics/User";
 import LoginButton from "./login/LoginButton";
-import UploadButton from "./basics/uploadButton";
 
 function imagen() {
   return (<img src={logo} className="App-logo" alt="logo" />);
@@ -39,10 +38,9 @@ class Main extends React.Component {
           </LoggedOut>
 
           <LoggedIn>
-            <Welcome />
+            <User />
             <Map />
             <LoginButton />
-            <UploadButton/>
           </LoggedIn>
         </div>
       </div>

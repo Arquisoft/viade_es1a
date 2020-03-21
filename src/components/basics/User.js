@@ -53,7 +53,7 @@ export const User = props => {
     
       render() {
         return (
-            <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.*'}>
+            <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.geojson'}>
                 <button className="btn">Upload</button>
             </ReactFileReader>
         );

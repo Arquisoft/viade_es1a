@@ -26,8 +26,6 @@ const Mapa2 = L.tileLayer(urlMapaSatelite, {
     maxNativeZoom: 17
 });
 
-
-
 export default class Map2 extends React.Component {
 
     constructor(props) {

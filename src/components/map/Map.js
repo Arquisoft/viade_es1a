@@ -4,7 +4,6 @@ import "leaflet/dist/leaflet.css";
 import styled from "styled-components";
 import Button from "../basics/BasicButton";
 import ReactFileReader from "react-file-reader";
-import geojson from "../../static/files/prueba3.geojson";
 
 const Wrapper = styled.div`
     width: 900px;
@@ -37,13 +36,11 @@ export default class Map2 extends React.Component {
     }
 
     handleFiles = files => {
-        var string = "";
         var reader = new FileReader();
         
         reader.onload = function () {
           // Use reader.result
           //Aqui habria que parsear el archivo y mostrarlo en el mapa
-          string = reader.result
           alert(reader.result)
           L.geoJSON(reader.result).addTo(this.map);
         }

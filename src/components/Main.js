@@ -5,7 +5,7 @@ import { observer } from "mobx-react";
 import Map from "./map/Map";
 import { LoggedOut, LoggedIn } from "@solid/react";
 
-import User  from "./basics/User";
+import User  from "./login/User";
 import LoginButton from "./login/LoginButton";
 
 function imagen() {

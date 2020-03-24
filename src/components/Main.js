@@ -3,9 +3,9 @@ import logo from "../static/images/ViaDe.svg";
 import "../static/css/login.css";
 import { observer } from "mobx-react";
 import Map from "./map/Map";
-import { LoggedOut, LoggedIn, useWebId } from "@solid/react";
+import { LoggedOut, LoggedIn } from "@solid/react";
 
-import { User, UploadButton } from "./basics/User";
+import User  from "./basics/User";
 import LoginButton from "./login/LoginButton";
 
 function imagen() {

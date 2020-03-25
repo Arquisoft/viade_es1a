@@ -25,7 +25,7 @@ const Mapa2 = L.tileLayer(urlMapaSatelite, {
     maxNativeZoom: 17
 });
 
-export default class Map2 extends React.Component {
+ class Map extends React.Component {
 
     constructor(props) {
         super(props);
@@ -45,10 +45,6 @@ export default class Map2 extends React.Component {
           L.geoJSON(reader.result).addTo(this.map);
         }
         reader.readAsText(files[0]);
-      }
-
-      aux(){
-
       }
 
     async cambiar() {
@@ -80,16 +76,15 @@ export default class Map2 extends React.Component {
 
         return (
             <div className="Map">
-                <br />
+                <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.geojson'}>
+                    <button className="btn">Mostrar Json en el Mapa</button>
+                </ReactFileReader>
                 <Button
                     class="btn"
                     text="Cambiar Mapa"
                     disabled={false}
                     onClick={() => this.cambiar()}
                 />
-                <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.geojson'}>
-                    <button className="btn">Upload</button>
-                </ReactFileReader>
                 <Wrapper id="map" />
             </div>
 
@@ -97,3 +92,4 @@ export default class Map2 extends React.Component {
     }
 }
 
+export default Map;

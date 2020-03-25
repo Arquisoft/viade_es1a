@@ -13,9 +13,10 @@ export const UploadHook = () => {
             var reader = new FileReader();
             reader.onload = function () {
                 let fc = new file_client(auth);
-                let url = "https://" + nameSplited + ".solid.community/public/rutas/prueba1.geojson";
-                console.log(url);
+                let fileName = files[0].name;
+                let url = "https://" + nameSplited + ".solid.community/public/rutas/"+fileName;
                 fc.createFile(url, reader.result, "text/turtle");
+                alert("Archivo subido a rutas/"+fileName)
             }
             reader.readAsText(files[0]);
         }

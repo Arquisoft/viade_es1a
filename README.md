@@ -5,10 +5,10 @@
 
 ## Autores
 
-- Alvaro Baños Gomez
-- Samuel Moreno Vincent
-- Adrián Fernández Alonso
-- Kevin Barbón Manzano
+* Alvaro Baños Gomez
+* Samuel Moreno Vincent
+* Adrián Fernández Alonso
+* Kevin Barbón Manzano
 
 ## Especificación
 

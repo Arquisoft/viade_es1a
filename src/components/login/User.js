@@ -1,6 +1,6 @@
 import React from "react";
 import { useWebId } from "@solid/react";
-import NameSplited from "./NameSplited";
+import nameSplited from "./NameSplited";
 
 export const User = () => {
   return (
@@ -8,7 +8,7 @@ export const User = () => {
       <div className="col-sm">
         <span>Estas logueado como:
             <a href={useWebId()}>
-            {NameSplited()}
+            {nameSplited()}
           </a>
         </span>
       </div>

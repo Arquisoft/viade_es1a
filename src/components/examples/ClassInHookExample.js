@@ -18,6 +18,6 @@ export const Hook = () => {
         }
     }
     return (<ClassInHookExample />);
-}
+};
 
 export default Hook;

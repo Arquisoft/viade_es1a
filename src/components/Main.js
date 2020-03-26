@@ -7,7 +7,7 @@ import logo from "../static/images/ViaDe.svg";
 import Map from "./map/Map";
 import User from "./login/User";
 import LoginButton from "./login/LoginButton";
-import UploadToPod from "./solidPod/UploadToPod"
+import UploadToPod from "./solidPod/UploadToPod";
 
 class Main extends React.Component {
   render() {

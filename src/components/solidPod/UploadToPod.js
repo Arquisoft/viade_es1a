@@ -17,9 +17,9 @@ export const UploadHook = () => {
                 let url = "https://" + nameSplited + ".solid.community/public/rutas/"+fileName;
                 fc.createFile(url, reader.result, "text/turtle");
                 alert("Archivo subido a rutas/"+fileName);
-            }
+            };
             reader.readAsText(files[0]);
-        }
+        };
 
         render() {
             return (

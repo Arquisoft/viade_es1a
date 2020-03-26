@@ -1,11 +1,11 @@
 export const HookExample = () => {
     let varExample = 1;
 
-    function FuncionExample() {
+    function funcionExample() {
         let varExample2 = varExample;
         return varExample2;
     }
 
-    return (FuncionExample());
+    return (funcionExample());
 };
 export default HookExample;

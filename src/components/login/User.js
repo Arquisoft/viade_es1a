@@ -1,16 +1,11 @@
 import React from "react";
-import { useWebId } from "@solid/react";
-import nameSplited from "./NameSplited";
+import { useWebId, Value } from "@solid/react";
 
 export const User = () => {
   return (
     <section>
       <div className="col-sm">
-        <span>Estas logueado como:
-            <a href={useWebId()}>
-            {nameSplited()}
-          </a>
-        </span>
+        <span>Estas logueado como: <a href={useWebId()}><Value src="user.name"/></a></span>
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
 const fc = new FC(auth);
 
-export async function listRoutes() {
+export async function getFiles() {
   let session = await auth.currentSession();
 
   const profileDocument = await fetchDocument(session.webId);
@@ -20,30 +20,64 @@ export async function listRoutes() {
     .then(content => { folder = content; })
     .catch(err => (folder = null));
 
-  var result = [];
+  var filesObtained = [];
   if (folder) {
     for (var i = 0; i < folder.files.length; i++) {
-      console.log(folder.files[i].url);
-      let ruta = folder.files[i].url;
+      let ruta = folder.files[i];
       if (ruta != null)
-        result = [...result, ruta];
+        filesObtained = [...filesObtained, ruta];
     }
   }
+  return filesObtained;
+}
 
-  alert(result);
-  return result;
+export function filesToButtons(files) {
+  const buttons = [];
+  for (const [index, value] of files.entries()) {
+    buttons.push(
+      <div key={index}>
+        <button key={index}>
+          {value.name}
+        </button>
+      </div>
+    );
+  }
+  return buttons;
 }
 
 class ListClass extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lista: (<p>Actualice la lista</p>)
+    };
+    this.updateList = this.updateList.bind(this);
+  }
+
+  async updateList() {
+    //Obtenemos lista de urls del pod
+    let asincFiles = getFiles();
+
+    //Para que espere a que se carguen las urls del pod se usa await
+    let files = await asincFiles;
+
+    let filesHtml = filesToButtons(files);
+
+    //Para que se recargue el {this.state.lista} de mas abajo hay que usar la funcion setState
+    this.setState({
+      lista: filesHtml,
+    });
+  }
+
   render() {
     return (
       <div>
         <Button
           class="btn"
-          text="Lista Rutas"
+          text="Actualizar lista"
           disabled={false}
-          onClick={() => listRoutes()}
-        />
+          onClick={() => this.updateList()} />
+        {this.state.lista}
       </div>
     );
   }

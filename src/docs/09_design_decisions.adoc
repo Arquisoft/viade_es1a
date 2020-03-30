@@ -1,5 +1,11 @@
 [[section-design-decisions]]
 == Decisiones de Diseño
 
-
-N/A
+|===
+|Decisión|Ventajas|Desventajas
+|GitHub|Permite mantener un buen control de versiones de forma gratuita, trabajar de forma paralela gracias a las ramas y ofrece la posibilidad de regresar a versiones anteriores.|La dificultad de aprendizaje al empezar a usarlo  
+|POD|El usuario es propietario de sus datos en lugar de las compañias y es de código libre|Es un proyecto en desarrollo por lo que puede tener problemas y la documentación puede  ser escasa en algunos casos
+|Español|Mayor velocidad de documentación y mayor calidad al ser lenguaje materno|No es el idioma más usado en proyectos
+|React|Proporciona librerias para trabajar con SOLID y cuenta con una amplia comunidad|La curva de aprendizaje que tiene para usuarios que no han utilizado esta tecnologia o javascript 
+|Arc42|Estructura clara, simple y efectiva para documentar y comunicar el sistema de software|La única desventaja que podemos encontrar es que no es la principal tecnología que se usa en EEUU
+|===

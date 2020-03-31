@@ -31,14 +31,20 @@ export async function getFiles() {
   return filesObtained;
 }
 
+function mostrarEnMapa(){
+  console.log("Mostrando en mapa");
+}
+
 export function filesToButtons(files) {
   const buttons = [];
   for (const [index, value] of files.entries()) {
     buttons.push(
       <div key={index}>
-        <button key={index}>
-          {value.name}
-        </button>
+        <Button
+          class="btn"
+          text={value.name}
+          disabled={false}
+          onClick={() => mostrarEnMapa()} />
       </div>
     );
   }

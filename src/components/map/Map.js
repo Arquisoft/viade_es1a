@@ -77,12 +77,6 @@ class Map extends React.Component {
             <div className="Map">
                 <Button
                     class="btn"
-                    text="Mostrar Json en el Mapa"
-                    disabled={false}
-                    onClick={() => this.handleFiles(Json)} />
-
-                <Button
-                    class="btn"
                     text="Cambiar Mapa"
                     disabled={false}
                     onClick={() => this.cambiar()}

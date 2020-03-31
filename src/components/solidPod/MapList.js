@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../basics/BasicButton"
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
+//const Json = require("../map/GetJSON");
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
@@ -33,6 +34,7 @@ export async function getFiles() {
 
 function mostrarEnMapa(){
   console.log("Mostrando en mapa");
+
 }
 
 export function filesToButtons(files) {

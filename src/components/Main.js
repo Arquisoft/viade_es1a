@@ -8,6 +8,7 @@ import Map from "./map/Map";
 import User from "./login/User";
 import LoginButton from "./login/LoginButton";
 import UploadToPod from "./solidPod/UploadToPod";
+import MapList from "./solidPod/MapList";
 
 class Main extends React.Component {
   render() {
@@ -23,6 +24,7 @@ class Main extends React.Component {
           <LoggedIn>
             <User />
             <UploadToPod />
+            <MapList />
             <Map />
             <LoginButton />
           </LoggedIn>

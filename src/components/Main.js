@@ -10,10 +10,11 @@ import UploadToPod from "./solidPod/UploadToPod";
 import MapList from "./solidPod/MapList";
 import ButtonRoute from "./map/ButtonRoute";
 import Map from "./map/Map";
-//const Map = require("./map/Map");
+
 
 class Main extends React.Component {
   render() {
+
     return (
       <div className="App">
         <div className="container">
@@ -27,10 +28,7 @@ class Main extends React.Component {
             <User />
             <UploadToPod />
             <MapList />
-            <ButtonRoute
-              mapa={Map}
-            />
-            <Map />
+            {Map()}
             <LoginButton />
           </LoggedIn>
         </div>

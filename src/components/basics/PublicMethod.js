@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class Owner extends React.Component {
+export default class Owner extends React.Component {
   receiveExposedMethod(exposedMethod) {
     this.exposedMethod = exposedMethod;
   }
@@ -25,6 +25,10 @@ export class Child extends React.Component {
   componentDidMount() {
     if (typeof this.props.getExposedMethod === 'function') {
       this.props.getExposedMethod(this.exposedMethod.bind(this));
+      console.log("Si es el caso")
+    }
+    else{
+        console.log("No es el caso")
     }
   }
   exposedMethod() {

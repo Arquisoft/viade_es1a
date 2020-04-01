@@ -43,7 +43,7 @@ class Map extends React.Component {
         };
     }
 
-    handleFiles(mapaJson) {
+    handleFiles = (mapaJson) => {
         this.map.setView([50.7924094, -1.0934092], 15);
         L.geoJSON(mapaJson.getData()).addTo(this.map);
     }
@@ -83,6 +83,11 @@ class Map extends React.Component {
                     disabled={false}
                     onClick={() => this.cambiar()}
                 />
+                <Button
+                    class="btn"
+                    text="Mostrar Json en el Mapa"
+                    disabled={false}
+                    onClick={() => this.handleFiles(Json)} />
                 <Wrapper id="map" />
             </div>
 

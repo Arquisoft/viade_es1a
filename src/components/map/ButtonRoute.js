@@ -5,7 +5,7 @@ import { handleFiles } from "./Map";
 const Json = require("./GetJSON");
 
 
-class ClassExample extends React.Component {
+class ButtonRoute extends React.Component {
 
     render() {
         return (
@@ -14,11 +14,11 @@ class ClassExample extends React.Component {
                     class="btn"
                     text="Mostrar Json en el Mapa"
                     disabled={false}
-                    onClick={() => handleFiles(this.props.mapa, Json)} />
+                    onClick={() => handleFiles(this.props.map, Json)} />
             </div>
         );
     }
 }
 
-export default ClassExample;
+export default ButtonRoute;
 

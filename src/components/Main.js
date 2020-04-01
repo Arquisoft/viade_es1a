@@ -14,6 +14,7 @@ import Map from "./map/Map";
 
 class Main extends React.Component {
   render() {
+    var mapita = (<Map/>);
 
     return (
       <div className="App">
@@ -28,7 +29,8 @@ class Main extends React.Component {
             <User />
             <UploadToPod />
             <MapList />
-            <Map />
+            <ButtonRoute map = {mapita} />
+            {mapita}
             <LoginButton />
           </LoggedIn>
         </div>

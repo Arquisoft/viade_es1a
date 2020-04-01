@@ -27,8 +27,7 @@ const Mapa2 = L.tileLayer(urlMapaSatelite, {
 
 
 export function handleFiles(Map, mapaJson){
-    Map.map.setView([50.7924094, -1.0934092], 15);
-    L.geoJSON(mapaJson.getData()).addTo(Map.map);
+    Map.handleFiles(mapaJson)
 }
 
 
@@ -43,7 +42,7 @@ class Map extends React.Component {
         };
     }
 
-    handleFiles = (mapaJson) => {
+    handleFiles = function (mapaJson)  {
         this.map.setView([50.7924094, -1.0934092], 15);
         L.geoJSON(mapaJson.getData()).addTo(this.map);
     }
@@ -87,7 +86,7 @@ class Map extends React.Component {
                     class="btn"
                     text="Mostrar Json en el Mapa"
                     disabled={false}
-                    onClick={() => this.handleFiles(Json)} />
+                    onClick={() => handleFiles(this, Json)} />
                 <Wrapper id="map" />
             </div>
 

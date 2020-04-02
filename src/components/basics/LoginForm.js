@@ -22,7 +22,7 @@ class LoginForm extends React.Component {
     }
     this.setState({
       [property]: val
-    })
+    });
   }
 
   resetForm() {

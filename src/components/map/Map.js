@@ -3,8 +3,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styled from "styled-components";
 import Button from "../basics/BasicButton";
-import ReactFileReader from "react-file-reader";
-import geojson from "../../static/files/prueba3.geojson";
+const Json = require("./GetJSON");
 
 const Wrapper = styled.div`
     width: 900px;
@@ -25,8 +24,7 @@ const Mapa2 = L.tileLayer(urlMapaSatelite, {
     maxZoom: 20,
     maxNativeZoom: 17
 });
-
-export default class Map2 extends React.Component {
+class Map extends React.Component {
 
     constructor(props) {
         super(props);
@@ -36,23 +34,14 @@ export default class Map2 extends React.Component {
         };
     }
 
-    handleFiles = files => {
-        var string = "";
-        var reader = new FileReader();
+    handleFiles() {
+        this.map.setView([50.7924094, -1.0934092], 15);
+        L.geoJSON(Json.getData()).addTo(this.map);
         
-        reader.onload = function () {
-          // Use reader.result
-          //Aqui habria que parsear el archivo y mostrarlo en el mapa
-          string = reader.result
-          alert(reader.result)
-          L.geoJSON(reader.result).addTo(this.map);
-        }
-        reader.readAsText(files[0]);
-      }
+        //L.geoJSON(getData()).addTo(this.map);
+    }
 
-      aux(){
 
-      }
 
     async cambiar() {
         if (this.state.nMapa === 1) {
@@ -83,16 +72,18 @@ export default class Map2 extends React.Component {
 
         return (
             <div className="Map">
-                <br />
+                <Button
+                    class="btn"
+                    text="Mostrar Json en el Mapa"
+                    disabled={false}
+                    onClick={() => this.handleFiles()} />
+
                 <Button
                     class="btn"
                     text="Cambiar Mapa"
                     disabled={false}
                     onClick={() => this.cambiar()}
                 />
-                <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.geojson'}>
-                    <button className="btn">Upload</button>
-                </ReactFileReader>
                 <Wrapper id="map" />
             </div>
 
@@ -100,3 +91,4 @@ export default class Map2 extends React.Component {
     }
 }
 
+export default Map;

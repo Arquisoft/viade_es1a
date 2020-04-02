@@ -5,9 +5,14 @@
 
 image::sistemaycontexto31.png[]
 
-El proyecto será una aplicación para que los usuarios puedan compartir sus rutas con las personas que quieran. Se utilizará la red descentralizada SOLID y se realizará usando JavaScript con el framework de ReactJS.
+|===
 
-Los usuarios podrán guardar sus distintas rutas usando sus PODS.
+|Entidad|Contexto
+|Usuario|Sube y lee rutas desde su POD
+|POD|Almacena rutas de forma interoperable
+|Viade|Parsea las rutas y las muestra en un mapa
+|===
+
 
 === Contexto técnico
 

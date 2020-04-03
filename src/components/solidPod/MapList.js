@@ -32,24 +32,29 @@ export async function getFiles() {
   return filesObtained;
 }
 
+async function readRoute(handleFiles, URL){
+
+  let rutaView;
+    await fc.readFile(URL)
+    .then(content => rutaView = content)
+    .catch(err => (rutaView = null));
+
+  alert(rutaView);
+  //handleFiles(rutaViewS);
+}
+
 export function filesToButtons(files, handleFiles) {
   const buttons = [];
   for (const [index, value] of files.entries()) {
 
-    let rutaView;
-    fc.readFile(value.url)
-    .then(content => rutaView = content)
-    .catch(err => (rutaView = null));
 
-    //var rutaView = JSON.stringify(fc.readFile(value.url));
-    
     buttons.push(
       <div key={index}>
         <Button
           class="btn"
           text={value.name}
           disabled={false}
-          onClick={() => alert(rutaView)/*() => handleFiles(rutaView)*/} />
+          onClick={() => readRoute(handleFiles, value.url)} />
       </div>
     );
   }

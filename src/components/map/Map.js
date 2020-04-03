@@ -26,10 +26,8 @@ const Mapa2 = L.tileLayer(urlMapaSatelite, {
 });
 
 
-export function handleFiles(mapita, mapaJson){
-
-    //mapita.handleFiles(mapaJson).bind(this);
-
+export function handleFilesExterno(mapita, mapaJson){
+    mapita.handleFiles(mapaJson);
 }
 
 
@@ -91,7 +89,7 @@ class Map extends React.Component {
                     class="btn"
                     text="Mostrar Json en el Mapa"
                     disabled={false}
-                    onClick={() => this.handleFiles(Json)} />
+                    onClick={() => handleFilesExterno(this, Json)} />
                 <Wrapper id="map" />
             </div>
 

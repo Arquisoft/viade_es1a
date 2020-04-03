@@ -40,9 +40,9 @@ class Map extends React.Component {
         };
     }
 
-    handleFiles(layerJson)  {
+    handleFiles(fileJson)  {
         this.map.setView([50.7924094, -1.0934092], 15);
-        L.geoJSON(layerJson.getData()).addTo(this.map);
+        L.geoJSON(fileJson.getData()).addTo(this.map);
     }
 
     async cambiar() {
@@ -75,7 +75,7 @@ class Map extends React.Component {
         return (
             <div className="Map">
 
-                <MapList action = {() => this.handleFiles(Json)} />
+                <MapList handleFiles = {this.handleFiles.bind(this)} />
 
                 <Button
                     class="btn"

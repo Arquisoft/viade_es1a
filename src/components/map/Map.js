@@ -3,10 +3,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styled from "styled-components";
 import Button from "../basics/BasicButton";
-
-
 import MapList from "../solidPod/MapList";
-import ButtonRoute from "../map/ButtonRoute";
 
 
 const Json = require("./GetJSON");
@@ -44,8 +41,7 @@ class Map extends React.Component {
 
         this.state = {
             nlayer: 1,
-            layer: layer1,
-            map: null
+            layer: layer1
         };
 
         this.handleFiles = function (layerJson)  {

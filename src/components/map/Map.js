@@ -16,24 +16,24 @@ const Wrapper = styled.div`
     height: 600px;
 `;
 
-const urlMapaMontania = "https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png";
-const urlMapaSatelite = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
+const urllayerMontania = "https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png";
+const urllayerSatelite = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
 
-const Mapa1 = L.tileLayer(urlMapaMontania, {
+const layer1 = L.tileLayer(urllayerMontania, {
     detectRetina: true,
     maxZoom: 20,
     maxNativeZoom: 17
 });
 
-const Mapa2 = L.tileLayer(urlMapaSatelite, {
+const layer2 = L.tileLayer(urllayerSatelite, {
     detectRetina: true,
     maxZoom: 20,
     maxNativeZoom: 17
 });
 
 
-export function handleFilesExterno(mapita, mapaJson){
-    mapita.handleFiles(mapaJson);
+export function handleFilesExterno(mapita, layerJson){
+    mapita.handleFiles(layerJson);
 }
 
 
@@ -43,32 +43,32 @@ class Map extends React.Component {
         super(props);
 
         this.state = {
-            nMapa: 1,
-            mapa: Mapa1,
+            nlayer: 1,
+            layer: layer1,
             map: null
         };
 
-        this.handleFiles = function (mapaJson)  {
+        this.handleFiles = function (layerJson)  {
             this.state.map.setView([50.7924094, -1.0934092], 15);
-            L.geoJSON(mapaJson.getData()).addTo(this.state.map);
+            L.geoJSON(layerJson.getData()).addTo(this.state.map);
         }
     }
 
 
 
     async cambiar() {
-        if (this.state.nMapa === 1) {
-            this.state.nMapa = 2;
-            this.state.mapa = Mapa2;
-            Mapa1.removeFrom(this.state.map);
+        if (this.state.nlayer === 1) {
+            this.state.nlayer = 2;
+            this.state.layer = layer2;
+            layer1.removeFrom(this.state.map);
         }
         else {
-            this.state.nMapa = 1;
-            this.state.mapa = Mapa1;
-            Mapa2.removeFrom(this.state.map);
+            this.state.nlayer = 1;
+            this.state.layer = layer1;
+            layer2.removeFrom(this.state.map);
         }
 
-        this.state.mapa.addTo(this.state.map);
+        this.state.layer.addTo(this.state.map);
     }
 
 
@@ -78,7 +78,7 @@ class Map extends React.Component {
             zoom: 10,
             zoomControl: false
         });
-        this.state.mapa.addTo(this.state.map);
+        this.state.layer.addTo(this.state.map);
     }
 
     render() {
@@ -90,13 +90,13 @@ class Map extends React.Component {
 
                 <Button
                     class="btn"
-                    text="Cambiar Mapa"
+                    text="Cambiar layer"
                     disabled={false}
                     onClick={() => this.cambiar()}
                 />
                 <Button
                     class="btn"
-                    text="Mostrar Json en el Mapa"
+                    text="Mostrar Json en el mapa"
                     disabled={false}
                     onClick={() => handleFilesExterno(this, Json)} />
                 <Wrapper id="map" />

@@ -49,8 +49,8 @@ class Map extends React.Component {
         };
 
         this.handleFiles = function (layerJson)  {
-            this.state.map.setView([50.7924094, -1.0934092], 15);
-            L.geoJSON(layerJson.getData()).addTo(this.state.map);
+            this.map.setView([50.7924094, -1.0934092], 15);
+            L.geoJSON(layerJson.getData()).addTo(this.map);
         }
     }
 
@@ -60,25 +60,25 @@ class Map extends React.Component {
         if (this.state.nlayer === 1) {
             this.state.nlayer = 2;
             this.state.layer = layer2;
-            layer1.removeFrom(this.state.map);
+            layer1.removeFrom(this.map);
         }
         else {
             this.state.nlayer = 1;
             this.state.layer = layer1;
-            layer2.removeFrom(this.state.map);
+            layer2.removeFrom(this.map);
         }
 
-        this.state.layer.addTo(this.state.map);
+        this.state.layer.addTo(this.map);
     }
 
 
     componentDidMount() {
-        this.state.map = L.map("map", {
+        this.map = L.map("map", {
             center: [43.3602900, -5.8447600],
             zoom: 10,
             zoomControl: false
         });
-        this.state.layer.addTo(this.state.map);
+        this.state.layer.addTo(this.map);
     }
 
     render() {

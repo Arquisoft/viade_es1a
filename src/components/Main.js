@@ -14,7 +14,7 @@ import Map from "./map/Map";
 
 class Main extends React.Component {
   render() {
-    var mapita = (<Map/>);
+    let mapita = (<Map/>);
 
     return (
       <div className="App">

@@ -26,8 +26,10 @@ const Mapa2 = L.tileLayer(urlMapaSatelite, {
 });
 
 
-export function handleFiles(Map, mapaJson){
-    Map.handleFiles(mapaJson)
+export function handleFiles(mapita, mapaJson){
+
+    //mapita.handleFiles(mapaJson).bind(this);
+
 }
 
 
@@ -39,37 +41,40 @@ class Map extends React.Component {
         this.state = {
             nMapa: 1,
             mapa: Mapa1,
+            map: null
         };
+
+        this.handleFiles = function (mapaJson)  {
+            this.state.map.setView([50.7924094, -1.0934092], 15);
+            L.geoJSON(mapaJson.getData()).addTo(this.state.map);
+        }
     }
 
-    handleFiles = function (mapaJson)  {
-        this.map.setView([50.7924094, -1.0934092], 15);
-        L.geoJSON(mapaJson.getData()).addTo(this.map);
-    }
+
 
     async cambiar() {
         if (this.state.nMapa === 1) {
             this.state.nMapa = 2;
             this.state.mapa = Mapa2;
-            Mapa1.removeFrom(this.map);
+            Mapa1.removeFrom(this.state.map);
         }
         else {
             this.state.nMapa = 1;
             this.state.mapa = Mapa1;
-            Mapa2.removeFrom(this.map);
+            Mapa2.removeFrom(this.state.map);
         }
 
-        this.state.mapa.addTo(this.map);
+        this.state.mapa.addTo(this.state.map);
     }
 
 
     componentDidMount() {
-        this.map = L.map("map", {
+        this.state.map = L.map("map", {
             center: [43.3602900, -5.8447600],
             zoom: 10,
             zoomControl: false
         });
-        this.state.mapa.addTo(this.map);
+        this.state.mapa.addTo(this.state.map);
     }
 
     render() {
@@ -86,7 +91,7 @@ class Map extends React.Component {
                     class="btn"
                     text="Mostrar Json en el Mapa"
                     disabled={false}
-                    onClick={() => handleFiles(this, Json)} />
+                    onClick={() => this.handleFiles(Json)} />
                 <Wrapper id="map" />
             </div>
 

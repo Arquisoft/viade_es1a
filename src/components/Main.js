@@ -7,8 +7,7 @@ import logo from "../static/images/ViaDe.svg";
 import User from "./login/User";
 import LoginButton from "./login/LoginButton";
 import UploadToPod from "./solidPod/UploadToPod";
-import MapList from "./solidPod/MapList";
-import ButtonRoute from "./map/ButtonRoute";
+
 import Map from "./map/Map";
 
 
@@ -28,8 +27,8 @@ class Main extends React.Component {
           <LoggedIn>
             <User />
             <UploadToPod />
-            <MapList />
-            <ButtonRoute map = {mapita} />
+            
+            {/* <ButtonRoute map = {mapita} /> */}
             {mapita}
             <LoginButton />
           </LoggedIn>

@@ -3,6 +3,12 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styled from "styled-components";
 import Button from "../basics/BasicButton";
+
+
+import MapList from "../solidPod/MapList";
+import ButtonRoute from "../map/ButtonRoute";
+
+
 const Json = require("./GetJSON");
 
 const Wrapper = styled.div`
@@ -79,6 +85,9 @@ class Map extends React.Component {
 
         return (
             <div className="Map">
+
+                <MapList action = {() => handleFilesExterno(this, Json)} />
+
                 <Button
                     class="btn"
                     text="Cambiar Mapa"

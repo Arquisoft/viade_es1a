@@ -29,11 +29,6 @@ const layer2 = L.tileLayer(urllayerSatelite, {
 });
 
 
-export function handleFilesExterno(mapita, layerJson){
-    mapita.handleFiles(layerJson);
-}
-
-
 class Map extends React.Component {
 
     constructor(props) {
@@ -43,14 +38,12 @@ class Map extends React.Component {
             nlayer: 1,
             layer: layer1
         };
-
-        this.handleFiles = function (layerJson)  {
-            this.map.setView([50.7924094, -1.0934092], 15);
-            L.geoJSON(layerJson.getData()).addTo(this.map);
-        }
     }
 
-
+    handleFiles(layerJson)  {
+        this.map.setView([50.7924094, -1.0934092], 15);
+        L.geoJSON(layerJson.getData()).addTo(this.map);
+    }
 
     async cambiar() {
         if (this.state.nlayer === 1) {
@@ -82,7 +75,7 @@ class Map extends React.Component {
         return (
             <div className="Map">
 
-                <MapList action = {() => handleFilesExterno(this, Json)} />
+                <MapList action = {() => this.handleFiles(Json)} />
 
                 <Button
                     class="btn"
@@ -94,7 +87,7 @@ class Map extends React.Component {
                     class="btn"
                     text="Mostrar Json en el mapa"
                     disabled={false}
-                    onClick={() => handleFilesExterno(this, Json)} />
+                    onClick={() => this.handleFiles(Json)} />
                 <Wrapper id="map" />
             </div>
 

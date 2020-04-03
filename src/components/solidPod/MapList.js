@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../basics/BasicButton"
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
-const ruta = require("../map/GetJSON");
+const rutaH = require("../map/GetJSON");
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
@@ -36,7 +36,12 @@ export function filesToButtons(files, handleFiles) {
   const buttons = [];
   for (const [index, value] of files.entries()) {
 
-    var rutaView = JSON.stringify(ruta.getData());
+    let rutaView;
+    fc.readFile(value.url)
+    .then(content => rutaView = content)
+    .catch(err => (rutaView = null));
+
+    //var rutaView = JSON.stringify(fc.readFile(value.url));
     
     buttons.push(
       <div key={index}>

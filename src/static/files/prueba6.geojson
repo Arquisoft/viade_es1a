@@ -1,0 +1,52 @@
+{
+  "type" : "FeatureCollection", 
+  "crs" : 
+  {
+    "type" : "name", 
+    "properties" : 
+    {
+      "name" : "EPSG:3857"
+    }
+  }, 
+  "features" : [
+    {
+      "type" : "Feature", 
+      "geometry" : 
+      {
+        "type" : "Point", 
+        "coordinates" : [
+          -9177311.62541634, 4247151.20522224
+        ]
+      }, 
+      "properties" : {
+        "Land_Use" : "I"
+      }
+    }, 
+    {
+      "type" : "Feature", 
+      "geometry" : 
+      {
+        "type" : "Point", 
+        "coordinates" : [
+          -9177302.51833157, 4247155.39273411
+        ]
+      }, 
+      "properties" : {
+        "Land_Use" : "I"
+      }
+    }, 
+    {
+      "type" : "Feature", 
+      "geometry" : 
+      {
+        "type" : "Point", 
+        "coordinates" : [
+          -9177381.8884008, 4247204.22222955
+        ]
+      }, 
+      "properties" : {
+        "Land_Use" : "I"
+      }
+    }
+  ]
+}

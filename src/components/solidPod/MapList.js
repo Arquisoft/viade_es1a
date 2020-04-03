@@ -8,6 +8,8 @@ const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
 const fc = new FC(auth);
 
+const Json = require("../map/GetJSON");
+
 export async function getFiles() {
   let session = await auth.currentSession();
 
@@ -39,8 +41,12 @@ async function readRoute(handleFiles, URL){
     .then(content => rutaView = content)
     .catch(err => (rutaView = null));
 
-  alert(rutaView);
-  //handleFiles(rutaViewS);
+    var rutaViewStJ = JSON.parse(rutaView);
+
+  //alert(rutaViewS);
+  //console.log(rutaViewS);
+  handleFiles(rutaViewStJ);
+  
 }
 
 export function filesToButtons(files, handleFiles) {

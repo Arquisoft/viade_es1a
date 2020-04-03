@@ -6,7 +6,7 @@ import Button from "../basics/BasicButton";
 import MapList from "../solidPod/MapList";
 
 
-const Json = require("./GetJSON");
+//const Json = require("./GetJSON");
 
 const Wrapper = styled.div`
     width: 900px;
@@ -42,7 +42,7 @@ class Map extends React.Component {
 
     handleFiles(fileJson)  {
         this.map.setView([50.7924094, -1.0934092], 15);
-        L.geoJSON(fileJson.getData()).addTo(this.map);
+        L.geoJSON(fileJson).addTo(this.map);
     }
 
     async cambiar() {

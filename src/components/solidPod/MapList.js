@@ -35,13 +35,16 @@ export async function getFiles() {
 export function filesToButtons(files, handleFiles) {
   const buttons = [];
   for (const [index, value] of files.entries()) {
+
+    let rutaView = Json;
+    
     buttons.push(
       <div key={index}>
         <Button
           class="btn"
           text={value.name}
           disabled={false}
-          onClick={() => handleFiles(Json)} />
+          onClick={() => handleFiles(rutaView)} />
       </div>
     );
   }

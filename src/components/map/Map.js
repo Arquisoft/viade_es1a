@@ -83,11 +83,11 @@ class Map extends React.Component {
                     disabled={false}
                     onClick={() => this.cambiar()}
                 />
-                <Button
+                {/* <Button
                     class="btn"
                     text="Mostrar Json en el mapa"
                     disabled={false}
-                    onClick={() => this.handleFiles(Json)} />
+                    onClick={() => this.handleFiles(Json)} /> */}
                 <Wrapper id="map" />
             </div>
 

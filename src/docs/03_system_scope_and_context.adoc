@@ -16,6 +16,7 @@ image::sistemaycontexto31.png[]
 
 === Contexto técnico
 
-N/A
+image::contextotecnico32.png[]
+
 
 

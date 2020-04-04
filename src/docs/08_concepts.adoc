@@ -1,3 +1,37 @@
 [[section-concepts]]
 == Conceptos transversales
 
+=== Conceptos de dominio
+* Ruta: Una ruta representa una trayectoria formada por puntos cuya información sera compartida o guardada.
+* POD: Un usuario almacena sus datos personales en "pods" (almacenes de datos personales en línea).
+* Cliente: Persona que usa la aplicación para compartir o ver una ruta.
+
+=== Reglas para usar la tecnología
+Los pasos para usar la aplicación son los siguientes:
+
+* Abrir el navegador.
+* Introducir la URL de la aplicación.
+* Si tienes una cuenta inicias sesión en caso contrario es necesario registrarse.
+* Ver y compartir rutas.
+
+=== Reglas de implementación
+Separamos la parte de vista del mapa y las dependencias del SolidPod y del login. También se evita la duplicación de código.
+
+=== Conceptos de seguridad y protección
+Logramos la comunicación segura entre canales mediante el protocolo HTTPS.
+Gracias a los PODs los datos del usuario se almacenarán con un enfoque privado y descentralizado al contrario de otros gigantes tecnológicos.
+
+=== "Under-the-hood"
+
+* Manejo de la sesión: administramos la sesión utilizando SOLID  que puede ser accedida utilizando las credenciales de SOLID.
+
+* Persistencia:No utilizamos ningún tipo de base de datos ya que los datos los almacenamos en PODs.
+
+* Manejo de errores: La desconexión de Internet mientras de usa la aplicación puede provocar mal funcionamiento.
+
+=== Conceptos de desarrollo
+* Build: Nuestra aplicación usará el paquete web NodeJS,npm para construir la aplicación.
+
+* Prueba: Utilizamos el framework Cucumber.js para probar nuestra aplicación.
+
+* Despliegue: Nuestra aplicación se implementará utilizando páginas de gitHub.

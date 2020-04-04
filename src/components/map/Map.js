@@ -41,7 +41,10 @@ class Map extends React.Component {
     }
 
     handleFiles(fileJson)  {
-        this.map.setView([50.7924094, -1.0934092], 15);
+        let center = [];
+        center[0] = fileJson.features[0].geometry.coordinates[0][1];
+        center[1] = fileJson.features[0].geometry.coordinates[1][0];
+        this.map.setView(center, 15);
         L.geoJSON(fileJson).addTo(this.map);
     }
 

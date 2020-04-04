@@ -2,13 +2,10 @@ import React from "react";
 import Button from "../basics/BasicButton"
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
-const rutaH = require("../map/GetJSON");
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
 const fc = new FC(auth);
-
-const Json = require("../map/GetJSON");
 
 export async function getFiles() {
   let session = await auth.currentSession();

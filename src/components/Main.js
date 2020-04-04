@@ -4,14 +4,17 @@ import { LoggedOut, LoggedIn } from "@solid/react";
 
 import "../static/css/login.css";
 import logo from "../static/images/ViaDe.svg";
-import Map from "./map/Map";
 import User from "./login/User";
 import LoginButton from "./login/LoginButton";
 import UploadToPod from "./solidPod/UploadToPod";
-import MapList from "./solidPod/MapList";
+
+import Map from "./map/Map";
+
 
 class Main extends React.Component {
   render() {
+    let mapita = (<Map/>);
+
     return (
       <div className="App">
         <div className="container">
@@ -24,8 +27,9 @@ class Main extends React.Component {
           <LoggedIn>
             <User />
             <UploadToPod />
-            <MapList />
-            <Map />
+            
+            {/* <ButtonRoute map = {mapita} /> */}
+            {mapita}
             <LoginButton />
           </LoggedIn>
         </div>

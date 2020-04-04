@@ -40,10 +40,8 @@ async function readRoute(handleFiles, URL){
 
     var rutaViewStJ = JSON.parse(rutaView);
 
-  //alert(rutaViewS);
-  //console.log(rutaViewS);
   handleFiles(rutaViewStJ);
-  
+
 }
 
 export function filesToButtons(files, handleFiles) {

@@ -7,13 +7,11 @@ import logo from "../static/images/ViaDe.svg";
 import User from "./login/User";
 import LoginButton from "./login/LoginButton";
 import UploadToPod from "./solidPod/UploadToPod";
-
 import Map from "./map/Map";
 
 
 class Main extends React.Component {
   render() {
-    let mapita = (<Map/>);
 
     return (
       <div className="App">
@@ -27,9 +25,7 @@ class Main extends React.Component {
           <LoggedIn>
             <User />
             <UploadToPod />
-            
-            {/* <ButtonRoute map = {mapita} /> */}
-            {mapita}
+            <Map/>
             <LoginButton />
           </LoggedIn>
         </div>

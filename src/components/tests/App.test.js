@@ -1,13 +1,20 @@
 import React from "react";
-import { render } from "@testing-library/react";
+//import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Main from "../Main";
-import { Given, Then, When } from "jest-cucumber"; 
-import { create, act } from "react-test-renderer";
-import { LoginButton, LoggedOut } from "@solid/react";
-import ReactDom from "react-dom";
+import User from "../login/User";
+//import { Given, Then, When } from "jest-cucumber"; 
+import { create } from "react-test-renderer";
+import { LoginButton, LoggedOut, LoggedIn } from "@solid/react";
+//import ReactDom from "react-dom";
+//import logo from "../../static/images/ViaDe.svg";
+//import {act} from 'react-dom/test-utils';
+//import TestRenderer from 'react-test-renderer';
 
-test("prueba1", () => {
+//const {act} = TestRenderer;
+//import App from "../../index";
+
+test("main", () => {
   //render(<Main/>);
   //const contain = document.getElementsByClassName("container");
   //const container = contain[0];
@@ -19,25 +26,23 @@ test("prueba1", () => {
   //});
 
   const main = create(<Main/>);
-  expect(main).toMatchSnapshot();
- 
+  expect(main).toMatchSnapshot(); 
+});
+
+test("loginButton", () => {
   
   const loginbutton = create(<LoginButton/>);
   expect(loginbutton).toMatchSnapshot();
-
-  const loggedOut = create(<LoggedOut></LoggedOut>)
-  expect(loggedOut).toMatchSnapshot();
-
 });
 
-test("prueba2", () => {
-  let container = document.createElement('div');
-  document.body.append(container);
+test("user", () => {
+  
+  const user = create(<User/>);
+  expect(user).toMatchSnapshot();
+});
 
-  act(()=>{
-    ReactDom.render(<Main></Main>, container);
-  });
-
-  const boton = container.querySelector('button');
-  expect(boton.textContent).toBe('Identificate');
+test("uploadToPod", () => {
+  
+  const uploadToPod = create(<uploadToPod/>);
+  expect(uploadToPod).toMatchSnapshot();
 });

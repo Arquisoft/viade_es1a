@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`prueba1 1`] = `
+exports[`loginButton 1`] = `
+<button
+  className="solid auth login"
+  onClick={[Function]}
+>
+  Log in
+</button>
+`;
+
+exports[`main 1`] = `
 <div
   className="App"
 >
@@ -10,13 +19,23 @@ exports[`prueba1 1`] = `
 </div>
 `;
 
-exports[`prueba1 2`] = `
-<button
-  className="solid auth login"
-  onClick={[Function]}
->
-  Log in
-</button>
-`;
+exports[`uploadToPod 1`] = `<uploadToPod />`;
 
-exports[`prueba1 3`] = `null`;
+exports[`user 1`] = `
+<section>
+  <div
+    className="col-sm"
+  >
+    <span>
+      Estas logueado como: 
+      <a
+        href={null}
+      >
+        <span
+          className="solid value pending"
+        />
+      </a>
+    </span>
+  </div>
+</section>
+`;

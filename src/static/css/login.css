@@ -87,6 +87,7 @@ body, html, #root, .app, .container {
    width: 100%;
   
    min-width: 280px;
+   /*max-width: 400px;*/
   
    color: #565656;
   
@@ -119,6 +120,10 @@ body, html, #root, .app, .container {
 div.overflow {
   overflow-y:scroll;
   height: 100px;
+
+  /* width: 100%;
+  min-width: 280px;
+  max-width: 400px; */
 }
 
 /*

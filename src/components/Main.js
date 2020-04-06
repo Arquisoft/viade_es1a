@@ -9,6 +9,7 @@ import LoginButton from "./login/LoginButton";
 import UploadToPod from "./solidPod/UploadToPod";
 import Map from "./map/Map";
 import ShowFriends from "./share/ShowFriends";
+import Share from "./share/Share";
 
 
 
@@ -26,9 +27,10 @@ class Main extends React.Component {
 
           <LoggedIn>
             <User />
-            <Map/>
+            <Map />
             <UploadToPod />
             <ShowFriends />
+            <Share />
             <LoginButton />
           </LoggedIn>
         </div>

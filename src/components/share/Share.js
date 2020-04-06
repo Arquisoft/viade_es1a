@@ -3,8 +3,7 @@ import React from "react";
 import { useWebId } from "@solid/react";
 import InputField from "../basics/ImputField";
 import Button from "../basics/BasicButton";
-//import ShowFriends from "./ShowFriends";
-
+import ShowFriends from "./ShowFriends";
 
 export const Hook = () => {
     let webid = String(String(useWebId()).replace("/profile/card#me", "/public/rutas/"));
@@ -41,17 +40,7 @@ export const Hook = () => {
             });
         }
 
-        getFriends() {
-            return (
-                <select onChange={this.handleChange.bind(this)}>
-                    <option value="http:amigo1">amigo 1</option>
-                    <option value="http:amigo2">amigo 2</option>
-                    <option value="http:amigo3">amigo 3</option>
-                    <option value="http:amigo4">amigo 4</option>
-                    <option value="http:amigo5">amigo 5</option>
-                </select>
-            );
-        }
+
 
         render() {
             return (
@@ -65,7 +54,7 @@ export const Hook = () => {
                         onChange={(val) => this.setInputValue("archivo", val)}
                     />
                     <p>Seleccione el amigo:</p>
-                    {this.getFriends()}
+                    {ShowFriends(this.handleChange.bind(this)) }
 
                     <Button
                         class="btn"

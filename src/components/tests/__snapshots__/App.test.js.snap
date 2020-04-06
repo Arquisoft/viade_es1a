@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`prueba1 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="container"
+  />
+</div>
+`;
+
+exports[`prueba1 2`] = `
+<button
+  className="solid auth login"
+  onClick={[Function]}
+>
+  Log in
+</button>
+`;
+
+exports[`prueba1 3`] = `null`;

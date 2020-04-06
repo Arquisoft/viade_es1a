@@ -107,3 +107,8 @@ body, html, #root, .app, .container {
    cursor: pointer;
   
   }
+
+  div.overflow {
+    overflow-y:scroll;
+    height: 120px;
+}

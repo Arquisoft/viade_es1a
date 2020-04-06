@@ -54,7 +54,7 @@ export const Hook = () => {
                         onChange={(val) => this.setInputValue("archivo", val)}
                     />
                     <p>Seleccione el amigo:</p>
-                    {ShowFriends(this.handleChange.bind(this)) }
+                    {ShowFriends(this.handleChange.bind(this))}
 
                     <Button
                         class="btn"

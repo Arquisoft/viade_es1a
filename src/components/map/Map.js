@@ -74,9 +74,6 @@ class Map extends React.Component {
 
         return (
             <div className="Map">
-
-                <MapList handleFiles = {this.handleFiles.bind(this)} />
-
                 <Button
                     class="btn"
                     text="Cambiar layer"
@@ -84,6 +81,7 @@ class Map extends React.Component {
                     onClick={() => this.cambiar()}
                 />
                 <Wrapper id="map" />
+                <MapList handleFiles = {this.handleFiles.bind(this)} />
             </div>
 
         );

@@ -26,8 +26,8 @@ class Main extends React.Component {
 
           <LoggedIn>
             <User />
-            <UploadToPod />
             <Map/>
+            <UploadToPod />
             <ShowFriends />
             <LoginButton />
           </LoggedIn>

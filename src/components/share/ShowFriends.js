@@ -5,13 +5,13 @@ class ShowFriends extends React.Component {
     return (
       <div>
         <h2>Lista de amigos</h2>
-        <div className="overflow">
-          <button className="btn btn-list">amigo 1</button>
-          <button className="btn btn-list">amigo 2</button>
-          <button className="btn btn-list">amigo 3</button>
-          <button className="btn btn-list">amigo 4</button>
-          <button className="btn btn-list">amigo 5</button>
-        </div>
+        <select id="cars">
+          <option value="amigo 5">amigo 1</option>
+          <option value="amigo 5">amigo 2</option>
+          <option value="amigo 5">amigo 3</option>
+          <option value="amigo 5">amigo 4</option>
+          <option value="amigo 5">amigo 5</option>
+        </select>
       </div>
     );
   }

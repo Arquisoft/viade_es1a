@@ -1,12 +1,13 @@
 import React from "react";
 
-import { useWebId, Value } from "@solid/react";
+import { useWebId } from "@solid/react";
 import InputField from "../basics/ImputField";
 import Button from "../basics/BasicButton";
+//import ShowFriends from "./ShowFriends";
 
 
 export const Hook = () => {
-    let webid = String(useWebId()).replace("/profile/card#me", "/public/rutas/");
+    let webid = String(String(useWebId()).replace("/profile/card#me", "/public/rutas/"));
     class Share extends React.Component {
         constructor(props) {
             super(props);
@@ -28,12 +29,24 @@ export const Hook = () => {
 
         setInputValue(property, val) {
             val = val.trim();
-            if (val.length > 12) {
-                return;
-            }
+            // if (val.length > 12) {
+            //     return;
+            // }
             this.setState({
                 [property]: val
             });
+        }
+
+        getFriends() {
+            return (
+                <select onChange={(val) => this.setInputValue("amigo", val)} id="cars">
+                    <option value="amigo5">amigo 1</option>
+                    <option value="amigo5">amigo 2</option>
+                    <option value="amigo5">amigo 3</option>
+                    <option value="amigo5">amigo 4</option>
+                    <option value="amigo5">amigo 5</option>
+                </select>
+            );
         }
 
         render() {
@@ -53,6 +66,8 @@ export const Hook = () => {
                         value={this.state.amigo ? this.state.amigo : ""}
                         onChange={(val) => this.setInputValue("amigo", val)}
                     />
+
+                    {this.getFriends()}
 
                     <Button
                         class="btn"

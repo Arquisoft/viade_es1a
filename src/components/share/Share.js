@@ -3,7 +3,6 @@ import React from "react";
 import { useWebId } from "@solid/react";
 import InputField from "../basics/ImputField";
 import Button from "../basics/BasicButton";
-import ShowFriends from "./ShowFriends";
 
 export const Hook = () => {
     let webid = String(String(useWebId()).replace("/profile/card#me", "/public/rutas/"));
@@ -16,7 +15,7 @@ export const Hook = () => {
             };
         }
 
-        async doLogin() {
+        async enviar() {
             // if (!this.state.archivo) {
             //   return;
             // }
@@ -40,8 +39,6 @@ export const Hook = () => {
             });
         }
 
-
-
         render() {
             return (
                 <div className="LoginForm">
@@ -53,14 +50,19 @@ export const Hook = () => {
                         value={this.state.archivo ? this.state.archivo : ""}
                         onChange={(val) => this.setInputValue("archivo", val)}
                     />
-                    <p>Seleccione el amigo:</p>
-                    {ShowFriends(this.handleChange.bind(this))}
+                    <p>Introducir WebId del amigo:</p>
+                    <InputField
+                        type="text"
+                        placeholder="https://ejemplo.solid.community/profile/card#me"
+                        value={this.state.amigo ? this.state.amigo : ""}
+                        onChange={(val) => this.setInputValue("amigo", val)}
+                    />
 
                     <Button
                         class="btn"
                         text="Enviar"
                         disabled={false}
-                        onClick={() => this.doLogin()}
+                        onClick={() => this.enviar()}
                     />
 
                 </div>

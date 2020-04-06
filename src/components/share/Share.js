@@ -1,31 +1,70 @@
 import React from "react";
 
+import { useWebId, Value } from "@solid/react";
+import InputField from "../basics/ImputField";
 import Button from "../basics/BasicButton";
 
-class Share extends React.Component {
 
-    compartir(){
-        console.log("Compartiendo...");
-    }
+export const Hook = () => {
+    let webid = String(useWebId()).replace("/profile/card#me", "/public/rutas/");
+    class Share extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                archivo: webid,
+                amigo: ""
+            };
+        }
 
-  render() {
-    return (
-      <div>
-          <h2>Compartir ruta</h2>
-          <p>URI de la ruta o archivo a compartir:</p>
-          <input></input>
-          <p>WebID del amigo con quien compartirla:</p>
-          <input></input>
-          <Button
-                    class="btn"
-                    text="Compartir"
-                    disabled={false}
-                    onClick={() => this.compartir()}
-                />
+        async doLogin() {
+            // if (!this.state.archivo) {
+            //   return;
+            // }
+            // if (!this.state.amigo) {
+            //   return;
+            // }
+            alert("Enviando " + this.state.archivo + " a " + this.state.amigo)
+        }
 
-      </div>
-    );
-  }
+        setInputValue(property, val) {
+            val = val.trim();
+            if (val.length > 12) {
+                return;
+            }
+            this.setState({
+                [property]: val
+            });
+        }
+
+        render() {
+            return (
+                <div className="LoginForm">
+
+                    <h2>Compartir ruta</h2>
+                    <p>Introducir URI del archivo</p>
+                    <InputField
+                        type="text"
+                        value={this.state.archivo ? this.state.archivo : ""}
+                        onChange={(val) => this.setInputValue("archivo", val)}
+                    />
+                    <p>Introducir webID del amigo</p>
+                    <InputField
+                        type="text"
+                        value={this.state.amigo ? this.state.amigo : ""}
+                        onChange={(val) => this.setInputValue("amigo", val)}
+                    />
+
+                    <Button
+                        class="btn"
+                        text="Enviar"
+                        disabled={false}
+                        onClick={() => this.doLogin()}
+                    />
+
+                </div>
+            );
+        }
+    };
+    return (<Share />);
 }
-
-export default Share;
+export default Hook;

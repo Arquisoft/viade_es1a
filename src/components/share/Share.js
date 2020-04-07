@@ -6,17 +6,43 @@ import Button from "../basics/BasicButton";
 import FileClient from "solid-file-client";
 import auth from "solid-auth-client";
 import properties from "../commons/Properties";
+import request from "request";
+
+async function sendNotification(userWebId, friendWebId, fileId) {
+    request({
+        method: "POST",
+        uri: friendWebId,
+        body: `@prefix as: <https://www.w3.org/ns/activitystreams#> .
+            @prefix schema: <http://schema.org/> .
+            <> a as:Follow ;
+            schema:Action "shareRoute" ;
+            schema:agent <${userWebId}> ;
+            schema:identifier "${fileId}" .`,
+        headers: {
+            "Content-Type": "text/turtle"
+        }
+
+    },
+
+        function (error, response, body) {
+            if (error) { return false } else {
+                console.log("Notificacion subida correctamente, el servidor respondio con :", body)
+                return true
+            }
+        })
+}
 
 export const Hook = () => {
-    let webid = String(String(useWebId()).replace(properties.profile, properties.myFolder));
+    //let folderId = String(String(useWebId()).replace(properties.profile, properties.myFolder)); 
+    let userId = useWebId();
 
 
     class Share extends React.Component {
         constructor(props) {
             super(props);
             this.state = {
-                archivo: "https://samuelmorenov.solid.community/private/rutas/prueba5.geojson",
-                amigo: "https://alvatros96.solid.community/profile/card#me",
+                archivo: "https://alvatros96.solid.community/private/rutas/prueba5.geojson",
+                amigo: "https://samuelmorenov.solid.community/profile/card#me",
                 //archivo: webid,
                 //amigo: ""
             };
@@ -30,17 +56,15 @@ export const Hook = () => {
                 return;
             }
 
-            let webidfriend = String(String(this.state.amigo).replace(properties.profile, properties.shareFolder));
-            let fileName = "Archivo.geojson";
-            let fileFriend = webidfriend + fileName;
-
-            console.log("Escribiendo en archivo: " + fileFriend);
+            let publicRute = String(String(this.state.archivo).replace(properties.myFolder, properties.shareFolder));
             //Leer archivo
 
             const fc = new FileClient(auth);
-            let result = false;
-            await fc
-                .copy(this.state.archivo, fileFriend, { withMeta: false, withAcl: false });
+            //let result = false;
+            await fc.copy(this.state.archivo, publicRute);
+            let friendInbox = String(String(this.state.amigo).replace(properties.profile, properties.friendInbox)); 
+            await sendNotification(userId, friendInbox, this.state.archivo);
+            alert("Archivo enviado");
             // .then(() => {
             //     result = true
             // })

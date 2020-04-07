@@ -4,5 +4,4 @@ const properties = {
     profile: "/profile/card#me"
 }
 
-
 export default properties;

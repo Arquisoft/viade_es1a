@@ -30,27 +30,46 @@ export const Hook = () => {
                 return;
             }
 
+            let webidfriend = String(String(this.state.amigo).replace(properties.profile, properties.shareFolder));
+            let fileName = "Archivo.geojson";
+            let fileFriend = webidfriend + fileName;
+
+            console.log("Escribiendo en archivo: " + fileFriend);
             //Leer archivo
 
             const fc = new FileClient(auth);
+            let result = false;
+            await fc
+                .copy(this.state.archivo, fileFriend, { withMeta: false, withAcl: false });
+            // .then(() => {
+            //     result = true
+            // })
+            // .catch(err => (result = false));
 
-            let archivoLeido;
-            await fc.readFile(this.state.archivo)
-                .then(content => archivoLeido = content)
-                .catch(err => (archivoLeido = null));
+            // if(result){
+            //     alert("Enviado " + this.state.archivo + " a " + this.state.amigo);
+            // }
+            // else{
+            //     alert("Error al enviar el archivo.")
+            // }
 
-            console.log(archivoLeido)
+            // let archivoLeido;
+            // await fc.readFile(this.state.archivo)
+            //     .then(content => archivoLeido = content)
+            //     .catch(err => (archivoLeido = null));
 
-            //Guardar archivo
-            
-            let webidfriend = String(String(this.state.amigo).replace(properties.profile, properties.shareFolder));
+            // console.log(archivoLeido)
 
-            let fileName = "Archivo.geojson";
-            let url = webidfriend + fileName;
-            fc.createFile(url, archivoLeido, "text/turtle");
+            // //Guardar archivo
 
 
-            alert("Enviado " + this.state.archivo + " a " + this.state.amigo);
+
+            // let fileName = "Archivo.geojson";
+            // let url = webidfriend + fileName;
+            // fc.createFile(url, archivoLeido, "text/turtle");
+
+
+
         }
 
         setInputValue(property, val) {

@@ -17,9 +17,11 @@ Cómo alcanzar los atributos de calidad::
 
 Tenemos en cuenta muchos atributos de calidad aunque los que consideramos mas importantes son la disponibilidad, seguridad consistencia o robustez.
 
-Descripcion de atributos:
+Para alcanzar estos atributos:
 
-N/A
+* Disponibilidad: Uso de Docker para el despliegue de la aplicación, eliminando así todos los posible errores que pudieran surgir por dependencias o versiones concretas.
+* Comunicación: El equipo tendrá la mayor comunicación posible discutiendo cada problema o idea, aportando la información que encuentre de utilidad.
+* División de tareas: El proyecto se divisirá en tareas distintas entre los miembros del equipo para poder trabajar de forma paralela y conseguir un ritmo eficiente.
 
 Decisiones de organización::
 

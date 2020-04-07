@@ -2,10 +2,11 @@ import React from "react";
 import FileClient from "solid-file-client";
 import auth from "solid-auth-client";
 import ReactFileReader from "react-file-reader";
-import nameSplit from "../login/NameSplited";
+import { useWebId } from "@solid/react";
+import properties from "../commons/Properties";
 
 export const UploadHook = () => {
-    let nameSplited = nameSplit();
+    let webid = String(String(useWebId()).replace(properties.profile, properties.myFolder));
 
     class UploadToPod extends React.Component {
 
@@ -14,7 +15,7 @@ export const UploadHook = () => {
             reader.onload = function () {
                 let fc = new FileClient(auth);
                 let fileName = files[0].name;
-                let url = "https://" + nameSplited + ".solid.community/public/rutas/"+fileName;
+                let url = webid+fileName;
                 fc.createFile(url, reader.result, "text/turtle");
                 alert("Archivo subido a rutas/"+fileName);
             };

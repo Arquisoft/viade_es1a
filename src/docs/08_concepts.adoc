@@ -34,4 +34,4 @@ Gracias a los PODs los datos del usuario se almacenarán con un enfoque privado 
 
 * Prueba: Utilizamos el framework Cucumber.js para probar nuestra aplicación.
 
-* Despliegue: Nuestra aplicación se implementará utilizando páginas de gitHub.
+* Despliegue: Nuestra aplicación se desplegará utilizando páginas de gitHub.

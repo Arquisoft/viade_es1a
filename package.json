@@ -16,6 +16,7 @@
     "react-dom": "^16.12.0",
     "react-file-reader": "^1.1.4",
     "react-scripts": "3.4.0",
+    "request": "^2.88.2",
     "solid-auth-client": "^2.4.1",
     "solid-file-client": "^1.0.2",
     "styled": "^1.0.0",

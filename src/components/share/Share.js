@@ -57,13 +57,15 @@ export const Hook = () => {
             }
 
             let publicRute = String(String(this.state.archivo).replace(properties.myFolder, properties.shareFolder));
+            console.log(publicRute);
             //Leer archivo
-
             const fc = new FileClient(auth);
             //let result = false;
             await fc.copy(this.state.archivo, publicRute);
             let friendInbox = String(String(this.state.amigo).replace(properties.profile, properties.friendInbox)); 
-            await sendNotification(userId, friendInbox, this.state.archivo);
+
+            //Enviamos la notificacion a nuestro amigo
+            await sendNotification(userId, friendInbox, publicRute);
             alert("Archivo enviado");
             // .then(() => {
             //     result = true

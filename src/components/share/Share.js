@@ -31,9 +31,7 @@ export const Hook = () => {
 
             //Leer archivo
 
-            const auth = require("solid-auth-client");
-            const FC = require("solid-file-client");
-            const fc = new FC(auth);
+            const fc = new FileClient(auth);
 
             let archivoLeido;
             await fc.readFile(this.state.archivo)
@@ -45,52 +43,13 @@ export const Hook = () => {
             //Guardar archivo
             let webidfriend = String(String(this.state.amigo).replace("/profile/card#me", "/public/rutasCompartidas/"));
 
+            let fileName = "ArchivoCompartido";
+            let url = webidfriend + fileName;
+            fc.createFile(url, archivoLeido, "text/turtle");
 
-
-
-            
 
             alert("Enviado " + this.state.archivo + " a " + this.state.amigo);
         }
-
-        // handleFiles = (files) => {
-        //     let webid = String(String(useWebId()).replace("/profile/card#me", "/public/rutas/"));
-
-        //     var reader = new FileReader();
-
-        //     reader.onload = function () {
-        //         let fc = new FileClient(auth);
-        //         let fileName = files[0].name;
-        //         let url = webid + fileName;
-        //         fc.createFile(url, reader.result, "text/turtle");
-        //         alert("Archivo subido a rutas/" + fileName);
-        //     };
-        //     reader.readAsText(files[0]);
-        // };
-
-        // getFiles() {
-        //     let session = await auth.currentSession();
-
-        //     const profileDocument = await fetchDocument(session.webId);
-        //     const profile = profileDocument.getSubject(session.webId);
-
-        //     const storage = profile.getRef(space.storage);
-
-        //     let folder;
-        //     await fc.readFolder(storage + "public/rutas/")
-        //       .then(content => { folder = content; })
-        //       .catch(err => (folder = null));
-
-        //     var filesObtained = [];
-        //     if (folder) {
-        //       for (var i = 0; i < folder.files.length; i++) {
-        //         let ruta = folder.files[i];
-        //         if (ruta != null)
-        //           filesObtained = [...filesObtained, ruta];
-        //       }
-        //     }
-        //     return filesObtained;
-        //   }
 
         setInputValue(property, val) {
             val = val.trim();

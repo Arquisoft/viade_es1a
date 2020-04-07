@@ -3,7 +3,6 @@ import React from "react";
 class SubmitButton extends React.Component {
   render() {
     return (
-      <div className="SubmitButton">
         <button
           className={this.props.class}
           disabled={this.props.disabled}
@@ -11,7 +10,6 @@ class SubmitButton extends React.Component {
         >
           {this.props.text}
         </button>
-      </div>
     );
   }
 }

@@ -5,9 +5,6 @@ import styled from "styled-components";
 import Button from "../basics/BasicButton";
 import MapList from "../solidPod/MapList";
 
-
-//const Json = require("./GetJSON");
-
 const Wrapper = styled.div`
     width: 900px;
     height: 600px;
@@ -77,21 +74,14 @@ class Map extends React.Component {
 
         return (
             <div className="Map">
-
-                <MapList handleFiles = {this.handleFiles.bind(this)} />
-
                 <Button
                     class="btn"
                     text="Cambiar layer"
                     disabled={false}
                     onClick={() => this.cambiar()}
                 />
-                {/* <Button
-                    class="btn"
-                    text="Mostrar Json en el mapa"
-                    disabled={false}
-                    onClick={() => this.handleFiles(Json)} /> */}
                 <Wrapper id="map" />
+                <MapList handleFiles = {this.handleFiles.bind(this)} />
             </div>
 
         );

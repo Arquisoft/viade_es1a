@@ -5,17 +5,18 @@ import InputField from "../basics/ImputField";
 import Button from "../basics/BasicButton";
 import FileClient from "solid-file-client";
 import auth from "solid-auth-client";
+import properties from "../commons/Properties";
 
 export const Hook = () => {
-    let webid = String(String(useWebId()).replace("/profile/card#me", "/public/rutas/"));
+    let webid = String(String(useWebId()).replace(properties.profile, properties.myFolder));
 
 
     class Share extends React.Component {
         constructor(props) {
             super(props);
             this.state = {
-                archivo: "https://samuelmorenov.solid.community/public/rutas/prueba5.geojson",
-                amigo: "https://samuelmorenov.solid.community/profile/card#me",
+                archivo: "https://samuelmorenov.solid.community/private/rutas/prueba5.geojson",
+                amigo: "https://alvatros96.solid.community/profile/card#me",
                 //archivo: webid,
                 //amigo: ""
             };
@@ -41,9 +42,10 @@ export const Hook = () => {
             console.log(archivoLeido)
 
             //Guardar archivo
-            let webidfriend = String(String(this.state.amigo).replace("/profile/card#me", "/public/rutasCompartidas/"));
+            
+            let webidfriend = String(String(this.state.amigo).replace(properties.profile, properties.shareFolder));
 
-            let fileName = "ArchivoCompartido";
+            let fileName = "Archivo.geojson";
             let url = webidfriend + fileName;
             fc.createFile(url, archivoLeido, "text/turtle");
 

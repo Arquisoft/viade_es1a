@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../basics/BasicButton"
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
+import properties from "../commons/Properties";
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
@@ -16,7 +17,7 @@ export async function getFiles() {
   const storage = profile.getRef(space.storage);
 
   let folder;
-  await fc.readFolder(storage + "public/rutas/")
+  await fc.readFolder(storage + properties.myFolder)
     .then(content => { folder = content; })
     .catch(err => (folder = null));
 

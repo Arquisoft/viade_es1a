@@ -3,10 +3,10 @@ import FileClient from "solid-file-client";
 import auth from "solid-auth-client";
 import ReactFileReader from "react-file-reader";
 import { useWebId } from "@solid/react";
+import properties from "../commons/Properties";
 
 export const UploadHook = () => {
-
-    let webid = String(String(useWebId()).replace("/profile/card#me", "/public/rutas/"));
+    let webid = String(String(useWebId()).replace(properties.profile, properties.myFolder));
 
     class UploadToPod extends React.Component {
 

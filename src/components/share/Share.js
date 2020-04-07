@@ -23,17 +23,16 @@ async function sendNotification(userWebId, friendWebId, fileId) {
         }
 
     },
-
         function (error, response, body) {
-            if (error) { return false } else {
-                console.log("Notificacion subida correctamente, el servidor respondio con :", body)
-                return true
+            if (!error) { 
+                alert("Notificacion enviada");
             }
+            return !error;
         })
 }
 
 export const Hook = () => {
-    //let folderId = String(String(useWebId()).replace(properties.profile, properties.myFolder)); 
+    let folderId = String(String(useWebId()).replace(properties.profile, properties.myFolder)); 
     let userId = useWebId();
 
 
@@ -41,15 +40,13 @@ export const Hook = () => {
         constructor(props) {
             super(props);
             this.state = {
-                archivo: "https://alvatros96.solid.community/private/rutas/prueba5.geojson",
-                amigo: "https://samuelmorenov.solid.community/profile/card#me",
-                //archivo: webid,
-                //amigo: ""
+                archivo: folderId,
+                amigo: ""
             };
         }
 
         async enviar() {
-            if (!this.state.archivo) {
+            if (!this.state.archivo){
                 return;
             }
             if (!this.state.amigo) {
@@ -57,44 +54,15 @@ export const Hook = () => {
             }
 
             let publicRute = String(String(this.state.archivo).replace(properties.myFolder, properties.shareFolder));
-            console.log(publicRute);
-            //Leer archivo
+            let friendInbox = String(String(this.state.amigo).replace(properties.profile, properties.friendInbox));
+
+            //Copiamos el archivo a la carpeta publica
             const fc = new FileClient(auth);
-            //let result = false;
             await fc.copy(this.state.archivo, publicRute);
-            let friendInbox = String(String(this.state.amigo).replace(properties.profile, properties.friendInbox)); 
 
             //Enviamos la notificacion a nuestro amigo
             await sendNotification(userId, friendInbox, publicRute);
-            alert("Archivo enviado");
-            // .then(() => {
-            //     result = true
-            // })
-            // .catch(err => (result = false));
-
-            // if(result){
-            //     alert("Enviado " + this.state.archivo + " a " + this.state.amigo);
-            // }
-            // else{
-            //     alert("Error al enviar el archivo.")
-            // }
-
-            // let archivoLeido;
-            // await fc.readFile(this.state.archivo)
-            //     .then(content => archivoLeido = content)
-            //     .catch(err => (archivoLeido = null));
-
-            // console.log(archivoLeido)
-
-            // //Guardar archivo
-
-
-
-            // let fileName = "Archivo.geojson";
-            // let url = webidfriend + fileName;
-            // fc.createFile(url, archivoLeido, "text/turtle");
-
-
+            
 
         }
 

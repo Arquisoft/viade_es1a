@@ -24,9 +24,8 @@ export async function getFiles() {
   var filesObtained = [];
   if (folder) {
     for (var i = 0; i < folder.files.length; i++) {
-      var ruta = folder.files[i];
-      if (ruta !== null){
-        filesObtained = [...filesObtained, ruta];
+      if (folder.files[i] !== null){
+        filesObtained = [...filesObtained, folder.files[i]];
       }
     }
   }

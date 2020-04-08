@@ -9,6 +9,7 @@ import LoginButton from "./login/LoginButton";
 import UploadToPod from "./solidPod/UploadToPod";
 import Map from "./map/Map";
 import Share from "./share/Share";
+import Notification from "./notifications/Notification";
 
 
 
@@ -28,6 +29,7 @@ class Main extends React.Component {
             <User />
             <Map />
             <UploadToPod />
+            <Notification />
             <Share />
             <LoginButton />
           </LoggedIn>

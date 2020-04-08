@@ -20,17 +20,7 @@ export async function getFiles() {
   await fc.readFolder(storage + properties.myFolder)
     .then((content) => { folder = content; })
     .catch((err) => (folder = null));
-
-  var filesObtained = [];
-  if (folder) {
-    for (var i = 0; i < folder.files.length; i++) {
-      var ruta = folder.files[[parseInt](i)];
-      if (ruta !== null){
-        filesObtained = [...filesObtained, ruta];
-      }
-    }
-  }
-  return filesObtained;
+  return folder.files;
 }
 
 async function readRoute(handleFiles, URL) {

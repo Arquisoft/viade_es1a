@@ -86,3 +86,19 @@ actor Usuario2
 Usuario2 <- viade2: Muestra ruta
 @enduml
 ----
+=== Compartir con grupos
+
+[plantuml,compartir grupos,png]
+----
+@startuml
+
+actor Usuario1
+Usuario1 -> Viade1a:Introducir URI archivo y amigo
+
+Viade1a -> Solid:Almacena Ruta privada en publica
+Solid -> Viade1a:Mensaje guardada
+Solid <- viade2:Accede a la ruta
+
+Grupo <- viade2: Muestra ruta
+@enduml
+----

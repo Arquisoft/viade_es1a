@@ -38,6 +38,8 @@ const NotificationHook = () => {
 
     class Notification extends React.Component {
 
+        _isMounted = false;
+
         constructor(props) {
             super(props);
             this.state = {
@@ -46,16 +48,25 @@ const NotificationHook = () => {
             };
         }
 
+        componentDidMount() {
+            this._isMounted = true;
+            this.updateNotifications();
+        }
+
+        componentWillUnmount() {
+            this._isMounted = false;
+        }
 
         async updateNotifications() {
             var num = String(await getNNotifications());
-            this.setState({
-                nNotifications: num,
-            });
+            if (this._isMounted) {
+                this.setState({
+                    nNotifications: num,
+                });
+            }
         }
 
         render() {
-            this.updateNotifications();
             return (
                 <p>
                     <img src={campanita} className="Campanita-ico" alt="ico" />

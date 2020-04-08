@@ -8,3 +8,7 @@ import { create } from "react-test-renderer";
 import { LoginButton, LoggedOut, LoggedIn } from "@solid/react";
 import ReactDom from "react-dom";
 import TestRenderer from 'react-test-renderer';
+
+test('renders without crashing', () => {
+    expect(<Map />).toBeTruthy();
+});

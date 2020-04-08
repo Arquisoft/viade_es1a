@@ -69,3 +69,20 @@ deactivate Interfaz_Grafica
 
 @enduml
 ----
+
+=== Compartir ruta
+
+[plantuml,compartir ruta,png]
+----
+@startuml
+
+actor Usuario1
+Usuario1 -> Viade1a:Introducir URI archivo y amigo
+
+Viade1a -> Solid:Almacena Ruta privada en publica
+Solid -> Viade1a:Mensaje guardada
+Solid <- viade2:Accede a la ruta
+actor Usuario2
+Usuario2 <- viade2: Muestra ruta
+@enduml
+----

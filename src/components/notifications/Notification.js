@@ -3,6 +3,8 @@ import campanita from "../../static/images/campanita.png";
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
+import Button from "../basics/BasicButton";
+import { useWebId } from "@solid/react";
 
 
 
@@ -28,24 +30,44 @@ async function getNNotifications() {
     return folder.files.length;
 }
 
-class Notification extends React.Component {
+export const NotificationHook = () => {
+    let webid = String(String(useWebId()).replace(properties.profile, properties.inbox));
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            nNotifications: 0,
-            inboxUrl: "https://ejemplo.solid.community/inbox/"
-        };
-      }
+    class Notification extends React.Component {
 
-    render() {
-        return (
-            <p>
-                <img src={campanita} className="Campanita-ico" alt="ico" />
-                <a href={this.state.inboxUrl}>Notificaciones recibidas</a>: {this.state.nNotifications}
-            </p>
-        );
+        constructor(props) {
+            super(props);
+            this.state = {
+                nNotifications: "",
+                inboxUrl: webid
+            };
+        }
+
+
+        async updateNotifications() {
+            var num = String(await getNNotifications());
+            this.setState({
+                nNotifications: num,
+            });
+        }
+
+        render() {
+            return (
+                <p>
+                    <img src={campanita} className="Campanita-ico" alt="ico" />
+                    <a href={this.state.inboxUrl}>Notificaciones recibidas</a>: {this.state.nNotifications}
+                    <Button
+                        class="btn"
+                        text="Refrescar"
+                        disabled={false}
+                        onClick={() => this.updateNotifications()}
+                    />
+                </p>
+            );
+        }
     }
+
+    return (<Notification/>);
 }
 
-export default Notification;
+export default NotificationHook;

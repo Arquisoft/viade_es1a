@@ -4,8 +4,7 @@ import Main from './Main';
 
 afterAll(cleanup);
 
-describe('Main', () => {
-  it('renders without crashing', () => {
+
+test('renders without crashing', () => {
     expect(<Main />).toBeTruthy();
-  });
 });

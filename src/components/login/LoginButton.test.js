@@ -1,14 +1,12 @@
-import 'jest';
 import React from 'react';
-
 import { render } from "@testing-library/react";
-
-import auth from '../tests/__mocks__/solid-auth-client';
 import LoginButton from './LoginButton';
 
-jest.mock('solid-auth-client');
+describe('Login', () => {
+  const { container } = render(<LoginButton/>);
 
-test('Boton', () => {
-    render(<LoginButton></LoginButton>);
-    expect(ReactDOM);
+  test('renders without crashing', () => {
+    expect(container).toBeTruthy();
+  });
+
 });

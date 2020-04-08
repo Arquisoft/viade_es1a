@@ -2,19 +2,6 @@
 == Alcance y contexto del sistema
 
 === Contexto empresarial
-
-image::sistemaycontexto31.png[]
-
-|===
-
-|Entidad|Contexto
-|Usuario|Sube y lee rutas desde su POD
-|POD|Almacena rutas de forma interoperable
-|Viade|Parsea las rutas y las muestra en un mapa
-|===
-
-
-=== Contexto técnico
 [plantuml,Contexto empresarial,png]
 
 ----
@@ -30,4 +17,45 @@ Pod -> [Viade] :Leer Rutas
 @enduml
 ----
 
+|===
 
+|Entidad|Contexto
+|Usuario|Sube y lee rutas desde su POD
+|POD|Almacena rutas de forma interoperable
+|Viade|Parsea las rutas y las muestra en un mapa
+|===
+
+
+=== Contexto técnico
+
+[plantuml,Contexto tecnico,png]
+
+----
+@startuml
+actor Alice
+actor Bob
+database AlicePod
+database BobPod
+
+Alice -right->  [ViadeA] :Browser
+[ViadeA] -right-> AlicePod    :Almacenar Ruta 
+AlicePod -left->  [ViadeA]   :Ver Ruta 
+
+Bob -right->   [ViadeB] :Browser
+[ViadeB] -right->  BobPod    :Almacenar Ruta 
+BobPod -left-> [ViadeB]   :Ver Ruta 
+
+
+[ViadeA] -down-> BobPod    :Compartir Ruta Alice 
+[ViadeB] -up-> AlicePod    :Compartir Ruta Bob 
+
+@enduml
+----
+|===
+
+|Entidad|Contexto
+|Alice/Bob|Accede a la aplicación mediante un navegador
+|Viade|Muestra y comparte las rutas 
+|POD|Almacena rutas de forma interoperable
+
+|===

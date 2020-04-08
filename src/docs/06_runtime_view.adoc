@@ -30,7 +30,8 @@ Viade1a -> Solid:Almacenar Ruta
 Solid -> Viade1a:Mensaje guardada
 
 
-@enduml----
+@enduml
+----
 
 
 === Escenario Ver Ruta

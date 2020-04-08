@@ -11,7 +11,16 @@
 |Problemas con git|Usar un metodología para los merges, commits y creación de ramas además de ser cuidadosos
 |Primer contacto con la programación asincrona| Mirar videotutoriales y entender con toda claridad este concepto
 |Sin experiencia en aplicar arquitecturas en proyectos desde cero  | Tomar como referencia proyectos ya realizados en react y hacer un buen uso de patrones tanto arquitectónicos como de diseño
+|===
 
+|===
+|Deudas técnicas|Descripción
+|Pedir permisos de manera automatica a solid.community| Para poder usar nuestra aplicación hay que autorizar dentro del servidor de pods de solid.community nuestra aplicación. Esto debería de pedirse desde la aplicación, pero de momento se seguirá haciendo de manera manual.
+
+|Crear un manejador de errores que no muestre el codigo del error| Ahora mismo cuando se produce un error se muestra por pantalla el código y el error, hay que implementar que redirija a una pagina donde no muestre toda la informacion del codigo ya que esto puede producir un grave problema de seguridad
+|Ordenar la interfaz para que sea mas usable |Se debe de ordenar todos los elementos de la aplicación para conseguir una mejor usabilidad ya que los elementos están apilados unos encima de otros
+|Interoperabilidad con otras aplicaciones VIADE|La aplicación no cuenta con el formato de rutas estandar, en el futuro deberá seguir las especificaciones de https://github.com/Arquisoft/viadeSpec
+|Dependencia con solid.community (popup.html)|Para no tener una dependencia con https://solid.community/common/Descargar hay que descargar el archivo popup.html
 |===
 
 

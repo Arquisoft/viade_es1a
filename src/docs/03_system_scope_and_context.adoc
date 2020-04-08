@@ -15,8 +15,19 @@ image::sistemaycontexto31.png[]
 
 
 === Contexto técnico
+[plantuml,Contexto empresarial,png]
 
-image::contextotecnico32.png[]
+----
+@startuml
+actor Usuario
+database Pod
 
+Usuario ->  [Viade] :Cargar ruta
+[Viade] ->  Usuario :Mostrar ruta
+Pod -> [Viade] :Leer Rutas
+[Viade]  -right-> Pod :Guardar Rutas
+
+@enduml
+----
 
 

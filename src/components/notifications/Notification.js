@@ -21,16 +21,19 @@ async function getNNotifications() {
 
     const storage = profile.getRef(space.storage);
 
+
     let folder;
     await fc.readFolder(storage + properties.inbox)
         .then(content => { folder = content; })
         .catch(err => (folder = null));
-
-
-    return folder.files.length;
+    let result = 0;
+    if (folder) {
+        result = folder.files.length;
+    }
+    return result;
 }
 
-export const NotificationHook = () => {
+const NotificationHook = () => {
     let webid = String(String(useWebId()).replace(properties.profile, properties.inbox));
 
     class Notification extends React.Component {
@@ -52,13 +55,14 @@ export const NotificationHook = () => {
         }
 
         render() {
+            this.updateNotifications();
             return (
                 <p>
                     <img src={campanita} className="Campanita-ico" alt="ico" />
                     <a href={this.state.inboxUrl}>Notificaciones recibidas</a>: {this.state.nNotifications}
                     <Button
                         class="btn"
-                        text="Refrescar"
+                        text="Refrescar notificaciones"
                         disabled={false}
                         onClick={() => this.updateNotifications()}
                     />
@@ -67,7 +71,7 @@ export const NotificationHook = () => {
         }
     }
 
-    return (<Notification/>);
+    return (<Notification />);
 }
 
 export default NotificationHook;

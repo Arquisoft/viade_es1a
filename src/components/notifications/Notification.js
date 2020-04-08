@@ -24,8 +24,8 @@ async function getNNotifications() {
 
     let folder;
     await fc.readFolder(storage + properties.inbox)
-        .then(content => { folder = content; })
-        .catch(err => (folder = null));
+        .then((content) => { folder = content; })
+        .catch((err) => (folder = null));
     let result = 0;
     if (folder) {
         result = folder.files.length;
@@ -83,6 +83,6 @@ const NotificationHook = () => {
     }
 
     return (<Notification />);
-}
+};
 
 export default NotificationHook;

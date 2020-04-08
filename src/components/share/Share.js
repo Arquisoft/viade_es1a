@@ -28,7 +28,7 @@ async function sendNotification(userWebId, friendWebId, fileId) {
                 alert("Notificacion enviada");
             }
             return !error;
-        })
+        });
 }
 
 export const Hook = () => {
@@ -108,7 +108,7 @@ export const Hook = () => {
                 </div>
             );
         }
-    };
+    }
     return (<Share />);
-}
+};
 export default Hook;

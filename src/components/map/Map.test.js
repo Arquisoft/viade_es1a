@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Main from "../Main";
+import Map from "./Map";
 import User from "../login/User";
 import { Given, Then, When } from "jest-cucumber"; 
 import { create } from "react-test-renderer";

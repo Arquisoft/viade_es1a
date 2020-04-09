@@ -28,7 +28,7 @@ async function sendNotification(userWebId, friendWebId, fileId) {
                 alert("Notificacion enviada");
             }
             return !error;
-        })
+        });
 }
 
 export const Hook = () => {
@@ -54,7 +54,7 @@ export const Hook = () => {
             }
 
             let publicRute = String(String(this.state.archivo).replace(properties.myFolder, properties.shareFolder));
-            let friendInbox = String(String(this.state.amigo).replace(properties.profile, properties.friendInbox));
+            let friendInbox = String(String(this.state.amigo).replace(properties.profile, properties.inbox));
 
             //Copiamos el archivo a la carpeta publica
             const fc = new FileClient(auth);
@@ -108,7 +108,7 @@ export const Hook = () => {
                 </div>
             );
         }
-    };
+    }
     return (<Share />);
-}
+};
 export default Hook;

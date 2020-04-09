@@ -1,9 +1,38 @@
 [[section-runtime-view]]
 == Vista de tiempo de ejecución
 
+
+=== Iniciar Sesión
+[plantuml,Inicio Sesión,png]
+----
+@startuml
+
+actor Usuario
+Usuario -> Viade1a: Login 
+Viade1a -> GestorSesión:Introduccion credenciales
+GestorSesión -> Solid:Login request
+Solid -> Viade1a:   Login correcto
+Solid -> GestorSesión:   Login incorrecto
+Usuario -> Viade1a: Gestión de rutas
+
+@enduml
+----
 === Escenario Nueva Ruta
 
-ToDo
+[plantuml,Nueva ruta,png]
+----
+@startuml
+
+actor Usuario
+Usuario -> Viade1a:Subir JSON
+
+Viade1a -> Solid:Almacenar Ruta
+Solid -> Viade1a:Mensaje guardada
+
+
+@enduml
+----
+
 
 === Escenario Ver Ruta
 
@@ -11,10 +40,12 @@ ToDo
 ----
 @startuml
 
+
+
 actor Usuario
 collections Interfaz_Grafica
 collections Logica_de_negocio
-boundary OpenStreetMap_API
+boundary LeafletApi
 collections Persistencia
 database Pod
 
@@ -29,12 +60,45 @@ Pod -> Persistencia: Devolver ruta (JSON)
 Persistencia -> Logica_de_negocio : Devolver ruta (JSON)
 deactivate Persistencia
 Logica_de_negocio -> Logica_de_negocio : Parser (JSON a Object)
-Logica_de_negocio -> OpenStreetMap_API : Obtener mapa (Object)
-OpenStreetMap_API -> Logica_de_negocio : Mapa (Url)
+Logica_de_negocio -> LeafletApi : Obtener mapa (Object)
+LeafletApi -> Logica_de_negocio : Mapa (Url)
 Logica_de_negocio -> Interfaz_Grafica : Mapa (Url)
 deactivate Logica_de_negocio
 Interfaz_Grafica -> Usuario : Mostrar mapa
 deactivate Interfaz_Grafica
 
+@enduml
+----
+
+=== Compartir ruta
+
+[plantuml,compartir ruta,png]
+----
+@startuml
+
+actor Usuario1
+Usuario1 -> Viade1a:Introducir URI archivo y amigo
+
+Viade1a -> Solid:Almacena Ruta privada en publica
+Solid -> Viade1a:Mensaje guardada
+Solid <- viade2:Accede a la ruta
+actor Usuario2
+Usuario2 <- viade2: Muestra ruta
+@enduml
+----
+=== Compartir con grupos
+
+[plantuml,compartir grupos,png]
+----
+@startuml
+
+actor Usuario1
+Usuario1 -> Viade1a:Introducir URI archivo y amigo
+
+Viade1a -> Solid:Almacena Ruta privada en publica
+Solid -> Viade1a:Mensaje guardada
+Solid <- viade2:Accede a la ruta
+
+Grupo <- viade2: Muestra ruta
 @enduml
 ----

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../basics/BasicButton"
+import Button from "../basics/BasicButton";
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
@@ -18,26 +18,17 @@ export async function getFiles() {
 
   let folder;
   await fc.readFolder(storage + properties.myFolder)
-    .then(content => { folder = content; })
-    .catch(err => (folder = null));
-
-  var filesObtained = [];
-  if (folder) {
-    for (var i = 0; i < folder.files.length; i++) {
-      let ruta = folder.files[i];
-      if (ruta != null)
-        filesObtained = [...filesObtained, ruta];
-    }
-  }
-  return filesObtained;
+    .then((content) => { folder = content; })
+    .catch((err) => (folder = null));
+  return folder.files;
 }
 
 async function readRoute(handleFiles, URL) {
 
-  let rutaView;
-  await fc.readFile(URL)
-    .then(content => rutaView = content)
-    .catch(err => (rutaView = null));
+  let rutaView = null;
+  if(fc.itemExists(URL)){
+    rutaView = await fc.readFile(URL);
+  }
 
   var rutaViewStJ = JSON.parse(rutaView);
 
@@ -56,7 +47,7 @@ export function filesToButtons(files, handleFiles) {
           disabled={false}
           onClick={() => readRoute(handleFiles, value.url)} />
       </div>
-    )
+    );
   }
   return buttons;
 }

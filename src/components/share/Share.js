@@ -2,7 +2,6 @@ import React from "react";
 
 import { useWebId } from "@solid/react";
 import InputField from "../basics/ImputField";
-import Button from "../basics/BasicButton";
 import FileClient from "solid-file-client";
 import auth from "solid-auth-client";
 import properties from "../commons/Properties";
@@ -25,7 +24,7 @@ async function sendNotification(userWebId, friendWebId, fileId) {
 
     },
         function (error, response, body) {
-            if (!error) { 
+            if (!error) {
                 alert("Notificacion enviada");
             }
             return !error;
@@ -33,7 +32,7 @@ async function sendNotification(userWebId, friendWebId, fileId) {
 }
 
 export const Hook = () => {
-    let folderId = String(String(useWebId()).replace(properties.profile, properties.myFolder)); 
+    let folderId = String(String(useWebId()).replace(properties.profile, properties.myFolder));
     let userId = useWebId();
 
 
@@ -46,24 +45,29 @@ export const Hook = () => {
             };
         }
 
-        async enviar() {
-            if (!this.state.archivo){
-                return;
-            }
-            if (!this.state.amigo) {
-                return;
-            }
+        async enviar(amigos) {
 
-            let publicRute = String(String(this.state.archivo).replace(properties.myFolder, properties.shareFolder));
-            let friendInbox = String(String(this.state.amigo).replace(properties.profile, properties.inbox));
-
-            //Copiamos el archivo a la carpeta publica
-            const fc = new FileClient(auth);
-            await fc.copy(this.state.archivo, publicRute);
-
-            //Enviamos la notificacion a nuestro amigo
-            await sendNotification(userId, friendInbox, publicRute);
+            //for (const [index, value] of amigos) {
+                alert("ENVIADOOOOO :O!!! encima a: "+amigos)
+              //}
             
+            // if (!this.state.archivo) {
+            //     return;
+            // }
+            // if (!this.state.amigo) {
+            //     return;
+            // }
+
+            // let publicRute = String(String(this.state.archivo).replace(properties.myFolder, properties.shareFolder));
+            // let friendInbox = String(String(this.state.amigo).replace(properties.profile, properties.inbox));
+
+            // //Copiamos el archivo a la carpeta publica
+            // const fc = new FileClient(auth);
+            // await fc.copy(this.state.archivo, publicRute);
+
+            // //Enviamos la notificacion a nuestro amigo
+            // await sendNotification(userId, friendInbox, publicRute);
+
 
         }
 
@@ -99,13 +103,8 @@ export const Hook = () => {
                         onChange={(val) => this.setInputValue("amigo", val)}
                     />
 
-                    <ShowFriends />
-                    <Button
-                        class="btn"
-                        text="Enviar"
-                        disabled={false}
-                        onClick={() => this.enviar()}
-                    />
+                    <ShowFriends src="user.friends" enviar={this.enviar} />
+                    
 
                 </div>
             );

@@ -1,18 +1,5 @@
-const HookExample = () => {
-    let varExample = 1;
-
-    function funcionExample() {
-        let varExample2 = varExample;
-        return varExample2;
-    }
-
-    return (funcionExample());
-};
-export default HookExample;
-
-
-function HookExample2() {
-    let varExample = 1;
+function HookExample2({parametro1, parametro2}) {
+    let varExample = parametro1 + parametro2;
 
     function funcionExample() {
         let varExample2 = varExample;
@@ -22,3 +9,5 @@ function HookExample2() {
     return (funcionExample());
 };
 export default HookExample2;
+
+//Llamada al HookExample2: <ShowFriends parametro1=1 parametro2=2 />

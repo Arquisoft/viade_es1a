@@ -5,7 +5,14 @@ import { useLDflexList } from "@solid/react";
 export default function List({
   src, offset = 0, limit = Infinity, filter = () => true,
   container = items => <ul>{items}</ul>,
-  children = (item, index) => <li key={index}>{`${item}`}</li>,
+  children = (item, index) => (
+    <div>
+          <input type="radio" id={index} value={`${item}`} />
+          <label> {`${item.firstName}`} </label>
+    </div>
+
+  
+  ),
 }) {
   const items = useLDflexList(src)
     .filter(filter)

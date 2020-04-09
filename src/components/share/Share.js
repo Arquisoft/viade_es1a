@@ -7,6 +7,7 @@ import FileClient from "solid-file-client";
 import auth from "solid-auth-client";
 import properties from "../commons/Properties";
 import request from "request";
+import ShowFriends from "./ShowFriends";
 
 async function sendNotification(userWebId, friendWebId, fileId) {
     request({
@@ -98,6 +99,7 @@ export const Hook = () => {
                         onChange={(val) => this.setInputValue("amigo", val)}
                     />
 
+                    <ShowFriends />
                     <Button
                         class="btn"
                         text="Enviar"

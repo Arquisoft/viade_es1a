@@ -44,3 +44,28 @@ node "Solid" {
 node "Datos Usuario" {
 
 }
+
+}
+}
+
+
+
+
+
+
+
+
+@enduml
+----
+|===
+
+|Entidad|Contexto
+|Solid|El servidor que contiene los PODs de los usuarios
+|Navegador|Navegador que permite el acceso a la Web
+|Viade1a|Nuestra aplicación desarrollada en React en la que se interectuará
+|GitHub Pages|Servicio de alojamiento web donde desplegaremos nuestra aplicación
+|Ordenador|Dispositivo que se usa para conectar con nuestra aplicación
+|GitHub|Plataforma para alojar nuestro utilizando el sistema de control de versiones Git
+|POD|Almacenamiento descentralizado de aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos
+
+|===

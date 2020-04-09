@@ -46,28 +46,35 @@ export const Hook = () => {
         }
 
         async enviar(amigos) {
+            if (!this.state.archivo) {
+                return;
+            }
 
-            //for (const [index, value] of amigos) {
-                alert("ENVIADOOOOO :O!!! encima a: "+amigos)
-              //}
-            
-            // if (!this.state.archivo) {
-            //     return;
-            // }
-            // if (!this.state.amigo) {
-            //     return;
-            // }
+            if (amigos.length <= 0) {
+                return;
+            }
 
-            // let publicRute = String(String(this.state.archivo).replace(properties.myFolder, properties.shareFolder));
-            // let friendInbox = String(String(this.state.amigo).replace(properties.profile, properties.inbox));
+            //let publicRute = String(this.state.archivo).replace(properties.myFolder, "") + properties.shareFolder;
+            let publicRute = String(String(this.state.archivo).replace(properties.myFolder, properties.shareFolder));
 
-            // //Copiamos el archivo a la carpeta publica
-            // const fc = new FileClient(auth);
-            // await fc.copy(this.state.archivo, publicRute);
+            //Copiamos el archivo a la carpeta publica
+            const fc = new FileClient(auth);
+            //console.log("Copiando "+this.state.archivo+" a " +publicRute)
+            await fc.copy(this.state.archivo, publicRute);
 
-            // //Enviamos la notificacion a nuestro amigo
-            // await sendNotification(userId, friendInbox, publicRute);
+            for (var i = 0; i < amigos.length; ++i) {
+                this.state.amigo = amigos[i];
 
+                if (!this.state.amigo) {
+                    break;
+                }
+
+                let friendInbox = String(this.state.amigo).replace(properties.profile, "/") + properties.inboxSinBarra;
+
+                //Enviamos la notificacion a nuestro amigo
+                await sendNotification(userId, friendInbox, publicRute);
+                //console.log("Enviando... "+userId+" "+friendInbox+" "+publicRute)
+            }
 
         }
 
@@ -95,16 +102,8 @@ export const Hook = () => {
                         value={this.state.archivo ? this.state.archivo : ""}
                         onChange={(val) => this.setInputValue("archivo", val)}
                     />
-                    <p>Introducir WebId del amigo:</p>
-                    <InputField
-                        type="text"
-                        placeholder="https://ejemplo.solid.community/profile/card#me"
-                        value={this.state.amigo ? this.state.amigo : ""}
-                        onChange={(val) => this.setInputValue("amigo", val)}
-                    />
+                    <ShowFriends src="user.friends" enviar={this.enviar.bind(this)} />
 
-                    <ShowFriends src="user.friends" enviar={this.enviar} />
-                    
 
                 </div>
             );

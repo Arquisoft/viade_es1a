@@ -3,12 +3,13 @@ import { useLDflexList } from "@solid/react";
 import Button from "../basics/BasicButton";
 
 function getMarcados() {
-    var checkedValue = null;
+    var checkedValue = [];
+    var indice = 0;
     var inputElements = document.getElementsByName("friendbox");
     for (var i = 0; inputElements[i]; ++i) {
         if (inputElements[i].checked) {
-            checkedValue = inputElements[i].value;
-            break;
+            checkedValue[indice] = inputElements[i].value;
+            ++indice;
         }
     }
     return checkedValue;
@@ -17,7 +18,9 @@ function getMarcados() {
 function ShowFriends({ src, enviar }) {
     let container = items => (
         <div>
+            <p>Seleccione amigos:</p>
             {items}
+            {/* {console.log(items!=null)} TODO: Comprobar que hay amigos*/}
             <Button
                 class="btn"
                 text="Enviar a amigos"
@@ -28,7 +31,7 @@ function ShowFriends({ src, enviar }) {
     );
     let children = (item, index) => (
         <div key={index}>
-            <input type="radio" name="friendbox" value={`${item}`} />
+            <input type="checkbox" name="friendbox" value={`${item}`} />
             <label> {`${item}`} </label>
         </div>
     );

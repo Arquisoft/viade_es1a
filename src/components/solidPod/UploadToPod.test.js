@@ -1,6 +1,6 @@
-import ReactDom from "react-dom";
-import 'jest';
 import React from 'react';
+
+import 'jest';
 
 
 import { render } from "@testing-library/react";

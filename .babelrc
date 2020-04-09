@@ -1,0 +1,31 @@
+{
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "root": [
+            "./src"
+          ],
+          "alias": {
+            "@components": "./src/components",
+            "@containers": "./src/containers",
+            "@util-components": "./src/components/Utils",
+            "@models": "./src/model",
+            "@services": "./src/services",
+            "@factories": "./src/factories",
+            "@solid-services": "./src/solid",
+            "@layouts": "./src/layouts",
+            "@contexts": "./src/contexts/",
+            "@hocs": "./src/hocs",
+            "@utils": "./src/utils",
+            "@hooks": "./src/hooks",
+            "@constants": "./src/constants",
+            "@mocks": "./test/__mocks__"
+          }
+        }
+      ]
+    ]
+  }

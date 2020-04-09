@@ -3,9 +3,8 @@ import List from "./List";
 
 export default function ShowFriends() {
   return (
-   
     <List src = "user.friends"></List>
-   
+    
   );
 };
 

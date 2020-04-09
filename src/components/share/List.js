@@ -3,15 +3,18 @@ import { useLDflexList } from "@solid/react";
 
 /** Displays a list of items matching a Solid LDflex expression. */
 export default function List({
-  src, offset = 0, limit = Infinity, filter = () => true,
-  container = items => <ul>{items}</ul>,
+  src,
+  offset = 0,
+  limit = Infinity,
+  filter = () => true,
+  container = items => (
+    <form action="/action_page.php">{items}</form>
+  ),
   children = (item, index) => (
     <div>
-          <input type="radio" id={index} value={`${item}`} />
-          <label> {`${item.firstName}`} </label>
+      <input type="radio" name="friendbox" id={index} value={`${item}`} />
+      <label> {`${item}`} </label>
     </div>
-
-  
   ),
 }) {
   const items = useLDflexList(src)

@@ -1,9 +1,11 @@
+import 'jest';
 import React from 'react';
 import { render } from '@testing-library/react';
-import Map from './Map';
+import User from './User';
 
-describe('map', ()=>{
-    const { container } = render(<Map/>);
+
+describe('user', ()=>{
+    const { container } = render(<User/>);
 
     test('renders without crashing', () => {
         expect(container).toBeTruthy();

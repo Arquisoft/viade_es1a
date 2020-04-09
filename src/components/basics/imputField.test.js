@@ -1,10 +1,10 @@
 import 'jest';
 import React from 'react';
 import { render } from "@testing-library/react";
-import LoginButton from './LoginButton';
+import ImputField from './ImputField';
 
-describe('LoginButton', () => {
-  const { container } = render(<LoginButton/>);
+describe('ImputField', () => {
+  const { container } = render(<ImputField/>);
   
   test('renders without crashing', () => {
     expect(container).toBeTruthy();

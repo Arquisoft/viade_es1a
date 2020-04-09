@@ -1,20 +1,12 @@
-import React from 'react';
-
 import 'jest';
-
-
-import { render } from "@testing-library/react";
-
-
-import auth from 'solid-auth-client';
+import React from 'react';
+import { render } from '@testing-library/react';
 import UploadToPod from './UploadToPod';
 
-jest.mock('solid-auth-client');
-
-describe.only('Upload To Pod', () => {
+describe('uploadToPod', ()=>{
     const { container } = render(<UploadToPod/>);
 
-  test('renders without crashing', () => {
-    expect(container).toBeTruthy();
-  });
+    test('renders without crashing', () => {
+        expect(container).toBeTruthy();
+    });
 });

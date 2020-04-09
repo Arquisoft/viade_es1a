@@ -8,6 +8,7 @@ import auth from "solid-auth-client";
 import properties from "../commons/Properties";
 import request from "request";
 import ShowFriends from "./ShowFriends";
+import List from "./List";
 
 async function sendNotification(userWebId, friendWebId, fileId) {
     request({
@@ -99,7 +100,7 @@ export const Hook = () => {
                         onChange={(val) => this.setInputValue("amigo", val)}
                     />
 
-                    <ShowFriends />
+                    <List src = "user.friends"></List>
                     <Button
                         class="btn"
                         text="Enviar"

@@ -18,7 +18,7 @@ defineFeature(feature, test => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
             
-            await page.goto("htpp://localhost:3000/", { waitUntil: 'networkidle2'});
+            await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
         
         });
 

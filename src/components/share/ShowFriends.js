@@ -1,27 +1,16 @@
 import React from "react";
-import { useLDflexList } from "@solid/react";
-
-function GetFriends(src) {
-  const items = useLDflexList(src)
-    .filter(() => true)
-    .slice(0, Infinity)
-    .map(
-      (item, index) =>
-        <li name="listFriend" key={index}>
-          {`${item}`}
-          <input type="checkbox" name="amigo">
-          </input>
-        </li>
-    );
-
-  return items;
-}
-
+import List from "./List";
 
 export default function ShowFriends() {
   return (
-    <div className="overflow">
-      <form action="/action_page.php">
+   
+      <List src="user.friends" />
+   
+  );
+};
+
+
+/* <form action="/action_page.php">
         <div>
           <input type="checkbox" id="http:amigo1" value="http:amigo1" />
           <label for="http:amigo1"> amigo 1</label>
@@ -34,7 +23,4 @@ export default function ShowFriends() {
           <input type="checkbox" id="http:amigo3" value="http:amigo3" />
           <label for="http:amigo3"> amigo 3</label>
         </div>
-      </form>
-    </div>
-  );
-};
+      </form> */

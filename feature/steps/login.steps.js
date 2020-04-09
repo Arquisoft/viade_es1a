@@ -17,29 +17,36 @@ defineFeature(feature, test => {
         given('Un usuario intenta iniciar sesion', async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
+
+            
             
             await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
         
         });
 
-        when('introduce el WebId', async () => {
+        when('introduce el WebId y rellena el formulario', async () => {
 
             //
             //
     
             await page.evaluate(() => {
               let btns = [...document.querySelectorAll("button")];
-              btns.forEach(function (btn) {
+              btns.forEach(async function (btn) {
                 if (btn.innerText == "Identificate"){
                   btn.click();
                 }      
               });
             });
+            
+            const [popup] = await Promise.all([
+              new Promise(resolve => page.once('popup', resolve)),
+            ]);
+            
 
-            await page.waitForSelector(".sc-EHOje.cffgrt");
-            await page.type(".sc-EHOje.cffgrt", "https://adri13fa.solid.community/profile/card#me");
+            await popup.waitForSelector("input");
+            await popup.type("input", "https://adrifa13.solid.community/profile/card#me");
 
-            await page.evaluate(() => {
+            await popup.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(function (btn) {
                   if (btn.innerText == "Go"){
@@ -48,40 +55,33 @@ defineFeature(feature, test => {
                 });
               });
     
-            await page.waitForNavigation({
+            await popup.waitForNavigation({
               waitUntil: 'networkidle2'
             });
-    
-        });
 
-        and('rellena el formulario', async () => {
-  
-            await page.waitForSelector("[id='username']", {visible: true});
-            await page.type("[id='username']", "adri13fa");
+            await popup.waitForSelector('[id="username"]', {visible: true});
+            await popup.type('[id="username"]', "adrifa13");
       
-            await page.waitFor(500);
-            await page.waitForSelector("[id='password']", {visible: true});
-            await page.type("[id='password']", "Adrifa1309?", {visible: true});
+            await popup.waitFor(500);
+            await popup.waitForSelector('[id="password"]', {visible: true});
+            await popup.type('[id="password"]', "Adrifa1309?", {visible: true});
       
-            await page.waitFor(500);
+            await popup.waitFor(500);
       
-            await page.evaluate(() => {
+            await popup.evaluate(() => {
               let btns = [...document.querySelector(".form-horizontal.login-up-form").querySelectorAll("button")];
               btns.forEach(function (btn) {
                 if (btn.innerText == "Log In")
                   btn.click();
               });
             });
-        });
+            
+          });
 
         then('nos muestra la pagina', async () => {
   
-            await page.waitForNavigation({
-              waitUntil: 'networkidle2'
-            });
-  
             expect(page.url()).toBe("http://localhost:3000/");
-            expect(page).toContain('<section><div class="col-sm"><span>Estas logueado como: <a href="https://adrifa13.solid.community/profile/card#me">Adrian Fernandez Alonso</a></span></div></section>');
+            await page.waitForSelector('[id="estasLogueado"]', {visible: true})
   
         });
 

@@ -58,6 +58,7 @@
     "jest-cucumber": "^2.0.11",
     "jest-puppeteer": "^4.4.0",
     "puppeteer": "^2.1.1",
+    "puppeteer-screenshot-tester": "^1.1.1",
     "react-test-renderer": "^16.13.1",
     "shx": "^0.3.2"
   }

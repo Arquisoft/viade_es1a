@@ -81,7 +81,8 @@ defineFeature(feature, test => {
         then('nos muestra la pagina', async () => {
   
             expect(page.url()).toBe("http://localhost:3000/");
-            await page.waitForSelector('[id="estasLogueado"]', {visible: true})
+            await page.waitForSelector('[id="estasLogueado"]', {visible: true});
+            await browser.close();
   
         });
 

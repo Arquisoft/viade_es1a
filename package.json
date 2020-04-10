@@ -33,7 +33,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "node scripts/test.js --coverage",
-    "test:e2e": "jest -c jest-cucumber.config.js --detectOpenHandles --coverage",
+    "test:e2e": "jest -c jest-cucumber.config.js --coverage --detectOpenHandles ",
     "docs": "shx rm -rf build/docs && asciidoctor -D build/docs -a imagesdir=./images -r asciidoctor-diagram src/docs/index.adoc && shx cp -R src/docs/images build/docs",
     "eject": "react-scripts eject"
   },

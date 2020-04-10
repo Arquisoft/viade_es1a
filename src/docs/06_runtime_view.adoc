@@ -40,32 +40,12 @@ Solid -> Viade1a:Mensaje guardada
 ----
 @startuml
 
-
-
 actor Usuario
-collections Interfaz_Grafica
-collections Logica_de_negocio
-boundary LeafletApi
-collections Persistencia
-database Pod
+Usuario -> Viade1a:Selecciona ruta
 
-Usuario -> Interfaz_Grafica: Click en la ruta
-activate Interfaz_Grafica
-Interfaz_Grafica -> Logica_de_negocio: Pedir ruta (id)
-activate Logica_de_negocio
-Logica_de_negocio -> Persistencia: Pedir ruta (id)
-activate Persistencia
-Persistencia -> Pod: Pedir Ruta (id)
-Pod -> Persistencia: Devolver ruta (JSON)
-Persistencia -> Logica_de_negocio : Devolver ruta (JSON)
-deactivate Persistencia
-Logica_de_negocio -> Logica_de_negocio : Parser (JSON a Object)
-Logica_de_negocio -> LeafletApi : Obtener mapa (Object)
-LeafletApi -> Logica_de_negocio : Mapa (Url)
-Logica_de_negocio -> Interfaz_Grafica : Mapa (Url)
-deactivate Logica_de_negocio
-Interfaz_Grafica -> Usuario : Mostrar mapa
-deactivate Interfaz_Grafica
+Viade1a -> Solid:Solicita la ruta al POD
+Solid -> Viade1a:Devuelve la ruta
+
 
 @enduml
 ----

@@ -3,11 +3,6 @@
 
 == Vista del bloque de construcción
 
-=== Nivel 1
-
-==== Sistema general de Whitebox
-=== Compartir ruta
-
 [plantuml,dia,png]
 ----
 @startuml
@@ -80,12 +75,4 @@ node "Tercer nivel Componente"{
 @enduml
 
 ----
-=== Nivel 2
 
-==== Viade
-
-
-
-=== Nivel 3
-
-N/A

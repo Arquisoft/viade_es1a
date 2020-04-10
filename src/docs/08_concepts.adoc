@@ -32,6 +32,6 @@ Gracias a los PODs los datos del usuario se almacenarán con un enfoque privado 
 === Conceptos de desarrollo
 * Build: Nuestra aplicación usará el paquete web NodeJS,npm para construir la aplicación.
 
-* Prueba: Utilizamos el framework Cucumber.js para probar nuestra aplicación.
+* Prueba: Utilizamos el framework Jest para probar nuestra aplicación.
 
 * Despliegue: Nuestra aplicación se desplegará utilizando páginas de gitHub.

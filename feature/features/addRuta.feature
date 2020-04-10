@@ -1,4 +1,4 @@
-Feature: Logearse
+Feature: Subir una ruta
  
 Scenario: Subir una ruta 
   Given Un usuario loggeado

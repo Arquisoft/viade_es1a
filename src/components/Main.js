@@ -17,11 +17,11 @@ class Main extends React.Component {
   render() {
 
     return (
-      <div className="App">
-        <div className="container">
+      <div className="App" data-testid="App">
+        <div className="container" data-testid="container">
           <LoggedOut>
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Iniciar sesión</h2>
+            <img src={logo} className="App-logo" alt="logo" data-testid="logo"/>
+            <h2 data-testid="IniciaSesion">Iniciar sesión</h2>
             <LoginButton/>
           </LoggedOut>
 

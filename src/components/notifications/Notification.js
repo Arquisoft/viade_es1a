@@ -5,6 +5,7 @@ import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
 import Button from "../basics/BasicButton";
 import { useWebId } from "@solid/react";
+import "../../static/css/nav.css";
 
 
 
@@ -72,11 +73,12 @@ const NotificationHook = () => {
                     <img src={campanita} className="Campanita-ico" alt="ico" />
                     <a href={this.state.inboxUrl}>Notificaciones recibidas</a>: {this.state.nNotifications}
                     <Button
-                        class="btn"
+                        class="btnNtf"
                         text="Refrescar notificaciones"
                         disabled={false}
                         onClick={() => this.updateNotifications()}
                     />
+                    
                 </p>
             );
         }

@@ -1,0 +1,70 @@
+.nav{
+    height: 5%;
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+.notification{
+    position: absolute;
+    top:-3%;
+    bottom:0;
+    right:0;
+    left:66%;
+}
+.btnNtf{
+    
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:65%;
+    width: 18%;
+    height: 5%;
+   
+    color: #565656;
+   
+    border: solid 2px #a4fa1a;
+   
+    border-radius: 4px;
+   
+    background: #fff;
+}
+
+.Campanita-ico{
+    width:3%;
+    min-width: 20px;
+    max-width: 50px; 
+  }
+
+.logout{
+
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:85%;
+    width: 3%;
+    height: 4%;
+    width: 2%;
+   
+    min-width: 280px;
+    /*max-width: 400px;*/
+   
+    color: #565656;
+   
+    padding: 8px;
+   
+    font-size: 14px;
+   
+    font-weight: bold;
+   
+    border: solid 2px #a4fa1a;
+   
+    border-radius: 4px;
+   
+    background: #fff;
+   
+    cursor: pointer;
+}

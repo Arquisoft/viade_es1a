@@ -2,7 +2,8 @@ import React from "react";
 import { observer } from "mobx-react";
 import { LoggedOut, LoggedIn } from "@solid/react";
 
-import "../static/css/login.css";
+import "../static/css/nav.css";
+import "../static/css/Mapa.css"
 import logo from "../static/images/ViaDe.svg";
 import User from "./login/User";
 import LoginButton from "./login/LoginButton";
@@ -17,7 +18,6 @@ class Main extends React.Component {
   render() {
 
     return (
-      <div className="App">
         <div className="container">
           <LoggedOut>
             <img src={logo} className="App-logo" alt="logo" />
@@ -26,15 +26,17 @@ class Main extends React.Component {
           </LoggedOut>
 
           <LoggedIn>
-            <User />
-            <Map />
+            <div className = "nav">
+              <User />
+              <div className = "notification"><Notification /></div>
+              <LoginButton />
+            </div>
+            <div className = "Mapa"><Map /></div>
             <UploadToPod />
-            <Notification />
             <Share />
-            <LoginButton />
+            
           </LoggedIn>
         </div>
-      </div>
     );
   }
 }

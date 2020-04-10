@@ -1,11 +1,11 @@
 import React from "react";
-import "../../static/css/login.css";
+import "../../static/css/nav.css";
 import { useWebId, Value } from "@solid/react";
 
 export const User = () => {
   return (
     <section>
-      <div className = "nav">
+      <div>
         <span className>Bienvenido: <a href={useWebId()}><Value src="user.name"/></a></span>
       </div>
     </section>

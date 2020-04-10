@@ -6,16 +6,6 @@ body, html, #root, .app, .container {
   
   }
   
-  .nav{
-    border-style: solid;
-    border-color: #a4fa1a;
-    border-radius: 5px;
-    height: 5%;
-    font-size: 28px;
-    padding-block: 2%;
-    
-  }
-  
   
   .container {
   
@@ -91,30 +81,6 @@ body, html, #root, .app, .container {
   
   }
   
-  .btn {
-  
-   width: 100%;
-  
-   min-width: 280px;
-   /*max-width: 400px;*/
-  
-   color: #565656;
-  
-   padding: 12px;
-  
-   font-size: 14px;
-  
-   font-weight: bold;
-  
-   border: solid 2px #a4fa1a;
-  
-   border-radius: 4px;
-  
-   background: #fff;
-  
-   cursor: pointer;
-  
-  }
 
   .btn-list {
   
@@ -139,11 +105,7 @@ textarea{
   resize: none;
 }
 
-.Campanita-ico{
-  width:3%;
-  min-width: 20px;
-  max-width: 50px; 
-}
+
 
 /*
 div{

@@ -9,4 +9,14 @@ describe('ImputField', () => {
   test('renders without crashing', () => {
     expect(container).toBeTruthy();
   });
+
+  test('Los elementos estan presentes', () => {
+    const { getByTestId } = render(<ImputField/>);
+    expect(getByTestId("input")).toBeTruthy();
+  });
+
+  test('Los elementos se pueden clicar', () => {
+      const { getByTestId } = render(<ImputField/>);
+      getByTestId("input").click();
+  });
 });

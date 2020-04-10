@@ -45,7 +45,8 @@ export function filesToButtons(files, handleFiles) {
           class="btn btn-list"
           text={value.name}
           disabled={false}
-          onClick={() => readRoute(handleFiles, value.url)} />
+          onClick={() => readRoute(handleFiles, value.url)} 
+          id={value.name}/>
       </div>
     );
   }
@@ -83,7 +84,8 @@ class ListClass extends React.Component {
           class="btn"
           text="Actualizar lista"
           disabled={false}
-          onClick={() => this.updateList()} />
+          onClick={() => this.updateList()} 
+          />
         {this.state.lista}
       </div>
     );

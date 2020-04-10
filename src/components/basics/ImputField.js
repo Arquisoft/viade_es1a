@@ -10,6 +10,7 @@ class ImputField extends React.Component {
           placeholder={this.props.placeholder}
           value={this.props.value}
           onChange={(e) => this.props.onChange(e.target.value)}
+          data-testid="input"
         />
       </div>
     );

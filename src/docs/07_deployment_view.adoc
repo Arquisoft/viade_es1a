@@ -2,5 +2,70 @@
 
 
 == Vista de implementacion
+Nuestra aplicación se puede usar en cualquiera de los principales navegadores, siempre que se disponga dee un ordenador con conexión a Internet estable y un POD que será donde se almacenan los datos de la ruta. 
 
-N/A
+=== Infraestructura Nivel 1
+[plantuml,Infra,png]
+----
+@startuml
+
+node "OrdenadorA" {
+  node "NavegadorA" {
+   NavegadorA --> [Github]:HTTP
+
+}
+}
+ node "OrdenadorB" {
+  node "NavegadorB" {
+   NavegadorB --> [Github]:HTTP
+
+}
+}
+
+node "Viade1a" {
+    Viade1a --> [POD]:Accede
+
+  node "index" {
+        index -up-> [Github]:Despliegue
+
+}
+  node "Componentes React" {
+}
+}
+node "Github" {
+  node "Github Pages" {
+ 
+}
+}
+
+
+node "Solid" {
+  node "POD" {
+node "Datos Usuario" {
+
+}
+
+}
+}
+
+
+
+
+
+
+
+
+@enduml
+----
+|===
+
+|Entidad|Contexto
+|Solid|El servidor que contiene los PODs de los usuarios
+|Navegador|Navegador que permite el acceso a la Web
+|Viade1a|Nuestra aplicación desarrollada en React en la que se interectuará
+|GitHub Pages|Servicio de alojamiento web donde desplegaremos nuestra aplicación
+|Ordenador|Dispositivo que se usa para conectar con nuestra aplicación
+|GitHub|Plataforma para alojar nuestro utilizando el sistema de control de versiones Git
+|POD|Almacenamiento descentralizado de aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos
+
+|===

@@ -5,7 +5,7 @@ export const User = () => {
   return (
     <section>
       <div className="col-sm">
-        <span>Estas logueado como: <a href={useWebId()}><Value src="user.name"/></a></span>
+        <span id="estasLogueado">Estas logueado como: <a href={useWebId()}><Value src="user.name"/></a></span>
       </div>
     </section>
   );

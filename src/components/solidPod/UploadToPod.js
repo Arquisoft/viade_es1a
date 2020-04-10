@@ -25,7 +25,7 @@ export const UploadHook = () => {
         render() {
             return (
                 <ReactFileReader handleFiles={this.handleFiles} fileTypes={".geojson"}>
-                    <button className="btn">Subir Json a Solid</button>
+                    <button className="btn" data-testid="subirjson">Subir Json a Solid</button>
                 </ReactFileReader>
             );
         }

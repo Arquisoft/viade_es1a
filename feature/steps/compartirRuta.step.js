@@ -30,7 +30,7 @@ defineFeature((feature, test) => {
               });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once("popup", resolve)),
+                new Promise((resolve) => page.once("popup", resolve)),
               ]);
               
   
@@ -88,8 +88,9 @@ defineFeature((feature, test) => {
               await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(function (btn) {
-                  if (btn.innerText == "Enviar a amigos")
+                  if (btn.innerText == "Enviar a amigos"){
                     btn.click();
+                  }
                 });
               });
             

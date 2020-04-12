@@ -14,7 +14,7 @@ defineFeature((feature, test) => {
     });
 
     test("Refrescar notificaciones", ({ given, when, then}) => {
-        given('Un usuario con la sesion iniciada', async () => {
+        given("Un usuario con la sesion iniciada", async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
@@ -93,6 +93,6 @@ defineFeature((feature, test) => {
         });
 
 
-    })
+    });
     
 });

@@ -30,7 +30,7 @@ defineFeature((feature, test) => {
               });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once("popup", resolve)),
+                new Promise((resolve) => page.once("popup", resolve)),
               ]);
               
   
@@ -69,7 +69,7 @@ defineFeature((feature, test) => {
               });
         });
 
-        when('selecciona una ruta', async () => {
+        when("selecciona una ruta", async () => {
             await page.waitFor(1000);
 
             await page.evaluate(() => {
@@ -114,6 +114,6 @@ defineFeature((feature, test) => {
         });
 
 
-    })
+    });
     
 });

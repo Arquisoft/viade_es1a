@@ -30,7 +30,7 @@ defineFeature((feature, test) => {
               });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once("popup", resolve)),
+                new Promise((resolve) => page.once("popup", resolve)),
               ]);
               
   
@@ -93,6 +93,6 @@ defineFeature((feature, test) => {
         });
 
 
-    })
+    });
     
 });

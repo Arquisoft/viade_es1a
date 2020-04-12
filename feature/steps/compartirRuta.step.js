@@ -1,4 +1,4 @@
-import 'jest';
+import "jest";
 
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
@@ -47,7 +47,7 @@ defineFeature(feature, test => {
                 });
       
               await popup.waitForNavigation({
-                waitUntil: 'networkidle2'
+                waitUntil: "networkidle2"
               });
   
               await popup.waitForSelector('[id="username"]', {visible: true});
@@ -99,8 +99,9 @@ defineFeature(feature, test => {
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(function (btn) {
-                  if (btn.innerText == "Refrescar notificaciones")
+                  if (btn.innerText == "Refrescar notificaciones"){
                     btn.click();
+                  }
                 });
               });
 

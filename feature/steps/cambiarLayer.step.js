@@ -1,4 +1,4 @@
-import 'jest';
+import "jest";
 
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
@@ -86,7 +86,7 @@ defineFeature((feature, test) => {
         then('se cambia el mapa', async () => {
             await page.waitForSelector('[id="map"]', {visible: true});
             await page.waitFor(1000);
-            await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot2.png'});
+            await page.screenshot({path: "src/components/tests/screenshots/cambiarLayer_Screenshot2.png"});
             expect(page.url()).toBe("http://localhost:3000/");
 
             await browser.close();

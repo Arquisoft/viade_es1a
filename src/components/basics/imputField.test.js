@@ -15,7 +15,7 @@ describe('ImputField', () => {
     expect(getByTestId("input")).toBeTruthy();
   });
 
-  test('Los elementos se pueden clicar', () => {
+  test("Los elementos se pueden clicar", () => {
       const { getByTestId } = render(<ImputField/>);
       getByTestId("input").click();
   });

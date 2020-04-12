@@ -6,13 +6,14 @@ const feature = loadFeature('./feature/features/refrescar.feature');
 const puppeteer = require('puppeteer');
 let browser = null;
 let page = null;
+let jest;
 
-defineFeature(feature, test => {
+defineFeature((feature, test) => {
     beforeEach(async () => {
         jest.setTimeout(1200000);
     });
 
-    test('Refrescar notificaciones', ({ given, when, then}) => {
+    test("Refrescar notificaciones", ({ given, when, then}) => {
         given('Un usuario con la sesion iniciada', async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
@@ -46,11 +47,11 @@ defineFeature(feature, test => {
                 });
       
               await popup.waitForNavigation({
-                waitUntil: 'networkidle2'
+                waitUntil: "networkidle2"
               });
   
               await popup.waitForSelector('[id="username"]', {visible: true});
-              await popup.type("[id="username"]", "adrifa13");
+              await popup.type('[id="username"]', "adrifa13");
         
               await popup.waitFor(500);
               await popup.waitForSelector('[id="password"]', {visible: true});
@@ -93,4 +94,4 @@ defineFeature(feature, test => {
 
     })
     
-})
+});

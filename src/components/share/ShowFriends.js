@@ -43,4 +43,4 @@ function ShowFriends({ src, enviar }) {
     return container ? container(items) : items;
 }
 
-export default ShowFriends
+export default ShowFriends;

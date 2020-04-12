@@ -23,7 +23,7 @@ defineFeature((feature, test) => {
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(async function (btn) {
-                  if (btn.innerText == "Identificate"){
+                  if (btn.innerText === "Identificate"){
                     btn.click();
                   }      
                 });
@@ -40,7 +40,7 @@ defineFeature((feature, test) => {
               await popup.evaluate(() => {
                   let btns = [...document.querySelectorAll("button")];
                   btns.forEach(function (btn) {
-                    if (btn.innerText == "Go"){
+                    if (btn.innerText === "Go"){
                       btn.click();
                     }      
                   });
@@ -75,7 +75,7 @@ defineFeature((feature, test) => {
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(async function (btn) {
-                  if (btn.innerText == "Desconectar"){
+                  if (btn.innerText === "Desconectar"){
                     btn.click();
                   }      
                 });

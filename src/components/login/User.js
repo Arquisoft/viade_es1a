@@ -6,7 +6,7 @@ export const User = () => {
   return (
     <section>
       <div>
-        <span className>Bienvenido: <a href={useWebId()}><Value src="user.name"/></a></span>
+        <span className = "user">Bienvenido: <a href={useWebId()}><Value src="user.name"/></a></span>
       </div>
     </section>
   );

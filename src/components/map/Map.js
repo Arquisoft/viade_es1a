@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Button from "../basics/BasicButton";
 import MapList from "../solidPod/MapList";
 import properties from "../commons/Properties";
+import "../../static/css/map.css";
 
 const Wrapper = styled.div`
     width: 900px;
@@ -58,7 +59,7 @@ class Map extends React.Component {
 
     render() {
         return (
-            <div className="Map">
+            <div className="map">
                 <Button
                     class="btn"
                     text="Cambiar layer"

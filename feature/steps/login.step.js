@@ -8,7 +8,7 @@ const puppeteer = require('puppeteer')
 let browser = null;
 let page = null;
 
-defineFeature(feature, test => {
+defineFeature((feature, test) => {
     beforeEach(async () => {
         jest.setTimeout(1200000);
     });
@@ -24,7 +24,7 @@ defineFeature(feature, test => {
         
         });
 
-        when('introduce el WebId y rellena el formulario', async () => {
+        when("introduce el WebId y rellena el formulario", async () => {
 
             //
             //
@@ -39,7 +39,7 @@ defineFeature(feature, test => {
             });
             
             const [popup] = await Promise.all([
-              new Promise(resolve => page.once('popup', resolve)),
+              new Promise((resolve) => page.once('popup', resolve)),
             ]);
             
 
@@ -78,7 +78,7 @@ defineFeature(feature, test => {
             
           });
 
-        then('nos muestra la pagina', async () => {
+        then("nos muestra la pagina", async () => {
   
             expect(page.url()).toBe("http://localhost:3000/");
             await page.waitForSelector('[id="estasLogueado"]', {visible: true});

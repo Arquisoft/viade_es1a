@@ -62,8 +62,9 @@ defineFeature(feature, test => {
               await popup.evaluate(() => {
                 let btns = [...document.querySelector(".form-horizontal.login-up-form").querySelectorAll("button")];
                 btns.forEach(function (btn) {
-                  if (btn.innerText == "Log In")
+                  if (btn.innerText == "Log In"){
                     btn.click();
+                  }
                 });
               });
         });
@@ -71,7 +72,7 @@ defineFeature(feature, test => {
         when('comparte una ruta', async () => {
             await page.waitFor(1000);
 
-            await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
+            await page.screenshot({path: "src/components/tests/screenshots/cambiarLayer_Screenshot1.png"});
 
             await page.waitForSelector('.input', {visible: true});
             await page.type(".input", "https://adrifa13.solid.community/private/rutas/prueba5.geojson");

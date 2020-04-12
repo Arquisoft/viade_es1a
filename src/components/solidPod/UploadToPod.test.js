@@ -16,7 +16,7 @@ describe('uploadToPod', ()=>{
         expect(getByTestId("subirjson")).toBeTruthy();
     });
 
-    test('Los elementos se pueden clicar', () => {
+    test("Los elementos se pueden clicar", () => {
         const { getByTestId } = render(<UploadToPod/>);
         getByTestId("subirjson").click();
     });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, getByText } from '@testing-library/react';
+import { render, getByText } from "@testing-library/react";
 import Map from './Map';
 
 describe('map', ()=>{

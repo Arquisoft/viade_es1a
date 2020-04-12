@@ -2,7 +2,7 @@ import "jest";
 
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
-const feature = loadFeature('./feature/features/addRuta.feature');
+const feature = loadFeature("./feature/features/addRuta.feature");
 const puppeteer = require('puppeteer');
 let browser = null;
 let page = null;
@@ -12,7 +12,7 @@ defineFeature(feature, test => {
         jest.setTimeout(1200000);
     });
 
-    test('Subir una ruta', ({ given, when, then}) => {
+    test("Subir una ruta", ({ given, when, then}) => {
         given('Un usuario loggeado', async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();

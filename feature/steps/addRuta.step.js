@@ -6,6 +6,7 @@ const feature = loadFeature("./feature/features/addRuta.feature");
 const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
+let jest;
 
 defineFeature((feature, test) => {
     beforeEach(async () => {
@@ -13,7 +14,7 @@ defineFeature((feature, test) => {
     });
 
     test("Subir una ruta", ({ given, when, then}) => {
-        given('Un usuario loggeado', async () => {
+        given("Un usuario loggeado", async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 

@@ -3,9 +3,10 @@ import "jest";
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
 const feature = loadFeature('./feature/features/cambiarLayer.feature');
-const puppeteer = require('puppeteer');
+const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
+let jest;
 
 defineFeature((feature, test) => {
     beforeEach(async () => {
@@ -29,7 +30,7 @@ defineFeature((feature, test) => {
               });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once('popup', resolve)),
+                new Promise(resolve => page.once("popup", resolve)),
               ]);
               
   
@@ -67,7 +68,7 @@ defineFeature((feature, test) => {
               });
         });
 
-        when('se pulsa el boton cambiar layer', async () => {
+        when("se pulsa el boton cambiar layer", async () => {
             await page.waitFor(1000);
 
             await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});

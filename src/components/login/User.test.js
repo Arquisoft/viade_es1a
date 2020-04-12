@@ -4,7 +4,7 @@ import { render } from "@testing-library/react";
 import User from './User';
 
 
-describe('user', ()=>{
+describe("user", ()=>{
     const { container } = render(<User/>);
 
     test('renders without crashing', () => {

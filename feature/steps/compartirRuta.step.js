@@ -2,8 +2,8 @@ import "jest";
 
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
-const feature = loadFeature('./feature/features/compartirRuta.feature');
-const puppeteer = require('puppeteer');
+const feature = loadFeature("./feature/features/compartirRuta.feature");
+const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
 let jest;

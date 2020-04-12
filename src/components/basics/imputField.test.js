@@ -6,7 +6,7 @@ import ImputField from "./ImputField";
 describe("ImputField", () => {
   const { container } = render(<ImputField/>);
   
-  test('renders without crashing', () => {
+  test("renders without crashing", () => {
     expect(container).toBeTruthy();
   });
 

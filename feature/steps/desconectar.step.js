@@ -1,6 +1,6 @@
 import "jest";
 
-import { defineFeature, loadFeature } from 'jest-cucumber';
+import { defineFeature, loadFeature } from "jest-cucumber";
 
 const feature = loadFeature("./feature/features/desconectar.feature");
 const puppeteer = require('puppeteer');
@@ -46,7 +46,7 @@ defineFeature((feature, test) => {
                 });
       
               await popup.waitForNavigation({
-                waitUntil: 'networkidle2'
+                waitUntil: "networkidle2"
               });
   
               await popup.waitForSelector('[id="username"]', {visible: true});
@@ -61,8 +61,9 @@ defineFeature((feature, test) => {
               await popup.evaluate(() => {
                 let btns = [...document.querySelector(".form-horizontal.login-up-form").querySelectorAll("button")];
                 btns.forEach(function (btn) {
-                  if (btn.innerText == "Log In")
+                  if (btn.innerText == "Log In"){
                     btn.click();
+                  }
                 });
               });
         });

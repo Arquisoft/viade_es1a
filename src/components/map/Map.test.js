@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import { render, getByText } from "@testing-library/react";
-import Map from './Map';
+import Map from "./Map";
 
 describe('map', ()=>{
     const { container } = render(<Map/>);

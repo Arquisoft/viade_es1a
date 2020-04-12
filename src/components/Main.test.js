@@ -4,10 +4,10 @@ import Main from './Main';
 
 afterAll(cleanup);
 
-describe("main", ()=>{
+describe("main", () => {
     const { container } = render(<Main/>);
 
-    test('renders without crashing', () => {
+    test("renders without crashing", () => {
         expect(container).toBeTruthy();
     });
 });

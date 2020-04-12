@@ -1,7 +1,7 @@
-import 'jest';
+import "jest";
 import React from 'react';
 import { render } from "@testing-library/react";
-import MapList from './MapList';
+import MapList from "./MapList";
 import {getFiles, readRoute, filesToButtons} from './MapList';
 
 const auth = require("solid-auth-client");

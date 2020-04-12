@@ -1,4 +1,4 @@
-import 'jest';
+import "jest";
 
 import { defineFeature, loadFeature } from 'jest-cucumber';
 

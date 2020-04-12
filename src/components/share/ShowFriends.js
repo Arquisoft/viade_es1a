@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useLDflexList } from "@solid/react";
 import Button from "../basics/BasicButton";
 
@@ -16,7 +16,7 @@ function getMarcados() {
 }
 
 function ShowFriends({ src, enviar }) {
-    let container = items => (
+    let container = (items) => (
         <div>
             <p>Seleccione amigos:</p>
             {items}

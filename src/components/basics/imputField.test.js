@@ -1,7 +1,7 @@
 import 'jest';
-import React from 'react';
+import React from "react";
 import { render } from "@testing-library/react";
-import ImputField from './ImputField';
+import ImputField from "./ImputField";
 
 describe('ImputField', () => {
   const { container } = render(<ImputField/>);
@@ -10,7 +10,7 @@ describe('ImputField', () => {
     expect(container).toBeTruthy();
   });
 
-  test('Los elementos estan presentes', () => {
+  test("Los elementos estan presentes", () => {
     const { getByTestId } = render(<ImputField/>);
     expect(getByTestId("input")).toBeTruthy();
   });

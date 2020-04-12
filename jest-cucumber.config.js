@@ -1,5 +1,5 @@
 module.exports = {
-    projects: ['ViaDe'],
+    projects: ["ViaDe"],
     verbose: true,
     resolver: "jest-pnp-resolver",
     preset: 'jest-puppeteer',

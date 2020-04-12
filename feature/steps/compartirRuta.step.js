@@ -6,6 +6,7 @@ const feature = loadFeature('./feature/features/compartirRuta.feature');
 const puppeteer = require('puppeteer');
 let browser = null;
 let page = null;
+let jest;
 
 defineFeature(feature, test => {
     beforeEach(async () => {
@@ -17,7 +18,7 @@ defineFeature(feature, test => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
-            await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
+            await page.goto("http://localhost:3000/", { waitUntil: "networkidle2"});
 
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
@@ -73,7 +74,7 @@ defineFeature(feature, test => {
             await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
 
             await page.waitForSelector('.input', {visible: true});
-            await page.type('.input', "https://adrifa13.solid.community/private/rutas/prueba5.geojson");
+            await page.type(".input", "https://adrifa13.solid.community/private/rutas/prueba5.geojson");
       
 
             await page.evaluate(() => {
@@ -93,7 +94,7 @@ defineFeature(feature, test => {
             
         });
 
-        then('se comparte', async () => {
+        then("se comparte", async () => {
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(function (btn) {

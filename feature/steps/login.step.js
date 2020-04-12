@@ -3,7 +3,7 @@ import 'jest';
 import { defineFeature, loadFeature } from 'jest-cucumber';
 import { givenName } from 'rdf-namespaces/dist/foaf';
 
-const feature = loadFeature('./feature/features/login.feature');
+const feature = loadFeature("./feature/features/login.feature");
 const puppeteer = require("puppeteer")
 let browser = null;
 let page = null;
@@ -14,7 +14,7 @@ defineFeature((feature, test) => {
     });
 
     test('Iniciar Sesion', ({ given, when, and, then}) => {
-        given('Un usuario intenta iniciar sesion', async () => {
+        given("Un usuario intenta iniciar sesion", async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
@@ -39,7 +39,7 @@ defineFeature((feature, test) => {
             });
             
             const [popup] = await Promise.all([
-              new Promise((resolve) => page.once('popup', resolve)),
+              new Promise((resolve) => page.once("popup", resolve)),
             ]);
             
 

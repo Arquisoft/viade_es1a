@@ -2,7 +2,7 @@ module.exports = {
     projects: ["ViaDe"],
     verbose: true,
     resolver: "jest-pnp-resolver",
-    preset: 'jest-puppeteer',
+    preset: "jest-puppeteer",
     testRegex: '(/feature/.*|(\\.|/)(feature))\\.[jt]sx?$',
     testTimeout: 30000,
     setupFiles: [

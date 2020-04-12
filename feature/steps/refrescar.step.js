@@ -82,7 +82,7 @@ defineFeature((feature, test) => {
             
         });
 
-        then('se actualiza', async () => {
+        then("se actualiza", async () => {
             await page.waitForSelector('[id="map"]', {visible: true});
             
             expect(page.url()).toBe("http://localhost:3000/");

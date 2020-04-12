@@ -12,8 +12,8 @@ defineFeature((feature, test) => {
         jest.setTimeout(1200000);
     });
 
-    test('Cambiar Layer', ({ given, when, then}) => {
-        given('Un usuario con la sesion iniciada', async () => {
+    test("Cambiar Layer", ({ given, when, then}) => {
+        given("Un usuario con la sesion iniciada", async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
@@ -46,7 +46,7 @@ defineFeature((feature, test) => {
                 });
       
               await popup.waitForNavigation({
-                waitUntil: 'networkidle2'
+                waitUntil: "networkidle2"
               });
   
               await popup.waitForSelector('[id="username"]', {visible: true});
@@ -83,7 +83,7 @@ defineFeature((feature, test) => {
             
         });
 
-        then('se cambia el mapa', async () => {
+        then("se cambia el mapa", async () => {
             await page.waitForSelector('[id="map"]', {visible: true});
             await page.waitFor(1000);
             await page.screenshot({path: "src/components/tests/screenshots/cambiarLayer_Screenshot2.png"});
@@ -96,4 +96,4 @@ defineFeature((feature, test) => {
 
     })
     
-})
+});

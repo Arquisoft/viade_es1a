@@ -8,12 +8,12 @@ let browser = null;
 let page = null;
 let jest;
 
-defineFeature(feature, test => {
+defineFeature((feature, test) => {
     beforeEach(async () => {
         jest.setTimeout(1200000);
     });
 
-    test('compartir ruta', ({ given, when, then}) => {
+    test("compartir ruta", ({ given, when, then}) => {
         given('Un usuario con la sesion iniciada', async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
@@ -74,7 +74,7 @@ defineFeature(feature, test => {
 
             await page.screenshot({path: "src/components/tests/screenshots/cambiarLayer_Screenshot1.png"});
 
-            await page.waitForSelector('.input', {visible: true});
+            await page.waitForSelector(".input", {visible: true});
             await page.type(".input", "https://adrifa13.solid.community/private/rutas/prueba5.geojson");
       
 
@@ -119,6 +119,6 @@ defineFeature(feature, test => {
         });
 
 
-    })
+    });
     
-})
+});

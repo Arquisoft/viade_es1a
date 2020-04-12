@@ -1,8 +1,8 @@
-import 'jest';
+import "jest";
 
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
-const feature = loadFeature('./feature/features/desconectar.feature');
+const feature = loadFeature("./feature/features/desconectar.feature");
 const puppeteer = require('puppeteer');
 let browser = null;
 let page = null;
@@ -12,8 +12,8 @@ defineFeature((feature, test) => {
         jest.setTimeout(1200000);
     });
 
-    test('Desconectar sesion', ({ given, when, then}) => {
-        given('Un usuario con la sesion iniciada', async () => {
+    test("Desconectar sesion", ({ given, when, then}) => {
+        given("Un usuario con la sesion iniciada", async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
@@ -29,7 +29,7 @@ defineFeature((feature, test) => {
               });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once('popup', resolve)),
+                new Promise(resolve => page.once("popup", resolve)),
               ]);
               
   
@@ -93,4 +93,4 @@ defineFeature((feature, test) => {
 
     })
     
-})
+});

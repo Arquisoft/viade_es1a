@@ -1,8 +1,8 @@
 import "jest";
-import React from 'react';
+import React from "react";
 import { render } from "@testing-library/react";
 import MapList from "./MapList";
-import {getFiles, readRoute, filesToButtons} from './MapList';
+import {getFiles, readRoute, filesToButtons} from "./MapList";
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
@@ -12,7 +12,7 @@ const fc = new FC(auth);
 describe("MapList", () => {
   const { container } = render(<MapList/>);
 
-  test('renders without crashing', () => {
+  test("renders without crashing", () => {
     expect(container).toBeTruthy();
   });
 

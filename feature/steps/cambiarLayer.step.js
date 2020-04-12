@@ -1,8 +1,8 @@
 import "jest";
 
-import { defineFeature, loadFeature } from 'jest-cucumber';
+import { defineFeature, loadFeature } from "jest-cucumber";
 
-const feature = loadFeature('./feature/features/cambiarLayer.feature');
+const feature = loadFeature("./feature/features/cambiarLayer.feature");
 const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
@@ -18,7 +18,7 @@ defineFeature((feature, test) => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
-            await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
+            await page.goto("http://localhost:3000/", { waitUntil: "networkidle2"});
 
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
@@ -71,7 +71,7 @@ defineFeature((feature, test) => {
         when("se pulsa el boton cambiar layer", async () => {
             await page.waitFor(1000);
 
-            await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
+            await page.screenshot({path: "src/components/tests/screenshots/cambiarLayer_Screenshot1.png"});
 
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];

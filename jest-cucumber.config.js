@@ -3,7 +3,7 @@ module.exports = {
     verbose: true,
     resolver: "jest-pnp-resolver",
     preset: "jest-puppeteer",
-    testRegex: '(/feature/.*|(\\.|/)(feature))\\.[jt]sx?$',
+    testRegex: "(/feature/.*|(\\.|/)(feature))\\.[jt]sx?$",
     testTimeout: 30000,
     setupFiles: [
       "react-app-polyfill/jsdom"

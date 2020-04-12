@@ -1,7 +1,7 @@
 import "jest";
-import React from 'react';
+import React from "react";
 import { render } from "@testing-library/react";
-import BasicButton from './BasicButton';
+import BasicButton from "./BasicButton";
 
 describe("BasicButton", () => {
   const { container } = render(<BasicButton/>);

@@ -1,6 +1,6 @@
 import "jest";
 
-import { defineFeature, loadFeature } from 'jest-cucumber';
+import { defineFeature, loadFeature } from "jest-cucumber";
 
 const feature = loadFeature("./feature/features/addRuta.feature");
 const puppeteer = require("puppeteer");
@@ -18,7 +18,7 @@ defineFeature((feature, test) => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
-            await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
+            await page.goto("http://localhost:3000/", { waitUntil: "networkidle2"});
 
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
@@ -30,7 +30,7 @@ defineFeature((feature, test) => {
               });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once('popup', resolve)),
+                new Promise(resolve => page.once("popup", resolve)),
               ]);
               
   
@@ -94,7 +94,7 @@ defineFeature((feature, test) => {
              
         });
 
-        then('nos añade la ruta', async () => {
+        then("nos añade la ruta", async () => {
             await page.waitForSelector('[id="map"]', {visible: true});
             
             expect(page.url()).toBe("http://localhost:3000/");

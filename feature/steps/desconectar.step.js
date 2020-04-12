@@ -3,9 +3,10 @@ import "jest";
 import { defineFeature, loadFeature } from "jest-cucumber";
 
 const feature = loadFeature("./feature/features/desconectar.feature");
-const puppeteer = require('puppeteer');
+const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
+let jest;
 
 defineFeature((feature, test) => {
     beforeEach(async () => {
@@ -17,7 +18,7 @@ defineFeature((feature, test) => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
-            await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
+            await page.goto("http://localhost:3000/", { waitUntil: "networkidle2"});
 
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
@@ -68,7 +69,7 @@ defineFeature((feature, test) => {
               });
         });
 
-        when('pulsa el boton de desconectar', async () => {
+        when("pulsa el boton de desconectar", async () => {
             await page.waitFor(500);
 
             await page.evaluate(() => {
@@ -82,9 +83,9 @@ defineFeature((feature, test) => {
               await page.waitFor(500);
         });
 
-        then('nos desconecta', async () => {
+        then("nos desconecta", async () => {
             await page.waitFor(500);
-            await page.waitForSelector('.container', {visible: true});
+            await page.waitForSelector(".container", {visible: true});
             expect(page.url()).toBe("http://localhost:3000/");
             
             await browser.close();

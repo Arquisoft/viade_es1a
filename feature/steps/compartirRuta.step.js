@@ -1,6 +1,6 @@
 import "jest";
 
-import { defineFeature, loadFeature } from 'jest-cucumber';
+import { defineFeature, loadFeature } from "jest-cucumber";
 
 const feature = loadFeature("./feature/features/compartirRuta.feature");
 const puppeteer = require("puppeteer");
@@ -14,7 +14,7 @@ defineFeature((feature, test) => {
     });
 
     test("compartir ruta", ({ given, when, then}) => {
-        given('Un usuario con la sesion iniciada', async () => {
+        given("Un usuario con la sesion iniciada", async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
@@ -30,7 +30,7 @@ defineFeature((feature, test) => {
               });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once('popup', resolve)),
+                new Promise(resolve => page.once("popup", resolve)),
               ]);
               
   
@@ -69,7 +69,7 @@ defineFeature((feature, test) => {
               });
         });
 
-        when('comparte una ruta', async () => {
+        when("comparte una ruta", async () => {
             await page.waitFor(1000);
 
             await page.screenshot({path: "src/components/tests/screenshots/cambiarLayer_Screenshot1.png"});
@@ -111,7 +111,7 @@ defineFeature((feature, test) => {
 
             await page.waitForSelector('[id="map"]', {visible: true});
             await page.waitFor(1000);
-            await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot2.png'});
+            await page.screenshot({path: "src/components/tests/screenshots/cambiarLayer_Screenshot2.png"});
             expect(page.url()).toBe("http://localhost:3000/");
 
             await browser.close();

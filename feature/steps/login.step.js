@@ -1,26 +1,27 @@
 import "jest";
 
-import { defineFeature, loadFeature } from 'jest-cucumber';
-import { givenName } from 'rdf-namespaces/dist/foaf';
+import { defineFeature, loadFeature } from "jest-cucumber";
+import { givenName } from "rdf-namespaces/dist/foaf";
 
 const feature = loadFeature("./feature/features/login.feature");
 const puppeteer = require("puppeteer")
 let browser = null;
 let page = null;
+let jest;
 
 defineFeature((feature, test) => {
     beforeEach(async () => {
         jest.setTimeout(1200000);
     });
 
-    test('Iniciar Sesion', ({ given, when, and, then}) => {
+    test("Iniciar Sesion", ({ given, when, and, then}) => {
         given("Un usuario intenta iniciar sesion", async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
             
             
-            await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
+            await page.goto("http://localhost:3000/", { waitUntil: "networkidle2"});
         
         });
 
@@ -56,7 +57,7 @@ defineFeature((feature, test) => {
               });
     
             await popup.waitForNavigation({
-              waitUntil: 'networkidle2'
+              waitUntil: "networkidle2"
             });
 
             await popup.waitForSelector('[id="username"]', {visible: true});

@@ -1,13 +1,13 @@
-import 'jest';
+import "jest";
 import React from "react";
 import { render, fireEvent, within } from "@testing-library/react";
 import UploadToPod from "./UploadToPod";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 
 describe("uploadToPod", () => {
     const { container } = render(<UploadToPod/>);
 
-    test('renders without crashing', () => {
+    test("renders without crashing", () => {
         expect(container).toBeTruthy();
     });
 

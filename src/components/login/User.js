@@ -1,5 +1,5 @@
 import React from "react";
-import "../../static/css/nav.css";
+import "../../static/css/app.css";
 import { useWebId, Value } from "@solid/react";
 
 export const User = () => {

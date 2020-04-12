@@ -5,7 +5,7 @@ import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
 import Button from "../basics/BasicButton";
 import { useWebId } from "@solid/react";
-import "../../static/css/nav.css";
+import "../../static/css/app.css";
 
 
 

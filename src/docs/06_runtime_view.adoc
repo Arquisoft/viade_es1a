@@ -36,7 +36,7 @@ Solid -> Viade1a:Mensaje guardada
 
 === Escenario Ver Ruta
 
-[plantuml,Sequence diagram,png]
+[plantuml,ver ruta,png]
 ----
 @startuml
 
@@ -50,35 +50,28 @@ Solid -> Viade1a:Devuelve la ruta
 @enduml
 ----
 
-=== Compartir ruta
+=== Compartir archivos
 
-[plantuml,compartir ruta,png]
+[plantuml,compartir arhivos,png]
 ----
 @startuml
 
 actor Usuario1
-Usuario1 -> Viade1a:Introducir URI archivo y amigo
 
-Viade1a -> Solid:Almacena Ruta privada en publica
-Solid -> Viade1a:Mensaje guardada
-Solid <- viade2:Accede a la ruta
+Usuario1 -> Viade1a:Introducir URI archivo y seleccionar amigos
+database Pod1
+
+Viade1a -> Pod1:Almacena Ruta privada en publica
+Pod1 -> Viade1a:Mensaje confirmación
+
+database Pod2
+Viade1a -> Pod2:Añade notificación
+viade2 <- Usuario2: Acceder aplicación
+Pod2 <- viade2:Accede al POD
+
+viade2 <- Pod2: Muestra Numero notificaciones
 actor Usuario2
-Usuario2 <- viade2: Muestra ruta
-@enduml
-----
-=== Compartir con grupos
+viade2 -> Usuario2: Ver Notificación
 
-[plantuml,compartir grupos,png]
-----
-@startuml
-
-actor Usuario1
-Usuario1 -> Viade1a:Introducir URI archivo y amigo
-
-Viade1a -> Solid:Almacena Ruta privada en publica
-Solid -> Viade1a:Mensaje guardada
-Solid <- viade2:Accede a la ruta
-
-Grupo <- viade2: Muestra ruta
 @enduml
 ----

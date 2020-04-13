@@ -76,3 +76,11 @@ viade2 -> Usuario2: Ver Notificación
 
 @enduml
 ----
+|===
+
+|Entidad|Contexto
+|Solid|El servidor que contiene los PODs de los usuarios
+|Viade|Aplicación desarrollada en React en la que se interectuará
+|POD|Almacenamiento descentralizado de aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos
+|Usuario|Accede a la aplicación mediante un navegador
+|===

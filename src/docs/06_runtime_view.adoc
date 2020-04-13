@@ -25,9 +25,10 @@ Usuario -> Viade1a: Gestión de rutas
 
 actor Usuario
 Usuario -> Viade1a:Subir JSON
+database Solid
 
 Viade1a -> Solid:Almacenar Ruta
-Solid -> Viade1a:Mensaje guardada
+ Solid -> Viade1a:Mensaje guardada
 
 
 @enduml
@@ -42,7 +43,7 @@ Solid -> Viade1a:Mensaje guardada
 
 actor Usuario
 Usuario -> Viade1a:Selecciona ruta
-
+database Solid
 Viade1a -> Solid:Solicita la ruta al POD
 Solid -> Viade1a:Devuelve la ruta
 
@@ -54,10 +55,10 @@ Solid -> Viade1a:Devuelve la ruta
 
 [plantuml,compartir arhivos,png]
 ----
-@startuml
-
 actor Usuario1
 
+Pod1 -> Viade1a :Cargar Lista amigos
+Viade1a -> Usuario1:Listar Amigos
 Usuario1 -> Viade1a:Introducir URI archivo y seleccionar amigos
 database Pod1
 

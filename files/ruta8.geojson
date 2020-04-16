@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "id": "way/32151694",
+        "properties": {
+            "highway": "residential",
+            "maxspeed": "20 mph",
+            "name": "King Street",
+            "id": "way/32151694",
+            "dst:person:id": 11063,
+            "dst:person:category": "person",
+            "dst:person:shortName": "king",
+            "dst:person:longName": "alexander king",
+            "dst:person:birthYear": "1558",
+            "dst:person:deathYear": "1603",
+            "dst:foundBefore": false
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-1.0912747, 50.792137],
+                [-1.0914787, 50.7921644],
+                [-1.0923257, 50.7922702],
+                [-1.0928406, 50.7923387],
+                [-1.0934092, 50.7924094],
+                [-1.0940122, 50.7924708]
+            ]
+        }
+    }
+	]
+}

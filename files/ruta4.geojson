@@ -1,0 +1,31 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "id": "way/5119265",
+        "properties": {
+            "highway": "residential",
+            "maxspeed": "20mph",
+            "name": "Astley Street",
+            "id": "way/5119265",
+            "dst:person:id": 583,
+            "dst:person:category": "person",
+            "dst:person:shortName": "astley",
+            "dst:person:longName": "john astley",
+            "dst:person:birthYear": "1509",
+            "dst:person:deathYear": "1558",
+            "dst:foundBefore": false
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-1.0934092, 50.7924094],
+                [-1.0933459, 50.792693],
+                [-1.0933442, 50.7928288],
+                [-1.0933299, 50.7932731],
+                [-1.0933377, 50.7935553]
+            ]
+        }
+    }
+	]
+}

@@ -1,9 +1,9 @@
 module.exports = {
-    projects: ['ViaDe'],
+    projects: ["ViaDe"],
     verbose: true,
     resolver: "jest-pnp-resolver",
-    preset: 'jest-puppeteer',
-    testRegex: '(/feature/.*|(\\.|/)(feature))\\.[jt]sx?$',
+    preset: "jest-puppeteer",
+    testRegex: "(/feature/.*|(\\.|/)(feature))\\.[jt]sx?$",
     testTimeout: 30000,
     setupFiles: [
       "react-app-polyfill/jsdom"

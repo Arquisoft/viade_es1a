@@ -3,27 +3,76 @@
 
 == Vista del bloque de construcción
 
-=== Nivel 1
+[plantuml,dia,png]
+----
+@startuml
+node "Primer nivel"{
+actor Usuario
+database Pod
 
-==== Sistema general de Whitebox
+Usuario ->  [Viade] :Cargar ruta
+[Viade] ->  Usuario :Mostrar ruta
+Pod -> [Viade] :Leer Rutas
+[Viade]  -right-> Pod :Guardar Rutas
+Viade --> [Segundo nivel]
 
-image:Figura5.1.png["Diagrama nivel 1",float="left",align="center"] +
-Figura 5.1
+}
+node "Segundo nivel"{
+  
+node "Test"{
+  [Jest]
+  [Puppeteer]
+  
+  }
+node "App"{
+   
+  [Componentes] --> [Tercer nivel Componente]
+ [Modelos] --> [Tercer nivel Modelo]
+  [Servicios] --> [Tercer nivel Servicio]
 
-|===
-| **Nombre** | **Responsable de:**
-| _Caja 1_ | _Aplicación encargada de cumplir con los requisitos propuestos_
-| _Caja 2_ | _Pods donde se guardará la información del dueño correspondiente_
-| _Flecha 1_ | _Representa la interacción del usuario con la aplicación mediante la interfaz gráfica de esta_
-| _Flecha 2_ | _Representa el envío de información, bien para el guardado en el caso de apuntar a un pod o del mostrado en caso de apuntar a la aplicación_
-| _Flecha 3_ | _Representa la solicitud de información desde una aplicación a un pod, ya sea el del usuario de la aplicación o de un amigo_
+}
+}
+node "Tercer nivel Modelo"{
+  
 
-|===
 
-=== Level 2
+   [Ruta]
+    [Perfil]
+    [Amigo]
+    [Sesión]
+  
+  
 
-N/A
+}
 
-=== Level 3
+node "Tercer nivel Servicio"{
+  
 
-N/A
+
+ 
+    [Login]
+    [Registro]
+    [Añadir Ruta]
+    [Añadir Amigo]
+    [Listar Amigos]
+ 
+  
+  
+
+}
+node "Tercer nivel Componente"{
+  
+
+
+  
+    [Mapa]
+    [Notificación]
+    [Share]
+    
+  
+  
+}
+@enduml
+
+----
+

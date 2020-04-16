@@ -1,0 +1,29 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "id": "way/5096858",
+        "properties": {
+            "highway": "residential",
+            "maxspeed": "20 mph",
+            "name": "Steel Street",
+            "id": "way/5096858",
+            "dst:person:id": 29673,
+            "dst:person:category": "person",
+            "dst:person:shortName": "steel",
+            "dst:person:longName": "samuel steel",
+            "dst:person:birthYear": "1882",
+            "dst:person:deathYear": "1961",
+            "dst:foundBefore": false
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-1.0952689, 50.7908282],
+                [-1.0940406, 50.7907387],
+                [-1.0940047, 50.7907164]
+            ]
+        }
+    }
+	]
+}

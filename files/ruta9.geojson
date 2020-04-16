@@ -1,0 +1,28 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "id": "way/71406301",
+        "properties": {
+            "highway": "residential",
+            "name": "Diamond Street",
+            "source": "survey",
+            "id": "way/71406301",
+            "dst:person:id": 23763,
+            "dst:person:category": "person",
+            "dst:person:shortName": "diamond",
+            "dst:person:longName": "charles diamond",
+            "dst:person:birthYear": "1858",
+            "dst:person:deathYear": "1934",
+            "dst:foundBefore": false
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-1.0950612, 50.7902086],
+                [-1.0953699, 50.790231]
+            ]
+        }
+    }
+    ]
+}

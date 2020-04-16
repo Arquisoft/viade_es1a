@@ -1,0 +1,30 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "id": "way/5096857",
+        "properties": {
+            "highway": "residential",
+            "maxspeed": "20 mph",
+            "name": "Gold Street",
+            "id": "way/5096857",
+            "dst:person:id": 24776,
+            "dst:person:category": "person",
+            "dst:person:shortName": "gold",
+            "dst:person:longName": "charles gold",
+            "dst:person:birthYear": "1837",
+            "dst:person:deathYear": "1924",
+            "dst:foundBefore": false
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-1.0959948, 50.7899525],
+                [-1.0954203, 50.7899155],
+                [-1.0953904, 50.7899132],
+                [-1.0942425, 50.7898294]
+            ]
+        }
+    }
+    ]
+}

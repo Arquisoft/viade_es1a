@@ -1,12 +1,12 @@
-import 'jest';
-import React from 'react';
-import { render } from '@testing-library/react';
-import Notification from './Notification';
+import "jest";
+import React from "react";
+import { render } from "@testing-library/react";
+import Notification from "./Notification";
 
-describe('notification', ()=>{
+describe("notification", () => {
     //const { container } = render(<Notification/>);
 
-    test('renders without crashing', () => {
+    test("renders without crashing", () => {
         expect(true).toBeTruthy();
     });
 });

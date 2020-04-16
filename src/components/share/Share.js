@@ -7,6 +7,7 @@ import auth from "solid-auth-client";
 import properties from "../commons/Properties";
 import request from "request";
 import ShowFriends from "./ShowFriends";
+import { useTranslation } from 'react-i18next';
 
 async function sendNotification(userWebId, friendWebId, fileId) {
     request({
@@ -34,6 +35,8 @@ async function sendNotification(userWebId, friendWebId, fileId) {
 export const Hook = () => {
     let folderId = String(String(useWebId()).replace(properties.profile, properties.myFolder));
     let userId = useWebId();
+    const { t, i18n } = useTranslation();
+
 
 
     class Share extends React.Component {
@@ -95,8 +98,8 @@ export const Hook = () => {
             return (
                 <div className="LoginForm">
 
-                    <h2>Compartir ruta</h2>
-                    <p>Introducir URI del archivo:</p>
+                    <h2>{t('Compartir.1')}</h2>
+                    <p>{t('URI.1')}</p>
                     <InputField
                         type="text"
                         value={this.state.archivo ? this.state.archivo : ""}

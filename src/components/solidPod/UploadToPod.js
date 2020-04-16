@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 export const UploadHook = () => {
     let webid = String(String(useWebId()).replace(properties.profile, properties.myFolder));
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     class UploadToPod extends React.Component {
 

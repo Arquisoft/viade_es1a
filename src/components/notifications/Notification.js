@@ -36,7 +36,7 @@ async function getNNotifications() {
 }
 
 const NotificationHook = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     let webid = String(String(useWebId()).replace(properties.profile, properties.inbox));
 

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React, {  Suspense } from 'react'
 import ReactDOM from "react-dom";
 import "./static/css/index.css";
 //import * as serviceWorker from "./serviceWorker";

@@ -69,7 +69,7 @@ class ListClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      lista: (<p></p>)
+      lista: (<p>Actualizar lista</p>)
     };
     this.updateList = this.updateList.bind(this);
   }

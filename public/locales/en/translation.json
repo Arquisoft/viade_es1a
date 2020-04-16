@@ -1,0 +1,49 @@
+{
+    "Logueado":{
+        "1":"You are logged in as"
+    },
+    "Refrescar":{
+        "1":"Refresh notifications"
+    },
+    "Subir":{
+        "1":"Upload Json to Solid"
+    },
+    "Sesion":{
+        "1":"Log In"
+    }
+    ,
+    "Amigos":{
+        "1":"Select friends:"
+    },
+    "Notificaciones":{
+        "1":"Notifications received"
+    }
+    ,
+    "Compartir":{
+        "1":"Share route"
+    }
+    ,
+    "URI":{
+        "1":"Enter URI file:"
+    },
+    "Enviar":{
+        "1":"Send to friends"
+    }
+    ,
+    "SP":{
+        "1":"Spanish"
+    },
+    "EN":{
+        "1":"English"
+    },
+    "Layer":{
+        "1":"Change Layer"
+    }
+    ,
+    "Actualizar":{
+        "1":"Update list"
+    } ,
+    "Desconectar":{
+        "1":"Disconnect"
+    }
+}

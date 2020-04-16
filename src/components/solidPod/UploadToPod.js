@@ -4,9 +4,11 @@ import auth from "solid-auth-client";
 import ReactFileReader from "react-file-reader";
 import { useWebId } from "@solid/react";
 import properties from "../commons/Properties";
+import { useTranslation } from 'react-i18next';
 
 export const UploadHook = () => {
     let webid = String(String(useWebId()).replace(properties.profile, properties.myFolder));
+    const { t, i18n } = useTranslation();
 
     class UploadToPod extends React.Component {
 
@@ -25,7 +27,7 @@ export const UploadHook = () => {
         render() {
             return (
                 <ReactFileReader handleFiles={this.handleFiles} fileTypes={".geojson"}>
-                    <button className="btn" data-testid="subirjson">Subir Json a Solid</button>
+                    <button className="btn" data-testid="subirjson">{t('Subir.1')}</button>
                 </ReactFileReader>
             );
         }

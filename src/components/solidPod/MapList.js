@@ -1,13 +1,25 @@
-import React from "react";
+import React, { Component, Suspense } from 'react';
 import Button from "../basics/BasicButton";
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
+import { useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
 const fc = new FC(auth);
 
+class LegacyComponentClass extends Component {
+  render() {
+    const { t } = this.props;
+
+    return (
+      <div>{t('Actualizar.1')}</div>
+    )
+  }
+}
+const MyComponent = withTranslation()(LegacyComponentClass)
 export async function getFiles() {
   let session = await auth.currentSession();
 
@@ -38,6 +50,7 @@ async function readRoute(handleFiles, URL) {
 
 export function filesToButtons(files, handleFiles) {
   const buttons = [];
+
   for (const [index, value] of files.entries()) {
     buttons.push(
       <div class="btn-list" key={index}>
@@ -57,7 +70,7 @@ class ListClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      lista: (<p>Actualice la lista</p>)
+      lista: (<p></p>)
     };
     this.updateList = this.updateList.bind(this);
   }
@@ -82,7 +95,7 @@ class ListClass extends React.Component {
       <div>
         <Button
           class="btn"
-          text="Actualizar lista"
+          text=<MyComponent></MyComponent>
           disabled={false}
           onClick={() => this.updateList()} 
           />

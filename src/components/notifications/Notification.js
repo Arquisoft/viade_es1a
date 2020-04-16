@@ -5,6 +5,8 @@ import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
 import Button from "../basics/BasicButton";
 import { useWebId } from "@solid/react";
+import { useTranslation } from 'react-i18next';
+
 
 
 
@@ -34,6 +36,8 @@ async function getNNotifications() {
 }
 
 const NotificationHook = () => {
+    const { t, i18n } = useTranslation();
+
     let webid = String(String(useWebId()).replace(properties.profile, properties.inbox));
 
     class Notification extends React.Component {
@@ -65,15 +69,17 @@ const NotificationHook = () => {
                 });
             }
         }
+        
 
         render() {
             return (
                 <p>
                     <img src={campanita} className="Campanita-ico" alt="ico" />
-                    <a href={this.state.inboxUrl}>Notificaciones recibidas</a>: {this.state.nNotifications}
+                    <a href={this.state.inboxUrl}>{t('Notificaciones.1')}</a>: {this.state.nNotifications}
                     <Button
                         class="btn"
-                        text="Refrescar notificaciones"
+                        text={t('Refrescar.1')}
+
                         disabled={false}
                         onClick={() => this.updateNotifications()}
                     />

@@ -17,7 +17,7 @@ function getMarcados() {
 }
 
 function ShowFriends({ src, enviar }) {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     let container = (items) => (
         <div>

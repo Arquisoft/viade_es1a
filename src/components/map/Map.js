@@ -16,11 +16,12 @@ class LegacyComponentClass extends Component {
       const { t } = this.props;
   
       return (
-        <div>{t('Layer.1')}</div>
+        <div>{t('Layer.1')}a</div>
       )
     }
   }
   const MyComponent = withTranslation()(LegacyComponentClass)
+
 
 class Map extends React.Component {
 
@@ -79,7 +80,7 @@ class Map extends React.Component {
                     disabled={false}
                     onClick={() => this.cambiar()}
                     data-testid = "cambiarLayer"
-                    text=<MyComponent></MyComponent>
+                    text="Cambiar layer"
 
                 />
                 <Wrapper id="map" data-testid = "map"/>

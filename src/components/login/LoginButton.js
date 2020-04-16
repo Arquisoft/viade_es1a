@@ -32,7 +32,7 @@ export default class LoginButton extends React.Component {
 
         return (
             <div data-testid="divLogin">
-                <AuthButton className="btn" popup={popUri} login=<Conectar></Conectar> logout=<MyComponent></MyComponent> />
+                <AuthButton className="btn" popup={popUri} login="Iniciar Sesión"logout="Desconectar" />
             </div>
         );
     }

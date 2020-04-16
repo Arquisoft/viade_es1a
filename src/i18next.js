@@ -25,9 +25,9 @@ i18n
     fallbackLng: 'es',
     debug: true,
     whitelist:Languages,
-
-    interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
+    react: {
+      wait: true,
+      useSuspense: false
     }
   });
 

@@ -1,19 +1,32 @@
-import React from "react";
+import React, { Component, Suspense } from 'react';
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styled from "styled-components";
 import Button from "../basics/BasicButton";
 import MapList from "../solidPod/MapList";
 import properties from "../commons/Properties";
+import { useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 const Wrapper = styled.div`
     width: 900px;
     height: 600px;
 `;
+class LegacyComponentClass extends Component {
+    render() {
+      const { t } = this.props;
+  
+      return (
+        <div>{t('Layer.1')}</div>
+      )
+    }
+  }
+  const MyComponent = withTranslation()(LegacyComponentClass)
 
 class Map extends React.Component {
 
     constructor(props) {
+        
         super(props);
         this.actual = 0;
         this.layer = null;
@@ -56,15 +69,20 @@ class Map extends React.Component {
         this.layer.addTo(this.map);
     }
 
+    
     render() {
+            const { t } = this.props;
+
         return (
             <div className="Map">
                 <Button
                     class="btn"
-                    text="Cambiar layer"
+
                     disabled={false}
                     onClick={() => this.cambiar()}
                     data-testid = "cambiarLayer"
+                    text=<MyComponent></MyComponent>
+
                 />
                 <Wrapper id="map" data-testid = "map"/>
                 <MapList handleFiles={this.handleFiles.bind(this)}/>

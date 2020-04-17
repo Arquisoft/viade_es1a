@@ -1,20 +1,15 @@
-import React, { lazy, Suspense } from 'react'
+import React, {  Suspense } from 'react'
 import ReactDOM from "react-dom";
 import "./static/css/index.css";
 //import * as serviceWorker from "./serviceWorker";
-import './i18next'
+import './i18next';
+import Main from "./components/Main";
 
-const Main = React.lazy(() => {
-    return new Promise(resolve => setTimeout(resolve, 1000)).then(
-      () => import("./components/Main")
-    );
-  });
 
 ReactDOM.render(
-    <Suspense fallback="Loading">
 
         <Main />
-    </Suspense>, document.getElementById("root")
+    , document.getElementById("root")
 
 );
 

@@ -1,9 +1,8 @@
-import React, { Component, Suspense } from 'react';
+import React, { Component } from 'react';
 import Button from "../basics/BasicButton";
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
-import { useTranslation } from 'react-i18next';
 import { withTranslation } from 'react-i18next';
 
 const auth = require("solid-auth-client");
@@ -70,7 +69,7 @@ class ListClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      lista: (<p></p>)
+      lista: (<p>Actualizar lista</p>)
     };
     this.updateList = this.updateList.bind(this);
   }

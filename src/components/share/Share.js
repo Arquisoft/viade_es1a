@@ -35,7 +35,7 @@ async function sendNotification(userWebId, friendWebId, fileId) {
 export const Hook = () => {
     let folderId = String(String(useWebId()).replace(properties.profile, properties.myFolder));
     let userId = useWebId();
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
 
 

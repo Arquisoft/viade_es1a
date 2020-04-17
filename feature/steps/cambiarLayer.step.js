@@ -6,9 +6,8 @@ const feature = loadFeature("./feature/features/cambiarLayer.feature");
 const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
-let jest;
 
-defineFeature((feature, test) => {
+defineFeature(feature, (test) => {
     beforeEach(async () => {
         jest.setTimeout(1200000);
     });

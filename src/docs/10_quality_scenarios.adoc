@@ -4,24 +4,21 @@
 === Árbol de calidad
 [plantuml,calidad,png]
 ----
-@startuml
+@startmindmap
 
-(Viade)--> (Usabilidad)
-(Viade)--> (Mantenibilidad)
-(Viade)--> (Privacidad de datos)
-(Viade)--> (Eficiencia)
+* Viade
+** Usabilidad
+*** Fácil de usar
+*** Accesibilidad
+** Mantenibilidad
+*** Buen diseño inicial
+*** Facil realizar cambios
+** Privacidad de datos
+*** Descentralización
+** Eficiencia
+*** Tiempo de respuesta cortos
 
-(Usabilidad) --> (Fácil de usar)
-(Usabilidad) --> (Accesibilidad)
-
-(Mantenibilidad) --> (Buen diseño inicial)
-(Mantenibilidad) --> (Facil realizar cambios)
-
-(Privacidad de datos) --> (Descentralización)
-
-(Eficiencia) --> (Tiempo de respuesta cortos)
-
-@enduml
+@endmindmap
 ----
 === Escenarios de calidad
 

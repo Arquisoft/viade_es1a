@@ -5,7 +5,6 @@ import styled from "styled-components";
 import Button from "../basics/BasicButton";
 import MapList from "../solidPod/MapList";
 import properties from "../commons/Properties";
-import { useTranslation } from 'react-i18next';
 
 const Wrapper = styled.div`
     width: 900px;
@@ -62,11 +61,7 @@ class Map extends React.Component {
 
     
     render() {
-        const Layer = () => {
-            const { t } = useTranslation();
-
-            return (<div>{t('Layer.1')}</div>);
-        };
+        
         return (
             <div className="Map">
                 <Button

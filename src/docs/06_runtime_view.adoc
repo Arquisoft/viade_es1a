@@ -9,7 +9,7 @@
 
 actor Usuario
 Usuario -> ViadeEs1a: Login 
-ViadeEs1a -> PopUp_Login:Boton de loguear
+ViadeEs1a -> PopUp_Login:Abrir popup
 Usuario -> PopUp_Login:Introducir datos de login
 database Solid
 PopUp_Login -> Solid:Login request
@@ -45,11 +45,15 @@ ViadeEs1a -> Solid:Almacenar Ruta
 @startuml
 
 actor Usuario
-Usuario -> ViadeEs1a:Selecciona ruta
+Usuario -> ViadeEs1a:Cargar rutas
 database Solid
-ViadeEs1a -> Solid:Solicita la ruta al POD
-Solid -> ViadeEs1a:Devuelve la ruta
-
+ViadeEs1a -> Solid:Solicita lista de rutas
+Solid -> ViadeEs1a:Devuelve lista de rutas
+Usuario -> ViadeEs1a:Seleccionar ruta
+ViadeEs1a -> Solid:Solicita ruta seleccionada
+Solid -> ViadeEs1a:Devuelve ruta seleccionada
+ViadeEs1a -> GestorMapas:Mostrar ruta
+GestorMapas -> Usuario:Mostrar ruta en mapa
 
 @enduml
 ----

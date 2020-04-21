@@ -16,10 +16,14 @@ export default class LoginButton extends React.Component {
 
             return (<div>{t('Desconectar.1')}</div>);
         };
+        const Iniciar = () => {
+            const { t } = useTranslation();
 
+            return (<div>{t('Sesion.1')}</div>);
+        };
         return (
             <div data-testid="divLogin">
-                <AuthButton className="btn" popup={popUri} login="Iniciar Sesión" logout={<Desconectarse></Desconectarse>} />
+                <AuthButton className="btn" popup={popUri} login={<Iniciar></Iniciar>} logout={<Desconectarse></Desconectarse>} />
             </div>
         );
     }

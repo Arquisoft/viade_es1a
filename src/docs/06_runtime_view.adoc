@@ -62,24 +62,33 @@ GestorMapas -> Usuario:Mostrar ruta en mapa
 
 [plantuml,compartir arhivos,png]
 ----
+@startuml
 actor Usuario1
 
-Pod1 -> ViadeEs1a :Cargar Lista amigos
-ViadeEs1a -> Usuario1:Listar Amigos
-Usuario1 -> ViadeEs1a:Introducir URI archivo y seleccionar amigos
+
+participant  ViadeEs1a_1
 database Pod1
-
-ViadeEs1a -> Pod1:Almacena Ruta privada en publica
-Pod1 -> ViadeEs1a:Mensaje confirmación
-
 database Pod2
-ViadeEs1a -> Pod2:Añade notificación
-viade2 <- Usuario2: Acceder aplicación
-Pod2 <- viade2:Accede al POD
+participant  ViadeEs1a_2
 
-viade2 <- Pod2: Muestra Numero notificaciones
 actor Usuario2
-viade2 -> Usuario2: Ver Notificación
+
+Pod1 -> ViadeEs1a_1 :Cargar Lista amigos
+ViadeEs1a_1 -> Usuario1:Listar Amigos
+Usuario1 -> ViadeEs1a_1:Introducir URI archivo y seleccionar amigos
+
+
+ViadeEs1a_1 -> Pod1:Almacena Ruta privada en publica
+Pod1 -> ViadeEs1a_1:Mensaje confirmación
+
+
+ViadeEs1a_1 -> Pod2:Añade notificación
+ViadeEs1a_2 <- Usuario2: Acceder aplicación
+Pod2 <- ViadeEs1a_2:Accede al POD
+
+ViadeEs1a_2 <- Pod2: Muestra Numero notificaciones
+
+ViadeEs1a_2 -> Usuario2: Ver Notificaciones
 
 @enduml
 ----

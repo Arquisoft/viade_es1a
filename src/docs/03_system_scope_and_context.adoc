@@ -34,22 +34,24 @@ Viade  -right-> Pod:Guardar Rutas
 
 ----
 @startuml
-actor Alice
-actor Bob
-database AlicePod
-database BobPod
+actor "Usuario 1" as Alice
+actor "Usuario 2" as Bob
+database "Pod del usuario 1" as AlicePod
+database "Pod del usuario 2" as BobPod
+node Viade <<Aplicacion>> as ViadeA
+node Viade <<Aplicacion>> as ViadeB
 
-Alice -right->  [ViadeA] :Browser
-[ViadeA] -right-> AlicePod    :Almacenar Ruta 
-AlicePod -left->  [ViadeA]   :Ver Ruta 
+Alice -right->  ViadeA :Navegador
+ViadeA -right-> AlicePod    :Almacenar Ruta 
+AlicePod -left->  ViadeA   :Ver Ruta 
 
-Bob -right->   [ViadeB] :Browser
-[ViadeB] -right->  BobPod    :Almacenar Ruta 
-BobPod -left-> [ViadeB]   :Ver Ruta 
+Bob -right->   ViadeB :Navegador
+ViadeB -right->  BobPod    :Almacenar Ruta 
+BobPod -left-> ViadeB   :Ver Ruta 
 
 
-[ViadeA] -down-> BobPod    :Compartir Ruta Alice 
-[ViadeB] -up-> AlicePod    :Compartir Ruta Bob 
+ViadeA -down-> BobPod    :Compartir Ruta 
+ViadeB -up-> AlicePod    :Compartir Ruta
 
 @enduml
 ----

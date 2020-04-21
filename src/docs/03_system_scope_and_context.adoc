@@ -6,13 +6,15 @@
 
 ----
 @startuml
+
 actor Usuario
+node Viade <<Aplicacion>> as Viade
 database Pod
 
-Usuario ->  [Viade] :Cargar ruta
-[Viade] ->  Usuario :Mostrar ruta
-Pod -> [Viade] :Leer Rutas
-[Viade]  -right-> Pod :Guardar Rutas
+Usuario ->  Viade:Cargar ruta
+Viade ->  Usuario:Mostrar ruta
+Pod -> Viade:Leer Rutas
+Viade  -right-> Pod:Guardar Rutas
 
 @enduml
 ----

@@ -8,12 +8,14 @@
 @startuml
 
 actor Usuario
-Usuario -> Viade1a: Login 
-Viade1a -> GestorSesión:Introduccion credenciales
-GestorSesión -> Solid:Login request
-Solid -> Viade1a:   Login correcto
-Solid -> GestorSesión:   Login incorrecto
-Usuario -> Viade1a: Gestión de rutas
+Usuario -> ViadeEs1a: Login 
+ViadeEs1a -> PopUp_Login:Boton de loguear
+Usuario -> PopUp_Login:Introducir datos de login
+database Solid
+PopUp_Login -> Solid:Login request
+Solid -> ViadeEs1a:   Login correcto
+Solid -> PopUp_Login:   Login incorrecto
+
 
 @enduml
 ----
@@ -24,11 +26,12 @@ Usuario -> Viade1a: Gestión de rutas
 @startuml
 
 actor Usuario
-Usuario -> Viade1a:Subir JSON
+
+Usuario -> ViadeEs1a:Subir JSON
 database Solid
 
-Viade1a -> Solid:Almacenar Ruta
- Solid -> Viade1a:Mensaje guardada
+ViadeEs1a -> Solid:Almacenar Ruta
+ Solid -> ViadeEs1a:Mensaje guardada
 
 
 @enduml
@@ -42,10 +45,10 @@ Viade1a -> Solid:Almacenar Ruta
 @startuml
 
 actor Usuario
-Usuario -> Viade1a:Selecciona ruta
+Usuario -> ViadeEs1a:Selecciona ruta
 database Solid
-Viade1a -> Solid:Solicita la ruta al POD
-Solid -> Viade1a:Devuelve la ruta
+ViadeEs1a -> Solid:Solicita la ruta al POD
+Solid -> ViadeEs1a:Devuelve la ruta
 
 
 @enduml
@@ -57,16 +60,16 @@ Solid -> Viade1a:Devuelve la ruta
 ----
 actor Usuario1
 
-Pod1 -> Viade1a :Cargar Lista amigos
-Viade1a -> Usuario1:Listar Amigos
-Usuario1 -> Viade1a:Introducir URI archivo y seleccionar amigos
+Pod1 -> ViadeEs1a :Cargar Lista amigos
+ViadeEs1a -> Usuario1:Listar Amigos
+Usuario1 -> ViadeEs1a:Introducir URI archivo y seleccionar amigos
 database Pod1
 
-Viade1a -> Pod1:Almacena Ruta privada en publica
-Pod1 -> Viade1a:Mensaje confirmación
+ViadeEs1a -> Pod1:Almacena Ruta privada en publica
+Pod1 -> ViadeEs1a:Mensaje confirmación
 
 database Pod2
-Viade1a -> Pod2:Añade notificación
+ViadeEs1a -> Pod2:Añade notificación
 viade2 <- Usuario2: Acceder aplicación
 Pod2 <- viade2:Accede al POD
 

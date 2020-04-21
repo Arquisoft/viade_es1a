@@ -5,21 +5,20 @@
 [options="header"]
 |===
 |        | Restricción | Descripción
-| RT1     | Uso React | Tendremos que usar React en el desarrollo de la aplicación teniendo en cuenta sus ventajas y limitaciones.
-| RT2     | Uso SOLID | Usaremos los principios de SOLID para conseguir una aplicación descentralizada.
+| RT1	| Uso React | Para una mayor rapidez a la hora de trabajar con java script, y teniendo a nuestra disposición el gran número de librerías de la que esta dispone.
+| RT2	| Uso SOLID | Usaremos los principios de SOLID para conseguir una aplicación descentralizada.
 |===
 === Restricciones Organizativas
 |===
-|        | Restricción | Descripción
-| RO1     | Equipo de 4 | Debemos organizarnos teniendo en cuenta a todos los integrantes del equipo.
-| RO2   | Tiempo | El tiempo que tenemos para la realización del proyecto es hasta la finalización del curso académico y la fecha dada por el profesor de la asignatura.
+|       | Restricción | Descripción
+| RO1	| Equipo de 4 | Nos organizaremos Debemos organizarnos teniendo en cuenta a todos los integrantes del equipo.
+| RO2   | Tiempo | Comenzando a principio del cuatrimestre y teniendo en cuenta la sucesivas revisiones del proyecto nos acojemos al tiempo organizado segun las directrices de la asignatura y tendrá que ser terminado en 3 meses.
 |===
 === Convenciones
 |===
-|        | Restricción | Descripción
-| RC1     | Git | Tenemos que usar git para la gestión de las versiones del proyecto.
-| RC2     | Arc42 | Se usará para la creación de la documentación del proyecto.
-| RC3 | Idioma|Se utilizará el castellano como idioma para la realización del proyecto para facilitar la documentación y la comunicación entre los miembros del equipo.
+|       | Restricción | Descripción
+| C1   | Git | Tenemos que usar git para la gestión de las versiones del proyecto.
+| C2   | Arc42 | Seguiremos las directrices de la metodologia Arc42 para organizar la documentacion de nuestro proyecto.
+| C3   | Idioma|Se utilizará el castellano como idioma para la realización del proyecto para facilitar la documentación y la comunicación entre los miembros del equipo.
 |===
-
 

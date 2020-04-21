@@ -21,7 +21,7 @@ async function getNNotifications() {
     const profileDocument = await fetchDocument(session.webId);
     const profile = profileDocument.getSubject(session.webId);
 
-    const storage = profile.getRef(space.storage);
+    const storage = profile.getRef(space.storage); 
 
 
     let folder;
@@ -79,9 +79,10 @@ const NotificationHook = () => {
                     <Button
                         class="btn"
                         text={t('Refrescar.1')}
-
+                        data-testid="btnoti"
                         disabled={false}
                         onClick={() => this.updateNotifications()}
+                        testid="btNot"
                     />
                 </p>
             );

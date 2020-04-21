@@ -88,11 +88,18 @@ class ListClass extends React.Component {
 
   render() {
     
+    const Actualizar = () => {
+      const { t } = useTranslation();
+      
+      return (<div data-testid="act">{t('Actualizar.1')}</div>);
+    };
+   
     return (
       <div>
+
         <Button
           class="btn"
-          text="Actualizar lista"
+          text={<Actualizar></Actualizar>}
           disabled={false}
           onClick={() => this.updateList()}
         />

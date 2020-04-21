@@ -45,8 +45,11 @@ ViadeEs1a -> Solid:Almacenar Ruta
 @startuml
 
 actor Usuario
-Usuario -> ViadeEs1a:Cargar rutas
+participant ViadeEs1a
+participant GestorMapas
 database Solid
+
+Usuario -> ViadeEs1a:Cargar rutas
 ViadeEs1a -> Solid:Solicita lista de rutas
 Solid -> ViadeEs1a:Devuelve lista de rutas
 Usuario -> ViadeEs1a:Seleccionar ruta

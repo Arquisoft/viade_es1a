@@ -75,7 +75,7 @@ class Map extends React.Component {
                     disabled={false}
                     onClick={() => this.cambiar()}
                     data-testid = "cambiarLayer"
-                    text={<Layer></Layer>}
+                    text="Cambiar layer"
 
                 />
                 <Wrapper id="map" data-testid = "map"/>

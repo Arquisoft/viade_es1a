@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from "../basics/BasicButton";
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
@@ -28,7 +28,7 @@ export async function getFiles() {
 async function readRoute(handleFiles, URL) {
 
   let rutaView = null;
-  if(fc.itemExists(URL)){
+  if (fc.itemExists(URL)) {
     rutaView = await fc.readFile(URL);
   }
 
@@ -48,8 +48,8 @@ export function filesToButtons(files, handleFiles) {
           class="btn btn-list"
           text={value.name}
           disabled={false}
-          onClick={() => readRoute(handleFiles, value.url)} 
-          id={value.name}/>
+          onClick={() => readRoute(handleFiles, value.url)}
+          id={value.name} />
       </div>
     );
   }
@@ -57,13 +57,13 @@ export function filesToButtons(files, handleFiles) {
 }
 
 class ListClass extends React.Component {
-  
+
   constructor(props) {
     const Actualizar = () => {
       const { t } = useTranslation();
 
       return (<p>{t('Actualizar.1')}</p>);
-  };
+    };
     super(props);
     this.state = {
       lista: (<Actualizar></Actualizar>)
@@ -91,15 +91,15 @@ class ListClass extends React.Component {
       const { t } = useTranslation();
 
       return (<div>{t('Actualizar.1')}</div>);
-  };
+    };
     return (
       <div>
         <Button
           class="btn"
-          text={<Actualizar></Actualizar>}
+          text="Actualizar lista"
           disabled={false}
-          onClick={() => this.updateList()} 
-          />
+          onClick={() => this.updateList()}
+        />
         {this.state.lista}
       </div>
     );

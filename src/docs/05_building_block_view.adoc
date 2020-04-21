@@ -3,74 +3,77 @@
 
 == Vista del bloque de construcción
 
-[plantuml,dia,png]
+
+[plantuml,Primer nivel,png]
+
 ----
 @startuml
 node "Primer nivel"{
 actor Usuario
+node Viade <<Aplicacion>> as Viade
 database Pod
 
-Usuario ->  [Viade] :Cargar ruta
-[Viade] ->  Usuario :Mostrar ruta
-Pod -> [Viade] :Leer Rutas
-[Viade]  -right-> Pod :Guardar Rutas
-Viade --> [Segundo nivel]
-
+Usuario ->  Viade:Cargar ruta
+Viade ->  Usuario:Mostrar ruta
+Pod -> Viade:Leer Rutas
+Viade  -right-> Pod:Guardar Rutas
 }
+@enduml
+----
+
+
+[plantuml,Segundo nivel,png]
+----
+@startuml
 node "Segundo nivel"{
-  
-node "Test"{
-  [Jest]
-  [Puppeteer]
-  
+  node "Test"{
+    (Jest)
+    (Puppeteer)
   }
-node "App"{
-   
-  [Componentes] --> [Tercer nivel Componente]
- [Modelos] --> [Tercer nivel Modelo]
-  [Servicios] --> [Tercer nivel Servicio]
-
+  node "App"{
+    (Componentes)
+    (Modelos)
+    (Servicios)
+  }
 }
+@enduml
+----
+
+
+[plantuml,Tercer nivel,png]
+----
+@startuml
+node "Tercer nivel Modelos"{
+  (Ruta)
+  (Perfil)
+  (Amigo)
+  (Sesión)
 }
-node "Tercer nivel Modelo"{
-  
+@enduml
+----
 
 
-   [Ruta]
-    [Perfil]
-    [Amigo]
-    [Sesión]
-  
-  
-
+[plantuml,Tercer nivel,png]
+----
+@startuml
+node "Tercer nivel Servicios"{
+    (Login)
+    (Registro)
+    (Añadir Ruta)
+    (Añadir Amigo)
+    (Listar Amigos)
 }
+@enduml
+----
 
-node "Tercer nivel Servicio"{
-  
 
-
- 
-    [Login]
-    [Registro]
-    [Añadir Ruta]
-    [Añadir Amigo]
-    [Listar Amigos]
- 
-  
-  
-
-}
+[plantuml,Tercer nivel,png]
+----
+@startuml
 node "Tercer nivel Componente"{
-  
-
-
-  
-    [Mapa]
-    [Notificación]
-    [Share]
-    
-  
-  
+    (Mapa)
+    (Notificación)
+    (Share)
 }
 @enduml
 

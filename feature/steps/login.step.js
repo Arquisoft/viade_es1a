@@ -25,10 +25,6 @@ defineFeature(feature, test => {
         });
 
         when('introduce el WebId y rellena el formulario', async () => {
-
-            //
-            //
-    
             await page.evaluate(() => {
               let btns = [...document.querySelectorAll("button")];
               btns.forEach(async function (btn) {

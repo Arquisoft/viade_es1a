@@ -70,7 +70,7 @@ defineFeature(feature, test => {
         when('comparte una ruta', async () => {
             await page.waitFor(1000);
 
-            await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
+            //await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
 
             await page.waitForSelector('.input', {visible: true});
             await page.type('.input', "https://adrifa13.solid.community/private/rutas/prueba5.geojson");
@@ -108,7 +108,7 @@ defineFeature(feature, test => {
 
             await page.waitForSelector('[id="map"]', {visible: true});
             await page.waitFor(1000);
-            await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot2.png'});
+            //await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot2.png'});
             expect(page.url()).toBe("http://localhost:3000/");
 
             await browser.close();

@@ -22,7 +22,7 @@ defineFeature(feature, test => {
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(async function (btn) {
-                  if (btn.innerText == "Identificate"){
+                  if (btn.firstChild.innerText == "Iniciar Sesión"){
                     btn.click();
                   }      
                 });

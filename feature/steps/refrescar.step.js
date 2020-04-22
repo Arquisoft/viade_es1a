@@ -20,13 +20,13 @@ defineFeature(feature, test => {
             await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
 
             await page.evaluate(() => {
-                let btns = [...document.querySelectorAll("button")];
-                btns.forEach(async function (btn) {
-                  if (btn.innerText == "Identificate"){
-                    btn.click();
-                  }      
-                });
+              let btns = [...document.querySelectorAll("button")];
+              btns.forEach(async function (btn) {
+                if (btn.firstChild.innerText == "Iniciar Sesión"){
+                  btn.click();
+                }      
               });
+            });
               
               const [popup] = await Promise.all([
                 new Promise(resolve => page.once('popup', resolve)),

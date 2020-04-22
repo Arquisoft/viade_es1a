@@ -20,13 +20,13 @@ defineFeature(feature, test => {
             await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
 
             await page.evaluate(() => {
-                let btns = [...document.querySelectorAll("button")];
-                btns.forEach(async function (btn) {
-                  if (btn.innerText == "Identificate"){
-                    btn.click();
-                  }      
-                });
+              let btns = [...document.querySelectorAll("button")];
+              btns.forEach(async function (btn) {
+                if (btn.firstChild.innerText == "Iniciar Sesión"){
+                  btn.click();
+                }      
               });
+            });
               
               const [popup] = await Promise.all([
                 new Promise(resolve => page.once('popup', resolve)),
@@ -70,7 +70,7 @@ defineFeature(feature, test => {
         when('se pulsa el boton cambiar layer', async () => {
             await page.waitFor(1000);
 
-            await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
+           // await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
 
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
@@ -86,7 +86,7 @@ defineFeature(feature, test => {
         then('se cambia el mapa', async () => {
             await page.waitForSelector('[id="map"]', {visible: true});
             await page.waitFor(1000);
-            await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot2.png'});
+          //  await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot2.png'});
             expect(page.url()).toBe("http://localhost:3000/");
 
             await browser.close();

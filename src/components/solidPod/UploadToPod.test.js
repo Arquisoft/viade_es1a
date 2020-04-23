@@ -13,7 +13,10 @@ describe("uploadToPod", () => {
 
     test("Los elementos estan presentes", () => {
         const { getByTestId } = render(<UploadToPod/>);
+
         expect(getByTestId("subirjson")).toBeTruthy();
+        expect(getByTestId("subirjson").textContent).toBe("Subir.1");
+
     });
 
     test("Los elementos se pueden clicar", () => {

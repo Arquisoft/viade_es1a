@@ -98,8 +98,8 @@ export const Hook = () => {
             return (
                 <div className="LoginForm">
 
-                    <h2>{t('Compartir.1')}</h2>
-                    <p>{t('URI.1')}</p>
+                    <h2 data-testid="comp">{t('Compartir.1')}</h2>
+                    <p data-testid="uri">{t('URI.1')}</p>
                     <InputField
                         type="text"
                         value={this.state.archivo ? this.state.archivo : ""}

@@ -21,12 +21,12 @@ function ShowFriends({ src, enviar }) {
 
     let container = (items) => (
         <div>
-            <p>{t('AmigosyGrupos.1')}</p>
+            <p>{t('Amigos.1')}</p>
             {items}
             {/* {console.log(items!=null)} TODO: Comprobar que hay amigos*/}
             <Button
                 class="btn"
-                text={t('Enviar.1')}
+                text={t('Crear.1')}
                 disabled={false}
                 onClick={() => enviar(getMarcados())}
             />

@@ -1,53 +1,56 @@
 {
-    "Logueado":{
-        "1":"Estas logueado como"
+    "Logueado": {
+        "1": "Estas logueado como"
     },
-    "Refrescar":{
-        "1":"Refrescar Notificaciones"
+    "Refrescar": {
+        "1": "Refrescar Notificaciones"
     },
-    "Subir":{
-        "1":"Subir Json a Solid"
+    "Subir": {
+        "1": "Subir Json a Solid"
     },
-    "Sesion":{
-        "1":"Iniciar Sesión"
+    "Sesion": {
+        "1": "Iniciar Sesión"
     },
-    "Amigos":{
-        "1":"Seleccione amigos"
+    "Amigos": {
+        "1": "Seleccione amigos"
     },
-    "Notificaciones":{
-        "1":"Notificaciones recibidas"
-    }
-    ,
-    "Compartir":{
-        "1":"Compartir ruta"
-    }
-    ,
-    "URI":{
-        "1":"Introducir URI del archivo:"
+    "AmigosyGrupos": {
+        "1": "Seleccione un amigo o grupo"
     },
-    "Enviar":{
-        "1":"Enviar a amigos"
-    } ,
-    "SP":{
-        "1":"Español"
+    "Notificaciones": {
+        "1": "Notificaciones recibidas"
     },
-    "EN":{
-        "1":"Inglés"
+    "Compartir": {
+        "1": "Compartir ruta"
     },
-    "Layer":{
-        "1":"Cambiar layer"
-    } ,
-    "Actualizar":{
-        "1":"Actualizar lista"
+    "URI": {
+        "1": "Introducir URI del archivo:"
     },
-    "Desconectar":{
-        "1":"Desconectar"
-    }
-    ,
-    "Identificate":{
-        "1":"Identificate"
-    }  ,
-    "Ini":{
-        "1":"Iniciar Sesión"
+    "Enviar": {
+        "1": "Enviar"
+    },
+    "Crear": {
+        "1": "Crear"
+    },
+    "SP": {
+        "1": "Español"
+    },
+    "EN": {
+        "1": "Inglés"
+    },
+    "Layer": {
+        "1": "Cambiar layer"
+    },
+    "Actualizar": {
+        "1": "Actualizar lista"
+    },
+    "Desconectar": {
+        "1": "Desconectar"
+    },
+    "Identificate": {
+        "1": "Identificate"
+    },
+    "Ini": {
+        "1": "Iniciar Sesión"
     }
 }

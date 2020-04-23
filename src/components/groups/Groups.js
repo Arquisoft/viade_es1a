@@ -1,12 +1,17 @@
 import React from "react";
+import ShowFriends from "./ShowFriends";
 
 export const Hook = () => {
 
     class Groups extends React.Component {
+        crearGrupo(){
+            alert("Grupo creado");
+        }
+
         render() {
             return (
                 <div>
-                   <p>Grupos</p>
+                   <ShowFriends src="user.friends" enviar={this.crearGrupo.bind(this)} />
                 </div>
             );
         }

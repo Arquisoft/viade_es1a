@@ -9,6 +9,7 @@ import LoginButton from "./login/LoginButton";
 import UploadToPod from "./solidPod/UploadToPod";
 import Map from "./map/Map";
 import Share from "./share/Share";
+import Groups from "./groups/Groups";
 import Notification from "./notifications/Notification";
 import { useTranslation } from 'react-i18next';
 
@@ -36,6 +37,7 @@ class Main extends React.Component {
             <UploadToPod />
             <Notification />
             <Share />
+            <Groups />
             <LoginButton />
           </LoggedIn>
         </div>

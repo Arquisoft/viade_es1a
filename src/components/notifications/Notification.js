@@ -69,7 +69,7 @@ const NotificationHook = () => {
 
         render() {
             return (
-                <p>
+                <div className = "notification">
                     <img src={campanita} className="Campanita-ico" alt="ico" />
                     <a href={this.state.inboxUrl}>Notificaciones recibidas</a>: {this.state.nNotifications}
                     <Button
@@ -79,7 +79,7 @@ const NotificationHook = () => {
                         onClick={() => this.updateNotifications()}
                     />
                     
-                </p>
+                </div>
             );
         }
     }

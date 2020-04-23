@@ -27,7 +27,7 @@ class Main extends React.Component {
           <LoggedIn>
             <div className = "nav">
               <div className = "usrCmp"><User /></div>
-              <div className = "notCmp"><Notification /></div>
+              <Notification />
               <div className = "lgnBtn"><LoginButton /></div>
             </div>
 

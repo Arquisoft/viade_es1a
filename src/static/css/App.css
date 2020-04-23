@@ -1,32 +1,36 @@
 .app {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   background-color:rgb(255, 255, 255) ;
-  padding: 100px;
 }
 
 .nav{
-  height: 5%;
-  font-size: 28px;
-  margin: 0;
-  padding: 0;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color:rgb(248, 144, 144) ;
+  top:-10%;
+  bottom:0;
+  right:0;
+  left:0;
   
 }
 
 
-.usrCmp{
+/* .usrCmp{
 
-}
+} */
 .user{
-  position: absolute;
+  position: relative;
   top:0%;
   bottom:0;
   right:0;
   left:10%;
 }
-.notCmp{
+/* .notCmp{
 
-}
+} */
 
 
 .Campanita-ico{
@@ -37,20 +41,20 @@
 
 
 .notification{
-  position: absolute;
-  top:-3%;
-  bottom:0;
+  position: relative;
+  top:-85%;
+  bottom:70%;
   right:0;
-  left:66%;
+  left:35%;
 }
 
 .btnNtf{
     
-  position: absolute;
-  top:0;
+  position: relative;
+  top:3%;
   bottom:0;
   right:0;
-  left:65%;
+  left:5%;
   width: 18%;
   height: 5%;
  
@@ -61,21 +65,22 @@
   border-radius: 4px;
  
   background: #fff;
-}
-.lgnBtn{
 
+  cursor: pointer;
 }
+/* .lgnBtn{
+
+} */
 
 .logout{
 
-  position: absolute;
-  top:0;
-  bottom:0;
+  position: relative;
+  top:-20;
+  bottom:10%;
   right:0;
-  left:85%;
-  width: 3%;
-  height: 4%;
-  width: 2%;
+  left:85.3%;
+  width: 0;
+  height: 1%;
  
   min-width: 280px;
   /*max-width: 400px;*/
@@ -102,7 +107,7 @@
 }
 
 .listaRuta{
-  position: absolute;
+  position: relative;
   top:0%;
   bottom:0;
   right:40%;

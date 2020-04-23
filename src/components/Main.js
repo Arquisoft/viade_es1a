@@ -25,7 +25,7 @@ class Main extends React.Component {
       <div className="App" data-testid="App">
         <div className="container" data-testid="container">
           <LoggedOut>
-            <img  data-testid="image"src={logo} className="App-logo" alt="logo" data-testid="logo"/>
+            <img  src={logo} className="App-logo" alt="logo" data-testid="logo"/>
             <h2 data-testid="IniciaSesion">{<Iniciar></Iniciar>}</h2>
             <LoginButton/>
           </LoggedOut>

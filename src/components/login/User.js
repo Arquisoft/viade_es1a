@@ -2,25 +2,27 @@ import React from "react";
 import { useWebId, Value } from "@solid/react";
 import { useTranslation } from 'react-i18next';
 
+
+
 export const User = () => {
   const { t, i18n } = useTranslation();
-
-  function handleClick(lang){
-    i18n.changeLanguage(lang);
+ 
+  function handleClick(lang) {
+    i18n.changeLanguage(lang.options[lang.selectedIndex].value);
 
   }
   return (
-    
-    <section>
-      <nav style={{ }}>
 
-        <button onClick={() => handleClick('en')}>
-        {t('EN.1')}
-        </button>
-        <button onClick={() => handleClick('es')}>
-          
-          {t('SP.1')}
-        </button>
+    <section>
+      <nav >
+
+        <select id="select_id" onChange={() => handleClick(document.getElementById("select_id"))}>
+          <option value="en">{t('EN.1')}</option>
+          <option value="es"> {t('SP.1')}
+          </option>
+        </select>
+
+       
       </nav>
       <div className="col-sm">
         <span id="estasLogueado" data-testid="usert"> {t('Logueado.1')} <a href={useWebId()}><Value src="user.name" /></a></span>

@@ -13,6 +13,7 @@
 |Sin experiencia en aplicar arquitecturas en proyectos desde cero  | Tomar como referencia proyectos ya realizados en react y hacer un buen uso de patrones tanto arquitectónicos como de diseño
 |===
 
+[options="header",cols="1,2"]
 |===
 |Deudas técnicas|Descripción
 |Pedir permisos de manera automatica a solid.community| Para poder usar nuestra aplicación hay que autorizar dentro del servidor de pods de solid.community nuestra aplicación. Esto debería de pedirse desde la aplicación, pero de momento se seguirá haciendo de manera manual.

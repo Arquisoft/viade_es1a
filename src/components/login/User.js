@@ -23,7 +23,7 @@ export const User = () => {
         </button>
       </nav>
       <div className="col-sm">
-        <span id="estasLogueado"> {t('Logueado.1')} <a href={useWebId()}><Value src="user.name" /></a></span>
+        <span id="estasLogueado" data-testid="usert"> {t('Logueado.1')} <a href={useWebId()}><Value src="user.name" /></a></span>
         <p></p>
       </div>
     </section>

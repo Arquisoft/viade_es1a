@@ -80,7 +80,7 @@ const NotificationHook = () => {
         render() {
             return (
                 <p>
-                    <img src={campanita} className="Campanita-ico" alt="ico" />
+                    <img  data-testid="imgnoti" src={campanita} className="Campanita-ico" alt="ico" />
                     <a data-testid="not" href={this.state.inboxUrl}>{t('Notificaciones.1')}</a>: {this.state.nNotifications}
                     <Button
                         class="btn"

@@ -10,5 +10,10 @@ describe("notification", () => {
         expect(true).toBeTruthy();
     });
 
-  
+    test("Los elementos estan presentes", () => {
+        const { container,getByTestId, getByText } = render(<Notification/>);
+       
+        expect(getByTestId("not").textContent).toBe("Notificaciones.1");
+
+    });
 });

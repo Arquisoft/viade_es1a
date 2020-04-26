@@ -15,13 +15,19 @@ async function getNNotifications() {
     const auth = require("solid-auth-client");
     const FC = require("solid-file-client");
     const fc = new FC(auth);
-
     let session = await auth.currentSession();
-
-    const profileDocument = await fetchDocument(session.webId);
-    const profile = profileDocument.getSubject(session.webId);
-
-    const storage = profile.getRef(space.storage); 
+    let session2 = "https://kevin23699.solid.community/profile/card#me"
+    let profile="";
+    let profileDocument="";
+    if (session == null) {
+         profileDocument = await fetchDocument(session2);
+         profile = profileDocument.getSubject(session2);
+    }
+    else {
+         profileDocument = await fetchDocument(session.webId);
+         profile = profileDocument.getSubject(session.webId);
+    }
+    const storage = profile.getRef(space.storage);
 
 
     let folder;
@@ -69,13 +75,13 @@ const NotificationHook = () => {
                 });
             }
         }
-        
+
 
         render() {
             return (
                 <p>
                     <img src={campanita} className="Campanita-ico" alt="ico" />
-                    <a href={this.state.inboxUrl}>{t('Notificaciones.1')}</a>: {this.state.nNotifications}
+                    <a data-testid="not" href={this.state.inboxUrl}>{t('Notificaciones.1')}</a>: {this.state.nNotifications}
                     <Button
                         class="btn"
                         text={t('Refrescar.1')}

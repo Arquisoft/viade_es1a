@@ -14,12 +14,12 @@ export default class LoginButton extends React.Component {
         const Desconectarse = () => {
             const { t } = useTranslation();
 
-            return (<div>{t('Desconectar.1')}</div>);
+            return (<div data-testid="descobt">{t('Desconectar.1')}</div>);
         };
         const Iniciar = () => {
             const { t } = useTranslation();
 
-            return (<div>{t('Sesion.1')}</div>);
+            return (<div data-testid="log">{t('Sesion.1')}</div>);
         };
         return (
             <div data-testid="divLogin">

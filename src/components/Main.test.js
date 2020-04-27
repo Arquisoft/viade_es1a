@@ -1,6 +1,8 @@
 import React from "react";
 import { cleanup, render, getByTestId } from "@testing-library/react";
 import Main from "./Main";
+import logo from "../static/images/ViaDe.svg"
+import {shallow} from 'enzyme';
 
 afterAll(cleanup);
 
@@ -9,5 +11,13 @@ describe("main", () => {
 
     test("renders without crashing", () => {
         expect(container).toBeTruthy();
+    });
+    test("Los elementos estan presentes", () => {
+        const { getByTestId } = render(<Main/>);
+
+
+        expect(getByTestId("ses")).toBeTruthy();
+        expect(getByTestId("ses").textContent).toBe("Sesion.1");
+
     });
 });

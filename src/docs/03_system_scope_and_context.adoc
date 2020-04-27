@@ -20,13 +20,12 @@ Viade  -right-> Pod:Guardar Rutas
 ----
 Leyenda:
 |===
-|Entidad|Contexto
 
-|image:usuario.png[]  Usuario|Sube y lee rutas desde su POD
-|image:pod.png[] POD|Almacena rutas de forma interoperable
-|image:viade.png[] Viade|Parsea las rutas y las muestra en un mapa
-
-
+|Simbolo|Significado
+|image:leyenda_actor.png["Actor",float="left",align="center"]|Usuario que interactua con la aplicación
+|image:leyenda_viade.png["Viade",float="left",align="center"]|Conjunto de módulos de la aplicación
+|image:leyenda_pod.png["Pod",float="left",align="center"]|POD de SOLID para almacenar información
+|===
 
 === Contexto técnico
 
@@ -55,6 +54,7 @@ ViadeB -up-> AlicePod    :Compartir Ruta
 
 @enduml
 ----
+
 Leyenda:
 |===
 

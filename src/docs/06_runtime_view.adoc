@@ -54,11 +54,11 @@ database Pod
 
 
 Usuario -> Interfaz_Grafica:Cargar rutas
-Interfaz_Grafica -> Solid:Solicita lista de rutas
-Solid -> Interfaz_Grafica:Devuelve lista de rutas
+Interfaz_Grafica -> Pod:Solicita lista de rutas
+Pod -> Interfaz_Grafica:Devuelve lista de rutas
 Usuario -> Interfaz_Grafica:Seleccionar ruta
-Interfaz_Grafica -> Solid:Solicita ruta seleccionada
-Solid -> Interfaz_Grafica:Devuelve ruta seleccionada
+Interfaz_Grafica -> Pod:Solicita ruta seleccionada
+Pod -> Interfaz_Grafica:Devuelve ruta seleccionada
 Interfaz_Grafica -> GestorMapas:Mostrar ruta
 
 GestorMapas -> Usuario:Mostrar ruta en mapa

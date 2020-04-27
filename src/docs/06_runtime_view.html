@@ -450,13 +450,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <pre>@startuml
 
 actor Usuario
-Usuario -&gt; ViadeEs1a: Login
-ViadeEs1a -&gt; PopUp_Login:Abrir popup
+Usuario -&gt; Interfaz_Grafica: Login
+Interfaz_Grafica -&gt; PopUp_Login:Abrir popup
 Usuario -&gt; PopUp_Login:Introducir datos de login
-database Pod
-PopUp_Login -&gt; Pod:Login request
-Pod -&gt; ViadeEs1a:   Login correcto
-Pod -&gt; PopUp_Login:   Login incorrecto
+
+database Solid
+PopUp_Login -&gt; Solid:Login request
+Solid -&gt; Interfaz_Grafica:   Login correcto
+Solid -&gt; PopUp_Login:   Login incorrecto
+
 
 
 @enduml</pre>
@@ -471,11 +473,12 @@ Pod -&gt; PopUp_Login:   Login incorrecto
 
 actor Usuario
 
-Usuario -&gt; ViadeEs1a:Subir JSON
-database Pod
+Usuario -&gt; UploadToPod:Subir JSON
+database Solid
+UploadToPod -&gt; Solid:Almacenar Ruta
+Solid -&gt; UploadToPod:Confirmacion
+UploadToPod -&gt; Usuario:Mensaje de confirmacion
 
-ViadeEs1a -&gt; Pod:Almacenar Ruta
- Pod -&gt; ViadeEs1a:Mensaje guardada
 
 
 @enduml</pre>
@@ -489,17 +492,19 @@ ViadeEs1a -&gt; Pod:Almacenar Ruta
 <pre>@startuml
 
 actor Usuario
-participant ViadeEs1a
+participant Interfaz_Grafica
 participant GestorMapas
 database Pod
 
-Usuario -&gt; ViadeEs1a:Cargar rutas
-ViadeEs1a -&gt; Pod:Solicita lista de rutas
-Pod -&gt; ViadeEs1a:Devuelve lista de rutas
-Usuario -&gt; ViadeEs1a:Seleccionar ruta
-ViadeEs1a -&gt; Pod:Solicita ruta seleccionada
-Pod -&gt; ViadeEs1a:Devuelve ruta seleccionada
-ViadeEs1a -&gt; GestorMapas:Mostrar ruta
+
+Usuario -&gt; Interfaz_Grafica:Cargar rutas
+Interfaz_Grafica -&gt; Solid:Solicita lista de rutas
+Solid -&gt; Interfaz_Grafica:Devuelve lista de rutas
+Usuario -&gt; Interfaz_Grafica:Seleccionar ruta
+Interfaz_Grafica -&gt; Solid:Solicita ruta seleccionada
+Solid -&gt; Interfaz_Grafica:Devuelve ruta seleccionada
+Interfaz_Grafica -&gt; GestorMapas:Mostrar ruta
+
 GestorMapas -&gt; Usuario:Mostrar ruta en mapa
 
 @enduml</pre>
@@ -514,29 +519,29 @@ GestorMapas -&gt; Usuario:Mostrar ruta en mapa
 actor Usuario1
 
 
-participant  ViadeEs1a_1
+participant  Share_1
 database Pod1
 database Pod2
-participant  ViadeEs1a_2
+participant  Share_2
 
 actor Usuario2
 
-Pod1 -&gt; ViadeEs1a_1 :Cargar Lista amigos
-ViadeEs1a_1 -&gt; Usuario1:Listar Amigos
-Usuario1 -&gt; ViadeEs1a_1:Introducir URI archivo y seleccionar amigos
+Pod1 -&gt; Share_1 :Cargar Lista amigos
+Share_1 -&gt; Usuario1:Listar Amigos
+Usuario1 -&gt; Share_1:Introducir URI archivo y seleccionar amigos
 
 
-ViadeEs1a_1 -&gt; Pod1:Almacena Ruta privada en publica
-Pod1 -&gt; ViadeEs1a_1:Mensaje confirmación
+Share_1 -&gt; Pod1:Almacena Ruta privada en publica
+Pod1 -&gt; Share_1:Mensaje confirmación
 
 
-ViadeEs1a_1 -&gt; Pod2:Añade notificación
-ViadeEs1a_2 &lt;- Usuario2: Acceder aplicación
-Pod2 &lt;- ViadeEs1a_2:Accede al POD
+Share_1 -&gt; Pod2:Añade notificación
+Share_2 &lt;- Usuario2: Acceder aplicación
+Pod2 &lt;- Share_2:Accede al POD
 
-ViadeEs1a_2 &lt;- Pod2: Muestra Numero notificaciones
+Share_2 &lt;- Pod2: Muestra Numero notificaciones
 
-ViadeEs1a_2 -&gt; Usuario2: Ver Notificaciones
+Share_2 -&gt; Usuario2: Ver Notificaciones
 
 @enduml</pre>
 </div>
@@ -574,7 +579,7 @@ ViadeEs1a_2 -&gt; Usuario2: Ver Notificaciones
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-27 22:40:34 +0200
+Last updated 2020-04-27 22:56:10 +0200
 </div>
 </div>
 </body>

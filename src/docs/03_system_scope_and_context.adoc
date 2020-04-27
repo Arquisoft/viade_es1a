@@ -18,11 +18,11 @@ Viade  -right-> Pod:Guardar Rutas
 
 @enduml
 ----
+Leyenda:
 
 |===
-
 |Entidad|Contexto
-|Usuario|Sube y lee rutas desde su POD
+|image::Usuario.png[] Usuario|Sube y lee rutas desde su POD
 |POD|Almacena rutas de forma interoperable
 |Viade|Parsea las rutas y las muestra en un mapa
 |===

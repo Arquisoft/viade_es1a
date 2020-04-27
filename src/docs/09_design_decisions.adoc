@@ -4,6 +4,6 @@
 |===
 |Decisión|Ventajas|Desventajas
 |Documentación en español|Mayor velocidad de documentación y mayor calidad al ser lenguaje materno|No es el idioma más usado en proyectos
-|Comenzar de nuevo el proyecto|Al no utilizar una plantilla conocemos todo el código implementado|Perdimos las 5 semanas que usamos para entender la plantilla plantilla
+|Comenzar de nuevo el proyecto|Al no utilizar una plantilla conocemos todo el código implementado|Perdimos las 5 semanas que usamos para entender la plantilla 
 |Utilizar una única pagina para toda la aplicación|Es mas fácil de implementar y se visualiza mas rápido|Puede quedar demasiado cargada
 |===

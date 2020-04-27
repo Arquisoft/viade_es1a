@@ -34,6 +34,6 @@
 | La información se tiene que guardar de forma descentralizada, es decir, que el usuario pueda llevarse su información cuando quiera y compartirla con las personas que desee.
 | Muy Alta
 | Eficiencia
-| La aplicación debe tener un tiempo de respuesta menor a 10 segundos
+| La aplicación debe tener un tiempo de respuesta menor a 3 segundos
 | Alta
 |===

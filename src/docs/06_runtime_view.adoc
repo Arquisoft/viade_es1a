@@ -103,8 +103,11 @@ Share_2 -> Usuario2: Ver Notificaciones
 Leyenda:
 |===
 
-|Entidad|Contexto
-|image:viade2.png[] Viade|Aplicación desarrollada en React en la que se interectuará
-|image:pod.png[] POD|Almacenamiento descentralizado de aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos
-|image:usuario.png[]  Usuario|Accede a la aplicación mediante un navegador
+|Simbolo|Significado
+|image:leyenda_actor_small.png["Actor",float="left",align="center", scaleheight=20px]|Usuario que interactua con la aplicación
+|image:leyenda_viade_small.png["Viade",float="left",align="center", scaleheight=20px]|Conjunto de módulos de la aplicación
+|image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información
+|image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
+|image:leyenda_modulo_small.png["Modulo",float="left",align="center", scaleheight=20px]|Modulo del sistema
+
 |===

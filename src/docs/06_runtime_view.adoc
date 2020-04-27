@@ -11,10 +11,10 @@ actor Usuario
 Usuario -> ViadeEs1a: Login 
 ViadeEs1a -> PopUp_Login:Abrir popup
 Usuario -> PopUp_Login:Introducir datos de login
-database Solid
-PopUp_Login -> Solid:Login request
-Solid -> ViadeEs1a:   Login correcto
-Solid -> PopUp_Login:   Login incorrecto
+database Pod
+PopUp_Login -> Pod:Login request
+Pod -> ViadeEs1a:   Login correcto
+Pod -> PopUp_Login:   Login incorrecto
 
 
 @enduml
@@ -28,10 +28,10 @@ Solid -> PopUp_Login:   Login incorrecto
 actor Usuario
 
 Usuario -> ViadeEs1a:Subir JSON
-database Solid
+database Pod
 
-ViadeEs1a -> Solid:Almacenar Ruta
- Solid -> ViadeEs1a:Mensaje guardada
+ViadeEs1a -> Pod:Almacenar Ruta
+ Pod -> ViadeEs1a:Mensaje guardada
 
 
 @enduml
@@ -47,14 +47,14 @@ ViadeEs1a -> Solid:Almacenar Ruta
 actor Usuario
 participant ViadeEs1a
 participant GestorMapas
-database Solid
+database Pod
 
 Usuario -> ViadeEs1a:Cargar rutas
-ViadeEs1a -> Solid:Solicita lista de rutas
-Solid -> ViadeEs1a:Devuelve lista de rutas
+ViadeEs1a -> Pod:Solicita lista de rutas
+Pod -> ViadeEs1a:Devuelve lista de rutas
 Usuario -> ViadeEs1a:Seleccionar ruta
-ViadeEs1a -> Solid:Solicita ruta seleccionada
-Solid -> ViadeEs1a:Devuelve ruta seleccionada
+ViadeEs1a -> Pod:Solicita ruta seleccionada
+Pod -> ViadeEs1a:Devuelve ruta seleccionada
 ViadeEs1a -> GestorMapas:Mostrar ruta
 GestorMapas -> Usuario:Mostrar ruta en mapa
 
@@ -95,11 +95,11 @@ ViadeEs1a_2 -> Usuario2: Ver Notificaciones
 
 @enduml
 ----
+Leyenda:
 |===
 
 |Entidad|Contexto
-|Solid|El servidor que contiene los PODs de los usuarios
-|Viade|Aplicación desarrollada en React en la que se interectuará
-|POD|Almacenamiento descentralizado de aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos
-|Usuario|Accede a la aplicación mediante un navegador
+|image:viade2.png[] Viade|Aplicación desarrollada en React en la que se interectuará
+|image:pod.png[] POD|Almacenamiento descentralizado de aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos
+|image:usuario.png[]  Usuario|Accede a la aplicación mediante un navegador
 |===

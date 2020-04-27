@@ -21,9 +21,9 @@ Viade  -right-> Pod:Guardar Rutas
 Leyenda:
 |===
 |Entidad|Contexto
-|image:Figura5.1.png[]  Usuario|Sube y lee rutas desde su POD
-|image::usuario.png[] POD|Almacena rutas de forma interoperable
-|Viade|Parsea las rutas y las muestra en un mapa
+|image:usuario.png[]  Usuario|Sube y lee rutas desde su POD
+|image:pod.png[] POD|Almacena rutas de forma interoperable
+|image:viade.png[] Viade|Parsea las rutas y las muestra en un mapa
 |===
 
 
@@ -54,11 +54,12 @@ ViadeB -up-> AlicePod    :Compartir Ruta
 
 @enduml
 ----
+Leyenda:
 |===
 
 |Entidad|Contexto
-|Alice/Bob|Accede a la aplicación mediante un navegador
-|Viade|Muestra y comparte las rutas 
-|POD|Almacena rutas de forma interoperable
+|image:usuario.png[]  Usuario|Accede a la aplicación mediante un navegador
+|image:viade.png[] Viade|Muestra y comparte las rutas 
+|image:pod.png[] POD|Almacena rutas de forma interoperable
 
 |===

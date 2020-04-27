@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Alcance y contexto del sistema</title>
+<title>Vista de tiempo de ejecución</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -441,77 +441,102 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="section-system-scope-and-context">Alcance y contexto del sistema</h2>
+<h2 id="section-runtime-view">Vista de tiempo de ejecución</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_contexto_empresarial">Contexto empresarial</h3>
+<h3 id="_iniciar_sesión">Iniciar Sesión</h3>
 <div class="listingblock">
 <div class="content">
 <pre>@startuml
 
 actor Usuario
-node Viade &lt;&lt;Aplicacion&gt;&gt; as Viade
+Usuario -&gt; ViadeEs1a: Login
+ViadeEs1a -&gt; PopUp_Login:Abrir popup
+Usuario -&gt; PopUp_Login:Introducir datos de login
 database Pod
+PopUp_Login -&gt; Pod:Login request
+Pod -&gt; ViadeEs1a:   Login correcto
+Pod -&gt; PopUp_Login:   Login incorrecto
 
-Usuario -&gt;  Viade:Cargar ruta
-Viade -&gt;  Usuario:Mostrar ruta
-Pod -&gt; Viade:Leer Rutas
-Viade  -right-&gt; Pod:Guardar Rutas
 
 @enduml</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Leyenda:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entidad</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Contexto</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="usuario.png" alt="usuario"></span>  Usuario</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sube y lee rutas desde su POD</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="pod.png" alt="pod"></span> POD</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Almacena rutas de forma interoperable</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="viade.png" alt="viade"></span> Viade</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parsea las rutas y las muestra en un mapa</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect2">
-<h3 id="_contexto_técnico">Contexto técnico</h3>
+<h3 id="_escenario_nueva_ruta">Escenario Nueva Ruta</h3>
 <div class="listingblock">
 <div class="content">
 <pre>@startuml
-actor "Usuario 1" as Alice
-actor "Usuario 2" as Bob
-database "Pod del usuario 1" as AlicePod
-database "Pod del usuario 2" as BobPod
-node Viade &lt;&lt;Aplicacion&gt;&gt; as ViadeA
-node Viade &lt;&lt;Aplicacion&gt;&gt; as ViadeB
 
-Alice -right-&gt;  ViadeA :Navegador
-ViadeA -right-&gt; AlicePod    :Almacenar Ruta
-AlicePod -left-&gt;  ViadeA   :Ver Ruta
+actor Usuario
 
-Bob -right-&gt;   ViadeB :Navegador
-ViadeB -right-&gt;  BobPod    :Almacenar Ruta
-BobPod -left-&gt; ViadeB   :Ver Ruta
+Usuario -&gt; ViadeEs1a:Subir JSON
+database Pod
+
+ViadeEs1a -&gt; Pod:Almacenar Ruta
+ Pod -&gt; ViadeEs1a:Mensaje guardada
 
 
-ViadeA -down-&gt; BobPod    :Compartir Ruta
-ViadeB -up-&gt; AlicePod    :Compartir Ruta
+@enduml</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escenario_ver_ruta">Escenario Ver Ruta</h3>
+<div class="listingblock">
+<div class="content">
+<pre>@startuml
+
+actor Usuario
+participant ViadeEs1a
+participant GestorMapas
+database Pod
+
+Usuario -&gt; ViadeEs1a:Cargar rutas
+ViadeEs1a -&gt; Pod:Solicita lista de rutas
+Pod -&gt; ViadeEs1a:Devuelve lista de rutas
+Usuario -&gt; ViadeEs1a:Seleccionar ruta
+ViadeEs1a -&gt; Pod:Solicita ruta seleccionada
+Pod -&gt; ViadeEs1a:Devuelve ruta seleccionada
+ViadeEs1a -&gt; GestorMapas:Mostrar ruta
+GestorMapas -&gt; Usuario:Mostrar ruta en mapa
+
+@enduml</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_compartir_archivos">Compartir archivos</h3>
+<div class="listingblock">
+<div class="content">
+<pre>@startuml
+actor Usuario1
+
+
+participant  ViadeEs1a_1
+database Pod1
+database Pod2
+participant  ViadeEs1a_2
+
+actor Usuario2
+
+Pod1 -&gt; ViadeEs1a_1 :Cargar Lista amigos
+ViadeEs1a_1 -&gt; Usuario1:Listar Amigos
+Usuario1 -&gt; ViadeEs1a_1:Introducir URI archivo y seleccionar amigos
+
+
+ViadeEs1a_1 -&gt; Pod1:Almacena Ruta privada en publica
+Pod1 -&gt; ViadeEs1a_1:Mensaje confirmación
+
+
+ViadeEs1a_1 -&gt; Pod2:Añade notificación
+ViadeEs1a_2 &lt;- Usuario2: Acceder aplicación
+Pod2 &lt;- ViadeEs1a_2:Accede al POD
+
+ViadeEs1a_2 &lt;- Pod2: Muestra Numero notificaciones
+
+ViadeEs1a_2 -&gt; Usuario2: Ver Notificaciones
 
 @enduml</pre>
 </div>
@@ -528,18 +553,18 @@ ViadeB -up-&gt; AlicePod    :Compartir Ruta
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Entidad</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Contexto</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="viade2.png" alt="viade2"></span> Viade</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aplicación desarrollada en React en la que se interectuará</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="pod.png" alt="pod"></span> POD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Almacenamiento descentralizado de aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="usuario.png" alt="usuario"></span>  Usuario</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Accede a la aplicación mediante un navegador</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="viade.png" alt="viade"></span> Viade</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Muestra y comparte las rutas</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="pod.png" alt="pod"></span> POD</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Almacena rutas de forma interoperable</p></td>
 </tr>
 </tbody>
 </table>
@@ -549,7 +574,7 @@ ViadeB -up-&gt; AlicePod    :Compartir Ruta
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-27 17:00:49 +0200
+Last updated 2020-04-27 22:40:34 +0200
 </div>
 </div>
 </body>

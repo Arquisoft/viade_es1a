@@ -8,12 +8,12 @@
 @startuml
 
 actor Usuario
-Usuario -> ViadeEs1a: Login 
-ViadeEs1a -> PopUp_Login:Abrir popup
+Usuario -> Interfaz_Grafica: Login 
+Interfaz_Grafica -> PopUp_Login:Abrir popup
 Usuario -> PopUp_Login:Introducir datos de login
 database Solid
 PopUp_Login -> Solid:Login request
-Solid -> ViadeEs1a:   Login correcto
+Solid -> Interfaz_Grafica:   Login correcto
 Solid -> PopUp_Login:   Login incorrecto
 
 
@@ -26,12 +26,11 @@ Solid -> PopUp_Login:   Login incorrecto
 @startuml
 
 actor Usuario
-
-Usuario -> ViadeEs1a:Subir JSON
+Usuario -> UploadToPod:Subir JSON
 database Solid
-
-ViadeEs1a -> Solid:Almacenar Ruta
- Solid -> ViadeEs1a:Mensaje guardada
+UploadToPod -> Solid:Almacenar Ruta
+Solid -> UploadToPod:Confirmacion
+UploadToPod -> Usuario:Mensaje de confirmacion
 
 
 @enduml
@@ -45,17 +44,17 @@ ViadeEs1a -> Solid:Almacenar Ruta
 @startuml
 
 actor Usuario
-participant ViadeEs1a
+participant Interfaz_Grafica
 participant GestorMapas
 database Solid
 
-Usuario -> ViadeEs1a:Cargar rutas
-ViadeEs1a -> Solid:Solicita lista de rutas
-Solid -> ViadeEs1a:Devuelve lista de rutas
-Usuario -> ViadeEs1a:Seleccionar ruta
-ViadeEs1a -> Solid:Solicita ruta seleccionada
-Solid -> ViadeEs1a:Devuelve ruta seleccionada
-ViadeEs1a -> GestorMapas:Mostrar ruta
+Usuario -> Interfaz_Grafica:Cargar rutas
+Interfaz_Grafica -> Solid:Solicita lista de rutas
+Solid -> Interfaz_Grafica:Devuelve lista de rutas
+Usuario -> Interfaz_Grafica:Seleccionar ruta
+Interfaz_Grafica -> Solid:Solicita ruta seleccionada
+Solid -> Interfaz_Grafica:Devuelve ruta seleccionada
+Interfaz_Grafica -> GestorMapas:Mostrar ruta
 GestorMapas -> Usuario:Mostrar ruta en mapa
 
 @enduml
@@ -69,29 +68,29 @@ GestorMapas -> Usuario:Mostrar ruta en mapa
 actor Usuario1
 
 
-participant  ViadeEs1a_1
+participant  Share_1
 database Pod1
 database Pod2
-participant  ViadeEs1a_2
+participant  Share_2
 
 actor Usuario2
 
-Pod1 -> ViadeEs1a_1 :Cargar Lista amigos
-ViadeEs1a_1 -> Usuario1:Listar Amigos
-Usuario1 -> ViadeEs1a_1:Introducir URI archivo y seleccionar amigos
+Pod1 -> Share_1 :Cargar Lista amigos
+Share_1 -> Usuario1:Listar Amigos
+Usuario1 -> Share_1:Introducir URI archivo y seleccionar amigos
 
 
-ViadeEs1a_1 -> Pod1:Almacena Ruta privada en publica
-Pod1 -> ViadeEs1a_1:Mensaje confirmación
+Share_1 -> Pod1:Almacena Ruta privada en publica
+Pod1 -> Share_1:Mensaje confirmación
 
 
-ViadeEs1a_1 -> Pod2:Añade notificación
-ViadeEs1a_2 <- Usuario2: Acceder aplicación
-Pod2 <- ViadeEs1a_2:Accede al POD
+Share_1 -> Pod2:Añade notificación
+Share_2 <- Usuario2: Acceder aplicación
+Pod2 <- Share_2:Accede al POD
 
-ViadeEs1a_2 <- Pod2: Muestra Numero notificaciones
+Share_2 <- Pod2: Muestra Numero notificaciones
 
-ViadeEs1a_2 -> Usuario2: Ver Notificaciones
+Share_2 -> Usuario2: Ver Notificaciones
 
 @enduml
 ----

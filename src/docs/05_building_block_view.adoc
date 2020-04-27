@@ -40,7 +40,7 @@ node "Segundo nivel"{
 ----
 
 
-[plantuml,Tercer nivel,png]
+[plantuml,Tercer nivel Modelos,png]
 ----
 @startuml
 node "Tercer nivel Modelos"{
@@ -53,7 +53,7 @@ node "Tercer nivel Modelos"{
 ----
 
 
-[plantuml,Tercer nivel,png]
+[plantuml,Tercer nivel servicios,png]
 ----
 @startuml
 node "Tercer nivel Servicios"{
@@ -67,7 +67,7 @@ node "Tercer nivel Servicios"{
 ----
 
 
-[plantuml,Tercer nivel,png]
+[plantuml,Tercer nivel componente,png]
 ----
 @startuml
 node "Tercer nivel Componente"{

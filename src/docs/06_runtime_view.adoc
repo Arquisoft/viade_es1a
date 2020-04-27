@@ -11,10 +11,12 @@ actor Usuario
 Usuario -> Interfaz_Grafica: Login 
 Interfaz_Grafica -> PopUp_Login:Abrir popup
 Usuario -> PopUp_Login:Introducir datos de login
+
 database Solid
 PopUp_Login -> Solid:Login request
 Solid -> Interfaz_Grafica:   Login correcto
 Solid -> PopUp_Login:   Login incorrecto
+
 
 
 @enduml
@@ -26,11 +28,13 @@ Solid -> PopUp_Login:   Login incorrecto
 @startuml
 
 actor Usuario
+
 Usuario -> UploadToPod:Subir JSON
 database Solid
 UploadToPod -> Solid:Almacenar Ruta
 Solid -> UploadToPod:Confirmacion
 UploadToPod -> Usuario:Mensaje de confirmacion
+
 
 
 @enduml
@@ -46,7 +50,8 @@ UploadToPod -> Usuario:Mensaje de confirmacion
 actor Usuario
 participant Interfaz_Grafica
 participant GestorMapas
-database Solid
+database Pod
+
 
 Usuario -> Interfaz_Grafica:Cargar rutas
 Interfaz_Grafica -> Solid:Solicita lista de rutas
@@ -55,6 +60,7 @@ Usuario -> Interfaz_Grafica:Seleccionar ruta
 Interfaz_Grafica -> Solid:Solicita ruta seleccionada
 Solid -> Interfaz_Grafica:Devuelve ruta seleccionada
 Interfaz_Grafica -> GestorMapas:Mostrar ruta
+
 GestorMapas -> Usuario:Mostrar ruta en mapa
 
 @enduml
@@ -94,11 +100,11 @@ Share_2 -> Usuario2: Ver Notificaciones
 
 @enduml
 ----
+Leyenda:
 |===
 
 |Entidad|Contexto
-|Solid|El servidor que contiene los PODs de los usuarios
-|Viade|Aplicación desarrollada en React en la que se interectuará
-|POD|Almacenamiento descentralizado de aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos
-|Usuario|Accede a la aplicación mediante un navegador
+|image:viade2.png[] Viade|Aplicación desarrollada en React en la que se interectuará
+|image:pod.png[] POD|Almacenamiento descentralizado de aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos
+|image:usuario.png[]  Usuario|Accede a la aplicación mediante un navegador
 |===

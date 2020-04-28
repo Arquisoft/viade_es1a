@@ -2,7 +2,7 @@
 
 
 == Vista de implementacion
-Nuestra aplicación se puede usar en cualquiera de los principales navegadores, siempre que se disponga de un ordenador con conexión a Internet estable y un POD que será donde se almacenan los datos de la ruta. 
+Viade1a puede ser usada en cualquiera de los principales navegadores, siempre que se disponga de un ordenador con conexión a Internet estable y un POD que será donde se almacenan los datos de la ruta. 
 
 === Infraestructura Nivel 1
 [plantuml,Infra,png]

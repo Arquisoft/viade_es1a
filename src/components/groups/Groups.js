@@ -40,7 +40,7 @@ export const Hook = () => {
             //console.log("Creado grupo " + this.state.nombreGrupo + " de ");
             //--------Creacion del archivo .json para grupos----------
             const c = "\"";
-            this.state.fileContent = "{" + "\n" + c + "nombreGrupo" + c + ":" + c + this.state.nombreGrupo + c +"," +"\n";
+            this.state.fileContent = "{\n" + c + "nombreGrupo" + c + ":" + c + this.state.nombreGrupo + c +",\n";
             this.state.fileContent += c + "arrayAmigos" + c + ":[";
 
             for (var i = 0; i < amigos.length; ++i) {

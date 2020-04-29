@@ -1,4 +1,6 @@
 import React from "react";
+import FileClient from "solid-file-client";
+import auth from "solid-auth-client";
 import ShowFriends from "./ShowFriends";
 import { useWebId } from "@solid/react";
 import properties from "../commons/Properties";
@@ -6,7 +8,7 @@ import InputField from "../basics/ImputField";
 
 export const Hook = () => {
 
-    let folderId = String(String(useWebId()).replace(properties.profile, properties.Groups));
+    let folderId = String(String(useWebId()).replace(properties.profile, properties.groupFolder));
     //let userId = useWebId();
 
     class Groups extends React.Component {
@@ -16,7 +18,8 @@ export const Hook = () => {
             this.state = {
                 archivo: folderId,
                 nombreGrupo: "",
-                amigo: ""
+                amigo: "",
+                fileContent: ""
             };
         }
 
@@ -29,19 +32,53 @@ export const Hook = () => {
                 return;
             }
 
+            if(this.state.nombreGrupo.length <= 0){
+                return;
+            }
 
-            console.log("Creado grupo " + this.state.nombreGrupo + " de ");
+
+            //console.log("Creado grupo " + this.state.nombreGrupo + " de ");
+            //--------Creacion del archivo .json para grupos----------
+            const c = "\"";
+            this.state.fileContent = "{" + "\n" + c + "nombreGrupo" + c + ":" + c + this.state.nombreGrupo + c +"," +"\n";
+            this.state.fileContent += c + "arrayAmigos" + c + ":[";
 
             for (var i = 0; i < amigos.length; ++i) {
+                
                 this.state.amigo = amigos[i];
 
                 if (!this.state.amigo) {
                     break;
                 }
 
-                console.log(this.state.amigo)
+                this.state.fileContent += "{\n" + 
+                    c + "uriAmigo" + c + ":" + c + this.state.amigo + c +
+                "\n}";
+                    if(i<amigos.length-1){
+                        this.state.fileContent += ",";
+                    }
+
+
+
+                //console.log(this.state.amigo)
 
             }
+            this.state.fileContent += "]\n}" ;
+
+            //-----------------
+
+            let fc = new FileClient(auth);
+            let fileName = this.state.nombreGrupo + ".json";
+            let url = this.state.archivo+fileName;
+
+
+            console.log("URL: "+url + " contenido: "+ this.state.fileContent)
+
+
+            fc.createFile(url, this.state.fileContent, "text/turtle");
+            alert("Archivo subido a "+properties.groupFolder+this.state.nombreGrupo);
+
+            
         }
 
 

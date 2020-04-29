@@ -19,6 +19,7 @@ function getMarcados() {
     return checkedValue;
 }
 
+//Esto devuelve una lista de archivos de properties.groupFolder
 async function getGroups() {
     const auth = require("solid-auth-client");
     const FC = require("solid-file-client");
@@ -34,15 +35,37 @@ async function getGroups() {
 
 
     let folder;
-    await fc.readFolder(storage + properties.inbox)
+    await fc.readFolder(storage + properties.groupFolder)
         .then((content) => { folder = content; })
         .catch((err) => (folder = null));
-    let result = 0;
-    if (folder) {
-        result = folder.files.length;
-    }
-    return result;
+
+
+    return folder.files;
 }
+
+function getGroupsList() {
+    //let asincFiles = getGroups();
+    //let files = asincFiles;
+    let checks = [];
+
+    checks.push(
+        <p>Grupos:</p>
+    );
+
+    // for (const [index, value] of files.entries()) {
+    //     let item = ":D";//value.nombreGrupo;
+    //     checks.push(
+    //         <div key={index}>
+    //             <input type="checkbox" name="groupbox" value={`${item}`} />
+    //             <label> {`${item}`} </label>
+    //         </div>
+    //     );
+    // }
+
+    return checks;
+
+}
+
 
 function ShowFriends({ src, enviar }) {
     const { t } = useTranslation();
@@ -51,7 +74,7 @@ function ShowFriends({ src, enviar }) {
         <div>
             <p>Seleccione amigos y grupos</p>
             {items}
-            {grupos}
+            {getGroupsList()}
             {/* {console.log(items!=null)} TODO: Comprobar que hay amigos*/}
             <Button
                 class="btn"
@@ -68,16 +91,12 @@ function ShowFriends({ src, enviar }) {
         </div>
     );
 
-    let grupos = () => {
-
-    };
-
     const items = useLDflexList(src)
         .filter(() => true)
         .slice(0, Infinity)
         .map(children);
-        
-    return container ? container(items, grupos) : items;
+
+    return container(items);
 }
 
 export default ShowFriends;

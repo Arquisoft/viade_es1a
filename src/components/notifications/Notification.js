@@ -7,10 +7,6 @@ import Button from "../basics/BasicButton";
 import { useWebId } from "@solid/react";
 import { useTranslation } from 'react-i18next';
 
-
-
-
-
 async function getNNotifications() {
     const auth = require("solid-auth-client");
     const FC = require("solid-file-client");

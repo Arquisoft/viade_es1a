@@ -6,7 +6,7 @@ import FileClient from "solid-file-client";
 import auth from "solid-auth-client";
 import properties from "../commons/Properties";
 import request from "request";
-import ShowFriends from "./ShowFriends";
+import ShowFriends from "./ShowFriendsAndGroups";
 import { useTranslation } from 'react-i18next';
 
 async function sendNotification(userWebId, friendWebId, fileId) {

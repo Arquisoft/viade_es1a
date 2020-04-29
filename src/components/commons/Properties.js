@@ -4,6 +4,7 @@ const properties = {
     profile: "/profile/card#me",
     inbox: "/inbox/",
     inboxSinBarra: "inbox/",
+    groupFolder: "/private/group",
     layers: [
         //Satelite
         "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",

@@ -19,9 +19,10 @@ export async function getFiles() {
   const storage = profile.getRef(space.storage);
 
   let folder;
-  await fc.readFolder(storage + properties.myFolder)
+  await fc.readFolder(storage + properties.myFolderSinBarra)
     .then((content) => { folder = content; })
     .catch((err) => (folder = null));
+
   return folder.files;
 }
 

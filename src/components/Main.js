@@ -20,13 +20,13 @@ class Main extends React.Component {
     const Iniciar = () => {
       const { t } = useTranslation();
 
-      return (<div>{t('Sesion.1')}</div>);
+      return (<div data-testid="ses">{t('Sesion.1')}</div>);
   };
     return (
       <div className="App" data-testid="App">
         <div className="container" data-testid="container">
           <LoggedOut>
-            <img src={logo} className="App-logo" alt="logo" data-testid="logo"/>
+            <img  src={logo} className="App-logo" alt="logo" data-testid="logo"/>
             <h2 data-testid="IniciaSesion">{<Iniciar></Iniciar>}</h2>
             <LoginButton/>
           </LoggedOut>

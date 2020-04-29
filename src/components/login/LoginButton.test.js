@@ -9,4 +9,11 @@ describe("LoginButton", () => {
   test("renders without crashing", () => {
     expect(container).toBeTruthy();
   });
+  test("Los elementos estan presentes", () => {
+    const { container,getByTestId} = render(<LoginButton></LoginButton>);
+
+    expect(getByTestId("log").textContent).toBe("Sesion.1");
+   
+
+  });
 });

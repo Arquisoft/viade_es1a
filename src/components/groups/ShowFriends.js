@@ -1,7 +1,6 @@
 import React from "react";
 import { useLDflexList } from "@solid/react";
 import Button from "../basics/BasicButton";
-import { useTranslation } from 'react-i18next';
 
 function getMarcados() {
     var checkedValue = [];
@@ -17,7 +16,6 @@ function getMarcados() {
 }
 
 function ShowFriends({ src, enviar }) {
-    const { t } = useTranslation();
 
     let container = (items) => (
         <div>
@@ -25,7 +23,7 @@ function ShowFriends({ src, enviar }) {
             {/* {console.log(items!=null)} TODO: Comprobar que hay amigos*/}
             <Button
                 class="btn"
-                text={t('Crear.1')}
+                text="Crear"
                 disabled={false}
                 onClick={() => enviar(getMarcados())}
             />

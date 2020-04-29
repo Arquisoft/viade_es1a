@@ -1,6 +1,5 @@
 import React from "react";
 import ShowFriends from "./ShowFriends";
-import { useTranslation } from 'react-i18next';
 import { useWebId } from "@solid/react";
 import properties from "../commons/Properties";
 import InputField from "../basics/ImputField";
@@ -9,8 +8,6 @@ export const Hook = () => {
 
     let folderId = String(String(useWebId()).replace(properties.profile, properties.Groups));
     //let userId = useWebId();
-
-    const { t } = useTranslation();
 
     class Groups extends React.Component {
 
@@ -33,7 +30,7 @@ export const Hook = () => {
             }
 
 
-            console.log("Creado grupo "+this.state.nombreGrupo+" de ");
+            console.log("Creado grupo " + this.state.nombreGrupo + " de ");
 
             for (var i = 0; i < amigos.length; ++i) {
                 this.state.amigo = amigos[i];
@@ -45,12 +42,9 @@ export const Hook = () => {
                 console.log(this.state.amigo)
 
             }
-
-
-
         }
 
-        
+
         setInputValue(property, val) {
             val = val.trim();
             this.setState({
@@ -68,7 +62,7 @@ export const Hook = () => {
                         onChange={(val) => this.setInputValue("nombreGrupo", val)}
                     />
 
-                    <p>{t('Amigos.1')}</p>
+                    <p>Amigos</p>
                     <ShowFriends src="user.friends" enviar={this.crearGrupo.bind(this)} />
                 </div>
             );

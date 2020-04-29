@@ -21,7 +21,7 @@ function ShowFriends({ src, enviar }) {
 
     let container = (items) => (
         <div>
-            <p>{t('AmigosyGrupos.1')}</p>
+            <p>Seleccione amigos y grupos</p>
             {items}
             {/* {console.log(items!=null)} TODO: Comprobar que hay amigos*/}
             <Button

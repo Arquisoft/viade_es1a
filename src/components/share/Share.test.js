@@ -14,7 +14,7 @@ describe("share", () => {
         const { container,getByTestId, getByText } = render(<Share/>);
         expect(getByTestId("comp").textContent).toBe("Compartir.1");
         expect(getByTestId("uri").textContent).toBe("URI.1");
-
+        getByText("Enviar.1").click();        
     });
 
 });

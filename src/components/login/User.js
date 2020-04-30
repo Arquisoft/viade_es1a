@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 export const User = () => {
   const { t, i18n } = useTranslation();
- 
+
   function handleClick(lang) {
     i18n.changeLanguage(lang.options[lang.selectedIndex].value);
 
@@ -17,12 +17,12 @@ export const User = () => {
       <nav >
 
         <select id="select_id" onChange={() => handleClick(document.getElementById("select_id"))}>
+          <option value="es"> {t('SP.1')}</option>
+
           <option value="en">{t('EN.1')}</option>
-          <option value="es"> {t('SP.1')}
-          </option>
         </select>
 
-       
+
       </nav>
       <div className="col-sm">
         <span id="estasLogueado" data-testid="usert"> {t('Logueado.1')} <a href={useWebId()}><Value src="user.name" /></a></span>

@@ -4,8 +4,7 @@ import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
 import { useTranslation } from 'react-i18next';
-import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom';
-import NotFoundPage from "../NotFoundPage";
+import { Redirect } from 'react-router-dom';
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
@@ -26,10 +25,14 @@ export async function getFiles() {
     .catch((err) => (folder = null));
 
   if (folder === null) {
-    //TODO
+    return null;
   }
 
   return folder.files;
+}
+
+function redirectTo() {
+  return <Redirect to="/404" />;
 }
 
 async function readRoute(handleFiles, URL) {
@@ -47,6 +50,10 @@ async function readRoute(handleFiles, URL) {
 
 export function filesToButtons(files, handleFiles) {
   const buttons = [];
+
+  if (files === null) {
+    return redirectTo();
+  }
 
   for (const [index, value] of files.entries()) {
     buttons.push(

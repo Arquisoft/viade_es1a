@@ -31,10 +31,6 @@ export async function getFiles() {
   return folder.files;
 }
 
-function redirectTo() {
-  return <Redirect to="/404" />;
-}
-
 async function readRoute(handleFiles, URL) {
 
   let rutaView = null;
@@ -52,7 +48,7 @@ export function filesToButtons(files, handleFiles) {
   const buttons = [];
 
   if (files === null) {
-    return redirectTo();
+    return <Redirect to="/404" />;
   }
 
   for (const [index, value] of files.entries()) {

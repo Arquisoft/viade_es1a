@@ -1,3 +1,4 @@
+/* 
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,13 +14,16 @@ code {
 }
 
 div{
-    /* */
+   
     border: solid;
     border-color:aquamarine;
-    /* */
+    
 }
 
-
+.identification{
+    width: 100%;
+    height: 100%;
+}
 
 
 .app{
@@ -29,6 +33,11 @@ div{
 }
 
 .nav{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-usr{
 
 }
 
@@ -44,7 +53,7 @@ div{
 
 }
 
-/*--------------------------------------------*/
+
 
 .map{
 
@@ -58,3 +67,34 @@ div{
 .hamburger-right{
 
 }
+
+.btn {
+  
+    width: 100%;
+   
+    min-width: 280px;
+   
+    color: #565656;
+   
+    padding: 12px;
+   
+    font-size: 14px;
+   
+    font-weight: bold;
+   
+    border: solid 2px #a4fa1a;
+   
+    border-radius: 4px;
+   
+    background: #fff;
+   
+    cursor: pointer;
+   
+   }
+
+.Campanita-ico{
+    width:3%;
+    min-width: 20px;
+    max-width: 50px; 
+}
+   */

@@ -8,8 +8,8 @@ import properties from "../commons/Properties";
 import "../../static/css/Main.css";
 
 const Wrapper = styled.div`
-    width: 100 px;
-    height: 100 px;
+    width: 1000px;
+    height: 600px;
 `;
 
 class Map extends React.Component {
@@ -38,16 +38,16 @@ class Map extends React.Component {
     }
 
     async cambiar() {
-        this.actual = this.actual+1;
-        if(this.actual >= properties.layers.length){
-            this.actual=0;
+        this.actual = this.actual + 1;
+        if (this.actual >= properties.layers.length) {
+            this.actual = 0;
         }
 
         this.layer.removeFrom(this.map);
         this.setLayer();
     }
 
-    setLayer(){
+    setLayer() {
         this.layer = L.tileLayer(
             properties.layers[this.actual], {
             detectRetina: true,
@@ -59,17 +59,21 @@ class Map extends React.Component {
 
     render() {
         return (
-            <div className="map">
+            <React.Fragment>
+                <div className= "map">
                 <Button
                     class="btn"
                     text="Cambiar layer"
                     disabled={false}
                     onClick={() => this.cambiar()}
-                    data-testid = "cambiarLayer"
+                    data-testid="cambiarLayer"
                 />
-                <Wrapper id="map" data-testid = "map"/>
-                <MapList handleFiles={this.handleFiles.bind(this)}/>
-            </div>
+                <Wrapper id="map" data-testid="map" />
+                </div>
+                <div className = "routeList"><MapList handleFiles={this.handleFiles.bind(this)} /></div>
+            </React.Fragment>
+
+
 
         );
     }

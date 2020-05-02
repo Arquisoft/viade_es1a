@@ -11,31 +11,33 @@ import Map from "./map/Map";
 import Share from "./share/Share";
 import Notification from "./notifications/Notification";
 
+
 import "../static/css/Main.css";
 
 class Main extends React.Component {
   render() {
 
     return (
+      
       <div className="app" data-testid="App">
         <div className="container" data-testid="container">
-          <LoggedOut>
-            <img src={logo} className="App-logo" alt="logo" data-testid="logo"/>
-            <h2 data-testid="IniciaSesion">Iniciar sesión</h2>
-            <LoginButton/>
-          </LoggedOut>
+          <div className="identification">
+            <LoggedOut>
+              <img src={logo} className="App-logo" alt="logo" data-testid="logo"/>
+              <h2 data-testid="IniciaSesion">Iniciar sesión</h2>
+              <LoginButton/>
+            </LoggedOut>
+          </div>
 
           <LoggedIn>
             <div className = "nav">
-              <div className = "usrCmp"><User /></div>
+              <div className = "nav nav-usr"><User /></div>
               <Notification />
               <div className = "lgnBtn"><LoginButton /></div>
             </div>
 
-            <div className = "map">
-              <div className = "mapCmp"><Map /></div>
-              <div className = "uplCmp"><UploadToPod /></div>
-            </div>
+            <Map />
+            <UploadToPod />
 
             <div className = "share">
               <div className = "shrCmp"><Share /></div>
@@ -43,7 +45,7 @@ class Main extends React.Component {
 
           </LoggedIn>
         </div>
-        </div>
+      </div>
     );
   }
 }

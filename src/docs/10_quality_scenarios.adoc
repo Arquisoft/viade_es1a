@@ -4,23 +4,21 @@
 === Árbol de calidad
 [plantuml,calidad,png]
 ----
-@startuml
-[Viade]--> [Usabilidad]
-[Viade]--> [Mantenibilidad]
-[Viade]--> [Privacidad de datos]
-[Viade]--> [Eficiencia]
+@startmindmap
 
-[Usabilidad] --> [Fácil de usar]
-[Usabilidad] --> [Accesibilidad]
+* Viade
+** Usabilidad
+*** Fácil de usar
+*** Accesibilidad
+** Mantenibilidad
+*** Buen diseño inicial
+*** Facil realizar cambios
+** Privacidad de datos
+*** Descentralización
+** Eficiencia
+*** Tiempo de respuesta cortos
 
-[Mantenibilidad] --> [Buen diseño inicial]
-[Mantenibilidad] --> [Facil realizar cambios]
-
-[Privacidad de datos] --> [Descentralización]
-
-[Eficiencia] --> [Tiempo de respuesta cortos]
-
-@enduml
+@endmindmap
 ----
 === Escenarios de calidad
 
@@ -36,6 +34,6 @@
 | La información se tiene que guardar de forma descentralizada, es decir, que el usuario pueda llevarse su información cuando quiera y compartirla con las personas que desee.
 | Muy Alta
 | Eficiencia
-| La aplicación debe tener un tiempo de respuesta menor a 10 segundos
+| La aplicación debe tener un tiempo de respuesta menor a 3 segundos
 | Alta
 |===

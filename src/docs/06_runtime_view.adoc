@@ -8,12 +8,16 @@
 @startuml
 
 actor Usuario
-Usuario -> Viade1a: Login 
-Viade1a -> GestorSesión:Introduccion credenciales
-GestorSesión -> Solid:Login request
-Solid -> Viade1a:   Login correcto
-Solid -> GestorSesión:   Login incorrecto
-Usuario -> Viade1a: Gestión de rutas
+Usuario -> Interfaz_Grafica: Login 
+Interfaz_Grafica -> PopUp_Login:Abrir popup
+Usuario -> PopUp_Login:Introducir datos de login
+
+database Solid
+PopUp_Login -> Solid:Login request
+Solid -> Interfaz_Grafica:   Login correcto
+Solid -> PopUp_Login:   Login incorrecto
+
+
 
 @enduml
 ----
@@ -24,10 +28,13 @@ Usuario -> Viade1a: Gestión de rutas
 @startuml
 
 actor Usuario
-Usuario -> Viade1a:Subir JSON
 
-Viade1a -> Solid:Almacenar Ruta
-Solid -> Viade1a:Mensaje guardada
+Usuario -> UploadToPod:Subir JSON
+database Solid
+UploadToPod -> Solid:Almacenar Ruta
+Solid -> UploadToPod:Confirmacion
+UploadToPod -> Usuario:Mensaje de confirmacion
+
 
 
 @enduml
@@ -36,69 +43,69 @@ Solid -> Viade1a:Mensaje guardada
 
 === Escenario Ver Ruta
 
-[plantuml,Sequence diagram,png]
+[plantuml,ver ruta,png]
 ----
 @startuml
-
-
 
 actor Usuario
-collections Interfaz_Grafica
-collections Logica_de_negocio
-boundary LeafletApi
-collections Persistencia
+participant Interfaz_Grafica
+participant GestorMapas
 database Pod
 
-Usuario -> Interfaz_Grafica: Click en la ruta
-activate Interfaz_Grafica
-Interfaz_Grafica -> Logica_de_negocio: Pedir ruta (id)
-activate Logica_de_negocio
-Logica_de_negocio -> Persistencia: Pedir ruta (id)
-activate Persistencia
-Persistencia -> Pod: Pedir Ruta (id)
-Pod -> Persistencia: Devolver ruta (JSON)
-Persistencia -> Logica_de_negocio : Devolver ruta (JSON)
-deactivate Persistencia
-Logica_de_negocio -> Logica_de_negocio : Parser (JSON a Object)
-Logica_de_negocio -> LeafletApi : Obtener mapa (Object)
-LeafletApi -> Logica_de_negocio : Mapa (Url)
-Logica_de_negocio -> Interfaz_Grafica : Mapa (Url)
-deactivate Logica_de_negocio
-Interfaz_Grafica -> Usuario : Mostrar mapa
-deactivate Interfaz_Grafica
+
+Usuario -> Interfaz_Grafica:Cargar rutas
+Interfaz_Grafica -> Pod:Solicita lista de rutas
+Pod -> Interfaz_Grafica:Devuelve lista de rutas
+Usuario -> Interfaz_Grafica:Seleccionar ruta
+Interfaz_Grafica -> Pod:Solicita ruta seleccionada
+Pod -> Interfaz_Grafica:Devuelve ruta seleccionada
+Interfaz_Grafica -> GestorMapas:Mostrar ruta
+
+GestorMapas -> Usuario:Mostrar ruta en mapa
 
 @enduml
 ----
 
-=== Compartir ruta
+=== Compartir archivos
 
-[plantuml,compartir ruta,png]
+[plantuml,compartir arhivos,png]
 ----
 @startuml
-
 actor Usuario1
-Usuario1 -> Viade1a:Introducir URI archivo y amigo
 
-Viade1a -> Solid:Almacena Ruta privada en publica
-Solid -> Viade1a:Mensaje guardada
-Solid <- viade2:Accede a la ruta
+
+participant  Share_1
+database Pod1
+database Pod2
+participant  Share_2
+
 actor Usuario2
-Usuario2 <- viade2: Muestra ruta
+
+Pod1 -> Share_1 :Cargar Lista amigos
+Share_1 -> Usuario1:Listar Amigos
+Usuario1 -> Share_1:Introducir URI archivo y seleccionar amigos
+
+
+Share_1 -> Pod1:Almacena Ruta privada en publica
+Pod1 -> Share_1:Mensaje confirmación
+
+
+Share_1 -> Pod2:Añade notificación
+Share_2 <- Usuario2: Acceder aplicación
+Pod2 <- Share_2:Accede al POD
+
+Share_2 <- Pod2: Muestra Numero notificaciones
+
+Share_2 -> Usuario2: Ver Notificaciones
+
 @enduml
 ----
-=== Compartir con grupos
+Leyenda:
+|===
 
-[plantuml,compartir grupos,png]
-----
-@startuml
+|Simbolo|Significado
+|image:leyenda_actor_small.png["Actor",float="left",align="center", scaleheight=20px]|Usuario que interactua con la aplicación
+|image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información
+|image:leyenda_modulo_small.png["Modulo",float="left",align="center", scaleheight=20px]|Modulo del sistema
 
-actor Usuario1
-Usuario1 -> Viade1a:Introducir URI archivo y amigo
-
-Viade1a -> Solid:Almacena Ruta privada en publica
-Solid -> Viade1a:Mensaje guardada
-Solid <- viade2:Accede a la ruta
-
-Grupo <- viade2: Muestra ruta
-@enduml
-----
+|===

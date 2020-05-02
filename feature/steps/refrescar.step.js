@@ -1,35 +1,36 @@
-import 'jest';
+import "jest";
 
-import { defineFeature, loadFeature } from 'jest-cucumber';
+import { defineFeature, loadFeature } from "jest-cucumber";
 
-const feature = loadFeature('./feature/features/cambiarLayer.feature');
-const puppeteer = require('puppeteer');
+const feature = loadFeature("./feature/features/refrescar.feature");
+const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
+let jest;
 
-defineFeature(feature, test => {
+defineFeature((feature, test) => {
     beforeEach(async () => {
         jest.setTimeout(1200000);
     });
 
-    test('Cambiar Layer', ({ given, when, then}) => {
-        given('Un usuario con la sesion iniciada', async () => {
+    test("Refrescar notificaciones", ({ given, when, then}) => {
+        given("Un usuario con la sesion iniciada", async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
-            await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
+            await page.goto("http://localhost:3000/", { waitUntil: "networkidle2"});
 
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(async function (btn) {
-                  if (btn.innerText == "Identificate"){
+                  if (btn.innerText === "Identificate"){
                     btn.click();
                   }      
                 });
               });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once('popup', resolve)),
+                new Promise((resolve) => page.once("popup", resolve)),
               ]);
               
   
@@ -39,14 +40,14 @@ defineFeature(feature, test => {
               await popup.evaluate(() => {
                   let btns = [...document.querySelectorAll("button")];
                   btns.forEach(function (btn) {
-                    if (btn.innerText == "Go"){
+                    if (btn.innerText === "Go"){
                       btn.click();
                     }      
                   });
                 });
       
               await popup.waitForNavigation({
-                waitUntil: 'networkidle2'
+                waitUntil: "networkidle2"
               });
   
               await popup.waitForSelector('[id="username"]', {visible: true});
@@ -61,21 +62,20 @@ defineFeature(feature, test => {
               await popup.evaluate(() => {
                 let btns = [...document.querySelector(".form-horizontal.login-up-form").querySelectorAll("button")];
                 btns.forEach(function (btn) {
-                  if (btn.innerText == "Log In")
+                  if (btn.innerText === "Log In"){
                     btn.click();
+                  }     
                 });
               });
         });
 
-        when('se pulsa el boton cambiar layer', async () => {
+        when("pulsa el boton de refrescar notificaciones", async () => {
             await page.waitFor(1000);
-
-            await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
 
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(async function (btn) {
-                  if (btn.innerText == "Cambiar layer"){
+                  if (btn.innerText === "Refrescar notificaciones"){
                     btn.click();
                   }      
                 });
@@ -83,10 +83,9 @@ defineFeature(feature, test => {
             
         });
 
-        then('se cambia el mapa', async () => {
+        then("se actualiza", async () => {
             await page.waitForSelector('[id="map"]', {visible: true});
-            await page.waitFor(1000);
-            await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot2.png'});
+            
             expect(page.url()).toBe("http://localhost:3000/");
 
             await browser.close();
@@ -94,6 +93,6 @@ defineFeature(feature, test => {
         });
 
 
-    })
+    });
     
-})
+});

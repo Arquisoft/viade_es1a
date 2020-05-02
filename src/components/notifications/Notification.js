@@ -6,6 +6,8 @@ import properties from "../commons/Properties";
 import Button from "../basics/BasicButton";
 import { useWebId } from "@solid/react";
 import "../../static/css/Main.css";
+import { useTranslation } from 'react-i18next';
+
 
 
 
@@ -14,12 +16,18 @@ async function getNNotifications() {
     const auth = require("solid-auth-client");
     const FC = require("solid-file-client");
     const fc = new FC(auth);
-
     let session = await auth.currentSession();
-
-    const profileDocument = await fetchDocument(session.webId);
-    const profile = profileDocument.getSubject(session.webId);
-
+    let session2 = "https://kevin23699.solid.community/profile/card#me"
+    let profile="";
+    let profileDocument="";
+    if (session == null) {
+         profileDocument = await fetchDocument(session2);
+         profile = profileDocument.getSubject(session2);
+    }
+    else {
+         profileDocument = await fetchDocument(session.webId);
+         profile = profileDocument.getSubject(session.webId);
+    }
     const storage = profile.getRef(space.storage);
 
 
@@ -35,6 +43,8 @@ async function getNNotifications() {
 }
 
 const NotificationHook = () => {
+    const { t } = useTranslation();
+
     let webid = String(String(useWebId()).replace(properties.profile, properties.inbox));
 
     class Notification extends React.Component {
@@ -67,15 +77,18 @@ const NotificationHook = () => {
             }
         }
 
+
         render() {
             return (
                 <div className = "notification">
-                    <img src={campanita} className="Campanita-ico" alt="ico" />
-                    <a href={this.state.inboxUrl}>Notificaciones recibidas</a>: {this.state.nNotifications}
+                    <img  data-testid="imgnoti" src={campanita} className="Campanita-ico" alt="ico" />
+                    <a data-testid="not" href={this.state.inboxUrl}>{t('Notificaciones.1')}</a>: {this.state.nNotifications}
                     <Button
-                        text="Refrescar notificaciones"
+                        text={t('Refrescar.1')}
+                        data-testid="btnoti"
                         disabled={false}
                         onClick={() => this.updateNotifications()}
+                        testid="btNot"
                     />
                     
                 </div>

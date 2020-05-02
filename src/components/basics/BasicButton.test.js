@@ -1,12 +1,12 @@
-import 'jest';
-import React from 'react';
+import "jest";
+import React from "react";
 import { render } from "@testing-library/react";
-import BasicButton from './BasicButton';
+import BasicButton from "./BasicButton";
 
-describe('BasicButton', () => {
+describe("BasicButton", () => {
   const { container } = render(<BasicButton/>);
   
-  test('renders without crashing', () => {
+  test("renders without crashing", () => {
     expect(container).toBeTruthy();
   });
 });

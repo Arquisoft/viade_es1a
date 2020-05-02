@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styled from "styled-components";
@@ -6,15 +6,19 @@ import Button from "../basics/BasicButton";
 import MapList from "../solidPod/MapList";
 import properties from "../commons/Properties";
 import "../../static/css/Main.css";
+import { useTranslation } from 'react-i18next';
 
 const Wrapper = styled.div`
     width: 1000px;
     height: 600px;
 `;
 
+
+
 class Map extends React.Component {
 
     constructor(props) {
+
         super(props);
         this.actual = 0;
         this.layer = null;
@@ -57,23 +61,30 @@ class Map extends React.Component {
         this.layer.addTo(this.map);
     }
 
+
     render() {
+        const Layer = () => {
+            const { t } = useTranslation();
+
+
+            return (<div data-testid="lay">{t('Layer.1')}</div>);
+        };
         return (
             <React.Fragment>
                 <div className= "map">
                 <Button
                     class="btn"
-                    text="Cambiar layer"
+
                     disabled={false}
                     onClick={() => this.cambiar()}
                     data-testid="cambiarLayer"
+
+                    text={<Layer></Layer>}
                 />
                 <Wrapper id="map" data-testid="map" />
                 </div>
                 <div className = "routeList"><MapList handleFiles={this.handleFiles.bind(this)} /></div>
             </React.Fragment>
-
-
 
         );
     }

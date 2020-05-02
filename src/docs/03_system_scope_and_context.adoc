@@ -6,25 +6,26 @@
 
 ----
 @startuml
+
 actor Usuario
+node Viade <<Aplicacion>> as Viade
 database Pod
 
-Usuario ->  [Viade] :Cargar ruta
-[Viade] ->  Usuario :Mostrar ruta
-Pod -> [Viade] :Leer Rutas
-[Viade]  -right-> Pod :Guardar Rutas
+Usuario ->  Viade:Cargar ruta
+Viade ->  Usuario:Mostrar ruta
+Pod -> Viade:Leer Rutas
+Viade  -right-> Pod:Guardar Rutas
 
 @enduml
 ----
-
+Leyenda:
 |===
 
-|Entidad|Contexto
-|Usuario|Sube y lee rutas desde su POD
-|POD|Almacena rutas de forma interoperable
-|Viade|Parsea las rutas y las muestra en un mapa
+|Simbolo|Significado
+|image:leyenda_actor_small.png["Actor",float="left",align="center", scaleheight=20px]|Usuario que interactua con la aplicación
+|image:leyenda_viade_small.png["Viade",float="left",align="center", scaleheight=20px]|Conjunto de módulos de la aplicación
+|image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información
 |===
-
 
 === Contexto técnico
 
@@ -32,30 +33,34 @@ Pod -> [Viade] :Leer Rutas
 
 ----
 @startuml
-actor Alice
-actor Bob
-database AlicePod
-database BobPod
+actor "Usuario 1" as Alice
+actor "Usuario 2" as Bob
+database "Pod del usuario 1" as AlicePod
+database "Pod del usuario 2" as BobPod
+node Viade <<Aplicacion>> as ViadeA
+node Viade <<Aplicacion>> as ViadeB
 
-Alice -right->  [ViadeA] :Browser
-[ViadeA] -right-> AlicePod    :Almacenar Ruta 
-AlicePod -left->  [ViadeA]   :Ver Ruta 
+Alice -right->  ViadeA :Navegador
+ViadeA -right-> AlicePod    :Almacenar Ruta 
+AlicePod -left->  ViadeA   :Ver Ruta 
 
-Bob -right->   [ViadeB] :Browser
-[ViadeB] -right->  BobPod    :Almacenar Ruta 
-BobPod -left-> [ViadeB]   :Ver Ruta 
+Bob -right->   ViadeB :Navegador
+ViadeB -right->  BobPod    :Almacenar Ruta 
+BobPod -left-> ViadeB   :Ver Ruta 
 
 
-[ViadeA] -down-> BobPod    :Compartir Ruta Alice 
-[ViadeB] -up-> AlicePod    :Compartir Ruta Bob 
+ViadeA -down-> BobPod    :Compartir Ruta 
+ViadeB -up-> AlicePod    :Compartir Ruta
 
 @enduml
 ----
+
+Leyenda:
 |===
 
-|Entidad|Contexto
-|Alice/Bob|Accede a la aplicación mediante un navegador
-|Viade|Muestra y comparte las rutas 
-|POD|Almacena rutas de forma interoperable
+|Simbolo|Significado
+|image:leyenda_actor_small.png["Actor",float="left",align="center", height=20]|Usuario que interactua con la aplicación
+|image:leyenda_viade_small.png["Viade",float="left",align="center", height=20]|Conjunto de módulos de la aplicación
+|image:leyenda_pod_small.png["Pod",float="left",align="center", height=20]|POD de SOLID para almacenar información
 
 |===

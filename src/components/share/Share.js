@@ -7,6 +7,8 @@ import auth from "solid-auth-client";
 import properties from "../commons/Properties";
 import request from "request";
 import ShowFriends from "./ShowFriends";
+import { useTranslation } from 'react-i18next';
+import { Redirect } from 'react-router-dom';
 
 async function sendNotification(userWebId, friendWebId, fileId) {
     request({
@@ -34,6 +36,8 @@ async function sendNotification(userWebId, friendWebId, fileId) {
 export const Hook = () => {
     let folderId = String(String(useWebId()).replace(properties.profile, properties.myFolder));
     let userId = useWebId();
+    const { t } = useTranslation();
+
 
 
     class Share extends React.Component {
@@ -41,7 +45,8 @@ export const Hook = () => {
             super(props);
             this.state = {
                 archivo: folderId,
-                amigo: ""
+                amigo: "",
+                error: ""
             };
         }
 
@@ -60,7 +65,15 @@ export const Hook = () => {
             //Copiamos el archivo a la carpeta publica
             const fc = new FileClient(auth);
             //console.log("Copiando "+this.state.archivo+" a " +publicRute)
-            await fc.copy(this.state.archivo, publicRute);
+            try {
+                await fc.copy(this.state.archivo, publicRute);
+            } catch (error) {
+                this.setState({
+                    error: <Redirect to="/404" />,
+                  });
+                return;
+            }
+            
 
             for (var i = 0; i < amigos.length; ++i) {
                 this.state.amigo = amigos[i];
@@ -95,14 +108,16 @@ export const Hook = () => {
             return (
                 <div className="LoginForm">
 
-                    <h2>Compartir ruta</h2>
-                    <p>Introducir URI del archivo:</p>
+                    <h2 data-testid="comp">{t('Compartir.1')}</h2>
+                    <p data-testid="uri">{t('URI.1')}</p>
                     <InputField
                         type="text"
                         value={this.state.archivo ? this.state.archivo : ""}
                         onChange={(val) => this.setInputValue("archivo", val)}
                     />
                     <ShowFriends src="user.friends" enviar={this.enviar.bind(this)} />
+
+                    {this.state.error}
 
 
                 </div>

@@ -18,7 +18,7 @@ export const UploadHook = () => {
                 let fileName = files[0].name;
                 let url = webid+fileName;
                 fc.createFile(url, reader.result, "text/turtle");
-                alert("Archivo subido a rutas/"+fileName);
+                alert("Archivo subido a "+properties.myFolder+fileName);
             };
             reader.readAsText(files[0]);
         };
@@ -26,7 +26,7 @@ export const UploadHook = () => {
         render() {
             return (
                 <ReactFileReader handleFiles={this.handleFiles} fileTypes={".geojson"}>
-                    <Button data-testid="subirjson">Subir Json a Solid</Button>
+                    <Button data-testid="subirjson">Subir Ruta</Button>
                 </ReactFileReader>
             );
         }

@@ -3,27 +3,89 @@
 
 == Vista del bloque de construcción
 
-=== Nivel 1
 
-==== Sistema general de Whitebox
+[plantuml,Primer nivel,png]
 
-image:Figura5.1.png["Diagrama nivel 1",float="left",align="center"] +
-Figura 5.1
+----
+@startuml
+node "Primer nivel"{
+actor Usuario
+node Viade <<Aplicacion>> as Viade
+database Pod
+
+Usuario ->  Viade:Cargar ruta
+Viade ->  Usuario:Mostrar ruta
+Pod -> Viade:Leer Rutas
+Viade  -right-> Pod:Guardar Rutas
+}
+@enduml
+----
+
+
+[plantuml,Segundo nivel,png]
+----
+@startuml
+node "Segundo nivel"{
+  node "Test"{
+    (Jest)
+    (Puppeteer)
+  }
+  node "App"{
+    (Componentes)
+    (Modelos)
+    (Servicios)
+  }
+}
+@enduml
+----
+
+
+[plantuml,Tercer nivel Modelos,png]
+----
+@startuml
+node "Tercer nivel Modelos"{
+  (Ruta)
+  (Perfil)
+  (Amigo)
+  (Sesión)
+}
+@enduml
+----
+
+
+[plantuml,Tercer nivel servicios,png]
+----
+@startuml
+node "Tercer nivel Servicios"{
+    (Login)
+    (Registro)
+    (Añadir Ruta)
+    (Añadir Amigo)
+    (Listar Amigos)
+}
+@enduml
+----
+
+
+[plantuml,Tercer nivel componente,png]
+----
+@startuml
+node "Tercer nivel Componente"{
+    (Mapa)
+    (Notificación)
+    (Share)
+}
+@enduml
+
+----
+
+Leyenda:
+|===
+
+|Simbolo|Significado
+|image:leyenda_actor_small.png["Actor",float="left",align="center", scaleheight=20px]|Usuario que interactua con la aplicación
+|image:leyenda_viade_small.png["Viade",float="left",align="center", scaleheight=20px]|Conjunto de módulos de la aplicación
+|image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información
+|image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
 
 |===
-| **Nombre** | **Responsable de:**
-| _Caja 1_ | _Aplicación encargada de cumplir con los requisitos propuestos_
-| _Caja 2_ | _Pods donde se guardará la información del dueño correspondiente_
-| _Flecha 1_ | _Representa la interacción del usuario con la aplicación mediante la interfaz gráfica de esta_
-| _Flecha 2_ | _Representa el envío de información, bien para el guardado en el caso de apuntar a un pod o del mostrado en caso de apuntar a la aplicación_
-| _Flecha 3_ | _Representa la solicitud de información desde una aplicación a un pod, ya sea el del usuario de la aplicación o de un amigo_
-
-|===
-
-=== Level 2
-
-N/A
-
-=== Level 3
-
-N/A

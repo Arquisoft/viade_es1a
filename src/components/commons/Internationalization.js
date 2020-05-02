@@ -1,7 +1,8 @@
+//import ReactDOM from "react-dom";
 import En from "./languages/En";
 import Es from "./languages/Es";
 
-function change(languaje){
+function change(languaje, update){
     console.log(languaje)
     if(languaje === "es"){
         Internationalization.Option = Es;
@@ -9,8 +10,11 @@ function change(languaje){
     }
     if(languaje === "en"){
         Internationalization.Option = En;
-        console.log("Cambiado a Es")
+        console.log("Cambiado a En")
     }
+
+    update();
+    //ReactDOM.render(null, document.getElementsById("inter"));
 }
 
 let Internationalization = {

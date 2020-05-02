@@ -1,20 +1,20 @@
 const Language = {
-    Logueado: " ",
-    Refrescar: " ",
-    Subir: " ",
-    Sesion: " ",
-    Amigos: " ",
-    Notificaciones: " ",
-    Compartir: " ",
-    URI: "Introducir URI del archivo:",
-    Enviar: "Enviar a amigos",
-    SP: "Español",
-    EN: "Inglés",
-    Layer: "Cambiar layer",
-    Actualizar: "Actualizar lista",
-    Desconectar: "Desconectar",
+    Logueado: "You are logged in as",
+    Refrescar: "Refresh notifications",
+    Subir: "Upload Json to Solid",
+    Sesion: "Log In",
+    Amigos: "Select friends:",
+    Notificaciones: "Notifications received",
+    Compartir: "Share route",
+    URI: "Enter URI file:",
+    Enviar: "Send to friends",
+    SP: "Spanish",
+    EN: "English",
+    Layer: "Change Layer",
+    Actualizar: "Update list",
+    Desconectar: "Disconnect",
     Identificate: "Identificate",
-    Ini: "Iniciar Sesión"
+    Ini: "Log in"
 }
 
 export default Language;

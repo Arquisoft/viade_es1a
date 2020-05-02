@@ -1,6 +1,8 @@
 const properties = {
-    myFolder: "/private/rutas/",
-    shareFolder: "/public/rutasCompartidas/",
+    //myFolder: "/private/rutas/",
+    myFolder: "/viade/routes/",
+    myFolderSinBarra: "viade/routes/",
+    shareFolder: "/public/viade/routes/",
     profile: "/profile/card#me",
     inbox: "/inbox/",
     inboxSinBarra: "inbox/",

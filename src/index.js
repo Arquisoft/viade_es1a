@@ -4,7 +4,6 @@ import "./static/css/Main.css";
 import Main from "./components/Main";
 //import * as serviceWorker from "./serviceWorker";
 import './i18next';
-import Main from "./components/Main";
 
 
 ReactDOM.render(

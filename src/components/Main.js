@@ -29,11 +29,10 @@ class Main extends React.Component {
       
       <div className="app" data-testid="App">
         <div className="container" data-testid="container">
-<<<<<<< HEAD
           <div className="identification">
             <LoggedOut>
               <img src={logo} className="App-logo" alt="logo" data-testid="logo"/>
-              <h2 data-testid="IniciaSesion">Iniciar sesión</h2>
+              <h2 data-testid="IniciaSesion">{<Iniciar></Iniciar>}</h2> 
               <LoginButton/>
             </LoggedOut>
           </div>
@@ -42,20 +41,9 @@ class Main extends React.Component {
             <div className = "nav">
               <div className = "nav nav-usr"><User /></div>
               <Notification />
-              <div className = "lgnBtn"><LoginButton /></div>
+              <LoginButton />
             </div>
 
-=======
-          <LoggedOut>
-            <img src={logo} className="App-logo" alt="logo" data-testid="logo" />
-            <h2 data-testid="IniciaSesion">{<Iniciar></Iniciar>}</h2>
-            <LoginButton />
-          </LoggedOut>
-
-          <LoggedIn>
-
-            <User />
->>>>>>> master
             <Map />
             <UploadToPod />
 

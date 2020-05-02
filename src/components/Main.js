@@ -17,11 +17,12 @@ class Main extends React.Component {
   render() {
 
     return (
-        <div className="app">
+      <div className="App" data-testid="App">
+        <div className="container" data-testid="container">
           <LoggedOut>
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Iniciar sesión</h2>
-            <LoginButton />
+            <img src={logo} className="App-logo" alt="logo" data-testid="logo"/>
+            <h2 data-testid="IniciaSesion">Iniciar sesión</h2>
+            <LoginButton/>
           </LoggedOut>
 
           <LoggedIn>
@@ -41,6 +42,7 @@ class Main extends React.Component {
             </div>
 
           </LoggedIn>
+        </div>
         </div>
     );
   }

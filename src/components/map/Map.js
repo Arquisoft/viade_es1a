@@ -65,9 +65,10 @@ class Map extends React.Component {
                     text="Cambiar layer"
                     disabled={false}
                     onClick={() => this.cambiar()}
+                    data-testid = "cambiarLayer"
                 />
-                <Wrapper id="map" />
-                <MapList handleFiles={this.handleFiles.bind(this)} />
+                <Wrapper id="map" data-testid = "map"/>
+                <MapList handleFiles={this.handleFiles.bind(this)}/>
             </div>
 
         );

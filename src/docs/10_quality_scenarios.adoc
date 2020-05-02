@@ -2,9 +2,26 @@
 == Requerimientos de calidad
 
 === Árbol de calidad
+[plantuml,calidad,png]
+----
+@startuml
+[Viade]--> [Usabilidad]
+[Viade]--> [Mantenibilidad]
+[Viade]--> [Privacidad de datos]
+[Viade]--> [Eficiencia]
 
-image::QualityTree.png[]
+[Usabilidad] --> [Fácil de usar]
+[Usabilidad] --> [Accesibilidad]
 
+[Mantenibilidad] --> [Buen diseño inicial]
+[Mantenibilidad] --> [Facil realizar cambios]
+
+[Privacidad de datos] --> [Descentralización]
+
+[Eficiencia] --> [Tiempo de respuesta cortos]
+
+@enduml
+----
 === Escenarios de calidad
 
 |===
@@ -19,6 +36,6 @@ image::QualityTree.png[]
 | La información se tiene que guardar de forma descentralizada, es decir, que el usuario pueda llevarse su información cuando quiera y compartirla con las personas que desee.
 | Muy Alta
 | Eficiencia
-| La aplicación no puede tener un tiempo de respuesta largo
+| La aplicación debe tener un tiempo de respuesta menor a 10 segundos
 | Alta
 |===

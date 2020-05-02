@@ -6,7 +6,6 @@ import properties from "../commons/Properties";
 import Button from "../basics/BasicButton";
 import { useWebId } from "@solid/react";
 import "../../static/css/Main.css";
-import { useTranslation } from 'react-i18next';
 
 
 

@@ -10,7 +10,6 @@ import UploadToPod from "./solidPod/UploadToPod";
 import Map from "./map/Map";
 import Share from "./share/Share";
 import Notification from "./notifications/Notification";
-import { useTranslation } from 'react-i18next';
 import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom';
 import NotFoundPage from "./NotFoundPage";
 

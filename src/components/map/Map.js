@@ -6,7 +6,6 @@ import Button from "../basics/BasicButton";
 import MapList from "../solidPod/MapList";
 import properties from "../commons/Properties";
 import "../../static/css/Main.css";
-import { useTranslation } from 'react-i18next';
 
 const Wrapper = styled.div`
     width: 1000px;

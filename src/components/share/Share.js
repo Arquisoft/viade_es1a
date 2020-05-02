@@ -7,7 +7,6 @@ import auth from "solid-auth-client";
 import properties from "../commons/Properties";
 import request from "request";
 import ShowFriends from "./ShowFriends";
-import { useTranslation } from 'react-i18next';
 import { Redirect } from 'react-router-dom';
 
 async function sendNotification(userWebId, friendWebId, fileId) {

@@ -3,7 +3,6 @@ import Button from "../basics/BasicButton";
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
-import { useTranslation } from 'react-i18next';
 import { Redirect } from 'react-router-dom';
 
 import "../../static/css/Main.css"

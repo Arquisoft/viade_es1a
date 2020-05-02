@@ -1,7 +1,6 @@
 import React from "react";
 import { useLDflexList } from "@solid/react";
 import Button from "../basics/BasicButton";
-import { useTranslation } from 'react-i18next';
 
 function getMarcados() {
     var checkedValue = [];

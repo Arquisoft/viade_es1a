@@ -1,7 +1,6 @@
 import React from 'react';
 import "leaflet/dist/leaflet.css";
 import { AuthButton } from "@solid/react";
-import { useTranslation } from 'react-i18next';
 
 const popUri = "https://solid.community/common/popup.html";
 

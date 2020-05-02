@@ -10,9 +10,9 @@ describe("LoginButton", () => {
     expect(container).toBeTruthy();
   });
   test("Los elementos estan presentes", () => {
-    const { container,getByTestId} = render(<LoginButton></LoginButton>);
+    const { container,getByTestId,getByText} = render(<LoginButton></LoginButton>);
 
-    expect(getByTestId("log").textContent).toBe("Sesion.1");
+    expect(getByText("Iniciar Sesión")).not.toBeNull();
    
 
   });

@@ -98,6 +98,8 @@ class ListClass extends React.Component {
       <div>
 
         <Button
+        data-testid="btmaplist"
+
           text={I.Option.Actualizar}
           disabled={false}
           onClick={() => this.updateList()}

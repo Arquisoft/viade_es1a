@@ -10,17 +10,18 @@ describe("map", () => {
     });
 
     test("Los elementos estan presentes", () => {
-        const { container,getByTestId, getByText } = render(<Map/>);
+        const { container,getByTestId, getByText,getAllByText } = render(<Map/>);
         expect(container.querySelector('.btn')).toBeTruthy()
         expect(getByTestId("map")).toBeTruthy();
-        expect(getByTestId("lay").textContent).toBe("Layer.1");
-        expect(getByTestId("act").textContent).toBe("Actualizar.1");
+        expect(getByText("Cambiar layer")).not.toBeNull();
+
+        expect(getAllByText("Actualizar lista")).not.toBeNull();
 
     });
 
     test("Los elementos se pueden clicar", () => {
         const { getByTestId, getByText } = render(<Map/>);
         getByTestId("map").click();
-        getByText("Layer.1").click();        
+        getByText("Cambiar layer").click();        
     });
 });

@@ -19,7 +19,7 @@ describe("MapList", () => {
   });
 
   test("Los elementos estan presentes", () => {
-    const { container,getByTestId} = render(<MapList></MapList>);
+    const { container,getAllByText,getByTestId} = render(<MapList></MapList>);
     //expect(getByTestId("map")).toBeTruthy();
 
     //auth.login("https://adrifa13.solid.community/profile/card#me");
@@ -27,7 +27,9 @@ describe("MapList", () => {
 
     //expect(getByText("Actualizar lista")).toBeTruthy();
     expect(container.querySelector('.btn')).toBeTruthy()
-    expect(getByTestId("act").textContent).toBe("Actualizar.1");
+//    expect(getByTestId("btmaplist").textContent).toBe("Actualizar lista");
+
+    expect(getAllByText("Actualizar lista")).not.toBeNull();
 
    // auth.logout();
   });

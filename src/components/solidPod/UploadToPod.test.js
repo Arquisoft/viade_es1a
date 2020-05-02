@@ -15,7 +15,7 @@ describe("uploadToPod", () => {
         const { getByTestId } = render(<UploadToPod/>);
 
         expect(getByTestId("subirjson")).toBeTruthy();
-        expect(getByTestId("subirjson").textContent).toBe("Subir.1");
+        expect(getByTestId("subirjson").textContent).toBe("Subir ruta");
 
     });
 

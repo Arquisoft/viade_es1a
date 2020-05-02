@@ -12,9 +12,9 @@ describe("share", () => {
 
     test("Los elementos estan presentes", () => {
         const { container,getByTestId, getByText } = render(<Share/>);
-        expect(getByTestId("comp").textContent).toBe("Compartir.1");
-        expect(getByTestId("uri").textContent).toBe("URI.1");
-        getByText("Enviar.1").click();        
+        expect(getByTestId("comp").textContent).toBe("Compartir ruta");
+        expect(getByTestId("uri").textContent).toBe("Introducir URI del archivo:");
+        getByText("Enviar a amigos").click();        
     });
 
 });

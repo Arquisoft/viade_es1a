@@ -16,8 +16,7 @@ describe("main", () => {
         const { getByTestId } = render(<Main/>);
 
 
-        expect(getByTestId("ses")).toBeTruthy();
-        expect(getByTestId("ses").textContent).toBe("Sesion.1");
+        expect(getByTestId("IniciaSesion").textContent).toBe("Iniciar Sesión");
 
     });
 });

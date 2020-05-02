@@ -5,6 +5,7 @@ import ReactFileReader from "react-file-reader";
 import { useWebId } from "@solid/react";
 import properties from "../commons/Properties";
 import { Button } from "react-bootstrap";
+import I from "../commons/Internationalization";
 
 export const UploadHook = () => {
     let webid = String(String(useWebId()).replace(properties.profile, properties.myFolder));
@@ -26,7 +27,7 @@ export const UploadHook = () => {
         render() {
             return (
                 <ReactFileReader handleFiles={this.handleFiles} fileTypes={".geojson"}>
-                    <Button data-testid="subirjson">Subir Ruta</Button>
+                    <Button data-testid="subirjson">{I.Option.Subir}</Button>
                 </ReactFileReader>
             );
         }

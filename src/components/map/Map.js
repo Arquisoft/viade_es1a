@@ -6,7 +6,7 @@ import Button from "../basics/BasicButton";
 import MapList from "../solidPod/MapList";
 import properties from "../commons/Properties";
 import "../../static/css/Main.css";
-import { useTranslation } from 'react-i18next';
+import I from "../commons/Internationalization";
 
 const Wrapper = styled.div`
     width: 1000px;
@@ -63,12 +63,6 @@ class Map extends React.Component {
 
 
     render() {
-        const Layer = () => {
-            const { t } = useTranslation();
-
-
-            return (<div data-testid="lay">{t('Layer.1')}</div>);
-        };
         return (
             <React.Fragment>
                 <div className= "map">
@@ -79,7 +73,7 @@ class Map extends React.Component {
                     onClick={() => this.cambiar()}
                     data-testid="cambiarLayer"
 
-                    text={<Layer></Layer>}
+                    text={I.Option.Layer}
                 />
                 <Wrapper id="map" data-testid="map" />
                 </div>

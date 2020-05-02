@@ -4,6 +4,7 @@ import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
 import { useTranslation } from 'react-i18next';
+import { Redirect } from 'react-router-dom';
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
@@ -19,9 +20,14 @@ export async function getFiles() {
   const storage = profile.getRef(space.storage);
 
   let folder;
-  await fc.readFolder(storage + properties.myFolder)
+  await fc.readFolder(storage + properties.myFolderSinBarra)
     .then((content) => { folder = content; })
     .catch((err) => (folder = null));
+
+  if (folder === null) {
+    return null;
+  }
+
   return folder.files;
 }
 
@@ -40,6 +46,10 @@ async function readRoute(handleFiles, URL) {
 
 export function filesToButtons(files, handleFiles) {
   const buttons = [];
+
+  if (files === null) {
+    return <Redirect to="/404" />;
+  }
 
   for (const [index, value] of files.entries()) {
     buttons.push(
@@ -87,13 +97,13 @@ class ListClass extends React.Component {
   }
 
   render() {
-    
+
     const Actualizar = () => {
       const { t } = useTranslation();
-      
+
       return (<div data-testid="act">{t('Actualizar.1')}</div>);
     };
-   
+
     return (
       <div>
 

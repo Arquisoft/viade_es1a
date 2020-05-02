@@ -8,6 +8,7 @@ import properties from "../commons/Properties";
 import request from "request";
 import ShowFriends from "./ShowFriends";
 import { useTranslation } from 'react-i18next';
+import { Redirect } from 'react-router-dom';
 
 async function sendNotification(userWebId, friendWebId, fileId) {
     request({
@@ -44,7 +45,8 @@ export const Hook = () => {
             super(props);
             this.state = {
                 archivo: folderId,
-                amigo: ""
+                amigo: "",
+                error: ""
             };
         }
 
@@ -63,7 +65,15 @@ export const Hook = () => {
             //Copiamos el archivo a la carpeta publica
             const fc = new FileClient(auth);
             //console.log("Copiando "+this.state.archivo+" a " +publicRute)
-            await fc.copy(this.state.archivo, publicRute);
+            try {
+                await fc.copy(this.state.archivo, publicRute);
+            } catch (error) {
+                this.setState({
+                    error: <Redirect to="/404" />,
+                  });
+                return;
+            }
+            
 
             for (var i = 0; i < amigos.length; ++i) {
                 this.state.amigo = amigos[i];
@@ -106,6 +116,8 @@ export const Hook = () => {
                         onChange={(val) => this.setInputValue("archivo", val)}
                     />
                     <ShowFriends src="user.friends" enviar={this.enviar.bind(this)} />
+
+                    {this.state.error}
 
 
                 </div>

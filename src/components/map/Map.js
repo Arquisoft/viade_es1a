@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 class Map extends React.Component {
 
     constructor(props) {
-        
+
         super(props);
         this.actual = 0;
         this.layer = null;
@@ -41,16 +41,16 @@ class Map extends React.Component {
     }
 
     async cambiar() {
-        this.actual = this.actual+1;
-        if(this.actual >= properties.layers.length){
-            this.actual=0;
+        this.actual = this.actual + 1;
+        if (this.actual >= properties.layers.length) {
+            this.actual = 0;
         }
 
         this.layer.removeFrom(this.map);
         this.setLayer();
     }
 
-    setLayer(){
+    setLayer() {
         this.layer = L.tileLayer(
             properties.layers[this.actual], {
             detectRetina: true,
@@ -60,7 +60,7 @@ class Map extends React.Component {
         this.layer.addTo(this.map);
     }
 
-    
+
     render() {
         const Layer = () => {
             const { t } = useTranslation();
@@ -75,12 +75,13 @@ class Map extends React.Component {
 
                     disabled={false}
                     onClick={() => this.cambiar()}
-                    data-testid = "cambiarLayer"
+                    data-testid="cambiarLayer"
                     text={<Layer></Layer>}
 
                 />
-                <Wrapper id="map" data-testid = "map"/>
-                <MapList handleFiles={this.handleFiles.bind(this)}/>
+
+                <Wrapper id="map" data-testid="map" />
+                <MapList handleFiles={this.handleFiles.bind(this)} />
             </div>
 
         );

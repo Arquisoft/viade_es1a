@@ -7,8 +7,8 @@ import auth from "solid-auth-client";
 import properties from "../commons/Properties";
 import request from "request";
 import ShowFriends from "./ShowFriends";
-import { useTranslation } from 'react-i18next';
 import { Redirect } from 'react-router-dom';
+import I from "../commons/Internationalization";
 
 async function sendNotification(userWebId, friendWebId, fileId) {
     request({
@@ -36,7 +36,6 @@ async function sendNotification(userWebId, friendWebId, fileId) {
 export const Hook = () => {
     let folderId = String(String(useWebId()).replace(properties.profile, properties.myFolder));
     let userId = useWebId();
-    const { t } = useTranslation();
 
 
 
@@ -108,10 +107,11 @@ export const Hook = () => {
             return (
                 <div className="LoginForm">
 
-                    <h2 data-testid="comp">{t('Compartir.1')}</h2>
-                    <p data-testid="uri">{t('URI.1')}</p>
+                    <h2 data-testid="comp">{I.Option.Compartir}</h2>
+                    <p data-testid="uri">{I.Option.URI}</p>
                     <InputField
                         type="text"
+                        class = "form-control"
                         value={this.state.archivo ? this.state.archivo : ""}
                         onChange={(val) => this.setInputValue("archivo", val)}
                     />

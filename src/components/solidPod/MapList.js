@@ -3,8 +3,10 @@ import Button from "../basics/BasicButton";
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
-import { useTranslation } from 'react-i18next';
 import { Redirect } from 'react-router-dom';
+import I from "../commons/Internationalization";
+
+import "../../static/css/Main.css"
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
@@ -55,7 +57,7 @@ export function filesToButtons(files, handleFiles) {
     buttons.push(
       <div class="btn-list" key={index}>
         <Button
-          class="btn btn-list"
+          class="btn btn-light"
           text={value.name}
           disabled={false}
           onClick={() => readRoute(handleFiles, value.url)}
@@ -69,14 +71,9 @@ export function filesToButtons(files, handleFiles) {
 class ListClass extends React.Component {
 
   constructor(props) {
-    const Actualizar = () => {
-      const { t } = useTranslation();
-
-      return (<p>{t('Actualizar.1')}</p>);
-    };
     super(props);
     this.state = {
-      lista: (<Actualizar></Actualizar>)
+      lista: (I.Option.Actualizar)
     };
     this.updateList = this.updateList.bind(this);
   }
@@ -97,19 +94,11 @@ class ListClass extends React.Component {
   }
 
   render() {
-
-    const Actualizar = () => {
-      const { t } = useTranslation();
-
-      return (<div data-testid="act">{t('Actualizar.1')}</div>);
-    };
-
     return (
       <div>
 
         <Button
-          class="btn"
-          text={<Actualizar></Actualizar>}
+          text={I.Option.Actualizar}
           disabled={false}
           onClick={() => this.updateList()}
         />

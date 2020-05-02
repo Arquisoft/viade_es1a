@@ -1,7 +1,7 @@
 import React from "react";
 import { useLDflexList } from "@solid/react";
 import Button from "../basics/BasicButton";
-import { useTranslation } from 'react-i18next';
+import I from "../commons/Internationalization";
 
 function getMarcados() {
     var checkedValue = [];
@@ -17,16 +17,15 @@ function getMarcados() {
 }
 
 function ShowFriends({ src, enviar }) {
-    const { t } = useTranslation();
 
     let container = (items) => (
         <div>
-            <p>{t('Amigos.1')}</p>
+            <p>{I.Option.Amigos}</p>
             {items}
             {/* {console.log(items!=null)} TODO: Comprobar que hay amigos*/}
             <Button
                 class="btn"
-                text={t('Enviar.1')}
+                text={I.Option.Enviar}
                 disabled={false}
                 onClick={() => enviar(getMarcados())}
             />
@@ -34,7 +33,7 @@ function ShowFriends({ src, enviar }) {
     );
     let children = (item, index) => (
         <div key={index}>
-            <input type="checkbox" name="friendbox" value={`${item}`} />
+            <input class="form-check-input" type="checkbox" name="friendbox" value={`${item}`} />
             <label> {`${item}`} </label>
         </div>
     );

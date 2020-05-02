@@ -4,6 +4,11 @@
   background-color:rgb(255, 255, 255) ;
 }
 
+div{
+  border-style: solid;
+  border-color: #61dafb;
+}
+
 .nav{
 
   position: relative;

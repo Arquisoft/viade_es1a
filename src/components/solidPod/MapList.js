@@ -4,7 +4,7 @@ import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
 
-import "../../static/css/app.css"
+import "../../static/css/Main.css"
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");

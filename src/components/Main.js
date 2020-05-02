@@ -11,13 +11,13 @@ import Map from "./map/Map";
 import Share from "./share/Share";
 import Notification from "./notifications/Notification";
 
-import "../static/css/app.css";
+import "../static/css/Main.css";
 
 class Main extends React.Component {
   render() {
 
     return (
-      <div className="App" data-testid="App">
+      <div className="app" data-testid="App">
         <div className="container" data-testid="container">
           <LoggedOut>
             <img src={logo} className="App-logo" alt="logo" data-testid="logo"/>

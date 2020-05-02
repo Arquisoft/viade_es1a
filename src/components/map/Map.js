@@ -5,11 +5,11 @@ import styled from "styled-components";
 import Button from "../basics/BasicButton";
 import MapList from "../solidPod/MapList";
 import properties from "../commons/Properties";
-import "../../static/css/map.css";
+import "../../static/css/Main.css";
 
 const Wrapper = styled.div`
-    width: 900px;
-    height: 600px;
+    width: 100 px;
+    height: 100 px;
 `;
 
 class Map extends React.Component {

@@ -16,3 +16,5 @@ const Language = {
     Identificate: "Identificate",
     Ini: "Iniciar Sesión"
 }
+
+export default Language;

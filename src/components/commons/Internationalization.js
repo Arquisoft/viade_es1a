@@ -1,5 +1,5 @@
-import En from "./Properties/En";
-import Es from "./Properties/Es";
+import En from "./languages/En";
+import Es from "./languages/Es";
 
 function change(languaje){
     if(languaje === "Es"){

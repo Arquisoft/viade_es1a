@@ -23,7 +23,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div className="app" id="inter" data-testid="App">
+      <div className="app" data-testid="App">
         <div className="container" data-testid="container">
           <div className="identification">
             <LoggedOut>

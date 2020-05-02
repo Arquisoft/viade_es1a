@@ -1,7 +1,7 @@
 const Language = {
-    Logueado: "You are logged in as",
+    Logueado: "Wellcome, ",
     Refrescar: "Refresh notifications",
-    Subir: "Upload Json to Solid",
+    Subir: "Upload route",
     Sesion: "Log In",
     Amigos: "Select friends:",
     Notificaciones: "Notifications received",
@@ -13,8 +13,7 @@ const Language = {
     Layer: "Change Layer",
     Actualizar: "Update list",
     Desconectar: "Disconnect",
-    Identificate: "Identificate",
-    Ini: "Log in"
+    Identificate: "Identificate"
 }
 
 export default Language;

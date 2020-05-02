@@ -2,11 +2,14 @@ import En from "./languages/En";
 import Es from "./languages/Es";
 
 function change(languaje){
-    if(languaje === "Es"){
+    console.log(languaje)
+    if(languaje === "es"){
         Internationalization.Option = Es;
+        console.log("Cambiado a Es")
     }
-    if(languaje === "En"){
+    if(languaje === "en"){
         Internationalization.Option = En;
+        console.log("Cambiado a Es")
     }
 }
 

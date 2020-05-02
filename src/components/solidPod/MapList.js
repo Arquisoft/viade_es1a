@@ -83,7 +83,6 @@ class ListClass extends React.Component {
     return (
       <div>
         <Button
-          class="btn"
           text="Actualizar lista"
           disabled={false}
           onClick={() => this.updateList()} 

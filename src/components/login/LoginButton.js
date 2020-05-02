@@ -8,7 +8,7 @@ export default class LoginButton extends React.Component {
     render() {
         return (
             <div data-testid="divLogin">
-                <AuthButton className="btn" popup={popUri} login="Identificate" logout="Desconectar" />
+                <AuthButton className="btn btn-primary" popup={popUri} login="Identificate" logout="Desconectar" />
             </div>
         );
     }

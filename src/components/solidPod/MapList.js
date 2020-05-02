@@ -57,7 +57,7 @@ export function filesToButtons(files, handleFiles) {
     buttons.push(
       <div class="btn-list" key={index}>
         <Button
-          class="btn btn-list"
+          class="btn btn-light"
           text={value.name}
           disabled={false}
           onClick={() => readRoute(handleFiles, value.url)}

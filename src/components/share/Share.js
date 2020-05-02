@@ -112,6 +112,7 @@ export const Hook = () => {
                     <p data-testid="uri">{t('URI.1')}</p>
                     <InputField
                         type="text"
+                        class = "form-control"
                         value={this.state.archivo ? this.state.archivo : ""}
                         onChange={(val) => this.setInputValue("archivo", val)}
                     />

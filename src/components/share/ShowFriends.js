@@ -34,7 +34,7 @@ function ShowFriends({ src, enviar }) {
     );
     let children = (item, index) => (
         <div key={index}>
-            <input type="checkbox" name="friendbox" value={`${item}`} />
+            <input class="form-check-input" type="checkbox" name="friendbox" value={`${item}`} />
             <label> {`${item}`} </label>
         </div>
     );

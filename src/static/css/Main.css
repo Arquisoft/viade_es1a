@@ -1,3 +1,4 @@
+
 /* 
 body {
     margin: 0;
@@ -92,8 +93,19 @@ div{
    
    }
 */
+.app{
+    background: linear-gradient(to top left, #ffffff -19%, #ccffff 117%);
+}
 .Campanita-ico{
     width:3%;
     min-width: 20px;
     max-width: 50px; 
+}
+
+
+
+div.overflow {
+
+    overflow-y:scroll;
+    height: 100px;
 }

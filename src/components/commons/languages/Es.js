@@ -5,7 +5,7 @@ const Language = {
     Sesion: "Iniciar Sesión",
     Amigos: "Seleccione amigos",
     Notificaciones: "Notificaciones recibidas",
-    Compartir: "Compartir ruta",
+    Compartir: "Compartir archivo",
     URI: "Introducir URI del archivo:",
     Enviar: "Enviar a amigos",
     SP: "Español",

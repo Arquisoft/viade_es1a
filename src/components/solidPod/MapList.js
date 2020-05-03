@@ -3,7 +3,10 @@ import Button from "../basics/BasicButton";
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
-import { useTranslation } from 'react-i18next';
+import { Redirect } from 'react-router-dom';
+import I from "../commons/Internationalization";
+
+import "../../static/css/Main.css"
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
@@ -19,9 +22,14 @@ export async function getFiles() {
   const storage = profile.getRef(space.storage);
 
   let folder;
-  await fc.readFolder(storage + properties.myFolder)
+  await fc.readFolder(storage + properties.myFolderSinBarra)
     .then((content) => { folder = content; })
     .catch((err) => (folder = null));
+
+  if (folder === null) {
+    return null;
+  }
+
   return folder.files;
 }
 
@@ -41,11 +49,15 @@ async function readRoute(handleFiles, URL) {
 export function filesToButtons(files, handleFiles) {
   const buttons = [];
 
+  if (files === null) {
+    return <Redirect to="/404" />;
+  }
+
   for (const [index, value] of files.entries()) {
     buttons.push(
       <div class="btn-list" key={index}>
         <Button
-          class="btn btn-list"
+          class="btn btn-light"
           text={value.name}
           disabled={false}
           onClick={() => readRoute(handleFiles, value.url)}
@@ -59,14 +71,9 @@ export function filesToButtons(files, handleFiles) {
 class ListClass extends React.Component {
 
   constructor(props) {
-    const Actualizar = () => {
-      const { t } = useTranslation();
-
-      return (<p>{t('Actualizar.1')}</p>);
-    };
     super(props);
     this.state = {
-      lista: (<Actualizar></Actualizar>)
+      lista: (I.Option.Actualizar)
     };
     this.updateList = this.updateList.bind(this);
   }
@@ -87,19 +94,13 @@ class ListClass extends React.Component {
   }
 
   render() {
-    
-    const Actualizar = () => {
-      const { t } = useTranslation();
-      
-      return (<div data-testid="act">{t('Actualizar.1')}</div>);
-    };
-   
     return (
       <div>
 
         <Button
-          class="btn"
-          text={<Actualizar></Actualizar>}
+        data-testid="btmaplist"
+
+          text={I.Option.Actualizar}
           disabled={false}
           onClick={() => this.updateList()}
         />

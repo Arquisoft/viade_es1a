@@ -5,10 +5,11 @@ import styled from "styled-components";
 import Button from "../basics/BasicButton";
 import MapList from "../solidPod/MapList";
 import properties from "../commons/Properties";
-import { useTranslation } from 'react-i18next';
+import "../../static/css/Main.css";
+import I from "../commons/Internationalization";
 
 const Wrapper = styled.div`
-    width: 900px;
+    width: 1000px;
     height: 600px;
 `;
 
@@ -17,7 +18,7 @@ const Wrapper = styled.div`
 class Map extends React.Component {
 
     constructor(props) {
-        
+
         super(props);
         this.actual = 0;
         this.layer = null;
@@ -41,16 +42,16 @@ class Map extends React.Component {
     }
 
     async cambiar() {
-        this.actual = this.actual+1;
-        if(this.actual >= properties.layers.length){
-            this.actual=0;
+        this.actual = this.actual + 1;
+        if (this.actual >= properties.layers.length) {
+            this.actual = 0;
         }
 
         this.layer.removeFrom(this.map);
         this.setLayer();
     }
 
-    setLayer(){
+    setLayer() {
         this.layer = L.tileLayer(
             properties.layers[this.actual], {
             detectRetina: true,
@@ -60,28 +61,24 @@ class Map extends React.Component {
         this.layer.addTo(this.map);
     }
 
-    
+
     render() {
-        const Layer = () => {
-            const { t } = useTranslation();
-
-
-            return (<div data-testid="lay">{t('Layer.1')}</div>);
-        };
         return (
-            <div className="Map">
+            <React.Fragment>
+                <div className= "map">
                 <Button
                     class="btn"
 
                     disabled={false}
                     onClick={() => this.cambiar()}
-                    data-testid = "cambiarLayer"
-                    text={<Layer></Layer>}
+                    data-testid="cambiarLayer"
 
+                    text={I.Option.Layer}
                 />
-                <Wrapper id="map" data-testid = "map"/>
-                <MapList handleFiles={this.handleFiles.bind(this)}/>
-            </div>
+                <Wrapper id="map" data-testid="map" />
+                </div>
+                <div className = "routeList"><MapList handleFiles={this.handleFiles.bind(this)} /></div>
+            </React.Fragment>
 
         );
     }

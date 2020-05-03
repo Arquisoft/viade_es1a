@@ -1,2 +1,3 @@
 ignore:
   - "src/index.js"
+  - git "src/components/commons/Internationalization.js"

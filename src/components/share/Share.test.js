@@ -1,6 +1,6 @@
 import "jest";
 import React from "react";
-import { render } from "@testing-library/react";
+import { render,fireEvent } from "@testing-library/react";
 import Share from "./Share";
 
 describe("share", () => {
@@ -12,9 +12,11 @@ describe("share", () => {
 
     test("Los elementos estan presentes", () => {
         const { container,getByTestId, getByText } = render(<Share/>);
-        expect(getByTestId("comp").textContent).toBe("Compartir.1");
-        expect(getByTestId("uri").textContent).toBe("URI.1");
-
+        expect(getByTestId("comp").textContent).toBe("Compartir ruta");
+        expect(getByTestId("uri").textContent).toBe("Introducir URI del archivo:");
+        getByText("Enviar a amigos").click();   
+        const input = getByTestId("input");
+        fireEvent.change(input, {target: {value: "12"}});     
     });
 
 });

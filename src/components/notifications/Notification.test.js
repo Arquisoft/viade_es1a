@@ -13,7 +13,7 @@ describe("notification", () => {
     test("Los elementos estan presentes", () => {
         const { container,getByTestId, getByText } = render(<Notification/>);
        
-        expect(getByTestId("not").textContent).toBe("Notificaciones.1");
+        expect(getByTestId("not").textContent).toBe("Notificaciones recibidas");
         expect(container.querySelector('.btn')).toBeTruthy()
         expect(getByTestId("imgnoti")).not.toBeNull
 
@@ -22,6 +22,6 @@ describe("notification", () => {
 
     test("Los elementos se pueden clicar", () => {
         const { getByTestId, getByText } = render(<Notification/>);
-        getByText("Refrescar.1").click();        
+        getByText("Refrescar Notificaciones").click();        
     });
 });

@@ -5,7 +5,8 @@ import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
 import Button from "../basics/BasicButton";
 import { useWebId } from "@solid/react";
-import { useTranslation } from 'react-i18next';
+import "../../static/css/Main.css";
+import I from "../commons/Internationalization";
 
 
 
@@ -42,7 +43,6 @@ async function getNNotifications() {
 }
 
 const NotificationHook = () => {
-    const { t } = useTranslation();
 
     let webid = String(String(useWebId()).replace(properties.profile, properties.inbox));
 
@@ -79,18 +79,18 @@ const NotificationHook = () => {
 
         render() {
             return (
-                <p>
+                <div className = "notification">
                     <img  data-testid="imgnoti" src={campanita} className="Campanita-ico" alt="ico" />
-                    <a data-testid="not" href={this.state.inboxUrl}>{t('Notificaciones.1')}</a>: {this.state.nNotifications}
+                    <a data-testid="not" href={this.state.inboxUrl}>{I.Option.Notificaciones}</a>: {this.state.nNotifications}
                     <Button
-                        class="btn"
-                        text={t('Refrescar.1')}
+                        text={I.Option.Refrescar}
                         data-testid="btnoti"
                         disabled={false}
                         onClick={() => this.updateNotifications()}
                         testid="btNot"
                     />
-                </p>
+                    
+                </div>
             );
         }
     }

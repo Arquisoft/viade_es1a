@@ -5,7 +5,7 @@ class ImputField extends React.Component {
     return (
       <div className="ImputField">
         <input
-          className="input"
+          className="form-control"
           type={this.props.type}
           placeholder={this.props.placeholder}
           value={this.props.value}

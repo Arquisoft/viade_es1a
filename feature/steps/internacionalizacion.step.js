@@ -104,9 +104,22 @@ defineFeature(feature, test => {
             
             expect(page.url()).toBe("http://localhost:3000/");
             
-           let a = await page.$('[id="estasLogueado"]')
-            expect(a).toEqual('<span id="estasLogueado" data-testid="usert"> Bienvenido,  <a href="https://adrifa13.solid.community/profile/card#me">Adrian Fernandez Alonso</a></span>');
+          // let a = await page.$('[id="estasLogueado"]')
+            //let a = null;
             
+           // await page.evaluate(() => {
+              //a = document.querySelector("#estasLogueado");
+            //});
+
+            await page.waitFor(1000);
+            
+            let a = await page.$eval("#estasLogueado", (element) => {
+              return element.innerHTML
+            })
+
+            expect(a).toEqual(' Wellcome,  <a href="https://adrifa13.solid.community/profile/card#me">Adrian Fernandez Alonso</a>');
+
+
             await browser.close();
   
         });

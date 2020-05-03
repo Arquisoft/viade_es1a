@@ -104,8 +104,8 @@ defineFeature(feature, test => {
             
             expect(page.url()).toBe("http://localhost:3000/");
             
-           
-            expect(page.$('[id="estasLogueado"]')).toEqual('<span id="estasLogueado" data-testid="usert"> Bienvenido,  <a href="https://adrifa13.solid.community/profile/card#me">Adrian Fernandez Alonso</a></span>');
+           let a = await page.$('[id="estasLogueado"]')
+            expect(a).toEqual('<span id="estasLogueado" data-testid="usert"> Bienvenido,  <a href="https://adrifa13.solid.community/profile/card#me">Adrian Fernandez Alonso</a></span>');
             
             await browser.close();
   

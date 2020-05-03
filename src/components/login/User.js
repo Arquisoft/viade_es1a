@@ -16,7 +16,7 @@ export const User = () => {
     <section>
       <nav >
 
-        <select id="select_id" onChange={() => handleClick(document.getElementById("select_id"))}>
+        <select id="select_id" class = "selectClass" onChange={() => handleClick(document.getElementById("select_id"))}>
           <option value="en">{t('EN.1')}</option>
           <option value="es"> {t('SP.1')}
           </option>

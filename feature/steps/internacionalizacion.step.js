@@ -22,7 +22,7 @@ defineFeature(feature, test => {
             await page.evaluate(() => {
               let btns = [...document.querySelectorAll("button")];
               btns.forEach(async function (btn) {
-                if (btn.firstChild.innerText == "Iniciar Sesión"){
+                if (btn.innerText == "Iniciar Sesión"){
                   btn.click();
                 }      
               });
@@ -68,7 +68,7 @@ defineFeature(feature, test => {
 
               await page.waitFor(1000);
 
-             //await page.select('[id="select_id"]', "es");
+             await page.select('[id="select_languaje"]', "es");
             // await page.click('#select_id > option:nth-child(0)')
              //await page.select('select', "es");
              //await page.querySelector("#select_id").type("español").click();
@@ -79,34 +79,22 @@ defineFeature(feature, test => {
              //const selectElem = await page.waitForXPath('*[@id="select_id"]');
             // const selectElem = await page.;
 
-             await page.evaluate(() => {
+             //
               //document.querySelector('select[id="select_id"]').selectedIndex = 0;
               //document.querySelector("#root > div > div > section > nav > select").selectedIndex = 0;
               //document.querySelector("#select_id").selectedIndex = 0;
              // document.querySelector("#select_id > option:nth-child(1)")
-              document.getElementById("select_id").selectIndex = 0;
-            })
+              //document.getElementById("select_id").selectIndex = 0;
+            //})
 
             
             //await page.click("#select_id > option:nth-child(1)");
         });
 
         when('cambia el idioma a ingles', async () => {
-            await page.waitFor(100);
+          await page.waitFor(100);
 
-           // await page.select('[@id="select_id"]', "en");//*[@id="select_id"]
-           //await page.click('#select_id > option:nth-child(1)')
-           //await page.select('select', "en");
-
-           await page.evaluate(() => {
-            //document.querySelector('select[id="select_id"]').selectedIndex = 0;
-            //document.querySelector("#root > div > div > section > nav > select").selectedIndex = 0;
-            //document.querySelector("#select_id").selectedIndex = 0;
-           // document.querySelector("#select_id > option:nth-child(1)")
-            document.getElementById("select_id").click(); 
-            document.getElementById("select_id").type("Español");
-            document.getElementById("select_id").click();
-          })
+          await page.select('[id="select_languaje"]', "en");
 
           await page.waitFor(1000);
         });
@@ -115,9 +103,10 @@ defineFeature(feature, test => {
             await page.waitForSelector('[id="map"]', {visible: true});
             
             expect(page.url()).toBe("http://localhost:3000/");
-
-            expect(page.querySelector(".estasLogueado")).toHaveHTML(<span id="estasLogueado" data-testid="usert"> You are logged in as <a href="https://adrifa13.solid.community/profile/card#me">Adrian Fernandez Alonso</a></span>);
-
+            
+           
+            expect(page.$('[id="estasLogueado"]')).toEqual('<span id="estasLogueado" data-testid="usert"> Bienvenido,  <a href="https://adrifa13.solid.community/profile/card#me">Adrian Fernandez Alonso</a></span>');
+            
             await browser.close();
   
         });

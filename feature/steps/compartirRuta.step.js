@@ -22,7 +22,7 @@ defineFeature(feature, test => {
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(async function (btn) {
-                  if (btn.firstChild.innerText == "Iniciar Sesión"){
+                  if (btn.innerText == "Iniciar Sesión"){
                     btn.click();
                   }      
                 });
@@ -72,8 +72,8 @@ defineFeature(feature, test => {
 
             //await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
 
-            await page.waitForSelector('.input', {visible: true});
-            await page.type('.input', "https://adrifa13.solid.community/private/rutas/prueba5.geojson");
+            await page.waitForSelector('.inputField', {visible: true});
+            await page.type('.inputField', "https://adrifa13.solid.community/private/rutas/prueba5.geojson");
       
 
             await page.evaluate(() => {

@@ -4,7 +4,7 @@ const Language = {
     Subir: "Upload route",
     Sesion: "Log In",
     Amigos: "Select friends:",
-    Notificaciones: "Notifications received",
+    Notificaciones: "Notifications",
     Compartir: "Share route",
     URI: "Enter URI file:",
     Enviar: "Send to friends",

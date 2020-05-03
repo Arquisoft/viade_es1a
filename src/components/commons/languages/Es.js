@@ -4,7 +4,7 @@ const Language = {
     Subir: "Subir ruta",
     Sesion: "Iniciar Sesión",
     Amigos: "Seleccione amigos",
-    Notificaciones: "Notificaciones recibidas",
+    Notificaciones: "Notificaciones",
     Compartir: "Compartir ruta",
     URI: "Introducir URI del archivo:",
     Enviar: "Enviar a amigos",

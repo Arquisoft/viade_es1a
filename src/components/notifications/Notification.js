@@ -81,7 +81,7 @@ const NotificationHook = () => {
             return (
                 <div className = "notification">
                     <img  data-testid="imgnoti" src={campanita} className="Campanita-ico" alt="ico" />
-                    <a data-testid="not" href={this.state.inboxUrl}>{I.Option.Notificaciones}</a>: {this.state.nNotifications}
+                    <a data-testid="not" href={this.state.inboxUrl}>{I.Option.Notificaciones} <span class="badge">{this.state.nNotifications}</span> </a> 
                     {/* <Button
                         text = "text"
                         class="icon-refresh"

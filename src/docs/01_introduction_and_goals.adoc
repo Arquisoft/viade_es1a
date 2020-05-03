@@ -2,7 +2,6 @@
 == Introdución y objetivos
 El objetivo es crear un sistema de gestión de rutas descentralizado basado en las especeficaciones solid utilizando el framework React.
 
-
 === Resumen de requisitos
 Los requisitos de la aplicación son:
 
@@ -11,9 +10,7 @@ Los requisitos de la aplicación son:
 * Los usuarios podrán visualizar las rutas en un mapa.
 * La aplicación permitirá al usuario compartir fotos, vídeos u otro tipo de ficheros con otros amigos.
 * Un usuario puede obtener notificaciones cuando algún amigo quiera compartir una ruta con él.
-* Los usuarios pueden tener grupos de amigos con quienes ellos puedan querer compartir una ruta.
-* Debería ser posible ver las rutas cargadas por usuarios que están utilizando una app diferente, de forma que la interoperabilidad con otros sistemas de gestión de rutas debería tenerse en cuenta. 
-
+* Los usuarios pueden tener grupos de amigos con quienes ellos puedan querer compartir una ruta. 
 
 === Objetivos de calidad
 
@@ -21,14 +18,12 @@ Los requisitos de la aplicación son:
 |===
 
 |Prioridad|Objetivo|Motivación
-|1|Privacidad|Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD
-|2|Usabilidad|El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática
-|3|Eficiencia|Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla
+|10|Privacidad|Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD
+|8|Usabilidad|El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática
+|8|Eficiencia|Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla
 |4|Interoperabilidad|La aplicación debe ser capaz de cargar y compartir rutas con otras aplicaciones SOLID similares
 |5|Disponibilidad|La aplicación debe tener estar disponible lo más cerca posible al 100% del tiempo
 |===
-
-
 
 === Stakeholders
 

@@ -5,7 +5,7 @@ const Language = {
     Sesion: "Log In",
     Amigos: "Select friends:",
     Notificaciones: "Notifications received",
-    Compartir: "Share route",
+    Compartir: "Share file",
     URI: "Enter URI file:",
     Enviar: "Send to friends",
     SP: "Spanish",

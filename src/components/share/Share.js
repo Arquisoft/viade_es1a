@@ -65,7 +65,7 @@ export const Hook = () => {
             const fc = new FileClient(auth);
             //console.log("Copiando "+this.state.archivo+" a " +publicRute)
             try {
-                await fc.copy(this.state.archivo, publicRute);
+                await fc.copyFile(this.state.archivo, publicRute);
             } catch (error) {
                 this.setState({
                     error: <Redirect to="/404" />,

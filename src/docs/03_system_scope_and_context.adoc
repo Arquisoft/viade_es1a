@@ -27,6 +27,9 @@ Leyenda:
 |image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información
 |===
 
+El usuario interacciona con la aplicación para cargar una ruta y que esta se la muestre.
+La aplicación se encarga de gestionar las rutas subidas en el pod del usuario y las renderiza en el mapa.
+
 === Contexto técnico
 
 [plantuml,Contexto tecnico,png]

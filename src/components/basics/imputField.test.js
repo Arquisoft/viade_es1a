@@ -1,6 +1,6 @@
 import "jest";
 import React from "react";
-import { render } from "@testing-library/react";
+import { render,fireEvent  } from "@testing-library/react";
 import ImputField from "./ImputField";
 
 describe("ImputField", () => {
@@ -18,5 +18,8 @@ describe("ImputField", () => {
   test("Los elementos se pueden clicar", () => {
       const { getByTestId } = render(<ImputField/>);
       getByTestId("input").click();
+     // const input = getByTestId("input");
+    // fireEvent.change(input, {target: {value: "12"}});
+      
   });
 });

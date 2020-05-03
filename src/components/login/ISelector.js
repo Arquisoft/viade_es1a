@@ -22,7 +22,7 @@ class ISelector extends React.Component {
 
     render() {
         return (
-            <select id="select_languaje" onChange={() => this.setInputValue()}>
+            <select id="select_languaje"  data-testid="input" onChange={() => this.setInputValue()}>
                 <option value="es"> {I.Option.SP}</option>
                 <option value="en">{I.Option.EN}</option>
             </select>

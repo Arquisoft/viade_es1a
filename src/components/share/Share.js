@@ -114,6 +114,8 @@ export const Hook = () => {
                         class = "form-control"
                         value={this.state.archivo ? this.state.archivo : ""}
                         onChange={(val) => this.setInputValue("archivo", val)}
+                        data-testid="input"
+
                     />
                     <ShowFriends src="user.friends" enviar={this.enviar.bind(this)} />
 

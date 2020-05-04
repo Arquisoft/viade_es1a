@@ -67,7 +67,7 @@ class Map extends React.Component {
             <React.Fragment>
                 <div className="row">
 
-                    <div class="col-sm">
+                    <div className="col-sm">
                         <div>
                             <Button
                                 class="btn"
@@ -80,7 +80,7 @@ class Map extends React.Component {
                             />
                             <Wrapper id="map" data-testid="map" />
                         </div>
-                        <div class="col-sm">
+                        <div className="col-sm">
                             <MapList handleFiles={this.handleFiles.bind(this)} />
 
                         </div>

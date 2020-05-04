@@ -7,11 +7,15 @@
 |        | Restricción | Descripción
 | RT1	| Uso React | Para una mayor rapidez a la hora de trabajar con java script, y teniendo a nuestra disposición el gran número de librerías de la que esta dispone.
 | RT2	| Uso SOLID | Nos basaremos en la funcionalidad que intenta conseguir solid para hacer uso de sus principios consiguiendo lo que se denomina un aplicacion descentralizada.
+| RT3	| Uso Bootstrap | Haremos uso del framework bootstrap para modificar la parte de interfaz de usuario(UI) asi como la experiencia de usuario(UX).
+| RT4	| Uso Leaflet | Utilizaremos la libreria Leaflet para la implementacion del mapa en la aplicacion asi como la visualizacion de las rutas en el mismo.
+| RT5   | Uso de Puppeteer | Se hará uso de la libreria pupeteer de node para la implementacion de test de funcionalidad.
+| RT6   | Uso de Jest | Se realizaran los test unitarios bajo el marco de pruebas de Jest.
 |===
 === Restricciones Organizativas
 |===
 |       | Restricción | Descripción
-| RO1	| Equipo de 4 | Nos organizaremos teniendo en cuenta a todos los integrantes del equipo.
+| RO1	| Equipo de 4 | Se nos impuso un grupo de 7 personas, que tras la reubicacion de una persona y el abandono de 2, nos vimos obligados a repartir el trabajo entre los integrantes restantes, aunque la funcionalidad de la aplicacion fue realizada por dos. 
 | RO2   | Tiempo | Comenzando a principio del cuatrimestre y teniendo en cuenta la sucesivas revisiones del proyecto, nos acojemos al tiempo organizado según las directrices de la asignatura, por lo que el proyecto tendrá que ser terminado en 3 meses.
 |===
 === Convenciones

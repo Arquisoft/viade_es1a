@@ -1,71 +1,12 @@
 [[section-deployment-view]]
 
 
-== Vista de implementacion
-Viade1a puede ser usada en cualquiera de los principales navegadores, siempre que se disponga de un ordenador con conexión a Internet estable y un POD que será donde se almacenan los datos de la ruta. 
+== Vista de despliegue
+La aplicación esta desplegada en nuestra pagina de https://arquisoft.github.io/viade_es1a/[github]. Todos los cambios que se realicen en la rama master del repositorio serán desplegados automáticamente gracias al uso de la herramienta Travis.
 
-=== Infraestructura Nivel 1
-[plantuml,Infra,png]
-----
-@startuml
+Para el despliegue en local de la aplicación, una vez descargado el repositorio, se usará la herramienta node para instalar las dependencias necesarias mediante el comando npm install. A continuación si se desea ejecutar la aplicación en modo desarrollo habrá que usar el comando npm start.
 
-node "OrdenadorA" {
-  node "NavegadorA" {
-   NavegadorA --> [Github]:HTTP
+Para la compilación del proyecto de manera local, se usará el comando npm run build.
 
-}
-}
- node "OrdenadorB" {
-  node "NavegadorB" {
-   NavegadorB --> [Github]:HTTP
+Para realizar los test de la aplicación basta con introducir el comando npm run test para los unitarios y npm run test:e2e para los funcionales.
 
-}
-}
-
-node "Viade1a" {
-    Viade1a --> [POD]:Accede
-
-  node "index" {
-        index -up-> [Github]:Despliegue
-
-}
-  node "Componentes React" {
-}
-}
-node "Github" {
-  node "Github Pages" {
- 
-}
-}
-
-
-node "Solid" {
-  node "POD" {
-node "Datos Usuario" {
-
-}
-
-}
-}
-
-
-
-
-
-
-
-
-@enduml
-----
-|===
-
-|Entidad|Contexto
-|Solid|El servidor que contiene los PODs de los usuarios
-|Navegador|Navegador que permite el acceso a la Web
-|Viade1a|Nuestra aplicación desarrollada en React en la que se interectuará
-|GitHub Pages|Servicio de alojamiento web donde desplegaremos nuestra aplicación
-|Ordenador|Dispositivo que se usa para conectar con nuestra aplicación
-|GitHub|Plataforma para alojar nuestro utilizando el sistema de control de versiones Git
-|POD|Almacenamiento descentralizado de aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos
-
-|===

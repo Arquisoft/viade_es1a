@@ -24,6 +24,7 @@
     "react-dom": "^16.12.0",
     "react-dropdown": "^1.7.0",
     "react-file-reader": "^1.1.4",
+    "react-notifications-component": "^2.4.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "request": "^2.88.2",
@@ -37,7 +38,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "node scripts/test.js --coverage",
-    "test:e2e": "jest -c jest-cucumber.config.js --coverage --detectOpenHandles ",
+    "test:e2e": "jest -c jest-cucumber.config.js --detectOpenHandles ",
     "docs": "shx rm -rf build/docs && asciidoctor -D build/docs -a imagesdir=./images -r asciidoctor-diagram src/docs/index.adoc && shx cp -R src/docs/images build/docs",
     "eject": "react-scripts eject"
   },

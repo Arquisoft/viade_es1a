@@ -2,7 +2,7 @@ import "jest";
 import React from "react";
 import { render } from "@testing-library/react";
 import MapList from "./MapList";
-import {getFiles, readRoute, filesToButtons} from "./MapList";
+import I from "../commons/Internationalization";
 
 import "@testing-library/jest-dom";
 
@@ -29,7 +29,7 @@ describe("MapList", () => {
     expect(container.querySelector('.btn')).toBeTruthy()
 //    expect(getByTestId("btmaplist").textContent).toBe("Actualizar lista");
 
-    expect(getAllByText("Actualizar lista")).not.toBeNull();
+    expect(getAllByText(I.Option.Actualizar)).not.toBeNull();
 
    // auth.logout();
   });

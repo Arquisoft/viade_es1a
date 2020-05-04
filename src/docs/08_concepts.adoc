@@ -3,7 +3,7 @@
 
 === Conceptos de dominio
 * Ruta: Una ruta representa una trayectoria formada por puntos cuya información sera compartida o guardada.
-* POD: Un usuario almacena sus datos personales en "pods" (almacenes de datos personales en línea).
+* POD: Un usuario almacena sus datos personales en "pods" (almacenes de datos personales sobre los que el usuario tiene total control de su información).
 * Cliente: Persona que usa la aplicación para compartir o ver una ruta.
 
 === Reglas para usar la tecnología
@@ -19,15 +19,7 @@ Separamos la parte de vista del mapa y las dependencias del SolidPod y del login
 
 === Conceptos de seguridad y protección
 Logramos la comunicación segura entre canales mediante el protocolo HTTPS.
-Gracias a los PODs los datos del usuario se almacenarán con un enfoque privado y descentralizado al contrario de otros gigantes tecnológicos.
-
-=== "Under-the-hood"
-
-* Manejo de la sesión: administramos la sesión utilizando SOLID  que puede ser accedida utilizando las credenciales de SOLID.
-
-* Persistencia:No utilizamos ningún tipo de base de datos ya que los datos los almacenamos en PODs.
-
-* Manejo de errores: La desconexión de Internet mientras de usa la aplicación puede provocar mal funcionamiento.
+Gracias a los PODs los datos del usuario se almacenarán con un enfoque privado y descentralizado.
 
 === Conceptos de desarrollo
 * Build: Nuestra aplicación usará el paquete web NodeJS,npm para construir la aplicación.

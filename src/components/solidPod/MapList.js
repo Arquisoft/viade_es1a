@@ -3,8 +3,8 @@ import Button from "../basics/BasicButton";
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
-import { Redirect } from 'react-router-dom';
 import I from "../commons/Internationalization";
+import Notification from "../basics/Notification";
 
 import "../../static/css/Main.css"
 
@@ -50,7 +50,8 @@ export function filesToButtons(files, handleFiles) {
   const buttons = [];
 
   if (files === null) {
-    return <Redirect to="/404" />;
+    Notification("danger", I.Option.Error404, I.Option.Rutas404);
+    return;
   }
 
   for (const [index, value] of files.entries()) {

@@ -5,7 +5,7 @@ const Language = {
     Sesion: "Iniciar Sesión",
     Amigos: "Seleccione amigos",
     Notificaciones: "Notificaciones",
-    Compartir: "Compartir ruta",
+    Compartir: "Compartir archivo",
     URI: "Introducir URI del archivo:",
     Enviar: "Enviar a amigos",
     SP: "Español",
@@ -13,7 +13,13 @@ const Language = {
     Layer: "Cambiar layer",
     Actualizar: "Actualizar lista",
     Desconectar: "Desconectar",
-    Identificate: "Identificate"
+    Identificate: "Identifícate",
+    Error404: "Error 404",
+    Archivo404: "El archivo seleccionado no existe",
+    Rutas404: "No se encuentran rutas en el pod",
+    Enviada: "Notificación enviada con éxito",
+    ArchivoSubido: "Archivo subido correctamente",
+    ArchivoSubidoa: "Archivo subido a "
 }
 
 export default Language;

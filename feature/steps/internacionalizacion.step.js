@@ -2,7 +2,7 @@ import 'jest';
 
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
-const feature = loadFeature('./feature/features/cambiarLayer.feature');
+const feature = loadFeature('./feature/features/internacionalizacion.feature');
 const puppeteer = require('puppeteer');
 let browser = null;
 let page = null;
@@ -12,8 +12,8 @@ defineFeature(feature, test => {
         jest.setTimeout(1200000);
     });
 
-    test('Cambiar Layer', ({ given, when, then}) => {
-        given('Un usuario con la sesion iniciada', async () => {
+    test('Cambiar el idioma de español a ingles', ({ given, when, then}) => {
+        given('Un usuario loggeado con la pagina en español', async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
@@ -65,29 +65,60 @@ defineFeature(feature, test => {
                     btn.click();
                 });
               });
-        });
 
-        when('se pulsa el boton cambiar layer', async () => {
-            await page.waitFor(1000);
+              await page.waitFor(1000);
 
-           // await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
+             await page.select('[id="select_languaje"]', "es");
+            // await page.click('#select_id > option:nth-child(0)')
+             //await page.select('select', "es");
+             //await page.querySelector("#select_id").type("español").click();
+           
+             //const selectElem = await page.$('[id="select_id"]');
+             
+            // const selectElem = await page.$('.selectClass');///html/body/div[1]/div/div/section/nav/select
+             //const selectElem = await page.waitForXPath('*[@id="select_id"]');
+            // const selectElem = await page.;
 
-            await page.evaluate(() => {
-                let btns = [...document.querySelectorAll("button")];
-                btns.forEach(async function (btn) {
-                  if (btn.innerText == "Cambiar layer"){
-                    btn.click();
-                  }      
-                });
-              });
+             //
+              //document.querySelector('select[id="select_id"]').selectedIndex = 0;
+              //document.querySelector("#root > div > div > section > nav > select").selectedIndex = 0;
+              //document.querySelector("#select_id").selectedIndex = 0;
+             // document.querySelector("#select_id > option:nth-child(1)")
+              //document.getElementById("select_id").selectIndex = 0;
+            //})
+
             
+            //await page.click("#select_id > option:nth-child(1)");
         });
 
-        then('se cambia el mapa', async () => {
+        when('cambia el idioma a ingles', async () => {
+          await page.waitFor(100);
+
+          await page.select('[id="select_languaje"]', "en");
+
+          await page.waitFor(1000);
+        });
+
+        then('nos cambia el idioma', async () => {
             await page.waitForSelector('[id="map"]', {visible: true});
-            await page.waitFor(1000);
-          //  await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot2.png'});
+            
             expect(page.url()).toBe("http://localhost:3000/");
+            
+          // let a = await page.$('[id="estasLogueado"]')
+            //let a = null;
+            
+           // await page.evaluate(() => {
+              //a = document.querySelector("#estasLogueado");
+            //});
+
+            await page.waitFor(1000);
+            
+            let a = await page.$eval("#estasLogueado", (element) => {
+              return element.innerHTML
+            })
+
+            expect(a).toEqual(' Wellcome,  <a href="https://adrifa13.solid.community/profile/card#me">Adrian Fernandez Alonso</a>');
+
 
             await browser.close();
   

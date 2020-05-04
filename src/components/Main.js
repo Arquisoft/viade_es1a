@@ -26,11 +26,14 @@ class Main extends React.Component {
   render() {
     return (
       <div className="app" data-testid="App">
-        <div className="identification">
+        <div className="logout">
           <LoggedOut>
-            <img src={logo} className="App-logo" alt="logo" data-testid="logo" />
+            <img src={logo} alt="logo" data-testid="logo" />
+            
             <h2 data-testid="IniciaSesion" >{I.Option.Sesion}</h2>
+            <div>
             <LoginButton />
+            </div>
           </LoggedOut>
         </div>
 

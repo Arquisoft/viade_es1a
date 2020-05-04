@@ -109,3 +109,18 @@ div.overflow {
     width: 25%;
     background-color: #f8f9fc;
 }
+
+.logout{
+
+    font-size: 28px;
+ 
+    color: #000000;
+ 
+    display: flex;
+ 
+    flex-direction: column;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+  }

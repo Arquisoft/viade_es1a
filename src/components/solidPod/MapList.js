@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 import Button from "../basics/BasicButton";
 import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
 import I from "../commons/Internationalization";
-import Notification from "../basics/ToastNotification";
+import notification from "../basics/ToastNotification";
 
-import "../../static/css/Main.css"
+import "../../static/css/Main.css";
 
 const auth = require("solid-auth-client");
 const FC = require("solid-file-client");
@@ -43,7 +43,7 @@ async function readRoute(handleFiles, URL) {
   try {
     var rutaViewStJ = JSON.parse(rutaView);
   } catch (error) {
-    Notification("danger", I.Option.ErrorMapaIncompatible);
+    notification("danger", I.Option.ErrorMapaIncompatible);
     return;
   }
   
@@ -55,7 +55,7 @@ export function filesToButtons(files, handleFiles) {
   const buttons = [];
 
   if (files === null) {
-    Notification("danger", I.Option.Error404, I.Option.Rutas404);
+    notification("danger", I.Option.Error404, I.Option.Rutas404);
     return;
   }
 

@@ -4,11 +4,11 @@ import { defineFeature, loadFeature } from "jest-cucumber";
 import { givenName } from "rdf-namespaces/dist/foaf";
 
 const feature = loadFeature("./feature/features/login.feature");
-const puppeteer = require("puppeteer")
+const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
 
-defineFeature(feature, test => {
+defineFeature(feature, (test) => {
     beforeEach(async () => {
         jest.setTimeout(1200000);
     });
@@ -67,8 +67,9 @@ defineFeature(feature, test => {
             await popup.evaluate(() => {
               let btns = [...document.querySelector(".form-horizontal.login-up-form").querySelectorAll("button")];
               btns.forEach(function (btn) {
-                if (btn.innerText == "Log In")
+                if (btn.innerText == "Log In"){
                   btn.click();
+                }
               });
             });
             
@@ -83,6 +84,6 @@ defineFeature(feature, test => {
         });
 
 
-    })
+    });
     
-})
+});

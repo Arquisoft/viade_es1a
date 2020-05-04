@@ -15,8 +15,8 @@ describe("notification", () => {
         const { container,getByTestId, getByText } = render(<Notification/>);
        
         expect(getByTestId("not").textContent).toBe(I.Option.Notificaciones);
-        expect(container.querySelector('.btn')).toBeTruthy()
-        expect(getByTestId("imgnoti")).not.toBeNull
+        expect(container.querySelector('.btn')).toBeTruthy();
+        expect(getByTestId("imgnoti")).not.toBeNull;
 
 
     });

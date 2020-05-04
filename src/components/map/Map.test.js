@@ -11,7 +11,7 @@ describe("map", () => {
 
     test("Los elementos estan presentes", () => {
         const { container,getByTestId, getByText,getAllByText } = render(<Map/>);
-        expect(container.querySelector(".btn")).toBeTruthy()
+        expect(container.querySelector(".btn")).toBeTruthy();
         expect(getByTestId("map")).toBeTruthy();
         expect(getByText("Cambiar layer")).not.toBeNull();
 

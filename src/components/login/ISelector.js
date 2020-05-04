@@ -14,7 +14,7 @@ class ISelector extends React.Component {
         var select = document.getElementById("select_languaje");
         var val = select.value;
 
-        I.change(val, this.props.update)
+        I.change(val, this.props.update);
         this.setState({
             selected: val
         });

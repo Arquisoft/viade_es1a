@@ -7,7 +7,7 @@ const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
 
-defineFeature(feature, test => {
+defineFeature(feature, (test) => {
     beforeEach(async () => {
         jest.setTimeout(1200000);
     });
@@ -29,7 +29,7 @@ defineFeature(feature, test => {
             });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once("popup", resolve)),
+                new Promise((resolve) => page.once("popup", resolve)),
               ]);
               
   
@@ -54,15 +54,16 @@ defineFeature(feature, test => {
         
               await popup.waitFor(500);
               await popup.waitForSelector("[id=\"password\"]", {visible: true});
-              await popup.type('[id="password"]', "Adrifa1309?", {visible: true});
+              await popup.type("[id=\"password\"]", "Adrifa1309?", {visible: true});
         
               await popup.waitFor(500);
         
               await popup.evaluate(() => {
                 let btns = [...document.querySelector(".form-horizontal.login-up-form").querySelectorAll("button")];
                 btns.forEach(function (btn) {
-                  if (btn.innerText == "Log In")
+                  if (btn.innerText == "Log In"){
                     btn.click();
+                  }
                 });
               });
         });
@@ -94,6 +95,6 @@ defineFeature(feature, test => {
         });
 
 
-    })
+    });
     
-})
+});

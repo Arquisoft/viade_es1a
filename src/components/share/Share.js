@@ -8,7 +8,7 @@ import properties from "../commons/Properties";
 import request from "request";
 import ShowFriends from "./ShowFriends";
 import I from "../commons/Internationalization";
-import Notification from "../basics/ToastNotification";
+import notification from "../basics/ToastNotification";
 
 
 
@@ -29,7 +29,7 @@ async function sendNotification(userWebId, friendWebId, fileId) {
     },
         function (error, response, body) {
             if (!error) {
-                Notification("success", I.Option.Enviada);
+                notification("success", I.Option.Enviada);
             }
             return !error;
         });
@@ -53,12 +53,12 @@ export const Hook = () => {
 
         async enviar(amigos) {
             if (!this.state.archivo) {
-                Notification("warning", I.Option.ErrorArchivoNull);
+                notification("warning", I.Option.ErrorArchivoNull);
                 return;
             }
 
             if (amigos.length <= 0) {
-                Notification("warning", I.Option.ErrorAmigosNull);
+                notification("warning", I.Option.ErrorAmigosNull);
                 return;
             }
 
@@ -71,7 +71,7 @@ export const Hook = () => {
             try {
                 await fc.copyFile(this.state.archivo, publicRute);
             } catch (error) {
-                Notification("danger", I.Option.Error404, I.Option.Archivo404);
+                notification("danger", I.Option.Error404, I.Option.Archivo404);
                 return;
             }
 

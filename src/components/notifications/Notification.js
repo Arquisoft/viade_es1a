@@ -13,7 +13,7 @@ async function getNNotifications() {
     const FC = require("solid-file-client");
     const fc = new FC(auth);
     let session = await auth.currentSession();
-    let session2 = "https://kevin23699.solid.community/profile/card#me"
+    let session2 = "https://kevin23699.solid.community/profile/card#me";
     let profile="";
     let profileDocument="";
     if (session == null) {

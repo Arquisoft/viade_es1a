@@ -19,7 +19,9 @@ const Language = {
     Rutas404: "Routes not found in the pod",
     Enviada: "Notification sented successfully",
     ArchivoSubido: "File uploaded successfully",
-    ArchivoSubidoa: "File uploaded to "
+    ArchivoSubidoa: "File uploaded to ",
+    Bienvenido: "Welcome to ViadeEs1a"
+
 }
 
 export default Language;

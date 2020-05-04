@@ -24,5 +24,5 @@ function Notification(tipo, titulo, mensaje) {
           onScreen: true
         }
       });
-};
+}
 export default Notification;

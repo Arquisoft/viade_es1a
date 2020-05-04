@@ -39,15 +39,16 @@ async function readRoute(handleFiles, URL) {
   if (fc.itemExists(URL)) {
     rutaView = await fc.readFile(URL);
   }
-
+  var rutaViewStJ = null;
   try {
-    var rutaViewStJ = JSON.parse(rutaView);
+    rutaViewStJ = JSON.parse(rutaView);
   } catch (error) {
     notification("danger", I.Option.ErrorMapaIncompatible);
     return;
   }
   
   handleFiles(rutaViewStJ);
+
 
 }
 

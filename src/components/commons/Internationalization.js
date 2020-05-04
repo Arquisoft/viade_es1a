@@ -5,22 +5,20 @@ import Es from "./languages/Es";
 
 let Internationalization = {
     Option: Es,
-    change : changeL
-};
+    change: (languaje, update) => {
+        console.log(languaje);
+        if (languaje === "es") {
+            Internationalization.Option = Es;
+        }
+        if (languaje === "en") {
+            Internationalization.Option = En;
+        }
 
-function changeL(languaje, update){
-    console.log(languaje);
-    if(languaje === "es"){
-        Internationalization.Option = Es;
-        console.log("Cambiado a Es");
-    }
-    if(languaje === "en"){
-        Internationalization.Option = En;
-        console.log("Cambiado a En");
-    }
 
-    update();
-    //ReactDOM.render(null, document.getElementsById("inter"));
+        update();
+        //ReactDOM.render(null, document.getElementsById("inter"));
+
+    }
 }
 
 export default Internationalization;

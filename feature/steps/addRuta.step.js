@@ -22,14 +22,14 @@ defineFeature(feature, (test) => {
             await page.evaluate(() => {
               let btns = [...document.querySelectorAll("button")];
               btns.forEach(async function (btn) {
-                if (btn.innerText == "Iniciar Sesión"){
+                if (btn.innerText === "Iniciar Sesión"){
                   btn.click();
                 }      
               });
             });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once("popup", resolve)),
+                new Promise((resolve) => page.once("popup", resolve)),
               ]);
               
   
@@ -39,7 +39,7 @@ defineFeature(feature, (test) => {
               await popup.evaluate(() => {
                   let btns = [...document.querySelectorAll("button")];
                   btns.forEach(function (btn) {
-                    if (btn.innerText == "Go"){
+                    if (btn.innerText === "Go"){
                       btn.click();
                     }      
                   });
@@ -61,7 +61,7 @@ defineFeature(feature, (test) => {
               await popup.evaluate(() => {
                 let btns = [...document.querySelector(".form-horizontal.login-up-form").querySelectorAll("button")];
                 btns.forEach(function (btn) {
-                  if (btn.innerText == "Log In"){
+                  if (btn.innerText === "Log In"){
                     btn.click();
                   }
                 });
@@ -74,7 +74,7 @@ defineFeature(feature, (test) => {
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(async function (btn) {
-                  if (btn.innerText == "Subir Json a Solid"){
+                  if (btn.innerText === "Subir Json a Solid"){
                     btn.click();
                   }      
                 });
@@ -85,7 +85,7 @@ defineFeature(feature, (test) => {
               await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(async function (btn) {
-                  if (btn.innerText == "Actualizar lista"){
+                  if (btn.innerText === "Actualizar lista"){
                     btn.click();
                   }      
                 });
@@ -101,7 +101,7 @@ defineFeature(feature, (test) => {
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(async function (btn) {
-                  if (btn.innerText == "prueba1.geojson"){
+                  if (btn.innerText === "prueba1.geojson"){
                     expect(true).toBe(true);
                     return;
                   }      

@@ -26,7 +26,7 @@ describe("MapList", () => {
     //session.webId = "https://adrifa13.solid.community/profile/card#me";
 
     //expect(getByText("Actualizar lista")).toBeTruthy();
-    expect(container.querySelector('.btn')).toBeTruthy()
+    expect(container.querySelector(".btn")).toBeTruthy()
 //    expect(getByTestId("btmaplist").textContent).toBe("Actualizar lista");
 
     expect(getAllByText(I.Option.Actualizar)).not.toBeNull();

@@ -1,9 +1,9 @@
-import 'jest';
+import "jest";
 
-import { defineFeature, loadFeature } from 'jest-cucumber';
+import { defineFeature, loadFeature } from "jest-cucumber";
 
-const feature = loadFeature('./feature/features/compartirRuta.feature');
-const puppeteer = require('puppeteer');
+const feature = loadFeature("./feature/features/compartirRuta.feature");
+const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
 
@@ -12,12 +12,12 @@ defineFeature(feature, test => {
         jest.setTimeout(1200000);
     });
 
-    test('compartir ruta', ({ given, when, then}) => {
-        given('Un usuario con la sesion iniciada', async () => {
+    test("compartir ruta", ({ given, when, then}) => {
+        given("Un usuario con la sesion iniciada", async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
-            await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
+            await page.goto("http://localhost:3000/", { waitUntil: "networkidle2"});
 
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
@@ -29,7 +29,7 @@ defineFeature(feature, test => {
               });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once('popup', resolve)),
+                new Promise(resolve => page.once("popup", resolve)),
               ]);
               
   
@@ -46,15 +46,15 @@ defineFeature(feature, test => {
                 });
       
               await popup.waitForNavigation({
-                waitUntil: 'networkidle2'
+                waitUntil: "networkidle2"
               });
   
-              await popup.waitForSelector('[id="username"]', {visible: true});
-              await popup.type('[id="username"]', "adrifa13");
+              await popup.waitForSelector("[id=\"username\"]", {visible: true});
+              await popup.type("[id=\"username\"]", "adrifa13");
         
               await popup.waitFor(500);
-              await popup.waitForSelector('[id="password"]', {visible: true});
-              await popup.type('[id="password"]', "Adrifa1309?", {visible: true});
+              await popup.waitForSelector("[id=\"password\"]", {visible: true});
+              await popup.type("[id=\"password\"]", "Adrifa1309?", {visible: true});
         
               await popup.waitFor(500);
         
@@ -67,12 +67,12 @@ defineFeature(feature, test => {
               });
         });
 
-        when('comparte una ruta', async () => {
+        when("comparte una ruta", async () => {
             await page.waitFor(1000);
 
             //await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
 
-            await page.waitForSelector('#root > div > div > div.share > div > div > div.ImputField > input', {visible: true});
+            await page.waitForSelector("#root > div > div > div.share > div > div > div.ImputField > input", {visible: true});
             await page.type("#root > div > div > div.share > div > div > div.ImputField > input", "https://adrifa13.solid.community/private/rutas/prueba5.geojson");
       
 
@@ -93,7 +93,7 @@ defineFeature(feature, test => {
             
         });
 
-        then('se comparte', async () => {
+        then("se comparte", async () => {
             await page.evaluate(() => {
                 let btns = [...document.querySelectorAll("button")];
                 btns.forEach(function (btn) {
@@ -106,7 +106,7 @@ defineFeature(feature, test => {
               //expect(p).toContain('<p><img src="/static/media/campanita.7dec6a40.png" class="Campanita-ico" alt="ico"><a href="https://adrifa13.solid.community/inbox/">Notificaciones recibidas</a>: 2<button class="btn">Refrescar notificaciones</button></p>');
 
 
-            await page.waitForSelector('[id="map"]', {visible: true});
+            await page.waitForSelector("[id=\"map\"]", {visible: true});
             await page.waitFor(1000);
             //await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot2.png'});
             expect(page.url()).toBe("http://localhost:3000/");

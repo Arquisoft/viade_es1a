@@ -1,4 +1,4 @@
-import { store } from 'react-notifications-component';
+import { store } from "react-notifications-component";
 
 
 function Notification(tipo, titulo, mensaje) {

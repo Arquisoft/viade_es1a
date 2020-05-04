@@ -1,6 +1,6 @@
 import React from "react";
 import { LoggedOut, LoggedIn } from "@solid/react";
-import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Redirect, Route, Switch, BrowserRouter } from "react-router-dom";
 
 import logo from "../static/images/ViaDe.svg";
 import User from "./login/User";
@@ -11,9 +11,9 @@ import Share from "./share/Share";
 import Notification from "./notifications/Notification";
 import I from "./commons/Internationalization";
 import ISelector from "./login/ISelector";
-import ReactNotification from 'react-notifications-component'
+import ReactNotification from "react-notifications-component";
 
-import 'react-notifications-component/dist/theme.css'
+import "react-notifications-component/dist/theme.css";
 
 import "../static/css/Main.css";
 
@@ -73,7 +73,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path='/' component={Main} />
+          <Route exact path="/" component={Main} />
           <Redirect to="/" />
         </Switch>
       </BrowserRouter>

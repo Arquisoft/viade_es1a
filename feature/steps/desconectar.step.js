@@ -1,9 +1,9 @@
-import 'jest';
+import "jest";
 
-import { defineFeature, loadFeature } from 'jest-cucumber';
+import { defineFeature, loadFeature } from "jest-cucumber";
 
-const feature = loadFeature('./feature/features/desconectar.feature');
-const puppeteer = require('puppeteer');
+const feature = loadFeature("./feature/features/desconectar.feature");
+const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
 
@@ -12,12 +12,12 @@ defineFeature(feature, test => {
         jest.setTimeout(1200000);
     });
 
-    test('Desconectar sesion', ({ given, when, then}) => {
-        given('Un usuario con la sesion iniciada', async () => {
+    test("Desconectar sesion", ({ given, when, then}) => {
+        given("Un usuario con la sesion iniciada", async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
-            await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
+            await page.goto("http://localhost:3000/", { waitUntil: "networkidle2"});
 
             await page.evaluate(() => {
               let btns = [...document.querySelectorAll("button")];
@@ -29,7 +29,7 @@ defineFeature(feature, test => {
             });
               
               const [popup] = await Promise.all([
-                new Promise(resolve => page.once('popup', resolve)),
+                new Promise(resolve => page.once("popup", resolve)),
               ]);
               
   
@@ -46,15 +46,15 @@ defineFeature(feature, test => {
                 });
       
               await popup.waitForNavigation({
-                waitUntil: 'networkidle2'
+                waitUntil: "networkidle2"
               });
   
-              await popup.waitForSelector('[id="username"]', {visible: true});
-              await popup.type('[id="username"]', "adrifa13");
+              await popup.waitForSelector("[id=\"username\"]", {visible: true});
+              await popup.type("[id=\"username\"]", "adrifa13");
         
               await popup.waitFor(500);
-              await popup.waitForSelector('[id="password"]', {visible: true});
-              await popup.type('[id="password"]', "Adrifa1309?", {visible: true});
+              await popup.waitForSelector("[id=\"password\"]", {visible: true});
+              await popup.type("[id=\"password\"]", "Adrifa1309?", {visible: true});
         
               await popup.waitFor(500);
         
@@ -67,7 +67,7 @@ defineFeature(feature, test => {
               });
         });
 
-        when('pulsa el boton de desconectar', async () => {
+        when("pulsa el boton de desconectar", async () => {
             await page.waitFor(500);
 
             await page.evaluate(() => {
@@ -81,9 +81,9 @@ defineFeature(feature, test => {
               await page.waitFor(500);
         });
 
-        then('nos desconecta', async () => {
+        then("nos desconecta", async () => {
             await page.waitFor(500);
-            await page.waitForSelector('.container', {visible: true});
+            await page.waitForSelector(".container", {visible: true});
             expect(page.url()).toBe("http://localhost:3000/");
             
             await browser.close();

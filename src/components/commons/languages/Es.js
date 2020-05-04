@@ -13,11 +13,11 @@ const Language = {
     Layer: "Cambiar layer",
     Actualizar: "Actualizar lista",
     Desconectar: "Desconectar",
-    Identificate: "Identificate",
+    Identificate: "Identifícate",
     Error404: "Error 404",
     Archivo404: "El archivo seleccionado no existe",
     Rutas404: "No se encuentran rutas en el pod",
-    Enviada: "Notificacion enviada con exito",
+    Enviada: "Notificación enviada con éxito",
     ArchivoSubido: "Archivo subido correctamente",
     ArchivoSubidoa: "Archivo subido a "
 }

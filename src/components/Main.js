@@ -24,7 +24,6 @@ class Main extends React.Component {
   render() {
     return (
       <div className="app" data-testid="App">
-
         <div className="identification">
           <LoggedOut>
             <img src={logo} className="App-logo" alt="logo" data-testid="logo" />
@@ -34,28 +33,25 @@ class Main extends React.Component {
         </div>
 
         <LoggedIn>
-
-          <div className="nav">
-            <ISelector update={this.update.bind(this)} />
-            <div className="nav nav-usr"><User /></div>
+          
+          <div className="nav ml-30">
+            <User />
             <Notification />
+            <ISelector update={this.update.bind(this)} />
             <LoginButton />
           </div>
 
-          <div className="map" data-testid="container">
+          <div className="container" data-testid="container">
             <Map />
+            <UploadToPod />
           </div>
-
-          <div className="share">
+           
+          <div>
             <Share />
           </div>
 
-          <div className="upload">
-            <UploadToPod />
-          </div>
 
         </LoggedIn>
-
       </div>
     );
   }

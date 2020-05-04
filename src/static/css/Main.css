@@ -102,8 +102,6 @@ div{
     max-width: 50px; 
 }
 
-
-
 div.overflow {
 
     overflow-y:scroll;

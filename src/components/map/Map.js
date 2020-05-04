@@ -65,7 +65,8 @@ class Map extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className= "map">
+                <div><MapList handleFiles={this.handleFiles.bind(this)} /></div>
+                <div>
                 <Button
                     class="btn"
 
@@ -77,7 +78,7 @@ class Map extends React.Component {
                 />
                 <Wrapper id="map" data-testid="map" />
                 </div>
-                <div className = "routeList"><MapList handleFiles={this.handleFiles.bind(this)} /></div>
+                
             </React.Fragment>
 
         );

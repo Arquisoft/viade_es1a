@@ -53,6 +53,7 @@ class Main extends React.Component {
               <div className="col-sm">
                 <div className ="ml-3">
                 <UploadToPod />
+                <p>{I.Option.HerramientaRutas}<a href="http://geojson.io/" target="_blank" rel="noopener noreferrer">{I.Option.HerramientaRutasEnlace}</a></p>
                 </div>
                 <Share />
               </div>

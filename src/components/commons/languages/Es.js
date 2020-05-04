@@ -22,7 +22,10 @@ const Language = {
     ArchivoSubidoa: "Archivo subido a ",
     Bienvenido: "Bienvenido a ViadeEs1a",
     ErrorArchivoNull: "Debe escribir la uri de algún archivo",
-    ErrorAmigosNull: "Debe seleccionar algun amigo"
+    ErrorAmigosNull: "Debe seleccionar algun amigo",
+    ErrorMapaIncompatible: "El archivo seleccionado no es compatible con el mapa",
+    HerramientaRutas: "Para crear una ruta sobre un mapa puede utilizar ",
+    HerramientaRutasEnlace: "este enlace"
 }
 
 export default Language;

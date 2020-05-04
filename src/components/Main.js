@@ -35,7 +35,7 @@ class Main extends React.Component {
         </div>
 
         <LoggedIn>
-
+          <ReactNotification />
           <div className="nav ml-30">
             <User />
             <Notification />

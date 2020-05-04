@@ -9,7 +9,7 @@ let Internationalization = {
 };
 
 function changeL(languaje, update){
-    console.log(languaje)
+    console.log(languaje);
     if(languaje === "es"){
         Internationalization.Option = Es;
         console.log("Cambiado a Es");

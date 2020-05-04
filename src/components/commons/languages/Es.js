@@ -26,6 +26,6 @@ const Language = {
     ErrorMapaIncompatible: "El archivo seleccionado no es compatible con el mapa",
     HerramientaRutas: "Para crear una ruta sobre un mapa puede utilizar ",
     HerramientaRutasEnlace: "este enlace"
-}
+};
 
 export default Language;

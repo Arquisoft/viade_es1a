@@ -19,7 +19,9 @@ const Language = {
     Rutas404: "No se encuentran rutas en el pod",
     Enviada: "Notificación enviada con éxito",
     ArchivoSubido: "Archivo subido correctamente",
-    ArchivoSubidoa: "Archivo subido a "
+    ArchivoSubidoa: "Archivo subido a ",
+    ErrorArchivoNull: "Debe escribir la uri de algún archivo",
+    ErrorAmigosNull: "Debe seleccionar algun amigo"
 }
 
 export default Language;

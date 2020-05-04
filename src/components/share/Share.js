@@ -7,9 +7,9 @@ import auth from "solid-auth-client";
 import properties from "../commons/Properties";
 import request from "request";
 import ShowFriends from "./ShowFriends";
-import { Redirect } from 'react-router-dom';
 import I from "../commons/Internationalization";
 import Notification from "../basics/Notification";
+
 
 
 async function sendNotification(userWebId, friendWebId, fileId) {
@@ -69,9 +69,7 @@ export const Hook = () => {
             try {
                 await fc.copyFile(this.state.archivo, publicRute);
             } catch (error) {
-                this.setState({
-                    error: <Redirect to="/404" />,
-                });
+                Notification("danger", "Error 404", "El archivo seleccionado no existe");
                 return;
             }
 

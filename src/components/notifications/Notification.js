@@ -8,10 +8,6 @@ import { useWebId } from "@solid/react";
 import "../../static/css/Main.css";
 import I from "../commons/Internationalization";
 
-
-
-
-
 async function getNNotifications() {
     const auth = require("solid-auth-client");
     const FC = require("solid-file-client");

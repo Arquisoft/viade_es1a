@@ -22,7 +22,8 @@ const Language = {
     ArchivoSubidoa: "File uploaded to ",
     Bienvenido: "Welcome to ViadeEs1a",
     ErrorArchivoNull: "You must write the uri of some file",
-    ErrorAmigosNull: "You must select a friend"
+    ErrorAmigosNull: "You must select a friend",
+    ErrorMapaIncompatible: "The selected file is not compatible with the map"
 }
 
 export default Language;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styled from "styled-components";
@@ -7,7 +7,7 @@ import MapList from "../solidPod/MapList";
 import properties from "../commons/Properties";
 import "../../static/css/Main.css";
 import I from "../commons/Internationalization";
-import Notification from "../basics/ToastNotification";
+import notification from "../basics/ToastNotification";
 
 const Wrapper = styled.div`
     width: 1080px;
@@ -42,7 +42,7 @@ class Map extends React.Component {
         try {
             L.geoJSON(fileJson).addTo(this.map);
         } catch (error) {
-            Notification("danger", I.Option.ErrorMapaIncompatible);
+            notification("danger", I.Option.ErrorMapaIncompatible);
         }
     }
 

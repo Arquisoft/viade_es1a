@@ -54,7 +54,7 @@ defineFeature(feature, (test) => {
         
               await popup.waitFor(500);
               await popup.waitForSelector("[id=\"password\"]", {visible: true});
-              await popup.type('[id="password"]', "Adrifa1309?", {visible: true});
+              await popup.type("[id=\"password\"]", "Adrifa1309?", {visible: true});
         
               await popup.waitFor(500);
         
@@ -95,6 +95,6 @@ defineFeature(feature, (test) => {
         });
 
 
-    })
+    });
     
-})
+});

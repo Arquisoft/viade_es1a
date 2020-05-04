@@ -6,7 +6,7 @@ import { useWebId } from "@solid/react";
 import properties from "../commons/Properties";
 import { Button } from "react-bootstrap";
 import I from "../commons/Internationalization";
-import Notification from "../basics/ToastNotification";
+import notification from "../basics/ToastNotification";
 
 export const UploadHook = () => {
     let webid = String(String(useWebId()).replace(properties.profile, properties.myFolder));
@@ -20,7 +20,7 @@ export const UploadHook = () => {
                 let fileName = files[0].name;
                 let url = webid+fileName;
                 fc.createFile(url, reader.result, "text/turtle");
-                Notification("success", I.Option.ArchivoSubido, I.Option.ArchivoSubidoa+properties.myFolder+fileName);
+                notification("success", I.Option.ArchivoSubido, I.Option.ArchivoSubidoa+properties.myFolder+fileName);
             };
             reader.readAsText(files[0]);
         };

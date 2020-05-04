@@ -1,4 +1,4 @@
-import jest from "jest";
+import "jest";
 
 import { defineFeature, loadFeature } from "jest-cucumber";
 import { givenName } from "rdf-namespaces/dist/foaf";
@@ -84,6 +84,6 @@ defineFeature(feature, (test) => {
         });
 
 
-    })
+    });
     
-})
+});

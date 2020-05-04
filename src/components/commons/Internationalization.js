@@ -6,7 +6,6 @@ import Es from "./languages/Es";
 let Internationalization = {
     Option: Es,
     change: (languaje, update) => {
-        console.log(languaje);
         if (languaje === "es") {
             Internationalization.Option = Es;
         }
@@ -19,6 +18,6 @@ let Internationalization = {
         //ReactDOM.render(null, document.getElementsById("inter"));
 
     }
-}
+};
 
 export default Internationalization;

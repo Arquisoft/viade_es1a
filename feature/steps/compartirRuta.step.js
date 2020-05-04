@@ -72,9 +72,8 @@ defineFeature(feature, (test) => {
             await page.waitFor(1000);
 
             //await page.screenshot({path: 'src/components/tests/screenshots/cambiarLayer_Screenshot1.png'});
-
-            await page.waitForSelector("#root > div > div > div.share > div > div > div.ImputField > input", {visible: true});
-            await page.type("#root > div > div > div.share > div > div > div.ImputField > input", "https://adrifa13.solid.community/private/rutas/prueba5.geojson");
+            await page.waitForSelector("#root > div > div.container > div > div:nth-child(2) > div.LoginForm > div.ImputField > input", {visible: true});
+            await page.type("#root > div > div.container > div > div:nth-child(2) > div.LoginForm > div.ImputField > input", "https://adrifa13.solid.community/private/rutas/prueba5.geojson");
       
 
             await page.evaluate(() => {

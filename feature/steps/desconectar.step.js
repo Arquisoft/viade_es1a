@@ -84,7 +84,7 @@ defineFeature(feature, (test)=> {
 
         then("nos desconecta", async () => {
             await page.waitFor(500);
-            await page.waitForSelector(".container", {visible: true});
+            await page.waitForSelector("#root > div > div", {visible: true});
             expect(page.url()).toBe("http://localhost:3000/");
             
             await browser.close();

@@ -118,7 +118,7 @@ defineFeature(feature, (test) => {
               return element.innerHTML;
             })
 
-            expect(a).toEqual("Wellcome,  <a href=\"https://adrifa13.solid.community/profile/card#me\">Adrian Fernandez Alonso</a>");
+            expect(a).toEqual(" Wellcome,  <a href=\"https://adrifa13.solid.community/profile/card#me\">Adrian Fernandez Alonso</a>");
 
 
             await browser.close();

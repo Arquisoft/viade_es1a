@@ -1,4 +1,4 @@
-import "jest";
+import jest from "jest";
 
 import { defineFeature, loadFeature } from "jest-cucumber";
 
@@ -7,7 +7,7 @@ const puppeteer = require("puppeteer");
 let browser = null;
 let page = null;
 
-defineFeature(feature, test => {
+defineFeature(feature, (test) => {
     beforeEach(async () => {
         jest.setTimeout(1200000);
     });
@@ -91,6 +91,6 @@ defineFeature(feature, test => {
         });
 
 
-    })
+    });
     
-})
+});

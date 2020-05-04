@@ -114,7 +114,7 @@ defineFeature(feature, test => {
             await page.waitFor(1000);
             
             let a = await page.$eval("#estasLogueado", (element) => {
-              return element.innerHTML
+              return element.innerHTML;
             })
 
             expect(a).toEqual("Wellcome,  <a href=\"https://adrifa13.solid.community/profile/card#me\">Adrian Fernandez Alonso</a>");

@@ -37,4 +37,12 @@ Instalar las dependencias:
 
 Ejecutar la aplicación:
 
-` run ` 
+` npm start ` 
+
+Ejecutar los test de unitarios:
+
+` npm run test ` 
+
+Ejecutar los test funcionales:
+
+` npm run test:e2e ` 

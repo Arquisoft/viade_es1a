@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "leaflet/dist/leaflet.css";
 import { AuthButton } from "@solid/react";
 import I from "../commons/Internationalization";

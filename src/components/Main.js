@@ -1,6 +1,5 @@
 import React from "react";
 import { LoggedOut, LoggedIn } from "@solid/react";
-import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import logo from "../static/images/ViaDe.svg";
 import User from "./login/User";
@@ -11,9 +10,9 @@ import Share from "./share/Share";
 import Notification from "./notifications/Notification";
 import I from "./commons/Internationalization";
 import ISelector from "./login/ISelector";
-import ReactNotification from 'react-notifications-component'
+import ReactNotification from "react-notifications-component";
 
-import 'react-notifications-component/dist/theme.css'
+import "react-notifications-component/dist/theme.css";
 
 import "../static/css/Main.css";
 
@@ -54,6 +53,7 @@ class Main extends React.Component {
               <div className="col-sm">
                 <div className ="ml-3">
                 <UploadToPod />
+                <p>{I.Option.HerramientaRutas}<a href="http://geojson.io/" target="_blank" rel="noopener noreferrer">{I.Option.HerramientaRutasEnlace}</a></p>
                 </div>
                 <Share />
               </div>
@@ -68,22 +68,4 @@ class Main extends React.Component {
   }
 }
 
-class App extends React.Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-          <Route exact path='/' component={Main} />
-          <Redirect to="/" />
-        </Switch>
-      </BrowserRouter>
-    )
-  }
-}
-
-export default App;
-
-
-
-
-//export default observer(Main);
+export default Main;

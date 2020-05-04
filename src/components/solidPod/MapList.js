@@ -40,8 +40,13 @@ async function readRoute(handleFiles, URL) {
     rutaView = await fc.readFile(URL);
   }
 
-  var rutaViewStJ = JSON.parse(rutaView);
-
+  try {
+    var rutaViewStJ = JSON.parse(rutaView);
+  } catch (error) {
+    Notification("danger", I.Option.ErrorMapaIncompatible);
+    return;
+  }
+  
   handleFiles(rutaViewStJ);
 
 }
@@ -99,7 +104,7 @@ class ListClass extends React.Component {
       <div>
 
         <Button
-        data-testid="btmaplist"
+          data-testid="btmaplist"
 
           text={I.Option.Actualizar}
           disabled={false}

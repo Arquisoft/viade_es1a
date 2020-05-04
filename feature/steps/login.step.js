@@ -1,10 +1,10 @@
-import 'jest';
+import "jest";
 
-import { defineFeature, loadFeature } from 'jest-cucumber';
-import { givenName } from 'rdf-namespaces/dist/foaf';
+import { defineFeature, loadFeature } from "jest-cucumber";
+import { givenName } from "rdf-namespaces/dist/foaf";
 
-const feature = loadFeature('./feature/features/login.feature');
-const puppeteer = require('puppeteer')
+const feature = loadFeature("./feature/features/login.feature");
+const puppeteer = require("puppeteer")
 let browser = null;
 let page = null;
 
@@ -13,18 +13,18 @@ defineFeature(feature, test => {
         jest.setTimeout(1200000);
     });
 
-    test('Iniciar Sesion', ({ given, when, and, then}) => {
-        given('Un usuario intenta iniciar sesion', async () => {
+    test("Iniciar Sesion", ({ given, when, and, then}) => {
+        given("Un usuario intenta iniciar sesion", async () => {
             browser = await puppeteer.launch({headless: false});
             page = await browser.newPage();
 
             
             
-            await page.goto("http://localhost:3000/", { waitUntil: 'networkidle2'});
+            await page.goto("http://localhost:3000/", { waitUntil: "networkidle2"});
         
         });
 
-        when('introduce el WebId y rellena el formulario', async () => {
+        when("introduce el WebId y rellena el formulario", async () => {
             await page.evaluate(() => {
               let btns = [...document.querySelectorAll("button")];
               btns.forEach(async function (btn) {
@@ -35,7 +35,7 @@ defineFeature(feature, test => {
             });
             
             const [popup] = await Promise.all([
-              new Promise(resolve => page.once('popup', resolve)),
+              new Promise(resolve => page.once("popup", resolve)),
             ]);
             
 
@@ -52,15 +52,15 @@ defineFeature(feature, test => {
               });
     
             await popup.waitForNavigation({
-              waitUntil: 'networkidle2'
+              waitUntil: "networkidle2"
             });
 
-            await popup.waitForSelector('[id="username"]', {visible: true});
-            await popup.type('[id="username"]', "adrifa13");
+            await popup.waitForSelector("[id=\"username\"]", {visible: true});
+            await popup.type("[id=\"username\"]", "adrifa13");
       
             await popup.waitFor(500);
-            await popup.waitForSelector('[id="password"]', {visible: true});
-            await popup.type('[id="password"]', "Adrifa1309?", {visible: true});
+            await popup.waitForSelector("[id=\"password\"]", {visible: true});
+            await popup.type("[id=\"password\"]", "Adrifa1309?", {visible: true});
       
             await popup.waitFor(500);
       
@@ -74,10 +74,10 @@ defineFeature(feature, test => {
             
           });
 
-        then('nos muestra la pagina', async () => {
+        then("nos muestra la pagina", async () => {
   
             expect(page.url()).toBe("http://localhost:3000/");
-            await page.waitForSelector('[id="estasLogueado"]', {visible: true});
+            await page.waitForSelector("[id=\"estasLogueado\"]", {visible: true});
             await browser.close();
   
         });

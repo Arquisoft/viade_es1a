@@ -7,6 +7,7 @@ import MapList from "../solidPod/MapList";
 import properties from "../commons/Properties";
 import "../../static/css/Main.css";
 import I from "../commons/Internationalization";
+import Notification from "../basics/ToastNotification";
 
 const Wrapper = styled.div`
     width: 1080px;
@@ -38,7 +39,11 @@ class Map extends React.Component {
         center[0] = fileJson.features[0].geometry.coordinates[0][1];
         center[1] = fileJson.features[0].geometry.coordinates[1][0];
         this.map.setView(center, 15);
-        L.geoJSON(fileJson).addTo(this.map);
+        try {
+            L.geoJSON(fileJson).addTo(this.map);
+        } catch (error) {
+            Notification("danger", I.Option.ErrorMapaIncompatible);
+        }
     }
 
     async cambiar() {

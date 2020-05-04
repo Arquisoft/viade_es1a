@@ -16,7 +16,7 @@ async function getNNotifications() {
     let session2 = "https://kevin23699.solid.community/profile/card#me";
     let profile="";
     let profileDocument="";
-    if (session == null) {
+    if (session === null) {
          profileDocument = await fetchDocument(session2);
          profile = profileDocument.getSubject(session2);
     }

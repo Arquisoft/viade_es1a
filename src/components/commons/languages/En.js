@@ -1,10 +1,10 @@
 const Language = {
     Logueado: "Wellcome, ",
-    Refrescar: "Refresh notifications",
+    Refrescar: "Refresh",
     Subir: "Upload route",
     Sesion: "Log In",
     Amigos: "Select friends:",
-    Notificaciones: "Notifications received",
+    Notificaciones: "Notifications",
     Compartir: "Share file",
     URI: "Enter URI file:",
     Enviar: "Send to friends",
@@ -20,6 +20,7 @@ const Language = {
     Enviada: "Notification sented successfully",
     ArchivoSubido: "File uploaded successfully",
     ArchivoSubidoa: "File uploaded to ",
+    Bienvenido: "Welcome to ViadeEs1a",
     ErrorArchivoNull: "You must write the uri of some file",
     ErrorAmigosNull: "You must select a friend"
 }

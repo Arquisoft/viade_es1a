@@ -4,7 +4,7 @@ import { space } from "rdf-namespaces";
 import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
 import I from "../commons/Internationalization";
-import Notification from "../basics/Notification";
+import Notification from "../basics/ToastNotification";
 
 import "../../static/css/Main.css"
 

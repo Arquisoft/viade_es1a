@@ -8,7 +8,7 @@ import properties from "../commons/Properties";
 import request from "request";
 import ShowFriends from "./ShowFriends";
 import I from "../commons/Internationalization";
-import Notification from "../basics/Notification";
+import Notification from "../basics/ToastNotification";
 
 
 

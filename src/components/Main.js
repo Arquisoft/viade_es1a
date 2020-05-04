@@ -21,39 +21,48 @@ class Main extends React.Component {
 
   update() {
     this.forceUpdate();
-}
+  }
 
   render() {
     return (
       <div className="app" data-testid="App">
-        <div className="container" data-testid="container">
-          <div className="identification">
-            <LoggedOut>
-              <img src={logo} className="App-logo" alt="logo" data-testid="logo" />
-              <h2 data-testid="IniciaSesion" >{I.Option.Sesion}</h2>
-              <LoginButton />
-            </LoggedOut>
+        <div className="logout">
+          <LoggedOut>
+            <img src={logo} alt="logo" data-testid="logo" />
+            
+            <h2 data-testid="IniciaSesion" >{I.Option.Sesion}</h2>
+            <div>
+            <LoginButton />
+            </div>
+          </LoggedOut>
+        </div>
+
+        <LoggedIn>
+          <ReactNotification />
+          <div className="nav ml-30">
+            <User />
+            <Notification />
+            <ISelector update={this.update.bind(this)} />
+            <LoginButton />
           </div>
 
-          <LoggedIn>
-          <ReactNotification />
-
-            <div className="nav">
-              <ISelector update={this.update.bind(this)} />
-              <div className="nav nav-usr"><User /></div>
-              <Notification />
-              <LoginButton />
+          <div className="container" data-testid="container">
+            <div className="row">
+              <div className="col-sm">
+                <Map />
+              </div>
+              <div className="col-sm">
+                <div className ="ml-3">
+                <UploadToPod />
+                </div>
+                <Share />
+              </div>
             </div>
 
-            <Map />
-            <UploadToPod />
+          </div>
 
-            <div className="share">
-              <div className="shrCmp"><Share /></div>
-            </div>
 
-          </LoggedIn>
-        </div>
+        </LoggedIn>
       </div>
     );
   }

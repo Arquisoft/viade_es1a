@@ -20,7 +20,7 @@ function ShowFriends({ src, enviar }) {
 
     let container = (items) => (
         <div>
-            <p>{I.Option.Amigos}</p>
+            <h4>{I.Option.Amigos}</h4>
             {items}
             <Button
                 class="btn"

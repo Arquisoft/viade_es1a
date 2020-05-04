@@ -6,7 +6,7 @@ import { useWebId } from "@solid/react";
 import properties from "../commons/Properties";
 import { Button } from "react-bootstrap";
 import I from "../commons/Internationalization";
-import Notification from "../basics/Notification";
+import Notification from "../basics/ToastNotification";
 
 export const UploadHook = () => {
     let webid = String(String(useWebId()).replace(properties.profile, properties.myFolder));

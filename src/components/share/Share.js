@@ -7,8 +7,10 @@ import auth from "solid-auth-client";
 import properties from "../commons/Properties";
 import request from "request";
 import ShowFriends from "./ShowFriends";
-import { Redirect } from 'react-router-dom';
 import I from "../commons/Internationalization";
+import Notification from "../basics/Notification";
+
+
 
 async function sendNotification(userWebId, friendWebId, fileId) {
     request({
@@ -27,7 +29,7 @@ async function sendNotification(userWebId, friendWebId, fileId) {
     },
         function (error, response, body) {
             if (!error) {
-                alert("Notificacion enviada");
+                Notification("success", I.Option.Enviada);
             }
             return !error;
         });
@@ -67,12 +69,10 @@ export const Hook = () => {
             try {
                 await fc.copyFile(this.state.archivo, publicRute);
             } catch (error) {
-                this.setState({
-                    error: <Redirect to="/404" />,
-                  });
+                Notification("danger", I.Option.Error404, I.Option.Archivo404);
                 return;
             }
-            
+
 
             for (var i = 0; i < amigos.length; ++i) {
                 this.state.amigo = amigos[i];
@@ -111,7 +111,7 @@ export const Hook = () => {
                     <p data-testid="uri">{I.Option.URI}</p>
                     <InputField
                         type="text"
-                        class = "form-control"
+                        class="form-control"
                         value={this.state.archivo ? this.state.archivo : ""}
                         onChange={(val) => this.setInputValue("archivo", val)}
                         data-testid="input"

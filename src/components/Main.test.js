@@ -3,6 +3,7 @@ import { cleanup, render, getByTestId } from "@testing-library/react";
 import Main from "./Main";
 import logo from "../static/images/ViaDe.svg"
 import {shallow} from 'enzyme';
+import I from "./commons/Internationalization";
 
 afterAll(cleanup);
 
@@ -16,7 +17,7 @@ describe("main", () => {
         const { getByTestId } = render(<Main/>);
 
 
-        expect(getByTestId("IniciaSesion").textContent).toBe("Iniciar Sesión");
+        expect(getByTestId("IniciaSesion").textContent).toBe(I.Option.Sesion);
 
     });
 });

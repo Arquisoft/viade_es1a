@@ -9,9 +9,11 @@ import UploadToPod from "./solidPod/UploadToPod";
 import Map from "./map/Map";
 import Share from "./share/Share";
 import Notification from "./notifications/Notification";
-import NotFoundPage from "./NotFoundPage";
 import I from "./commons/Internationalization";
 import ISelector from "./login/ISelector";
+import ReactNotification from 'react-notifications-component'
+
+import 'react-notifications-component/dist/theme.css'
 
 import "../static/css/Main.css";
 
@@ -34,6 +36,8 @@ class Main extends React.Component {
           </div>
 
           <LoggedIn>
+          <ReactNotification />
+
             <div className="nav">
               <ISelector update={this.update.bind(this)} />
               <div className="nav nav-usr"><User /></div>
@@ -61,7 +65,6 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={Main} />
-          <Route path="/404" component={NotFoundPage} />
           <Redirect to="/" />
         </Switch>
       </BrowserRouter>

@@ -22,7 +22,6 @@ function ShowFriends({ src, enviar }) {
         <div>
             <p>{I.Option.Amigos}</p>
             {items}
-            {/* {console.log(items!=null)} TODO: Comprobar que hay amigos*/}
             <Button
                 class="btn"
                 text={I.Option.Enviar}
@@ -33,7 +32,7 @@ function ShowFriends({ src, enviar }) {
     );
     let children = (item, index) => (
         <div key={index}>
-            <input class="form-check-input" type="checkbox" name="friendbox" value={`${item}`} />
+            <input className="form-check-input" type="checkbox" name="friendbox" value={`${item}`} />
             <label> {`${item}`} </label>
         </div>
     );

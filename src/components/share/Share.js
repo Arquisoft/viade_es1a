@@ -53,10 +53,12 @@ export const Hook = () => {
 
         async enviar(amigos) {
             if (!this.state.archivo) {
+                Notification("warning", I.Option.ErrorArchivoNull);
                 return;
             }
 
             if (amigos.length <= 0) {
+                Notification("warning", I.Option.ErrorAmigosNull);
                 return;
             }
 

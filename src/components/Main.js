@@ -12,6 +12,9 @@ import Notification from "./notifications/Notification";
 import NotFoundPage from "./NotFoundPage";
 import I from "./commons/Internationalization";
 import ISelector from "./login/ISelector";
+import ReactNotification from 'react-notifications-component'
+
+import 'react-notifications-component/dist/theme.css'
 
 import "../static/css/Main.css";
 
@@ -34,6 +37,8 @@ class Main extends React.Component {
           </div>
 
           <LoggedIn>
+          <ReactNotification />
+
             <div className="nav">
               <ISelector update={this.update.bind(this)} />
               <div className="nav nav-usr"><User /></div>

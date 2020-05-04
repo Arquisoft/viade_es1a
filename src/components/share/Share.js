@@ -9,6 +9,8 @@ import request from "request";
 import ShowFriends from "./ShowFriends";
 import { Redirect } from 'react-router-dom';
 import I from "../commons/Internationalization";
+import Notification from "../basics/Notification";
+
 
 async function sendNotification(userWebId, friendWebId, fileId) {
     request({
@@ -27,7 +29,7 @@ async function sendNotification(userWebId, friendWebId, fileId) {
     },
         function (error, response, body) {
             if (!error) {
-                alert("Notificacion enviada");
+                Notification("success", "Notificacion enviada con exito");
             }
             return !error;
         });
@@ -69,10 +71,10 @@ export const Hook = () => {
             } catch (error) {
                 this.setState({
                     error: <Redirect to="/404" />,
-                  });
+                });
                 return;
             }
-            
+
 
             for (var i = 0; i < amigos.length; ++i) {
                 this.state.amigo = amigos[i];
@@ -111,7 +113,7 @@ export const Hook = () => {
                     <p data-testid="uri">{I.Option.URI}</p>
                     <InputField
                         type="text"
-                        class = "form-control"
+                        class="form-control"
                         value={this.state.archivo ? this.state.archivo : ""}
                         onChange={(val) => this.setInputValue("archivo", val)}
                         data-testid="input"

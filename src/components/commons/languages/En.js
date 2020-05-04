@@ -1,7 +1,7 @@
 const Language = {
     Logueado: "Wellcome, ",
     Refrescar: "Refresh",
-    Subir: "Upload route",
+    Subir: "Upload file",
     Sesion: "Log In",
     Amigos: "Select friends:",
     Notificaciones: "Notifications",

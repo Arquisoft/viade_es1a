@@ -1,7 +1,7 @@
 const Language = {
     Logueado: "Bienvenido, ",
     Refrescar: "Refrescar",
-    Subir: "Subir ruta",
+    Subir: "Subir archivo",
     Sesion: "Iniciar Sesión",
     Amigos: "Seleccione amigos",
     Notificaciones: "Notificaciones",

@@ -1,6 +1,6 @@
 const Language = {
     Logueado: "Wellcome, ",
-    Refrescar: "Refresh notifications",
+    Refrescar: "Refresh",
     Subir: "Upload route",
     Sesion: "Log In",
     Amigos: "Select friends:",

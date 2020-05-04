@@ -23,7 +23,9 @@ const Language = {
     Bienvenido: "Welcome to ViadeEs1a",
     ErrorArchivoNull: "You must write the uri of some file",
     ErrorAmigosNull: "You must select a friend",
-    ErrorMapaIncompatible: "The selected file is not compatible with the map"
+    ErrorMapaIncompatible: "The selected file is not compatible with the map",
+    HerramientaRutas: "To create a route on a map you can use ",
+    HerramientaRutasEnlace: "this link"
 }
 
 export default Language;

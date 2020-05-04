@@ -1,6 +1,5 @@
 import React from "react";
 import { LoggedOut, LoggedIn } from "@solid/react";
-import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import logo from "../static/images/ViaDe.svg";
 import User from "./login/User";
@@ -68,22 +67,4 @@ class Main extends React.Component {
   }
 }
 
-class App extends React.Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-          <Route exact path='/' component={Main} />
-          <Redirect to="/" />
-        </Switch>
-      </BrowserRouter>
-    )
-  }
-}
-
-export default App;
-
-
-
-
-//export default observer(Main);
+export default Main;

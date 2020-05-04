@@ -20,8 +20,9 @@ const Language = {
     Enviada: "Notification sented successfully",
     ArchivoSubido: "File uploaded successfully",
     ArchivoSubidoa: "File uploaded to ",
-    Bienvenido: "Welcome to ViadeEs1a"
-
+    Bienvenido: "Welcome to ViadeEs1a",
+    ErrorArchivoNull: "You must write the uri of some file",
+    ErrorAmigosNull: "You must select a friend"
 }
 
 export default Language;

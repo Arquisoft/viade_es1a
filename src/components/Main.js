@@ -33,7 +33,7 @@ class Main extends React.Component {
         </div>
 
         <LoggedIn>
-          
+
           <div className="nav ml-30">
             <User />
             <Notification />
@@ -42,12 +42,18 @@ class Main extends React.Component {
           </div>
 
           <div className="container" data-testid="container">
-            <Map />
-            <UploadToPod />
-          </div>
-           
-          <div>
-            <Share />
+            <div className="row">
+              <div className="col-sm">
+                <Map />
+              </div>
+              <div className="col-sm">
+                <div className ="ml-3">
+                <UploadToPod />
+                </div>
+                <Share />
+              </div>
+            </div>
+
           </div>
 
 

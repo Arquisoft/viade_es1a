@@ -9,8 +9,8 @@ import "../../static/css/Main.css";
 import I from "../commons/Internationalization";
 
 const Wrapper = styled.div`
-    width: 1000px;
-    height: 600px;
+    width: 1080px;
+    height: 566px;
 `;
 
 
@@ -65,20 +65,27 @@ class Map extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div><MapList handleFiles={this.handleFiles.bind(this)} /></div>
-                <div>
-                <Button
-                    class="btn"
+                <div className="row">
 
-                    disabled={false}
-                    onClick={() => this.cambiar()}
-                    data-testid="cambiarLayer"
+                    <div class="col-sm">
+                        <div>
+                            <Button
+                                class="btn"
 
-                    text={I.Option.Layer}
-                />
-                <Wrapper id="map" data-testid="map" />
+                                disabled={false}
+                                onClick={() => this.cambiar()}
+                                data-testid="cambiarLayer"
+
+                                text={I.Option.Layer}
+                            />
+                            <Wrapper id="map" data-testid="map" />
+                        </div>
+                        <div class="col-sm">
+                            <MapList handleFiles={this.handleFiles.bind(this)} />
+
+                        </div>
+                    </div>
                 </div>
-                
             </React.Fragment>
 
         );

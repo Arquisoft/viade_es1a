@@ -29,7 +29,7 @@ async function sendNotification(userWebId, friendWebId, fileId) {
     },
         function (error, response, body) {
             if (!error) {
-                Notification("success", "Notificacion enviada con exito");
+                Notification("success", I.Option.Enviada);
             }
             return !error;
         });
@@ -69,7 +69,7 @@ export const Hook = () => {
             try {
                 await fc.copyFile(this.state.archivo, publicRute);
             } catch (error) {
-                Notification("danger", "Error 404", "El archivo seleccionado no existe");
+                Notification("danger", I.Option.Error404, I.Option.Archivo404);
                 return;
             }
 

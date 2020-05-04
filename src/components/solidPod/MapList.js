@@ -50,7 +50,7 @@ export function filesToButtons(files, handleFiles) {
   const buttons = [];
 
   if (files === null) {
-    Notification("danger", "Error 404", "No se encuentran rutas en el pod");
+    Notification("danger", I.Option.Error404, I.Option.Rutas404);
     return;
   }
 

@@ -20,7 +20,7 @@ export const UploadHook = () => {
                 let fileName = files[0].name;
                 let url = webid+fileName;
                 fc.createFile(url, reader.result, "text/turtle");
-                Notification("success", "Archivo subido correctamente", "Archivo subido a "+properties.myFolder+fileName);
+                Notification("success", I.Option.ArchivoSubido, I.Option.ArchivoSubidoa+properties.myFolder+fileName);
             };
             reader.readAsText(files[0]);
         };

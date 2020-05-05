@@ -15,7 +15,7 @@ const Language = {
     Desconectar: "Disconnect",
     Identificate: "Identificate",
     Error404: "Error 404",
-    Archivo404: "The selected file does not exist or there are no permissions to copy to the pod",
+    Archivo404: "The selected file does not exist or the application does not have permissions of \"Control\"",
     Rutas404: "Routes not found in the pod",
     Enviada: "Notification sented successfully",
     ArchivoSubido: "File uploaded successfully",

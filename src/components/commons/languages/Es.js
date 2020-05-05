@@ -15,7 +15,7 @@ const Language = {
     Desconectar: "Desconectar",
     Identificate: "Identifícate",
     Error404: "Error 404",
-    Archivo404: "El archivo seleccionado no existe o no hay permisos para copiar en el pod",
+    Archivo404: "El archivo seleccionado no existe o la aplicacion no hay permisos de \"Control\"",
     Rutas404: "No se encuentran rutas en el pod",
     Enviada: "Notificación enviada con éxito",
     ArchivoSubido: "Archivo subido correctamente",

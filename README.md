@@ -69,6 +69,6 @@ Iniciamos el contenedor de la aplicación
 
 Arrancamos los dos contenedores en Docker Desktop
 
-Por último accedemos a la aplicación mediante http://localhost:300 o http://IP:3000 
+Por último accedemos a la aplicación desde [localhost:3000](http://localhost:3000)
 
 

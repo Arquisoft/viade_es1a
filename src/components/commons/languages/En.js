@@ -15,7 +15,7 @@ const Language = {
     Desconectar: "Disconnect",
     Identificate: "Identificate",
     Error404: "Error 404",
-    Archivo404: "The selected file does not exist",
+    Archivo404: "The selected file does not exist or there are no permissions to copy to the pod",
     Rutas404: "Routes not found in the pod",
     Enviada: "Notification sented successfully",
     ArchivoSubido: "File uploaded successfully",
@@ -26,7 +26,7 @@ const Language = {
     ErrorMapaIncompatible: "The selected file is not compatible with the map",
     HerramientaRutas: "To create a route on a map you can use ",
     HerramientaRutasEnlace: "this link",
-    ErrorCentro: "Center not found",
+    ErrorCentro: "The selected route is not fully compatible",
     ErrorCentroDescripcion: "The selected route is not completely compatible, the map could not be centered, but it has been shown"
 };
 

@@ -15,7 +15,7 @@ const Language = {
     Desconectar: "Desconectar",
     Identificate: "Identifícate",
     Error404: "Error 404",
-    Archivo404: "El archivo seleccionado no existe",
+    Archivo404: "El archivo seleccionado no existe o no hay permisos para copiar en el pod",
     Rutas404: "No se encuentran rutas en el pod",
     Enviada: "Notificación enviada con éxito",
     ArchivoSubido: "Archivo subido correctamente",
@@ -26,8 +26,8 @@ const Language = {
     ErrorMapaIncompatible: "El archivo seleccionado no es compatible con el mapa",
     HerramientaRutas: "Para crear una ruta sobre un mapa puede utilizar ",
     HerramientaRutasEnlace: "este enlace",
-    ErrorCentro: "Centro no encontrado",
-    ErrorCentroDescripcion: "La ruta seleccionada no es completamente compatible, no se ha podido centrar el mapa pero si se ha mostrado"
+    ErrorCentro: "La ruta seleccionada no es completamente compatible",
+    ErrorCentroDescripcion: "The map could not be centered, but it was shown"
 };
 
 export default Language;

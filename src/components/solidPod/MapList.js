@@ -46,7 +46,7 @@ async function readRoute(handleFiles, URL) {
     notification("danger", I.Option.ErrorMapaIncompatible);
     return;
   }
-  
+
   handleFiles(rutaViewStJ);
 
 
@@ -61,16 +61,20 @@ export function filesToButtons(files, handleFiles) {
   }
 
   for (const [index, value] of files.entries()) {
-    buttons.push(
-      <div class="btn-list" key={index}>
-        <Button
-          class="btn btn-light"
-          text={value.name}
-          disabled={false}
-          onClick={() => readRoute(handleFiles, value.url)}
-          id={value.name} />
-      </div>
-    );
+    if (value.name.endsWith(".geojson")) {
+      let name = String(String(value.name).replace(".geojson", ""));
+
+      buttons.push(
+        <div class="btn-list" key={index}>
+          <Button
+            class="btn btn-light"
+            text={name}
+            disabled={false}
+            onClick={() => readRoute(handleFiles, value.url)}
+            id={name} />
+        </div>
+      );
+    }
   }
   return buttons;
 }

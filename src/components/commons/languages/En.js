@@ -25,7 +25,9 @@ const Language = {
     ErrorAmigosNull: "You must select a friend",
     ErrorMapaIncompatible: "The selected file is not compatible with the map",
     HerramientaRutas: "To create a route on a map you can use ",
-    HerramientaRutasEnlace: "this link"
+    HerramientaRutasEnlace: "this link",
+    ErrorCentro: "Center not found",
+    ErrorCentroDescripcion: "The selected route is not completely compatible, the map could not be centered, but it has been shown"
 };
 
 export default Language;

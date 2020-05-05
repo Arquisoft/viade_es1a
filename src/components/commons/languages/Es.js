@@ -25,7 +25,9 @@ const Language = {
     ErrorAmigosNull: "Debe seleccionar algun amigo",
     ErrorMapaIncompatible: "El archivo seleccionado no es compatible con el mapa",
     HerramientaRutas: "Para crear una ruta sobre un mapa puede utilizar ",
-    HerramientaRutasEnlace: "este enlace"
+    HerramientaRutasEnlace: "este enlace",
+    ErrorCentro: "Centro no encontrado",
+    ErrorCentroDescripcion: "La ruta seleccionada no es completamente compatible, no se ha podido centrar el mapa pero si se ha mostrado"
 };
 
 export default Language;

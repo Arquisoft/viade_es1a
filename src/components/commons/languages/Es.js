@@ -19,7 +19,7 @@ const Language = {
     ErrorI: "Error no identificado",
     Archivo404: "El archivo seleccionado no existe",
     ErrorPermisos: "La aplicacion no hay permisos suficientes para realizar esta acción",
-    Rutas404: "No se encuentran rutas en el pod",
+    Rutas404: "La lista de rutas esta vacía",
     Enviada: "Notificación enviada con éxito",
     ArchivoSubido: "Archivo subido correctamente",
     ArchivoSubidoa: "Archivo subido a ",
@@ -30,7 +30,8 @@ const Language = {
     HerramientaRutas: "Para crear una ruta sobre un mapa puede utilizar ",
     HerramientaRutasEnlace: "este enlace",
     ErrorCentro: "La ruta seleccionada no es completamente compatible",
-    ErrorCentroDescripcion: "No se ha podido centrar el mapa, pero sí se ha mostrado"
+    ErrorCentroDescripcion: "No se ha podido centrar el mapa, pero sí se ha mostrado",
+    ListaRutas: "Lista de rutas:"
 };
 
 export default Language;

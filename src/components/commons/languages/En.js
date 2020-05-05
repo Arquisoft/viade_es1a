@@ -19,7 +19,7 @@ const Language = {
     ErrorI: "Error unidentified",
     Archivo404: "The selected file does not exist",
     ErrorPermisos: "The application has insufficient permissions to perform this action",
-    Rutas404: "Routes not found in the pod",
+    Rutas404: "The route list is empty",
     Enviada: "Notification sented successfully",
     ArchivoSubido: "File uploaded successfully",
     ArchivoSubidoa: "File uploaded to ",
@@ -30,7 +30,8 @@ const Language = {
     HerramientaRutas: "To create a route on a map you can use ",
     HerramientaRutasEnlace: "this link",
     ErrorCentro: "The selected route is not fully compatible",
-    ErrorCentroDescripcion: "The map could not be centered, but it was shown"
+    ErrorCentroDescripcion: "The map could not be centered, but it was shown",
+    ListaRutas: "Route list:"
 };
 
 export default Language;

@@ -57,7 +57,7 @@ export function filesToButtons(files, handleFiles) {
   const buttons = [];
 
   if (files === null) {
-    notification("danger", I.Option.Error404, I.Option.Rutas404);
+    notification("info", I.Option.Rutas404);
     return;
   }
 
@@ -111,13 +111,14 @@ class ListClass extends React.Component {
     return (
       <div>
 
-        <Button
+        {/* <Button
           data-testid="btmaplist"
 
           text={I.Option.Actualizar}
           disabled={false}
           onClick={() => this.updateList()}
-        />
+        /> */}
+        <h2>{I.Option.ListaRutas}</h2>
         {this.state.lista}
       </div>
     );

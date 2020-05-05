@@ -87,6 +87,7 @@ class ListClass extends React.Component {
       lista: (I.Option.Actualizar)
     };
     this.updateList = this.updateList.bind(this);
+    this.updateList();
   }
 
   async updateList() {

@@ -17,12 +17,12 @@ Los requisitos de la aplicación son:
 [options="header",cols="1,2,3"]
 |===
 
-|Prioridad|Objetivo|Motivación
-|10|Privacidad|Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD
-|8|Usabilidad|El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática
-|8|Eficiencia|Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla
-|4|Interoperabilidad|La aplicación debe ser capaz de cargar y compartir rutas con otras aplicaciones SOLID similares
-|5|Disponibilidad|La aplicación debe tener estar disponible lo más cerca posible al 100% del tiempo
+|Objetivo|Motivación
+|Privacidad|Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD
+|Usabilidad|El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática
+|Eficiencia|Un tiempo de respuesta largo puede hacer pensar al usuario que la aplicación no funciona y, por tanto, dejar de usarla
+|Interoperabilidad|La aplicación debe ser capaz de cargar y compartir rutas con otras aplicaciones SOLID similares
+|Disponibilidad|La aplicación debe tener estar disponible lo más cerca posible al 100% del tiempo
 |===
 
 === Stakeholders
@@ -31,7 +31,7 @@ Los requisitos de la aplicación son:
 |===
 |Rol/Nombre|Descripción|Expectativas
 | Profesores | Evaluan la aplicación y aconsejan en las bases del desarrollo de la aplicación | Esperan que los estudiantes trabajen en equipo, se desenvuelvan a la hora de aprender una nueva tecnología y tengan la iniciativa en la toma de decisiones.
-|Usuarios |Seran los interesados en conocer rutas o añadir las suyas|Usaran la aplicacion para guardar y compartir rutas con personas o con  grupos de personas de forma usable, disponible, rápida y segura. También harán  uso de la aplicación para seguir la ruta que elijan. 
+|Senderistas |Seran los interesados en conocer rutas o añadir las suyas|Usaran la aplicacion para guardar y compartir rutas con personas o con  grupos de personas de forma usable, disponible, rápida y segura. También harán  uso de la aplicación para seguir la ruta que elijan. 
 | Inrupt |Organización que fomenta y desarrola Solid y ha propuesto el desafío | Esperan que los estudiantes creen una aplicación descentralizada usando Solid para fomentar su uso.
 | Desarrolladores |Diseñan e implementan la aplicación tanto desde un punto de  vista arquitectónico, como desde la codificación | Esperan aprender a trabajar en equipo, ser capaces de realizar una aplicación funcional de rutas descentralizadas y saber ampliar sus horizontes con nuevas tecnologías.
 |===

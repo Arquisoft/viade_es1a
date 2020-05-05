@@ -8,7 +8,7 @@
 [plantuml,Primer nivel,png]
 ----
 @startuml
-node "Primer nivel"{
+node {
 actor Usuario
 node Viade <<Aplicacion>> as Viade
 database Pod
@@ -26,7 +26,12 @@ Leyenda:
 |image:leyenda_actor_small.png["Actor",float="left",align="center", scaleheight=20px]|Usuario que interactua con la aplicación
 |image:leyenda_viade_small.png["Viade",float="left",align="center", scaleheight=20px]|Conjunto de módulos de la aplicación
 |image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información
+|image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
 |===
+
+El usuario interacciona con la aplición para ver y compartir rutas.
+
+La aplicación accede a los archivos del pod del usuario para guardar y cargar datos.
 
 === Nivel 2
 
@@ -64,6 +69,14 @@ Leyenda:
 |image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente react de importancia para la arquitectura
 |===
 
+El componente Main es el encargado de desplegar la aplicación y gestionar los distintos componentes de la misma.
+
+En la gestión de Mapa existe un único componente importante. En esta sección se controla el mapa de la aplicación, para que sea visible al usuario.
+
+La gestión de pods tiene diferentes componentes dedicados a distintas tareas. Estas tareas serán: guardar archivos en el pod, guardar las rutas publicas para compartirlas y de compartirlas, cargar las rutas para mostrarlas en el mapa y mostrar las notificaciones recibidas
+
+La Internacionalización es llamada desde todos los modulos para obtener los textos a mostrar en la interfaz.
+
 === Nivel 3
 
 ==== Gestor de Mapa
@@ -82,6 +95,8 @@ Leyenda:
 |image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
 |image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente react de importancia para la arquitectura
 |===
+
+Este componente hace uso de la libreria de Leaflet para mostrar al usuario un mapa con diferentes layers en el que se mostraran las rutas gracias al componente MapList.
 
 ==== Gestor de Pods
 
@@ -103,6 +118,14 @@ Leyenda:
 |image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente react de importancia para la arquitectura
 |===
 
+El componente UploadToPod se encarga de subir los archivos seleccionados por el usuario al pod del mismo.
+
+El componente MapList se encarga de listar los archivos disponibles en el pod del usuario y se comunica por el componente Map para mostrar las rutas que seleccione el usuario de la lista cargada.
+
+El componente Share se encarga de mostrar una lista de amigos del usuario y hacer una copia de un archivo seleccionado por el usuario en una carpeta publica y compartir el enlace de dicha carpeta con los amigos seleccionados.
+
+El componente Notification se encarga de mostar el numero de notificaciones que tiene el usuario en la carpeta inbox del pod.
+
 ==== Internacionalización
 
 [plantuml,Internacionalización,png]
@@ -120,4 +143,4 @@ Leyenda:
 |image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente react de importancia para la arquitectura
 |===
 
-
+Este componente es llamado por el resto de componentes y se comunica con ellos para darles el texto a mostrar en el idioma seleccionado.

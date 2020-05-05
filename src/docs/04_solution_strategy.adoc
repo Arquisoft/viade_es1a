@@ -31,9 +31,9 @@ Se han hecho reuniones semanales para consensuar el trabajo ha realizar y llevar
 
 Se ha utilizado las librerías:
 
-* https://github.com/solid/react-components#readme[Solid React Components]
-* https://react-leaflet.js.org/[React Leaflet]
+* https://github.com/solid/react-components#readme[Solid React Components] para la correcta fusión de las funcionalidades de la aplicación con SOLID y la utilización de los PODS.
+* https://react-leaflet.js.org/[React Leaflet] para la renderizacion de un mapa interactuable en el que se pueden visualizar las rutas que existen en el POD.
 
-Se han usado de guia los repositorios:
+Se han usado de guía los repositorios:
 
-* https://github.com/solid/react-components[Solid React Components], este repositorio se utilizó de guía además de librería.
+* https://github.com/solid/react-components[Solid React Components], se ha utilizado para ayudarnos a implementar diversas funcionalidades clave de la aplicación.

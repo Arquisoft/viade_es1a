@@ -47,3 +47,21 @@ Ejecutar los test de unitarios:
 Ejecutar los test funcionales:
 
 ` npm run test:e2e ` 
+## Despliegue de docker
+Para desplegar la apliación mediante docker,debemos tener instalado Docker Desktop
+
+Abrimos una terminal y nos movemos hasta el directorio que contenga el proyecto
+
+Descargamos la imagen oficial de Solid
+` docker pull nodesolidserver/node-solid-server`
+
+Iniciamos el contenedor de Solid
+` docker run -p 8443:8443 --name solid nodesolidserver/node-solid-server`
+Construimos el container de nuestra aplicación
+` docker build -t node .`
+Iniciamos el contenedor de la aplicación
+`docker run -p 3000:3000 --name viade_es2a node`
+Arrancamos los dos contenedores en Docker Desktop
+Por último accedemos a la aplicación mediante http://localhost:300 o http://IP:3000 
+
+

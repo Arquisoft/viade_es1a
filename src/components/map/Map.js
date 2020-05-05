@@ -35,11 +35,11 @@ class Map extends React.Component {
     }
 
     handleFiles(fileJson) {
-        let center = [];
-        center[0] = fileJson.features[0].geometry.coordinates[0][1];
-        center[1] = fileJson.features[0].geometry.coordinates[1][0];
-        this.map.setView(center, 15);
         try {
+            let center = [];
+            center[0] = fileJson.features[0].geometry.coordinates[0][1];
+            center[1] = fileJson.features[0].geometry.coordinates[1][0];
+            this.map.setView(center, 15);
             L.geoJSON(fileJson).addTo(this.map);
         } catch (error) {
             notification("danger", I.Option.ErrorMapaIncompatible);

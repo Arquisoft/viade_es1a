@@ -5,6 +5,7 @@ import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
 import I from "../commons/Internationalization";
 import notification from "../basics/ToastNotification";
+import { setUpdateList } from "../solidPod/UpdateList";
 
 import "../../static/css/Main.css";
 
@@ -87,6 +88,7 @@ class ListClass extends React.Component {
       lista: (I.Option.Actualizar)
     };
     this.updateList = this.updateList.bind(this);
+    setUpdateList(this.updateList.bind(this));
     this.updateList();
   }
 

@@ -14,8 +14,11 @@ const Language = {
     Actualizar: "Update list",
     Desconectar: "Disconnect",
     Identificate: "Identificate",
+    Error403: "Error 403",
     Error404: "Error 404",
-    Archivo404: "The selected file does not exist or the application does not have permissions of \"Control\"",
+    ErrorI: "Error unidentified",
+    Archivo404: "The selected file does not exist",
+    ErrorPermisos: "The application has insufficient permissions to perform this action",
     Rutas404: "Routes not found in the pod",
     Enviada: "Notification sented successfully",
     ArchivoSubido: "File uploaded successfully",
@@ -27,7 +30,7 @@ const Language = {
     HerramientaRutas: "To create a route on a map you can use ",
     HerramientaRutasEnlace: "this link",
     ErrorCentro: "The selected route is not fully compatible",
-    ErrorCentroDescripcion: "The selected route is not completely compatible, the map could not be centered, but it has been shown"
+    ErrorCentroDescripcion: "The map could not be centered, but it was shown"
 };
 
 export default Language;

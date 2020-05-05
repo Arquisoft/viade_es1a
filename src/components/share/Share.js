@@ -30,6 +30,8 @@ async function sendNotification(userWebId, friendWebId, fileId) {
         function (error, response, body) {
             if (!error) {
                 notification("success", I.Option.Enviada);
+            } else {
+                notification("danger", I.Option.ErrorI);
             }
             return !error;
         });
@@ -68,10 +70,29 @@ export const Hook = () => {
             //Copiamos el archivo a la carpeta publica
             const fc = new FileClient(auth);
             //console.log("Copiando "+this.state.archivo+" a " +publicRute)
+
             try {
-                await fc.copyFile(this.state.archivo, publicRute);
+                var timeOut = 0;
+                timeOut = () => {
+                    fc.copyFile(this.state.archivo, publicRute);
+                    return 1;
+                }
+                const delay = ms => new Promise(res => setTimeout(res, ms));
+                await delay(5000);
+                if(timeOut === 0){
+                    throw new Error("Time out");
+                }
             } catch (error) {
-                notification("danger", I.Option.Error404, I.Option.Archivo404);
+                console.log(error);
+                if (error.status === 403) {
+                    notification("danger", I.Option.Error403, I.Option.ErrorPermisos);
+                }
+                else if (error.status === 404) {
+                    notification("danger", I.Option.Error404, I.Option.Archivo404);
+                }
+                else {
+                    notification("danger", I.Option.ErrorI);
+                }
                 return;
             }
 

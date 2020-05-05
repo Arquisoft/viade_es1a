@@ -48,7 +48,6 @@ class Map extends React.Component {
         }
         try {
             L.geoJSON(fileJson).addTo(this.map);
-
             if(error_center === 1){
                 notification("warning", I.Option.ErrorCentro, I.Option.ErrorCentroDescripcion);
             }

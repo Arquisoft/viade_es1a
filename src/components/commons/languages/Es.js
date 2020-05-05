@@ -14,8 +14,11 @@ const Language = {
     Actualizar: "Actualizar lista",
     Desconectar: "Desconectar",
     Identificate: "Identifícate",
+    Error403: "Error 403",
     Error404: "Error 404",
-    Archivo404: "El archivo seleccionado no existe o la aplicacion no hay permisos de \"Control\"",
+    ErrorI: "Error no identificado",
+    Archivo404: "El archivo seleccionado no existe",
+    ErrorPermisos: "La aplicacion no hay permisos suficientes para realizar esta acción",
     Rutas404: "No se encuentran rutas en el pod",
     Enviada: "Notificación enviada con éxito",
     ArchivoSubido: "Archivo subido correctamente",
@@ -27,7 +30,7 @@ const Language = {
     HerramientaRutas: "Para crear una ruta sobre un mapa puede utilizar ",
     HerramientaRutasEnlace: "este enlace",
     ErrorCentro: "La ruta seleccionada no es completamente compatible",
-    ErrorCentroDescripcion: "The map could not be centered, but it was shown"
+    ErrorCentroDescripcion: "No se ha podido centrar el mapa, pero sí se ha mostrado"
 };
 
 export default Language;

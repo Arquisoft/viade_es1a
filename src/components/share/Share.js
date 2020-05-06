@@ -9,6 +9,7 @@ import request from "request";
 import ShowFriends from "./ShowFriends";
 import I from "../commons/Internationalization";
 import notification from "../basics/ToastNotification";
+import FileList from "./FileList";  
 
 
 
@@ -72,16 +73,7 @@ export const Hook = () => {
             //console.log("Copiando "+this.state.archivo+" a " +publicRute)
 
             try {
-                // var timeOut = 0;
-                // timeOut = () => {
                 await fc.copyFile(this.state.archivo, publicRute);
-                //     return 1;
-                // }
-                // const delay = ms => new Promise(res => setTimeout(res, ms));
-                // await delay(5000);
-                // if(timeOut === 0){
-                //     throw new Error("Time out");
-                // }
             } catch (error) {
                 console.log(error);
                 if (error.status === 403) {
@@ -125,6 +117,9 @@ export const Hook = () => {
                 amigo: e.target.value
             });
         }
+        handleFiles(val) {
+            this.setInputValue("archivo", val);
+        }
 
         render() {
             return (
@@ -140,6 +135,7 @@ export const Hook = () => {
                         data-testid="input"
 
                     />
+                    <FileList handleFiles={this.handleFiles.bind(this)} />
                     <ShowFriends src="user.friends" enviar={this.enviar.bind(this)} />
 
                     {this.state.error}

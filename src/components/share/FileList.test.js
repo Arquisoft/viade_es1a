@@ -1,7 +1,7 @@
 import "jest";
 import React from "react";
 import { render } from "@testing-library/react";
-import MapList from "./MapList";
+import FileList from "./FileList";
 import I from "../commons/Internationalization";
 
 import "@testing-library/jest-dom";
@@ -11,15 +11,15 @@ const FC = require("solid-file-client");
 const fc = new FC(auth);
 
 
-describe("MapList", () => {
-  const { container } = render(<MapList/>);
+describe("FileList", () => {
+  const { container } = render(<FileList/>);
 
   test("renders without crashing", () => {
     expect(container).toBeTruthy();
   });
 
   test("Los elementos estan presentes", () => {
-    const { container,getAllByText,getByTestId} = render(<MapList></MapList>);
+    const { container,getAllByText,getByTestId} = render(<FileList></FileList>);
     //expect(getByTestId("map")).toBeTruthy();
 
     //auth.login("https://adrifa13.solid.community/profile/card#me");

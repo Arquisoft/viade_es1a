@@ -3,7 +3,7 @@ import Button from "../basics/BasicButton";
 import properties from "../commons/Properties";
 import I from "../commons/Internationalization";
 import notification from "../basics/ToastNotification";
-import { setUpdateList1 } from "../solidPod/UpdateList";
+import { setUpdateList2 } from "../solidPod/UpdateList";
 
 import "../../static/css/Main.css";
 
@@ -33,25 +33,6 @@ export async function getFiles() {
   return folder.files;
 }
 
-async function readRoute(handleFiles, URL) {
-
-  let rutaView = null;
-  if (fc.itemExists(URL)) {
-    rutaView = await fc.readFile(URL);
-  }
-  var rutaViewStJ = null;
-  try {
-    rutaViewStJ = JSON.parse(rutaView);
-  } catch (error) {
-    notification("danger", I.Option.ErrorMapaIncompatible);
-    return;
-  }
-
-  handleFiles(rutaViewStJ);
-
-
-}
-
 export function filesToButtons(files, handleFiles) {
   const buttons = [];
 
@@ -61,20 +42,16 @@ export function filesToButtons(files, handleFiles) {
   }
 
   for (const [index, value] of files.entries()) {
-    if (value.name.endsWith(".geojson")) {
-      let name = String(String(value.name).replace(".geojson", ""));
-
-      buttons.push(
-        <div class="btn-list" key={index}>
-          <Button
-            class="btn btn-light"
-            text={name}
-            disabled={false}
-            onClick={() => readRoute(handleFiles, value.url)}
-            id={name} />
-        </div>
-      );
-    }
+    buttons.push(
+      <div class="btn-list" key={index}>
+        <Button
+          class="btn btn-light"
+          text={value.name}
+          disabled={false}
+          onClick={() => handleFiles(value.url)}
+          id={value.name} />
+      </div>
+    );
   }
   return buttons;
 }
@@ -87,7 +64,7 @@ class ListClass extends React.Component {
       lista: (I.Option.Actualizar)
     };
     this.updateList = this.updateList.bind(this);
-    setUpdateList1(this.updateList.bind(this));
+    setUpdateList2(this.updateList.bind(this));
     this.updateList();
   }
 
@@ -109,15 +86,7 @@ class ListClass extends React.Component {
   render() {
     return (
       <div>
-
-        {/* <Button
-          data-testid="btmaplist"
-
-          text={I.Option.Actualizar}
-          disabled={false}
-          onClick={() => this.updateList()}
-        /> */}
-        <h2>{I.Option.ListaRutas}</h2>
+        <h3>{I.Option.ListaArchivos}</h3>
         {this.state.lista}
       </div>
     );

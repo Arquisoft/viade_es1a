@@ -1,7 +1,6 @@
 import "jest";
 
 import { defineFeature, loadFeature } from "jest-cucumber";
-import { givenName } from "rdf-namespaces/dist/foaf";
 
 const feature = loadFeature("./feature/features/login.feature");
 const puppeteer = require("puppeteer");

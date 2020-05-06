@@ -1,7 +1,5 @@
 import React from "react";
 import Button from "../basics/BasicButton";
-import { space } from "rdf-namespaces";
-import { fetchDocument } from "tripledoc";
 import properties from "../commons/Properties";
 import I from "../commons/Internationalization";
 import notification from "../basics/ToastNotification";
@@ -15,15 +13,12 @@ const fc = new FC(auth);
 
 
 export async function getFiles() {
-  let session = await auth.currentSession();
-
-  const profileDocument = await fetchDocument(session.webId);
-  const profile = profileDocument.getSubject(session.webId);
-
-  const storage = profile.getRef(space.storage);
-
+  let storage = "";
+  await auth.trackSession(session => {
+    storage = session.webId.replace(properties.profile, "");
+  });
   let folder;
-  await fc.readFolder(storage + properties.myFolderSinBarra)
+  await fc.readFolder(storage + properties.myFolder)
     .then((content) => { folder = content; })
     .catch((err) => (folder = null));
 

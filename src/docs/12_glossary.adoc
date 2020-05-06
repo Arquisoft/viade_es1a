@@ -2,10 +2,10 @@
 == Glosario
 
 |===
-| https://es.reactjs.org/[React] | Usaremos React, una biblioteca de JavaScript que nos da la posibilidad de crear interfaces de usuario de una manera facil e intuitiva
-| https://solid.mit.edu/[SOLID] | Usaremos los principios de SOLID, que nos dará una aplicación descentralizada ofreciendonos un alto nivel de privacidad.
+| https://es.reactjs.org/[React] | Una biblioteca de JavaScript que nos da la posibilidad de crear interfaces de usuario de una manera facil e intuitiva
+| https://solid.mit.edu/[SOLID] | Que nos dará una aplicación descentralizada ofreciendonos un alto nivel de privacidad.
 |POD |Almacenamiento descentralizado que se usa en aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos.
 |https://arc42.org/[arc42]|Plantilla para la comunicación y documentación de arquitectura que responde a que debemos documentar y a como debemos documentar.
-|https://gatling.io/[Gatling]|Gatling es un marco de prueba de carga y rendimiento de código abierto basado en Scala, Akka y Netty
+|https://gatling.io/[Gatling]|Gatling es un marco de prueba de carga y rendimiento de código abierto basado en Scala, Akka y Netty.
 |https://cucumber.io/[Cucumber] |Cucumber es una herramienta de software que ejecuta pruebas de aceptación automatizadas escritas en un estilo de desarrollo basado en el comportamiento (BBD)
 |===

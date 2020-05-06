@@ -2,24 +2,19 @@
 == Riesgos y Deudas Técnicas
 
 [options="header",cols="1,2"]
+=== Riesgos
 |===
-|Riesgos|Soluciones
-|Primer contacto con React| Realizar cursos, mirar tutoriales  y practicar con pequeñas aplicaciones
-
-|Inexperiencia con Solid| Mirar  foros y ejemplos oficiales de Solid
-|Abandono de futuros miembros del equipo| Mantener un buena comunicación y dividir el trabajo a partes iguales para trabajar lo más eficientemente posible y que no suponga una carga excesiva de trabajo que termine en abandono del equipo
-|Problemas con git|Usar un metodología para los merges, commits y creación de ramas además de ser cuidadosos
-|Primer contacto con la programación asincrona| Mirar videotutoriales y entender con toda claridad este concepto
-|Sin experiencia en aplicar arquitecturas en proyectos desde cero  | Tomar como referencia proyectos ya realizados en react y hacer un buen uso de patrones tanto arquitectónicos como de diseño
+|Riesgos|Solucion
+|Cambios en la plataforma de SOLID | Actualizar la aplicación en funcion de los cambios que se produzcan en la plataforma de Solid.
+|Actualizaciones de librerias externas | Utilizar npm para guardar la version de la libreria que se usa actualmente y la aplicacion permanezca sin errores. Habría que contemplar la posibilidad de actualizar las librerías si estas nos ofrecen mejoras.
 |===
 
 [options="header",cols="1,2"]
+=== Deudas Técnicas
 |===
 |Deudas técnicas|Descripción
 |Pedir permisos de manera automatica a solid.community| Para poder usar nuestra aplicación hay que autorizar dentro del servidor de pods de solid.community nuestra aplicación. Esto debería de pedirse desde la aplicación, pero de momento se seguirá haciendo de manera manual.
-
-|Crear un manejador de errores que no muestre el codigo del error| Ahora mismo cuando se produce un error se muestra por pantalla el código y el error, hay que implementar que redirija a una pagina donde no muestre toda la informacion del codigo ya que esto puede producir un grave problema de seguridad
-|Ordenar la interfaz para que sea mas usable |Se debe de ordenar todos los elementos de la aplicación para conseguir una mejor usabilidad ya que los elementos están apilados unos encima de otros
+|Existencia de grupos de amigos dentro de la aplicacion| Actualmente la manera de compartir archivos con varias personas a la vez es seleccionar a todas aquellas a las que les quieras dar el archivos.
 |Interoperabilidad con otras aplicaciones VIADE|La aplicación no cuenta con el formato de rutas estandar, en el futuro deberá seguir las especificaciones de https://github.com/Arquisoft/viadeSpec
 |Dependencia con solid.community (popup.html)|Para no tener una dependencia con https://solid.community/common/Descargar hay que descargar el archivo popup.html
 |===

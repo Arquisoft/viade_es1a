@@ -115,7 +115,7 @@ Leyenda:
 |===
 |Simbolo|Significado
 |image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
-|image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente react de importancia para la arquitectura
+|image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente 12_glossary.adoc[react] de importancia para la arquitectura
 |===
 
 El componente UploadToPod se encarga de subir los archivos seleccionados por el usuario al pod del mismo.

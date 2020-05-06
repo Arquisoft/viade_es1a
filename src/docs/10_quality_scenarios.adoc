@@ -1,5 +1,5 @@
 [[section-quality-scenarios]]
-== Requerimientos de calidad
+== Requisitos de calidad
 
 === Árbol de calidad
 [plantuml,calidad,png]
@@ -21,19 +21,24 @@
 @endmindmap
 ----
 === Escenarios de calidad
+Se ha hecho un esfuerzo para intentar definir los escenarios de calidad en diversas categorias.
 
 |===
-| Escenario | Explicación | Prioridad
-| Usabilidad
-| La aplicación tiene que ser fácil de usar y accesible
-| Medio
-| Mantenibilidad
-| Tiene que ser fácil realizar cambios, y añadir funcionalidades en la aplicación
-| Alta
-| Privacidad
-| La información se tiene que guardar de forma descentralizada, es decir, que el usuario pueda llevarse su información cuando quiera y compartirla con las personas que desee.
-| Muy Alta
-| Eficiencia
-| La aplicación debe tener un tiempo de respuesta menor a 3 segundos
-| Alta
+| Usabilidad | Estímulo |Solución | Prioridad
+| U1         | Usuario novel intenta hacer uso de las funcionalidades de la aplicación | Las funcionalidades que posee la aplicación estan descritas con un titulo fácil de identificar | Alta
+|===
+
+|===
+| Mantenibilidad | Estímulo |Solución | Prioridad
+| M1             |Necesidad de añadir una nueva funcionalidad| Se he realizado un gestion del proyecto limpia y sencilla para una buena escalabilidad y que el incorporar nuevas funcionalidades no entrame mayor dificultad. | Media
+|===
+
+|===
+| Privacidad | Estímulo |Solución | Prioridad
+| P1         |
+|===
+
+|===
+| Eficiencia | Estímulo |Solución | Prioridad
+| E1         | Un usuario desea cargar una ruta en el mapa y es necesaria una rapida respuesta | La forma en la que esta implementada la funcionalidad de mostrar rutas en el mapa hace que sea practicamente instantánia la visualización de las mismas.
 |===

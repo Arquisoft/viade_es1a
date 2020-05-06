@@ -6,7 +6,7 @@ const Language = {
     Amigos: "Select friends:",
     Notificaciones: "Notifications",
     Compartir: "Share file",
-    URI: "Enter URI file:",
+    URI: "Selected URI file:",
     Enviar: "Send to friends",
     SP: "Spanish",
     EN: "English",
@@ -31,7 +31,8 @@ const Language = {
     HerramientaRutasEnlace: "this link",
     ErrorCentro: "The selected route is not fully compatible",
     ErrorCentroDescripcion: "The map could not be centered, but it was shown",
-    ListaRutas: "Route list:"
+    ListaRutas: "Route list:",
+    ListaArchivos: "File list:"
 };
 
 export default Language;

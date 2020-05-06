@@ -9,6 +9,7 @@ import request from "request";
 import ShowFriends from "./ShowFriends";
 import I from "../commons/Internationalization";
 import notification from "../basics/ToastNotification";
+import FileList from "./FileList";  
 
 
 
@@ -116,6 +117,9 @@ export const Hook = () => {
                 amigo: e.target.value
             });
         }
+        handleFiles(val) {
+            this.setInputValue("archivo", val);
+        }
 
         render() {
             return (
@@ -131,6 +135,7 @@ export const Hook = () => {
                         data-testid="input"
 
                     />
+                    <FileList handleFiles={this.handleFiles.bind(this)} />
                     <ShowFriends src="user.friends" enviar={this.enviar.bind(this)} />
 
                     {this.state.error}

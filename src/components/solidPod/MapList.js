@@ -15,10 +15,14 @@ const fc = new FC(auth);
 export async function getFiles() {
   let storage = "";
   await auth.trackSession(session => {
-    storage = session.webId.replace(properties.profile, "");
+      if (session)
+          storage = session.webId;
   });
+
+  storage = storage.replace(properties.profile, properties.myFolder);
   let folder;
-  await fc.readFolder(storage + properties.myFolder)
+
+  await fc.readFolder(storage)
     .then((content) => { folder = content; })
     .catch((err) => (folder = null));
 

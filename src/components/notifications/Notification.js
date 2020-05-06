@@ -13,11 +13,14 @@ async function getNNotifications() {
 
     let storage = "";
     await auth.trackSession(session => {
-        storage = session.webId.replace(properties.profile, "");
+        if (session)
+            storage = session.webId;
     });
+
+    storage = storage.replace(properties.profile, properties.inbox);
     let folder;
 
-    await fc.readFolder(storage + properties.inbox)
+    await fc.readFolder(storage)
         .then((content) => { folder = content; })
         .catch((err) => (folder = null));
     let result = 0;

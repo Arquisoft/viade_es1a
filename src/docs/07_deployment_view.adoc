@@ -29,9 +29,9 @@ scale 700 height
 Leyenda:
 |===
 | Símbolo|Significado
-|image:leyenda_modulo_small.png["Viade",float="left",align="center", scaleheight=20px]|Caja Negra
-|image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información
-|image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
+|image:leyenda_entidad.png["Viade",float="left",align="center", scaleheight=20px] | Aplicaciones de interconexión.
+|image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información.
+|image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama.
 |image:leyenda_flecha.png["Nodo",float="left",align="center", scaleheight=20px]|Uso de protocolo de transferencia seguro para la conexión entre los elementos del sistema.
 |===
 

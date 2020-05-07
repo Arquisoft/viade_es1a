@@ -8,7 +8,7 @@
 | https://arc42.org/[arc42]|Plantilla para la comunicación y documentación de arquitectura que responde a que debemos documentar y a cómo debemos documentar.
 | https://jestjs.io/es-ES/[Jest] | marco de prueba de JavaScript para el desarrollo de pruebas unitarias.
 | https://cucumber.io/[Cucumber] |Cucumber es una herramienta de software que ejecuta pruebas de aceptación automatizadas escritas en un estilo de desarrollo basado en el comportamiento (BBD).
-| https://pptr.dev/[Puppeteer] | Librería de Node que proporciona una API de alto nivel para controlar Chrome or Chromium.
+| https://pptr.dev/[Puppeteer] | Librería de Node que proporciona una API de alto nivel para controlar Chrome o Chromium.
 | https://getbootstrap.com/[Bootstrap] | Conjunto de herramientas de código abierto para diseño de sitios y aplicaciones web.
 | Framework | Entorno de trabajo​​, conjunto estandarizado de conceptos, prácticas y criterios para enfocar un tipo de problemática particular que sirve como referencia, para enfrentar y resolver nuevos problemas de índole similar.
 | https://leafletjs.com/[Leaflet] |Librería que aporta las funcionalidades necesarias para mostrar y gestionar un mapa interactuable.

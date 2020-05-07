@@ -1,71 +1,21 @@
 [[section-system-scope-and-context]]
 == Alcance y contexto del sistema
 
-=== Contexto empresarial
-[plantuml,Contexto empresarial,png]
+=== Contexto empresarial y técnico
+[plantuml,Contexto empresarial y técnico,png]
 
 ----
-@startuml
-
-actor Usuario
-node Viade <<Aplicacion>> as Viade
-database Pod
-
-Usuario ->  Viade:Cargar ruta
-Viade ->  Usuario:Mostrar ruta
-Pod -> Viade:Leer Rutas
-Viade  -right-> Pod:Guardar Rutas
-
-@enduml
+image:Diagrama_de_contexto.png
 ----
 Leyenda:
 |===
 
 |Simbolo|Significado
-|image:leyenda_actor_small.png["Actor",float="left",align="center", scaleheight=20px]|Usuario que interactua con la aplicación
-|image:leyenda_viade_small.png["Viade",float="left",align="center", scaleheight=20px]|Conjunto de módulos de la aplicación
-|image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información
+|image:leyenda_actor_small.png["Actor",float="left",align="center", scaleheight=20px]|Usuario que interactua con la aplicación.
+|image:leyenda_modulo_small.png["Modulo",float="left",align="center", scaleheight=20px]|Entidades del sistema.
+|image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información.
 |===
 
 El usuario interacciona con la aplicación para cargar una ruta y que esta se la muestre.
 La aplicación se encarga de gestionar las rutas subidas en el pod del usuario y las renderiza en el mapa.
-
-=== Contexto técnico
-
-[plantuml,Contexto tecnico,png]
-
-----
-@startuml
-actor "Usuario 1" as Alice
-actor "Usuario 2" as Bob
-database "Pod del usuario 1" as AlicePod
-database "Pod del usuario 2" as BobPod
-node Viade <<Aplicacion>> as ViadeA
-node Viade <<Aplicacion>> as ViadeB
-
-Alice -right->  ViadeA :Navegador
-ViadeA -right-> AlicePod    :Almacenar Ruta 
-AlicePod -left->  ViadeA   :Ver Ruta 
-
-Bob -right->   ViadeB :Navegador
-ViadeB -right->  BobPod    :Almacenar Ruta 
-BobPod -left-> ViadeB   :Ver Ruta 
-
-
-ViadeA -down-> BobPod    :Compartir Ruta 
-ViadeB -up-> AlicePod    :Compartir Ruta
-
-@enduml
-----
-
-Leyenda:
-|===
-
-|Simbolo|Significado
-|image:leyenda_actor_small.png["Actor",float="left",align="center", height=20]|Usuario que interactua con la aplicación
-|image:leyenda_viade_small.png["Viade",float="left",align="center", height=20]|Conjunto de módulos de la aplicación
-|image:leyenda_pod_small.png["Pod",float="left",align="center", height=20]|POD de SOLID para almacenar información
-
-|===
-
-Ademas de lo visto en el contexto empresarial, hay que tener en cuenta que la aplicación se encargará de gestionar la funcionalidad de compartir rutas y archivos con amigos y recibir notificaciones de los archivos que hayan sido compartidos.
+Hay que tener en cuenta que la aplicación se encargará de gestionar la funcionalidad de compartir rutas y archivos con amigos y recibir notificaciones de los archivos que hayan sido compartidos.

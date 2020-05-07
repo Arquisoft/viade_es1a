@@ -2,7 +2,7 @@
 
 
 == Vista de despliegue
-
+---
 @startuml
 scale 300 width
 scale 700 height
@@ -24,6 +24,7 @@ scale 700 height
 
   
 @enduml
+---
 
 La aplicación esta desplegada en nuestra pagina de https://arquisoft.github.io/viade_es1a/[github]. Todos los cambios que se realicen en la rama master del repositorio serán desplegados automáticamente gracias al uso de la herramienta Travis.
 

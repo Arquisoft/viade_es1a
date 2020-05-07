@@ -2,6 +2,29 @@
 
 
 == Vista de despliegue
+
+@startuml
+scale 300 width
+scale 700 height
+  node "PC" as pc{
+    rectangle browser
+  }
+  
+  node "GitHubPages" as app{
+    rectangle Viade
+    
+  }
+  browser <---> Viade:https
+ 
+  
+  node "Solid" as solid{
+    database Pod
+  }
+ Viade <---> Pod:https
+
+  
+@enduml
+
 La aplicación esta desplegada en nuestra pagina de https://arquisoft.github.io/viade_es1a/[github]. Todos los cambios que se realicen en la rama master del repositorio serán desplegados automáticamente gracias al uso de la herramienta Travis.
 
 Para el despliegue en local de la aplicación, una vez descargado el repositorio, se usará la herramienta node para instalar las dependencias necesarias mediante el comando npm install. A continuación si se desea ejecutar la aplicación en modo desarrollo habrá que usar el comando npm start.

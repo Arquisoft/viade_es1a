@@ -4,9 +4,9 @@
 === Contexto empresarial y técnico
 [plantuml,Contexto empresarial y técnico,png]
 
-----
-image:Diagrama_de_contexto.png
-----
+
+image:Diagrama_de_contexto.png["Diagrama de contexto",float="left",align="center"]
+
 Leyenda:
 |===
 
@@ -16,6 +16,6 @@ Leyenda:
 |image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información.
 |===
 
-El usuario interacciona con la aplicación para cargar una ruta y que esta se la muestre.
-La aplicación se encarga de gestionar las rutas subidas en el pod del usuario y las renderiza en el mapa.
-Hay que tener en cuenta que la aplicación se encargará de gestionar la funcionalidad de compartir rutas y archivos con amigos y recibir notificaciones de los archivos que hayan sido compartidos.
+El usuario pide una ruta a la aplicacion y esta se comunica con el pod del usuario para obtener la información que es renderizada y mostrada al usuario.
+Por otro lado para que la aplicación pueda mostrar el mapa hace uso de Leaflet, le pide el fragmento que quiere mostrar y este le devuelve las imagenes para poder mostrar el mapa(Esto se realiza automaticamente gracias a la libreria de Leaflet)
+El usuario también puede compartir rutas con amigos, para ello la aplicación generará una notificación en el pod del amigo.

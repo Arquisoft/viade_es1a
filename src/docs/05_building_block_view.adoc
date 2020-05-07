@@ -8,10 +8,14 @@
 [plantuml,Primer nivel,png]
 ----
 @startuml
-node {
+rectangle {
 actor Usuario
-node Viade <<Aplicacion>> as Viade
+rectangle Viade <<Aplicacion>> as Viade
 database Pod
+skinparam rectangle{
+  backgroundColor White
+ backgroundColor<<Aplicacion>> Grey
+  }
 
 Usuario ->  Viade
 Viade ->  Usuario
@@ -38,27 +42,23 @@ La aplicación accede a los archivos del pod del usuario para guardar y cargar d
 [plantuml,Segundo nivel,png]
 ----
 @startuml
-node Viade <<Aplicacion>>{
-  
+rectangle Viade <<Aplicacion>>{
+skinparam rectangle{
+  backgroundColor<<Aplicacion>>  White
+  backgroundColor Grey
+  }
   [Main]
   
 
-  Main -down-> mapa
-  Main -down-> inter
+  Main -down-> [Map]
+  Main -down-> [ISelector]
   Main -down-> pods
   
-  node "Gestor de Mapa" as mapa{
-    [Map]
+    rectangle "Gestor de Pods" as pods{
+
   }
-    node "Gestor de Pods" as pods{
-    [UploadToPod]
-    [MapList]
-    [Share]
-    [Notification]
-  }
-  node "Internacionalización" as inter{
-    [ISelector]
-  }
+  
+  
 }
 @enduml
 ----
@@ -79,31 +79,12 @@ La Internacionalización es llamada desde todos los modulos para obtener los tex
 
 === Nivel 3
 
-==== Gestor de Mapa
-
-[plantuml,Gestor de Mapa,png]
-----
-@startuml
-  node "Gestor de Mapa" as mapa{
-    [Map]
-  }
-@enduml
-----
-Leyenda:
-|===
-|Simbolo|Significado
-|image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
-|image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente react de importancia para la arquitectura
-|===
-
-Este componente hace uso de la libreria de Leaflet para mostrar al usuario un mapa con diferentes layers en el que se mostraran las rutas gracias al componente MapList.
-
 ==== Gestor de Pods
 
 [plantuml,Gestor de Pods,png]
 ----
 @startuml
-  node "Gestor de Pods" as pods{
+  rectangle "Gestor de Pods" as pods{
     [UploadToPod]
     [MapList]
     [Share]
@@ -114,7 +95,7 @@ Este componente hace uso de la libreria de Leaflet para mostrar al usuario un ma
 Leyenda:
 |===
 |Simbolo|Significado
-|image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
+|image:leyenda_modulo_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
 |image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente 12_glossary.adoc[react] de importancia para la arquitectura
 |===
 
@@ -126,21 +107,3 @@ El componente Share se encarga de mostrar una lista de amigos del usuario y hace
 
 El componente Notification se encarga de mostar el numero de notificaciones que tiene el usuario en la carpeta inbox del pod.
 
-==== Internacionalización
-
-[plantuml,Internacionalización,png]
-----
-@startuml
-  node "Internacionalización" as inter{
-    [ISelector]
-  }
-@enduml
-----
-Leyenda:
-|===
-|Simbolo|Significado
-|image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
-|image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente react de importancia para la arquitectura
-|===
-
-Este componente es llamado por el resto de componentes y se comunica con ellos para darles el texto a mostrar en el idioma seleccionado.

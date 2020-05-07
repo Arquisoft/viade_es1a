@@ -21,24 +21,24 @@
 @endmindmap
 ----
 === Escenarios de calidad
-Se ha hecho un esfuerzo para intentar definir los escenarios de calidad en diversas categorias.
+Se ha hecho un esfuerzo para intentar definir los escenarios de calidad en diversas categorías.
 
 |===
 | Usabilidad | Estímulo |Solución | Prioridad
-| U1         | Usuario novel intenta hacer uso de las funcionalidades de la aplicación | Las funcionalidades que posee la aplicación estan descritas con un titulo fácil de identificar | Alta
+| U1         | Usuario novel intenta hacer uso de las funcionalidades de la aplicación | Las funcionalidades que posee la aplicación están descritas con un título fácil de identificar | Alta
 |===
 
 |===
 | Mantenibilidad | Estímulo |Solución | Prioridad
-| M1             |Necesidad de añadir una nueva funcionalidad| Se he realizado un gestion del proyecto limpia y sencilla para una buena escalabilidad y que el incorporar nuevas funcionalidades no entrame mayor dificultad. | Media
+| M1             |Necesidad de añadir una nueva funcionalidad| Se ha realizado una gestión del proyecto limpia y sencilla para una buena escalabilidad y que el incorporar nuevas funcionalidades no entrame mayor dificultad. | Media
 |===
 
 |===
 | Privacidad | Estímulo |Solución | Prioridad
-| P1         | Un usuario desea que la aplicación no pueda acceder a parte de sus datos | La aplicación esta desarrollada con la tecnologia de Solid y con ello el usuario podra elegir cuales son los datos que maneja la aplicación. | Alta
+| P1         | Un usuario desea que la aplicación no pueda acceder a parte de sus datos | La aplicación está desarrollada con la tecnología de Solid y con ello el usuario podrá elegir cuales son los datos que maneja la aplicación. | Alta
 |===
 
 |===
 | Eficiencia | Estímulo |Solución | Prioridad
-| E1         | Un usuario desea cargar una ruta en el mapa y es necesaria una rapida respuesta | La forma en la que esta implementada la funcionalidad de mostrar rutas en el mapa hace que sea practicamente instantánia la visualización de las mismas.| Alta
+| E1         | Un usuario desea cargar una ruta en el mapa y es necesaria una rápida respuesta | La forma en la que esta implementada la funcionalidad de mostrar rutas en el mapa hace que sea prácticamente instantánea la visualización de estas.| Alta
 |===

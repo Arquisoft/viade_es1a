@@ -5,34 +5,34 @@
 
 === Tecnología:
 
-En cuánto a las tecnologías usaremos React y Solid como se redacto en las Restricciones de la arquitectura. Parte de la tecnología usada para el desarrollo de la aplicación es parte de las restricciones.
-Hemos consensuado usar Visual Studio Code como editor de texto para el desarrollo del código para un trabajo en equipo mas dinámico.
+En cuanto a las tecnologías usaremos React y Solid como se redactó en las Restricciones de la arquitectura. Parte de la tecnología usada para el desarrollo de la aplicación es parte de las restricciones.
+Hemos consensuado usar Visual Studio Code como editor de texto para el desarrollo del código para un trabajo en equipo más dinámico.
 
 === Descomposición del sistema:
-Teniendo en cuenta que se usaran los principios de Solid, tendremos una aplicación descentralizada en la que la base de datos sera el POD de cada usuario. Nos comunicaremos con los Pods de solid utilizando la librería https://github.com/solid/react-components#readme[solid-react-components].
-Al usar REACT seguiremos una estructura en la que la vista, la lógica y el dominio estarán "juntos".
+Teniendo en cuenta que se usaran los principios de Solid, tendremos una aplicación descentralizada en la que la base de datos será el Pod de cada usuario. Nos comunicaremos con los Pods de Solid utilizando la librería https://github.com/solid/react-components#readme[solid-react-components].
+Al usar React seguiremos una estructura en la que la vista, la lógica y el dominio estarán "juntos".
 
 === Cómo alcanzar los atributos de calidad:
 
-Se han tenido en cuenta muchos atributos de calidad aunque los considerados mas importantes son la disponibilidad, seguridad, consistencia y robustez.
+Se han tenido en cuenta muchos atributos de calidad, aunque los considerados más importantes son la disponibilidad, seguridad, consistencia y robustez.
 
 Para alcanzar estos atributos:
 
-* Disponibilidad: Uso de Docker para el despliegue de la aplicación, eliminando así todos los posible errores que pudieran surgir por dependencias o versiones concretas.
+* Disponibilidad: Uso de Docker para el despliegue de la aplicación, eliminando así todos los posibles errores que pudieran surgir por dependencias o versiones concretas.
 * Comunicación: Se ha usado de la mejor manera posible los medios disponibles a su alcance, como reuniones en Teams, un grupo de Whatsapp, así como las herramientas que nos proporciona Github, para discutir cada problema o idea, aportando la información que se ha encontrado de utilidad.
 * División de tareas: El proyecto se ha dividido en tareas distintas entre los miembros del equipo para poder trabajar de forma paralela y conseguir un ritmo eficiente.
 
 === Decisiones de organización:
 
-En la mitad del desarrollo del proyecto, al ver que las aportaciones mayoritarias en la funcionalidad del mismo eran de dos de los integrantes, se tomo la decisión de hacer una reorganización de roles, asignando a los otros dos integrantes para la realización fundamental de test y documentación, aunque esta ultima fue revisada y reestructurada por los integrantes que han realizado la funcionalidad.
-Se han hecho reuniones semanales para consensuar el trabajo ha realizar y llevar un control de las aportaciones de cada participante, las cuales han sido añadidas a la wiki del repositorio.
+En la mitad del desarrollo del proyecto, al ver que las aportaciones mayoritarias en la funcionalidad de este eran de dos de los integrantes, se tomó la decisión de hacer una reorganización de roles, asignando a los otros dos integrantes para la realización fundamental de test y documentación, aunque esta última fue revisada y reestructurada por los integrantes que han realizado la funcionalidad.
+Se han hecho reuniones semanales para consensuar el trabajo a realizar y llevar un control de las aportaciones de cada participante, las cuales han sido añadidas a la wiki del repositorio.
 
 ==== Librerías y otros repositorios
 
 Se ha utilizado las librerías:
 
 * https://github.com/solid/react-components#readme[Solid React Components] para la correcta fusión de las funcionalidades de la aplicación con SOLID y la utilización de los PODS.
-* https://react-leaflet.js.org/[React Leaflet] para la renderizacion de un mapa interactuable en el que se pueden visualizar las rutas que existen en el POD.
+* https://react-leaflet.js.org/[React Leaflet] para la renderización de un mapa interactuable en el que se pueden visualizar las rutas que existen en el POD.
 
 Se han usado de guía los repositorios:
 

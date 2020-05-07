@@ -1,6 +1,6 @@
 [[section-introduction-and-goals]]
-== Introdución y objetivos
-El objetivo es crear un sistema de gestión de rutas descentralizado basado en las especeficaciones solid utilizando el framework React.
+== Introducción y objetivos
+El objetivo es crear un sistema de gestión de rutas descentralizado basado en las especificaciones Solid utilizando el framework React.
 
 === Resumen de requisitos
 Los requisitos de la aplicación son:
@@ -29,8 +29,8 @@ Los requisitos de la aplicación son:
 [options="header",cols="1,2,3"]
 |===
 |Rol/Nombre|Descripción|Expectativas
-| Profesores | Evaluan la aplicación y aconsejan en las bases del desarrollo de la aplicación | Esperan que los estudiantes trabajen en equipo, se desenvuelvan a la hora de aprender una nueva tecnología y tengan la iniciativa en la toma de decisiones.
-|Senderistas |Seran los interesados en conocer rutas o añadir las suyas|Usaran la aplicacion para guardar y compartir rutas con personas o con  grupos de personas de forma usable, disponible, rápida y segura. También harán  uso de la aplicación para seguir la ruta que elijan. 
-| Inrupt |Organización que fomenta y desarrola Solid y ha propuesto el desafío | Esperan que los estudiantes creen una aplicación descentralizada usando Solid para fomentar su uso.
+| Profesores | Evalúan la aplicación y aconsejan en las bases del desarrollo de la aplicación | Esperan que los estudiantes trabajen en equipo, se desenvuelvan a la hora de aprender una nueva tecnología y tengan la iniciativa en la toma de decisiones.
+|Senderistas |Serán los interesados en conocer rutas o añadir las suyas|Usaran la aplicación para guardar y compartir rutas con personas o con  grupos de personas de forma usable, disponible, rápida y segura. También harán  uso de la aplicación para seguir la ruta que elijan. 
+| Inrupt |Organización que fomenta y desarrolla Solid y ha propuesto el desafío | Esperan que los estudiantes creen una aplicación descentralizada usando Solid para fomentar su uso.
 | Desarrolladores |Diseñan e implementan la aplicación tanto desde un punto de  vista arquitectónico, como desde la codificación | Esperan aprender a trabajar en equipo, ser capaces de realizar una aplicación funcional de rutas descentralizadas y saber ampliar sus horizontes con nuevas tecnologías.
 |===

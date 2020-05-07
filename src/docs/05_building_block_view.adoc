@@ -26,14 +26,14 @@ Viade  -right-> Pod
 ----
 Leyenda:
 |===
-|Simbolo|Significado
-|image:leyenda_actor_small.png["Actor",float="left",align="center", scaleheight=20px]|Usuario que interactua con la aplicación
-|image:leyenda_viade_small.png["Viade",float="left",align="center", scaleheight=20px]|Conjunto de módulos de la aplicación
+|Símbolo|Significado
+|image:leyenda_actor_small.png["Actor",float="left",align="center", scaleheight=20px]|Usuario que interactúa con la aplicación
+|image:leyenda_cajaNegra.png["Viade",float="left",align="center", scaleheight=20px]|Caja Negra
 |image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información
-|image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
+|image:leyenda_contenedor.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
 |===
 
-El usuario interacciona con la aplición para ver y compartir rutas.
+El usuario interacciona con la aplicación para ver y compartir rutas.
 
 La aplicación accede a los archivos del pod del usuario para guardar y cargar datos.
 
@@ -64,18 +64,20 @@ skinparam rectangle{
 ----
 Leyenda:
 |===
-|Simbolo|Significado
-|image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
-|image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente react de importancia para la arquitectura
+|Símbolo|Significado
+|image:leyenda_contenedor.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
+|image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente React de importancia para la arquitectura
+|image:leyenda_cajaNegra.png["Viade",float="left",align="center", scaleheight=20px]|Caja Negra
+
 |===
 
-El componente Main es el encargado de desplegar la aplicación y gestionar los distintos componentes de la misma.
+El componente Main es el encargado de desplegar la aplicación y gestionar los distintos componentes de esta.
 
 En la gestión de Mapa existe un único componente importante. En esta sección se controla el mapa de la aplicación, para que sea visible al usuario.
 
-La gestión de pods tiene diferentes componentes dedicados a distintas tareas. Estas tareas serán: guardar archivos en el pod, guardar las rutas publicas para compartirlas y de compartirlas, cargar las rutas para mostrarlas en el mapa y mostrar las notificaciones recibidas
+La gestión de pods tiene diferentes componentes dedicados a distintas tareas. Estas tareas serán: guardar archivos en el pod, guardar las rutas públicas para compartirlas y de compartirlas, cargar las rutas para mostrarlas en el mapa y mostrar las notificaciones recibidas
 
-La Internacionalización es llamada desde todos los modulos para obtener los textos a mostrar en la interfaz.
+La Internacionalización es llamada desde todos los módulos para obtener los textos a mostrar en la interfaz.
 
 === Nivel 3
 
@@ -94,9 +96,10 @@ La Internacionalización es llamada desde todos los modulos para obtener los tex
 ----
 Leyenda:
 |===
-|Simbolo|Significado
-|image:leyenda_modulo_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
-|image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente 12_glossary.adoc[react] de importancia para la arquitectura
+|Símbolo|Significado
+|image:leyenda_componente_small.png["Nodo",float="left",align="center", scaleheight=20px]|Componente 12_glossary.adoc[React] de importancia para la arquitectura
+|image:leyenda_contenedor.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama
+
 |===
 
 El componente UploadToPod se encarga de subir los archivos seleccionados por el usuario al pod del mismo.
@@ -105,5 +108,5 @@ El componente MapList se encarga de listar los archivos disponibles en el pod de
 
 El componente Share se encarga de mostrar una lista de amigos del usuario y hacer una copia de un archivo seleccionado por el usuario en una carpeta publica y compartir el enlace de dicha carpeta con los amigos seleccionados.
 
-El componente Notification se encarga de mostar el numero de notificaciones que tiene el usuario en la carpeta inbox del pod.
+El componente Notification se encarga de mostrar el número de notificaciones que tiene el usuario en la carpeta inbox del pod.
 

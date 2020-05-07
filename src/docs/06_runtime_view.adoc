@@ -103,8 +103,8 @@ Share_2 -> Usuario2: Ver Notificaciones
 Leyenda:
 |===
 
-|Simbolo|Significado
-|image:leyenda_actor_small.png["Actor",float="left",align="center", scaleheight=20px]|Usuario que interactua con la aplicación
+|Símbolo|Significado
+|image:leyenda_actor_small.png["Actor",float="left",align="center", scaleheight=20px]|Usuario que interactúa con la aplicación
 |image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información
 |image:leyenda_modulo_small.png["Modulo",float="left",align="center", scaleheight=20px]|Modulo del sistema
 

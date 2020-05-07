@@ -2,8 +2,8 @@
 == Conceptos transversales
 
 === Conceptos de dominio
-* Ruta: Una ruta representa una trayectoria formada por puntos cuya información sera compartida o guardada.
-* POD: Un usuario almacena sus datos personales en "pods" (almacenes de datos personales sobre los que el usuario tiene total control de su información).
+* Ruta: Una ruta representa una trayectoria formada por puntos cuya información será compartida o guardada.
+* Pod: Un usuario almacena sus datos personales en "Pods" (almacenes de datos personales sobre los que el usuario tiene total control de su información).
 * Cliente: Persona que usa la aplicación para compartir o ver una ruta.
 
 === Reglas para usar la tecnología
@@ -19,11 +19,11 @@ Separamos la parte de vista del mapa y las dependencias del SolidPod y del login
 
 === Conceptos de seguridad y protección
 Logramos la comunicación segura entre canales mediante el protocolo HTTPS.
-Gracias a los PODs los datos del usuario se almacenarán con un enfoque privado y descentralizado.
+Gracias a los Pods los datos del usuario se almacenarán con un enfoque privado y descentralizado.
 
 === Conceptos de desarrollo
 * Build: Nuestra aplicación usará el paquete web NodeJS,npm para construir la aplicación.
 
 * Prueba: Utilizamos el framework Jest para probar nuestra aplicación.
 
-* Despliegue: Nuestra aplicación se desplegará utilizando páginas de gitHub.
+* Despliegue: Nuestra aplicación se desplegará utilizando páginas de GitHub.

@@ -2,12 +2,16 @@
 == Glosario
 
 |===
-| https://es.reactjs.org/[React] | Una biblioteca de JavaScript que nos da la posibilidad de crear interfaces de usuario de una manera facil e intuitiva.
-| https://solid.mit.edu/[SOLID] | Que nos dará una aplicación descentralizada ofreciendonos un alto nivel de privacidad.
-| POD |Almacenamiento descentralizado que se usa en aplicaciones SOLID que permite al usuario conservar el control y la propiedad de sus datos.
-| https://arc42.org/[arc42]|Plantilla para la comunicación y documentación de arquitectura que responde a que debemos documentar y a como debemos documentar.
+| https://es.reactjs.org/[React] | Framework de JavaScript que nos da la posibilidad de crear interfaces de usuario de una manera fácil e intuitiva.
+| https://solid.mit.edu/[Solid] | Que nos dará una aplicación descentralizada ofreciéndonos un alto nivel de privacidad.
+| Pod |Almacenamiento descentralizado que se usa en aplicaciones Solid que permite al usuario conservar el control y la propiedad de sus datos.
+| https://arc42.org/[arc42]|Plantilla para la comunicación y documentación de arquitectura que responde a que debemos documentar y a cómo debemos documentar.
 | https://jestjs.io/es-ES/[Jest] | marco de prueba de JavaScript para el desarrollo de pruebas unitarias.
 | https://cucumber.io/[Cucumber] |Cucumber es una herramienta de software que ejecuta pruebas de aceptación automatizadas escritas en un estilo de desarrollo basado en el comportamiento (BBD).
-| https://pptr.dev/[Puppeteer] | Librería de node que proporciona una API de alto nivel para controlar Chrome or Chromium.
+| https://pptr.dev/[Puppeteer] | Librería de Node que proporciona una API de alto nivel para controlar Chrome or Chromium.
 | https://getbootstrap.com/[Bootstrap] | Conjunto de herramientas de código abierto para diseño de sitios y aplicaciones web.
+| Framework | Entorno de trabajo​​, conjunto estandarizado de conceptos, prácticas y criterios para enfocar un tipo de problemática particular que sirve como referencia, para enfrentar y resolver nuevos problemas de índole similar.
+| https://leafletjs.com/[Leaflet] |Librería que aporta las funcionalidades necesarias para mostrar y gestionar un mapa interactuable.
+| https://nodejs.org/es/[Node] | Entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor basado en el lenguaje de programación JavaScript.
+| https://www.npmjs.com/[npm] | Sistema de gestión de paquetes por defecto para Node.js.
 |===

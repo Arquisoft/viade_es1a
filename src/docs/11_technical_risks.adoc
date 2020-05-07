@@ -4,18 +4,18 @@
 [options="header",cols="1,2"]
 === Riesgos
 |===
-|Riesgos|Solucion
-|Cambios en la plataforma de SOLID | Actualizar la aplicación en funcion de los cambios que se produzcan en la plataforma de Solid.
-|Actualizaciones de librerias externas | Utilizar npm para guardar la version de la libreria que se usa actualmente y la aplicacion permanezca sin errores. Habría que contemplar la posibilidad de actualizar las librerías si estas nos ofrecen mejoras.
+|Riesgos|Solución
+|Cambios en la plataforma de SOLID | Actualizar la aplicación en función de los cambios que se produzcan en la plataforma de Solid.
+|Actualizaciones de librerías externas | Utilizar npm para guardar la versión de la librería que se usa actualmente y la aplicación permanezca sin errores. Habría que contemplar la posibilidad de actualizar las librerías si estas nos ofrecen mejoras.
 |===
 
 [options="header",cols="1,2"]
 === Deudas Técnicas
 |===
 |Deudas técnicas|Descripción
-|Pedir permisos de manera automatica a solid.community| Para poder usar nuestra aplicación hay que autorizar dentro del servidor de pods de solid.community nuestra aplicación. Esto debería de pedirse desde la aplicación, pero de momento se seguirá haciendo de manera manual.
-|Existencia de grupos de amigos dentro de la aplicacion| Actualmente la manera de compartir archivos con varias personas a la vez es seleccionar a todas aquellas a las que les quieras dar el archivos.
-|Interoperabilidad con otras aplicaciones VIADE|La aplicación no cuenta con el formato de rutas estandar, en el futuro deberá seguir las especificaciones de https://github.com/Arquisoft/viadeSpec
+|Pedir permisos de manera automática a solid.community| Para poder usar nuestra aplicación hay que autorizar dentro del servidor de pods de solid.community nuestra aplicación. Esto debería de pedirse desde la aplicación, pero de momento se seguirá haciendo de manera manual.
+|Existencia de grupos de amigos dentro de la aplicación| Actualmente la manera de compartir archivos con varias personas a la vez, es seleccionar a todas aquellas a las que les quieras proporcionar el archivo.
+|Interoperabilidad con otras aplicaciones VIADE|La aplicación no cuenta con el formato de rutas estándar, en el futuro deberá seguir las especificaciones de https://github.com/Arquisoft/viadeSpec
 |Dependencia con solid.community (popup.html)|Para no tener una dependencia con https://solid.community/common/Descargar hay que descargar el archivo popup.html
 |===
 

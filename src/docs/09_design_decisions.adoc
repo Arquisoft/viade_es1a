@@ -4,7 +4,7 @@
 |===
 |Decisión|Ventajas|Desventajas
 |Documentación en español|Mayor velocidad de documentación y mayor calidad al ser lenguaje materno|No es el idioma más usado en proyectos.
-|Funcion de compartir simple|Mayor facilidad a la hora de ampliar esta funcionalidad | Mas complejo para el usuario acceder a los archivos compartidos, teniendo que acceder al enlace que se comparte y descargando la informacion del pod desde el que fue compartido.
-|Utilizar una única pagina para toda la aplicación|Es mas fácil de implementar y se visualiza mas rápido|Puede quedar demasiado cargada.
-|Lista de Archivos a Compartir | Para compartir el archivo unicamente es necesario elegir de la lista el archivo que se desea compartir, en lugar de escribir la ruta completa del archivo.| Se pierde la capacidad de compartir cualquier archivo que exista dentro del pod del usuario, limitandose solo a una zona del mismo.
+|Función de compartir simple|Mayor facilidad a la hora de ampliar esta funcionalidad | Mas complejo para el usuario acceder a los archivos compartidos, teniendo que acceder al enlace que se comparte y descargando la información del pod desde el que fue compartido.
+|Utilizar una única página para toda la aplicación|Es más fácil de implementar y se visualiza más rápido|Puede quedar demasiado cargada.
+|Lista de Archivos a Compartir | Para compartir el archivo únicamente es necesario elegir de la lista el archivo que se desea compartir, en lugar de escribir la ruta completa del archivo.| Se pierde la capacidad de compartir cualquier archivo que exista dentro del pod del usuario, limitándose solo a una zona de este.
 |===

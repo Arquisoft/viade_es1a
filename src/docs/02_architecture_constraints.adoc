@@ -6,23 +6,23 @@
 |===
 | ID  | Restricción | Descripción
 | RT1 | Uso React | Para una mayor rapidez a la hora de trabajar con java script, y teniendo a nuestra disposición el gran número de librerías de la que esta dispone.
-| RT2 | Uso SOLID | Nos basaremos en la funcionalidad que intenta conseguir solid para hacer uso de sus principios consiguiendo lo que se denomina un aplicación descentralizada.
-| RT3 | Uso Bootstrap | Haremos uso del framework bootstrap para modificar la parte de interfaz de usuario(UI) asi como la experiencia de usuario(UX).
-| RT4 | Uso Leaflet | Utilizaremos la librería Leaflet para la implementación del mapa en la aplicación así como la visualización de las rutas en el mismo.
-| RT5 | Uso de Puppeteer | Se hará uso de la librería pupeteer de node para la implementación de test de funcionalidad.
-| RT6 | Uso de Jest | Se realizaran los test unitarios bajo el marco de pruebas de Jest.
+| RT2 | Uso Solid | Nos basaremos en la funcionalidad que intenta conseguir Solid para hacer uso de sus principios consiguiendo lo que se denomina una aplicación descentralizada.
+| RT3 | Uso Bootstrap | Haremos uso del framework bootstrap para modificar la parte de interfaz de usuario (UI) asi como la experiencia de usuario (UX).
+| RT4 | Uso Leaflet | Utilizaremos la librería Leaflet para la implementación del mapa en la aplicación, así como la visualización de las rutas en el mismo.
+| RT5 | Uso de Puppeteer | Se hará uso de la librería pupeteer de Node para la implementación de test de funcionalidad.
+| RT6 | Uso de Jest | Se realizarán los test unitarios bajo el marco de pruebas de Jest.
 |===
 === Restricciones Organizativas
 |===
 | ID  | Restricción | Descripción
 | RO1 | Reuniones Semanales | Para paliar nuestra inexperiencia con las nuevas tecnologías y trabajando en equipo hemos realizado reuniones para consensuar los avances y poder tener un mejor seguimiento del equipo.
-| RO2 | Tiempo | Comenzando a principio del cuatrimestre y teniendo en cuenta la sucesivas revisiones del proyecto, nos acojemos al tiempo organizado según las directrices de la asignatura, por lo que el proyecto tendrá que ser terminado en 3 meses.
-| RO3 | Pair Programing | La funcionalidad de la aplicación ha sido implementada por dos personas, que han empezado de cero con las tecnologías en las que esta desarrollada la aplicación, por ello se ha usado esta técnica para brindar un apoyo mutuo a la hora de implementar nuevas funcionalidades. 
+| RO2 | Tiempo | Comenzando a principio del cuatrimestre y teniendo en cuenta las sucesivas revisiones del proyecto, nos acogemos al tiempo organizado según las directrices de la asignatura, por lo que el proyecto tendrá que ser terminado en 3 meses.
+| RO3 | Pair Programing | La funcionalidad de la aplicación ha sido implementada por dos personas, que han empezado de cero con las tecnologías en las que está desarrollada la aplicación, por ello se ha usado esta técnica para brindar un apoyo mutuo a la hora de implementar nuevas funcionalidades. 
 |===
 === Convenciones
 |===
 | ID | Restricción | Descripción
-| C1  | Git | Usaremos las grandes ventajas que nos ofrece github para organizarnos de manera mas eficiente, así mismo podremos tener versiones sucesivas del proyecto, a las que poder volver ante cualquier imprevisto.
+| C1  | Git | Usaremos las grandes ventajas que nos ofrece GitHub para organizarnos de manera más eficiente, así mismo podremos tener versiones sucesivas del proyecto, a las que poder volver ante cualquier imprevisto.
 | C2  | Arc42 | Seguiremos las directrices de la metodología Arc42 para organizar la documentación de nuestro proyecto.
 | C3  | Idioma| Se utilizará el castellano como idioma para la realización del proyecto para facilitar la documentación y la comunicación entre los miembros del equipo.
 |===

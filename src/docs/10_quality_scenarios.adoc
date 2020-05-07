@@ -35,7 +35,7 @@ Se ha hecho un esfuerzo para intentar definir los escenarios de calidad en diver
 
 |===
 | Privacidad | Estímulo |Solución | Prioridad
-| P1         |
+| P1         | Un usuario desea que la aplicación no pueda acceder a parte de sus datos | La aplicación esta desarrollada con la tecnologia de Solid y con ello el usuario podra elegir cuales son los datos que maneja la aplicación.
 |===
 
 |===

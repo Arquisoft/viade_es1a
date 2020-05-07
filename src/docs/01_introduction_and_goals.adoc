@@ -14,9 +14,8 @@ Los requisitos de la aplicación son:
 
 === Objetivos de calidad
 
-[options="header",cols="1,2,3"]
+[options="header",cols="1,2"]
 |===
-
 |Objetivo|Motivación
 |Privacidad|Es importante mantener la privacidad de los datos de cada usuario almacenándolos en su propio POD
 |Usabilidad|El usuario debe sentirse cómodo usando nuestra aplicación independientemente de sus conocimientos de informática

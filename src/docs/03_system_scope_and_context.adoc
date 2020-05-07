@@ -2,7 +2,6 @@
 == Alcance y contexto del sistema
 
 === Contexto empresarial y técnico
-[plantuml,Contexto empresarial y técnico,png]
 
 
 image:Diagrama_de_contexto.png["Diagrama de contexto",float="left",align="center"]
@@ -17,5 +16,5 @@ Leyenda:
 |===
 
 El usuario pide una ruta a la aplicación y esta se comunica con el pod del usuario para obtener la información que es renderizada y mostrada al usuario.
-Por otro lado para que la aplicación pueda mostrar el mapa hace uso de Leaflet, le pide el fragmento que quiere mostrar y este le devuelve las imágenes para poder mostrar el mapa (esto se realiza automáticamente gracias a la librería de Leaflet).
+Por otro lado, para que la aplicación pueda mostrar el mapa hace uso de Leaflet, le pide el fragmento que quiere mostrar y este le devuelve las imágenes para poder mostrar el mapa (esto se realiza automáticamente gracias a la librería de Leaflet).
 El usuario también puede compartir rutas con amigos, para ello la aplicación generará una notificación en el pod del amigo.

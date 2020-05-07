@@ -14,7 +14,7 @@
 |===
 |Deudas técnicas|Descripción
 |Pedir permisos de manera automática a solid.community| Para poder usar nuestra aplicación hay que autorizar dentro del servidor de pods de solid.community nuestra aplicación. Esto debería de pedirse desde la aplicación, pero de momento se seguirá haciendo de manera manual.
-|Existencia de grupos de amigos dentro de la aplicación| Actualmente la manera de compartir archivos con varias personas a la vez, es seleccionar a todas aquellas a las que les quieras proporcionar el archivo.
+|Existencia de grupos de amigos dentro de la aplicación| Actualmente la manera de compartir archivos con varias personas a la vez es seleccionar a todas aquellas a las que les quieras proporcionar el archivo.
 |Interoperabilidad con otras aplicaciones VIADE|La aplicación no cuenta con el formato de rutas estándar, en el futuro deberá seguir las especificaciones de https://github.com/Arquisoft/viadeSpec
 |Dependencia con solid.community (popup.html)|Para no tener una dependencia con https://solid.community/common/Descargar hay que descargar el archivo popup.html
 |===

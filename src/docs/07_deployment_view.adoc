@@ -2,6 +2,7 @@
 
 
 == Vista de despliegue
+[plantuml,Vista Despliegue,png]
 ----
 @startuml
 scale 300 width
@@ -27,7 +28,7 @@ scale 700 height
   
 Leyenda:
 |===
-| Simbolo|Significado
+| Símbolo|Significado
 |image:leyenda_modulo_small.png["Viade",float="left",align="center", scaleheight=20px]|Caja Negra
 |image:leyenda_pod_small.png["Pod",float="left",align="center", scaleheight=20px]|POD de SOLID para almacenar información
 |image:leyenda_node_small.png["Nodo",float="left",align="center", scaleheight=20px]|Contenedor de elementos del diagrama

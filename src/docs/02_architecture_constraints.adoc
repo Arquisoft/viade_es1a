@@ -7,7 +7,7 @@
 | ID  | Restricción | Descripción
 | RT1 | Uso React | Para una mayor rapidez a la hora de trabajar con java script, y teniendo a nuestra disposición el gran número de librerías de la que esta dispone.
 | RT2 | Uso Solid | Nos basaremos en la funcionalidad que intenta conseguir Solid para hacer uso de sus principios consiguiendo lo que se denomina una aplicación descentralizada.
-| RT3 | Uso Bootstrap | Haremos uso del framework bootstrap para modificar la parte de interfaz de usuario (UI) asi como la experiencia de usuario (UX).
+| RT3 | Uso Bootstrap | Haremos uso del framework bootstrap para modificar la parte de interfaz de usuario (UI) así como la experiencia de usuario (UX).
 | RT4 | Uso Leaflet | Utilizaremos la librería Leaflet para la implementación del mapa en la aplicación, así como la visualización de las rutas en el mismo.
 | RT5 | Uso de Puppeteer | Se hará uso de la librería pupeteer de Node para la implementación de test de funcionalidad.
 | RT6 | Uso de Jest | Se realizarán los test unitarios bajo el marco de pruebas de Jest.
